@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur GpsTime</title>
+    <script>
+        function convertGpsTime() {
+            const gpsTime = parseFloat(document.getElementById('gpsTime').value);
+            const gpsEpoch = new Date(2011, 8, 14); // Mois est 0-indexé
+            const convertedDate = new Date(gpsEpoch.getTime() + gpsTime * 1000);
+            document.getElementById('result').innerText = convertedDate.toLocaleString();
+        }
+    </script>
+</head>
+<body>
+    <h1>Convertisseur GpsTime</h1>
+    <label for="gpsTime">Entrez la valeur GpsTime :</label>
+    <input type="number" id="gpsTime" step="any">
+    <button onclick="convertGpsTime()">Convertir</button>
+    <p id="result"></p>
+</body>
+</html>
