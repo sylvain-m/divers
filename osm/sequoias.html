@@ -11,7 +11,7 @@
     <!-- Feuille de style pour les clusters -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    <!-- Style pour la carte en plein écran -->
+    <!-- Style pour la carte en plein écran et les popups -->
     <style>
         body, html {
             margin: 0;
@@ -24,10 +24,26 @@
             width: 100%;
             height: 100%;
         }
-        .popup-content {
+        .popup-main {
             font-family: Arial, sans-serif;
-            font-size: 12px;
-            white-space: pre-wrap;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .popup-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 5pt;
+            margin-top: 5px;
+        }
+        .popup-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .popup-table tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        .popup-table td {
+            padding: 1px 3px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
@@ -53,9 +69,9 @@
         // Création d'une icône personnalisée pour les séquoias
         var sequoiaIcon = L.icon({
             iconUrl: 'sequoias.png',
-            iconSize: [32, 32], // Taille de l'icône
-            iconAnchor: [16, 32], // Point d'ancrage de l'icône
-            popupAnchor: [0, -32] // Point d'ancrage de la popup
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
         });
 
         // Création d'un groupe de clusters
@@ -67,34 +83,50 @@
             .then(sequoias => {
                 L.geoJSON(sequoias, {
                     pointToLayer: function (feature, latlng) {
-                        // Crée un marqueur avec l'icône personnalisée
                         return L.marker(latlng, { icon: sequoiaIcon });
                     },
                     onEachFeature: function(feature, layer) {
                         if (feature.properties) {
-                            // Formate les propriétés pour l'affichage
-                            let popupContent = "<div class='popup-content'><b>ID:</b> " + feature.id + "<br><br>";
-                            for (let key in feature.properties) {
-                                popupContent += "<b>" + key + ":</b> " + feature.properties[key] + "<br>";
+                            // Construction du contenu de la popup
+                            let popupContent = "<div class='popup-main'>";
+
+                            // Propriétés importantes en haut (exemple : @id avec lien OSM)
+                            if (feature.properties["@id"]) {
+                                let osmId = feature.properties["@id"].split('/')[1];
+                                popupContent +=
+                                    "<b>OSM ID:</b> <a href='https://www.openstreetmap.org/" +
+                                    feature.properties["@id"] + "' target='_blank'>" +
+                                    feature.properties["@id"] + "</a><br>";
                             }
-                            popupContent += "</div>";
+
+                            // Ajoute ici d'autres propriétés importantes si besoin
+                            // Exemple : if (feature.properties["species"]) { ... }
+
+                            // Tableau pour les autres propriétés
+                            popupContent += "<table class='popup-table'>";
+                            for (let key in feature.properties) {
+                                // On saute les propriétés déjà affichées en haut
+                                if (key === "@id") continue;
+                                popupContent +=
+                                    "<tr><td><b>" + key + "</b></td><td>" +
+                                    feature.properties[key] + "</td></tr>";
+                            }
+                            popupContent += "</table></div>";
+
                             layer.bindPopup(popupContent);
                         }
                     }
                 }).eachLayer(function(layer) {
-                    // Ajoute chaque marqueur au groupe de clusters
                     markers.addLayer(layer);
                 });
 
                 // Ajoute le groupe de clusters à la carte
                 map.addLayer(markers);
-
-                // Ajuste la vue de la carte pour afficher tous les marqueurs
                 map.fitBounds(markers.getBounds());
             })
             .catch(error => {
-                console.error('Erreur lors du chargement du GeoJSON:', error);
-                alert("Impossible de charger le fichier GeoJSON. Vérifiez le chemin ou le nom du fichier.");
+                console.error('Erreur:', error);
+                alert("Impossible de charger le fichier GeoJSON.");
             });
     </script>
 </body>
