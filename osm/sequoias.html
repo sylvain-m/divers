@@ -24,6 +24,31 @@
             width: 100%;
             height: 100%;
         }
+        #title-box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px 12px;
+            border-radius: 4px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            pointer-events: none;
+        }
+        #title-box h1 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        #title-box h2 {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+            color: #666;
+            font-weight: normal;
+        }
         .popup-main {
             font-family: Arial, sans-serif;
             font-size: 14px;
@@ -45,10 +70,23 @@
             padding: 1px 3px;
             border: 1px solid #ddd;
         }
+        @media (min-width: 768px) {
+            #title-box {
+                left: auto;
+                right: 20px;
+                width: auto;
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="map"></div>
+    <div id="map">
+        <div id="title-box">
+            <h1>Séquoias du Monde</h1>
+            <h2>Extraction des Séquoias cartographiés dans OpenStreetMap</h2>
+        </div>
+    </div>
 
     <!-- Bibliothèque Leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -98,9 +136,6 @@
                                     feature.properties["@id"] + "' target='_blank'>" +
                                     feature.properties["@id"] + "</a><br>";
                             }
-
-                            // Ajoute ici d'autres propriétés importantes si besoin
-                            // Exemple : if (feature.properties["species"]) { ... }
 
                             // Tableau pour les autres propriétés
                             popupContent += "<table class='popup-table'>";
