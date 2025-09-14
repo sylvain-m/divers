@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sequoias OpenStreetMap</title>
+    <title>Séquoias OpenStreetMap</title>
     <!-- Feuille de style Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -23,6 +23,11 @@
         #map {
             width: 100%;
             height: 100%;
+        }
+        .popup-content {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            white-space: pre-wrap;
         }
     </style>
 </head>
@@ -45,6 +50,14 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+        // Création d'une icône personnalisée pour les séquoias
+        var sequoiaIcon = L.icon({
+            iconUrl: 'sequoias.png',
+            iconSize: [32, 32], // Taille de l'icône
+            iconAnchor: [16, 32], // Point d'ancrage de l'icône
+            popupAnchor: [0, -32] // Point d'ancrage de la popup
+        });
+
         // Création d'un groupe de clusters
         var markers = L.markerClusterGroup();
 
@@ -54,12 +67,18 @@
             .then(sequoias => {
                 L.geoJSON(sequoias, {
                     pointToLayer: function (feature, latlng) {
-                        // Crée un marqueur pour chaque point
-                        return L.marker(latlng);
+                        // Crée un marqueur avec l'icône personnalisée
+                        return L.marker(latlng, { icon: sequoiaIcon });
                     },
                     onEachFeature: function(feature, layer) {
-                        if (feature.properties && feature.properties.name) {
-                            layer.bindPopup(feature.properties.name);
+                        if (feature.properties) {
+                            // Formate les propriétés pour l'affichage
+                            let popupContent = "<div class='popup-content'><b>ID:</b> " + feature.id + "<br><br>";
+                            for (let key in feature.properties) {
+                                popupContent += "<b>" + key + ":</b> " + feature.properties[key] + "<br>";
+                            }
+                            popupContent += "</div>";
+                            layer.bindPopup(popupContent);
                         }
                     }
                 }).eachLayer(function(layer) {
