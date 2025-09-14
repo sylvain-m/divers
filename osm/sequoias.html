@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Séquoias OpenStreetMap</title>
+    <title>Sequoias OpenStreetMap</title>
     <!-- Feuille de style Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
+    <!-- Feuille de style pour les clusters -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <!-- Style pour la carte en plein écran -->
     <style>
         body, html {
@@ -30,33 +33,45 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
+    <!-- Plugin Leaflet.markercluster -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <!-- Code pour charger la carte et le GeoJSON -->
     <script>
         // Initialisation de la carte
-        var map = L.map('map').setView([48.8566, 2.3522], 6); // Coordonnées centrées sur la France par défaut
+        var map = L.map('map').setView([48.8566, 2.3522], 6);
 
         // Ajout d'une couche de tuiles OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+        // Création d'un groupe de clusters
+        var markers = L.markerClusterGroup();
+
         // Chargement du fichier GeoJSON local
         fetch('sequoias.geojson')
             .then(response => response.json())
             .then(sequoias => {
                 L.geoJSON(sequoias, {
-                    style: function(feature) {
-                        return {color: feature.properties.color || '#ff7800'};
+                    pointToLayer: function (feature, latlng) {
+                        // Crée un marqueur pour chaque point
+                        return L.marker(latlng);
                     },
                     onEachFeature: function(feature, layer) {
                         if (feature.properties && feature.properties.name) {
                             layer.bindPopup(feature.properties.name);
                         }
                     }
-                }).addTo(map);
+                }).eachLayer(function(layer) {
+                    // Ajoute chaque marqueur au groupe de clusters
+                    markers.addLayer(layer);
+                });
 
-                // Ajuste la vue de la carte pour afficher toutes les données GeoJSON
-                map.fitBounds(L.geoJSON(sequoias).getBounds());
+                // Ajoute le groupe de clusters à la carte
+                map.addLayer(markers);
+
+                // Ajuste la vue de la carte pour afficher tous les marqueurs
+                map.fitBounds(markers.getBounds());
             })
             .catch(error => {
                 console.error('Erreur lors du chargement du GeoJSON:', error);
