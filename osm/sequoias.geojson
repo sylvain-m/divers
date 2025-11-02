@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo (via script Python)",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2025-09-14T18:36:24Z",
+  "timestamp": "2025-11-02T17:24:42Z",
   "features": [
     {
       "type": "Feature",
@@ -403,20 +403,20 @@
       "type": "Feature",
       "properties": {
         "@id": "node/366594202",
-        "@timestamp": "2025-09-04T20:02:14Z",
-        "@version": 12,
-        "@changeset": 171469110,
-        "@user": "chris66",
-        "@uid": 43972,
+        "@timestamp": "2025-10-09T08:43:06Z",
+        "@version": 14,
+        "@changeset": 173038217,
+        "@user": "rene78",
+        "@uid": 257555,
         "circumference": "7",
         "denotation": "natural_monument",
         "description": "Riesenmammutbaum",
-        "diameter": "2.5",
-        "fixme": "Abstrus kleiner Stammdurchmesser (diameter) von weniger als 10 mm",
+        "diameter": "2.5 m",
         "genus": "Sequoiadendron",
         "height": "45",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
+        "name": "Häfler Mammutbaum",
         "natural": "tree",
         "species": "Sequoiadendron giganteum",
         "species:de": "Riesenmammutbaum",
@@ -1792,6 +1792,38 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/720752877",
+        "@timestamp": "2025-10-30T10:16:00Z",
+        "@version": 5,
+        "@changeset": 173967908,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "natural_monument",
+        "genus": "Sequoiadendron",
+        "genus:de": "Mammutbaum",
+        "height": "20",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "name": "Mammutbaum in Huntlosen",
+        "natural": "tree",
+        "ref": "ND 306",
+        "species": "Sequoiadendron giganteum",
+        "species:wikidata": "Q149851",
+        "species:wikipedia": "de:Riesenmammutbaum",
+        "wikimedia_commons": "File:ND306 Mammutbaum in Huntlosen.jpg",
+        "wikipedia": "de:Liste der Naturdenkmale in Großenkneten"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2664473,
+          52.9931176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/732011741",
         "@timestamp": "2025-06-23T14:51:35Z",
         "@version": 7,
@@ -2909,14 +2941,15 @@
       "type": "Feature",
       "properties": {
         "@id": "node/970960447",
-        "@timestamp": "2023-04-24T20:56:32Z",
-        "@version": 5,
-        "@changeset": 135318779,
-        "@user": "TurBoo22",
-        "@uid": 15926643,
+        "@timestamp": "2025-10-21T08:30:05Z",
+        "@version": 6,
+        "@changeset": 173569992,
+        "@user": "ArthurMcGill",
+        "@uid": 10271506,
         "denotation": "natural_monument",
         "diameter": "2 m",
         "height": "28",
+        "image": "File:ND Mammutbaum Linzenshäuschen, Aachen (2).jpg",
         "name": "Mammutbaum",
         "natural": "tree",
         "species": "Sequoiadendron giganteum"
@@ -2926,248 +2959,6 @@
         "coordinates": [
           6.089755,
           50.7373821
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324608",
-        "@timestamp": "2018-05-09T01:56:44Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1116622,
-          54.8465726
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324610",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1122914,
-          54.8468017
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324611",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1120264,
-          54.8467052
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324612",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1119933,
-          54.8466932
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324614",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1115297,
-          54.8465244
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324615",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1117284,
-          54.8465967
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324618",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1119271,
-          54.8466691
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324621",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1120596,
-          54.8467173
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324622",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1117615,
-          54.8466088
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324624",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1116953,
-          54.8465847
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324625",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1115959,
-          54.8465485
         ]
       }
     },
@@ -3196,248 +2987,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1003324629",
-        "@timestamp": "2018-05-09T01:56:45Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1120927,
-          54.8467294
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324630",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1118609,
-          54.846645
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324632",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1115628,
-          54.8465364
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324634",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1122582,
-          54.8467897
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324637",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1122251,
-          54.8467776
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324638",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.111894,
-          54.846657
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324640",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1117946,
-          54.8466208
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324641",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1121589,
-          54.8467535
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324643",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1118277,
-          54.8466329
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324645",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1121601,
-          54.8469029
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324646",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1119602,
-          54.8466811
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1003324647",
         "@timestamp": "2018-05-09T01:56:46Z",
         "@version": 4,
@@ -3454,72 +3003,6 @@
         "coordinates": [
           83.1121135,
           54.8474953
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324649",
-        "@timestamp": "2018-05-09T01:56:46Z",
-        "@version": 6,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1121258,
-          54.8467414
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324650",
-        "@timestamp": "2018-05-09T01:56:47Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1116291,
-          54.8465605
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003324652",
-        "@timestamp": "2018-05-09T01:56:47Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.112192,
-          54.8467655
         ]
       }
     },
@@ -3548,28 +3031,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1003376695",
-        "@timestamp": "2018-05-09T01:56:47Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1118372,
-          54.8468476
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1003376696",
         "@timestamp": "2018-05-09T01:56:47Z",
         "@version": 4,
@@ -3586,50 +3047,6 @@
         "coordinates": [
           83.1138514,
           54.8474728
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376698",
-        "@timestamp": "2018-05-09T01:56:47Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1118703,
-          54.8468597
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376701",
-        "@timestamp": "2018-05-09T01:56:47Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1121022,
-          54.8469441
         ]
       }
     },
@@ -3658,28 +3075,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1003376703",
-        "@timestamp": "2018-05-09T01:56:47Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1121353,
-          54.8469562
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1003376705",
         "@timestamp": "2018-05-09T01:56:47Z",
         "@version": 4,
@@ -3696,28 +3091,6 @@
         "coordinates": [
           83.1150021,
           54.8476114
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376708",
-        "@timestamp": "2018-05-09T01:56:47Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.111771,
-          54.8468235
         ]
       }
     },
@@ -3746,50 +3119,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1003376711",
-        "@timestamp": "2018-05-09T01:56:48Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1115392,
-          54.8467391
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376712",
-        "@timestamp": "2018-05-09T01:56:48Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1120359,
-          54.84692
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1003376714",
         "@timestamp": "2018-05-09T01:56:48Z",
         "@version": 4,
@@ -3806,50 +3135,6 @@
         "coordinates": [
           83.1149967,
           54.847571
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376715",
-        "@timestamp": "2018-05-09T01:56:48Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1117048,
-          54.8467994
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376716",
-        "@timestamp": "2018-05-09T01:56:48Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1118041,
-          54.8468356
         ]
       }
     },
@@ -3878,72 +3163,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1003376722",
-        "@timestamp": "2018-05-09T01:56:48Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1119697,
-          54.8468959
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376724",
-        "@timestamp": "2018-05-09T01:56:48Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.112069,
-          54.846932
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376727",
-        "@timestamp": "2018-05-09T01:56:48Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1116385,
-          54.8467753
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1003376728",
         "@timestamp": "2018-05-09T01:56:48Z",
         "@version": 4,
@@ -3960,28 +3179,6 @@
         "coordinates": [
           83.1121641,
           54.8472416
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376730",
-        "@timestamp": "2018-05-09T01:56:49Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1117379,
-          54.8468115
         ]
       }
     },
@@ -4032,72 +3229,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1003376734",
-        "@timestamp": "2018-05-09T01:56:49Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1119035,
-          54.8468718
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376735",
-        "@timestamp": "2018-05-09T01:56:49Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1120028,
-          54.8469079
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376737",
-        "@timestamp": "2018-05-09T01:56:49Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1116717,
-          54.8467873
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1003376739",
         "@timestamp": "2018-05-09T01:56:49Z",
         "@version": 4,
@@ -4142,50 +3273,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1003376744",
-        "@timestamp": "2018-05-09T01:56:49Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1119366,
-          54.8468838
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376745",
-        "@timestamp": "2018-05-09T01:56:49Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1115723,
-          54.8467512
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1003376747",
         "@timestamp": "2018-05-09T01:56:49Z",
         "@version": 4,
@@ -4202,28 +3289,6 @@
         "coordinates": [
           83.1149157,
           54.8475664
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1003376749",
-        "@timestamp": "2018-05-09T01:56:49Z",
-        "@version": 4,
-        "@changeset": 58804722,
-        "@user": "xscvxc",
-        "@uid": 605402,
-        "leaf_type": "needleleaved",
-        "natural": "tree",
-        "species": "Sequoia",
-        "species:en": "Spruce"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.1116054,
-          54.8467632
         ]
       }
     },
@@ -4608,19 +3673,39 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1129572660",
-        "@timestamp": "2025-08-11T12:37:26Z",
-        "@version": 8,
-        "@changeset": 170291316,
-        "@user": "whb",
-        "@uid": 202726,
-        "denotation": "natural_monument",
-        "description": "Das Schild daneben gibt Höhe (84 m) und Umfang (31 m) eines anderen Baums derselben Art an (General Sherman in Kalifornien).",
-        "description:de": "Das Schild daneben gibt Höhe (84 m) und Umfang (31 m) eines anderen Baums derselben Art an (General Sherman in Kalifornien).",
-        "description:en": "The sign next to it indicate height (84m) and circumference (31m) of another tree of the same family (the General Sherman in California).",
+        "@id": "node/1129572569",
+        "@timestamp": "2025-09-29T16:50:20Z",
+        "@version": 4,
+        "@changeset": 172622862,
+        "@user": "Niiepce",
+        "@uid": 12992079,
         "leaf_type": "needleleaved",
-        "name": "Mammutbäume",
         "natural": "tree",
+        "sign": "no",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7100474,
+          49.4007631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1129572660",
+        "@timestamp": "2025-09-30T16:19:50Z",
+        "@version": 10,
+        "@changeset": 172668561,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "denotation": "natural_monument",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=14179",
+        "ref:monumentaltrees": "https://www.monumentaltrees.com/de/deu/badenwurttemberg/heidelberg/11969_arboretum1/23317/",
         "species": "Sequoiadendron giganteum"
       },
       "geometry": {
@@ -5353,11 +4438,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1287712691",
-        "@timestamp": "2014-08-16T09:05:16Z",
-        "@version": 2,
-        "@changeset": 24782809,
-        "@user": "whb",
-        "@uid": 202726,
+        "@timestamp": "2025-09-29T16:50:36Z",
+        "@version": 4,
+        "@changeset": 172622862,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "check_date": "2025-09-27",
         "leaf_type": "needleleaved",
         "natural": "tree",
         "species": "Metasequoia glyptostroboides",
@@ -5366,8 +4452,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.7097251,
-          49.4011661
+          8.709621,
+          49.4009983
         ]
       }
     },
@@ -5375,21 +4461,23 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1287712714",
-        "@timestamp": "2014-08-16T09:05:17Z",
-        "@version": 2,
-        "@changeset": 24782809,
-        "@user": "whb",
-        "@uid": 202726,
+        "@timestamp": "2025-09-29T16:50:29Z",
+        "@version": 4,
+        "@changeset": 172622909,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "check_date": "2025-09-27",
         "leaf_type": "needleleaved",
         "natural": "tree",
         "species": "Sequoiadendron giganteum",
-        "species:de": "Riesenmammutbaum"
+        "species:de": "Riesenmammutbaum",
+        "start_date": "1969"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.7107449,
-          49.4003257
+          8.7109047,
+          49.4003442
         ]
       }
     },
@@ -5633,7 +4721,7 @@
         "@timestamp": "2025-05-08T17:55:06Z",
         "@version": 5,
         "@changeset": 165996304,
-        "@user": "anti42",
+        "@user": "GachaNoUta",
         "@uid": 22833477,
         "check_date": "2023-11-18",
         "ele": "411",
@@ -5661,7 +4749,7 @@
         "@timestamp": "2025-05-08T17:55:06Z",
         "@version": 5,
         "@changeset": 165996304,
-        "@user": "anti42",
+        "@user": "GachaNoUta",
         "@uid": 22833477,
         "check_date": "2023-11-18",
         "ele": "411",
@@ -7862,16 +6950,15 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1846770122",
-        "@timestamp": "2024-11-17T17:44:42Z",
-        "@version": 11,
-        "@changeset": 159252952,
+        "@timestamp": "2025-10-13T09:37:00Z",
+        "@version": 12,
+        "@changeset": 173217229,
         "@user": "user_5589",
         "@uid": 5589,
         "genus": "Sequoiadendron",
         "height": "31",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
-        "name": "Séquoia géant",
         "natural": "tree",
         "species": "Sequoiadendron giganteum",
         "species:fr": "Séquoia géant",
@@ -9496,13 +8583,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/2130206274",
-        "@timestamp": "2024-05-03T09:50:33Z",
-        "@version": 5,
-        "@changeset": 150828088,
-        "@user": "ivanbranco",
-        "@uid": 11220113,
+        "@timestamp": "2025-10-08T10:21:10Z",
+        "@version": 6,
+        "@changeset": 172996365,
+        "@user": "Loppi",
+        "@uid": 2457192,
         "genus": "Sequoia",
         "genus:it": "Sequoia",
+        "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
         "name": "Sequoia (Sequoia semprevirens)",
         "natural": "tree",
@@ -20672,6 +19760,26 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/2523793968",
+        "@timestamp": "2025-10-06T04:28:03Z",
+        "@version": 2,
+        "@changeset": 172893248,
+        "@user": "Leporids",
+        "@uid": 10054659,
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0141305,
+          36.9807154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/2550518392",
         "@timestamp": "2021-12-01T09:42:42Z",
         "@version": 9,
@@ -20770,15 +19878,16 @@
       "type": "Feature",
       "properties": {
         "@id": "node/2640207580",
-        "@timestamp": "2025-06-18T20:39:43Z",
-        "@version": 4,
-        "@changeset": 167799512,
-        "@user": "user_5589",
-        "@uid": 5589,
+        "@timestamp": "2025-10-11T13:19:57Z",
+        "@version": 5,
+        "@changeset": 173136996,
+        "@user": "ThibaultPelloquin",
+        "@uid": 578689,
         "description": "Séquoia toujours vert, Séquoia à feuilles d'if",
         "genus:fr": "Séquoia Redwood",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
+        "name": "Séquoia à feuilles d'if",
         "natural": "tree",
         "species": "Sequoia sempervirens"
       },
@@ -27022,13 +26131,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/3097855334",
-        "@timestamp": "2024-08-31T20:51:46Z",
-        "@version": 6,
-        "@changeset": 156020853,
+        "@timestamp": "2025-09-24T10:23:44Z",
+        "@version": 7,
+        "@changeset": 172385846,
         "@user": "user_5589",
         "@uid": 5589,
         "circumference": "1.80",
         "denotation": "park",
+        "genus": "Sequoia",
         "height": "14",
         "leaf_type": "needleleaved",
         "natural": "tree",
@@ -28881,9 +27991,9 @@
       "type": "Feature",
       "properties": {
         "@id": "node/3098041954",
-        "@timestamp": "2025-07-13T23:13:04Z",
-        "@version": 11,
-        "@changeset": 168893471,
+        "@timestamp": "2025-09-20T19:48:37Z",
+        "@version": 12,
+        "@changeset": 172220534,
         "@user": "user_5589",
         "@uid": 5589,
         "circumference": "5.53",
@@ -28900,8 +28010,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.3806632,
-          48.8797547
+          2.3806625,
+          48.8797521
         ]
       }
     },
@@ -29011,13 +28121,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/3098115542",
-        "@timestamp": "2024-11-04T00:40:01Z",
-        "@version": 5,
-        "@changeset": 158720979,
+        "@timestamp": "2025-10-29T01:44:07Z",
+        "@version": 6,
+        "@changeset": 173907652,
         "@user": "user_5589",
         "@uid": 5589,
         "circumference": "1.10",
         "denotation": "park",
+        "genus": "Sequoia",
         "leaf_type": "needleleaved",
         "natural": "tree",
         "species": "Sequoia sempervirens",
@@ -29083,13 +28194,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/3098115814",
-        "@timestamp": "2024-11-04T00:41:25Z",
-        "@version": 5,
-        "@changeset": 158720979,
+        "@timestamp": "2025-10-28T00:23:58Z",
+        "@version": 6,
+        "@changeset": 173860734,
         "@user": "user_5589",
         "@uid": 5589,
         "circumference": "3.05",
         "denotation": "park",
+        "genus": "Sequoia",
         "leaf_type": "needleleaved",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -31258,6 +30370,33 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/3338590196",
+        "@timestamp": "2025-09-29T09:35:56Z",
+        "@version": 6,
+        "@changeset": 172602936,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.84",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "genus:fr": "Sequoia",
+        "height": "10",
+        "natural": "tree",
+        "species": "Sequoia sempervirens",
+        "start_date": "2004-01-01",
+        "taxon": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3621185,
+          48.8748018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/3338600461",
         "@timestamp": "2024-08-18T00:12:20Z",
         "@version": 3,
@@ -31510,6 +30649,118 @@
         "coordinates": [
           5.0819517,
           52.0383454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3388473871",
+        "@timestamp": "2025-10-22T15:40:13Z",
+        "@version": 7,
+        "@changeset": 173634371,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "operator": "Stadt Witten",
+        "operator:type": "public",
+        "operator:wikidata": "Q3764",
+        "species": "Metasequoia glyptostroboides",
+        "species:wikidata": "Q156800"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3287021,
+          51.4376471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3388473872",
+        "@timestamp": "2025-10-23T21:34:42Z",
+        "@version": 7,
+        "@changeset": 173693066,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "operator": "Stadt Witten",
+        "operator:type": "public",
+        "operator:wikidata": "Q3764",
+        "species": "Metasequoia glyptostroboides",
+        "species:wikidata": "Q156800"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3286252,
+          51.437699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3388473873",
+        "@timestamp": "2025-10-24T16:11:33Z",
+        "@version": 6,
+        "@changeset": 173725521,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "operator": "Stadt Witten",
+        "operator:type": "public",
+        "operator:wikidata": "Q3764",
+        "species": "Metasequoia glyptostroboides",
+        "species:wikidata": "Q156800"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3287147,
+          51.4377084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3388473874",
+        "@timestamp": "2025-10-26T12:40:26Z",
+        "@version": 7,
+        "@changeset": 173792917,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "operator": "Stadt Witten",
+        "operator:type": "public",
+        "operator:wikidata": "Q3764",
+        "species": "Metasequoia glyptostroboides",
+        "species:wikidata": "Q156800"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3286895,
+          51.4377894
         ]
       }
     },
@@ -39153,12 +38404,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4169875602",
-        "@timestamp": "2025-06-16T21:09:46Z",
-        "@version": 6,
-        "@changeset": 167713334,
-        "@user": "user_5589",
-        "@uid": 5589,
-        "check_date": "2021-07-01",
+        "@timestamp": "2025-10-13T17:13:31Z",
+        "@version": 7,
+        "@changeset": 173238883,
+        "@user": "Der Troisdorfer",
+        "@uid": 237277,
+        "check_date": "2025-04-24",
         "circumference": "2.65",
         "denotation": "urban",
         "diameter_crown": "8.00",
@@ -39167,7 +38418,7 @@
         "leaf_cycle": "deciduous",
         "leaf_type": "needleleaved",
         "natural": "tree",
-        "ref": "77 (18079)",
+        "ref": "77",
         "source": "daten.stadttroisdorf",
         "species": "Metasequoia glyptostroboides",
         "species:de": "Urweltmammutbaum",
@@ -39177,7 +38428,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.1760452,
+          7.176045,
           50.8163932
         ]
       }
@@ -39866,11 +39117,11 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4355366957",
-        "@timestamp": "2025-07-06T12:48:11Z",
-        "@version": 3,
-        "@changeset": 168560321,
-        "@user": "Monchinho",
-        "@uid": 2788764,
+        "@timestamp": "2025-10-07T20:08:18Z",
+        "@version": 4,
+        "@changeset": 172976256,
+        "@user": "ydubras",
+        "@uid": 17421650,
         "genus": "Sequoia",
         "height": "24",
         "leaf_cycle": "evergreen",
@@ -39878,7 +39129,8 @@
         "name": "Sequoia vermella da Alameda",
         "natural": "tree",
         "species": "Sequoia sempervirens",
-        "species:gl": "Sequoia vermella"
+        "species:gl": "Sequoia vermella",
+        "species:wikidata": "Q150129"
       },
       "geometry": {
         "type": "Point",
@@ -42168,12 +41420,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4440535206",
-        "@timestamp": "2016-10-10T12:14:51Z",
-        "@version": 1,
-        "@changeset": 42775736,
-        "@user": "gnoomnet",
-        "@uid": 4265129,
-        "genus": "sequoia",
+        "@timestamp": "2025-10-15T20:15:38Z",
+        "@version": 2,
+        "@changeset": 173337248,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "genus": "Sequoia",
         "natural": "tree",
         "species": "sequoia sempervirens",
         "species:fr": "sequoia toujours vert"
@@ -47495,16 +46747,16 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4897837974",
-        "@timestamp": "2024-12-30T15:03:39Z",
-        "@version": 4,
-        "@changeset": 160796040,
-        "@user": "aTarom",
-        "@uid": 5127355,
+        "@timestamp": "2025-10-24T14:53:56Z",
+        "@version": 5,
+        "@changeset": 173722257,
+        "@user": "Hugoren Martinako",
+        "@uid": 3392826,
         "est_height": "35-40",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
         "leisure": "nature_reserve",
-        "name": "Gasteizko sekuoia/Sequoia de Vitoria",
+        "name": "Gasteizko sekuoia / Sequoia de Vitoria",
         "name:es": "Sequoia de Vitoria",
         "name:eu": "Gasteizko sekuoia",
         "natural": "tree",
@@ -52648,12 +51900,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/5913266905",
-        "@timestamp": "2025-06-23T13:49:32Z",
-        "@version": 5,
-        "@changeset": 168004926,
-        "@user": "user_5589",
-        "@uid": 5589,
-        "check_date": "2021-07-01",
+        "@timestamp": "2025-10-03T17:15:21Z",
+        "@version": 6,
+        "@changeset": 172802541,
+        "@user": "Der Troisdorfer",
+        "@uid": 237277,
+        "check_date": "2025-04-24",
         "circumference": "1.03",
         "denotation": "urban",
         "diameter_crown": "4.00",
@@ -52662,7 +51914,7 @@
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
         "natural": "tree",
-        "ref": "210 (15618)",
+        "ref": "210",
         "source": "daten.stadttroisdorf",
         "species": "Sequoiadendron giganteum",
         "species:de": "Mammutbaum",
@@ -52671,8 +51923,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.1726996,
-          50.8210388
+          7.1726997,
+          50.8210387
         ]
       }
     },
@@ -52783,15 +52035,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/5939569818",
-        "@timestamp": "2025-06-17T12:51:14Z",
-        "@version": 2,
-        "@changeset": 167737230,
-        "@user": "simo_fi",
-        "@uid": 18469761,
+        "@timestamp": "2025-09-30T05:48:01Z",
+        "@version": 3,
+        "@changeset": 172643010,
+        "@user": "mbyte",
+        "@uid": 505942,
         "circumference": "5.76",
         "denotation": "natural_monument",
         "ele": "15",
-        "fixme": "position",
         "genus": "Sequoia",
         "height": "35.2",
         "leaf_cycle": "evergreen",
@@ -52804,8 +52055,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.5116901,
-          43.8414025
+          10.5117395,
+          43.8414042
         ]
       }
     },
@@ -55102,6 +54353,36 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/6574752539",
+        "@timestamp": "2025-10-16T15:19:36Z",
+        "@version": 8,
+        "@changeset": 173371788,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "natural_monument",
+        "description": "Nom latin : sequoiadendron giganteum L'arbre le plus grand du monde en volumeHauteur maximale : 90 mètresCirconférence maximale : 34 mètres (Boole Tree)Feuillage en écailles, collées au rameau. Longs rameaux regroupés en touffe.",
+        "genus": "Sequoiadendron",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "local knowledge;aerial imagery;streetlevel imagery",
+        "species": "Sequoiadendron giganteum",
+        "species:fr": "Séquoia géant",
+        "species:wikidata": "Q149851",
+        "wikidata": "Q149851",
+        "wikipedia": "fr:Séquoia géant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6683851,
+          47.4584956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/6578739589",
         "@timestamp": "2020-11-03T17:06:15Z",
         "@version": 3,
@@ -55477,6 +54758,28 @@
         "coordinates": [
           -122.2773903,
           37.3697937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6676245174",
+        "@timestamp": "2025-10-15T20:21:23Z",
+        "@version": 4,
+        "@changeset": 173337473,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "landmark",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:fr": "Séquoia géant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4266833,
+          47.5609931
         ]
       }
     },
@@ -61721,10 +61024,109 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/9050662050",
-        "@timestamp": "2025-09-06T14:44:32Z",
+        "@id": "node/9050411052",
+        "@timestamp": "2025-10-14T06:56:51Z",
+        "@version": 4,
+        "@changeset": 173258797,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "5.15",
+        "denotation": "natural_monument",
+        "genus": "Sequoiadendron",
+        "height": "30",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "start_date": "1850"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2477134,
+          48.8694583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9050411472",
+        "@timestamp": "2025-10-27T00:02:05Z",
         "@version": 5,
-        "@changeset": 171543776,
+        "@changeset": 173816042,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "3.35",
+        "genus": "Sequoiadendron",
+        "height": "29",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "start_date": "1850"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2574998,
+          48.8764741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9050412317",
+        "@timestamp": "2025-10-29T19:41:24Z",
+        "@version": 4,
+        "@changeset": 173945803,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "6.45",
+        "denotation": "natural_monument",
+        "genus": "Sequoiadendron",
+        "height": "36",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "start_date": "1872"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2526762,
+          48.8648179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9050662007",
+        "@timestamp": "2025-09-15T13:59:55Z",
+        "@version": 5,
+        "@changeset": 171967141,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4469742,
+          48.8392812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9050662050",
+        "@timestamp": "2025-10-04T20:19:49Z",
+        "@version": 6,
+        "@changeset": 172845441,
         "@user": "user_5589",
         "@uid": 5589,
         "denotation": "urban",
@@ -61737,8 +61139,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.455756,
-          48.8218034
+          2.4557631,
+          48.8218135
         ]
       }
     },
@@ -61770,9 +61172,9 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9050663159",
-        "@timestamp": "2025-09-03T14:02:14Z",
-        "@version": 5,
-        "@changeset": 171409799,
+        "@timestamp": "2025-10-04T20:04:54Z",
+        "@version": 6,
+        "@changeset": 172845032,
         "@user": "user_5589",
         "@uid": 5589,
         "denotation": "urban",
@@ -61785,8 +61187,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.456488,
-          48.8214136
+          2.4564822,
+          48.8213947
         ]
       }
     },
@@ -61893,6 +61295,32 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/9050665893",
+        "@timestamp": "2025-09-15T14:00:52Z",
+        "@version": 5,
+        "@changeset": 171967141,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "2",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "17",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4470624,
+          48.8392617
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/9050669789",
         "@timestamp": "2025-09-06T19:32:38Z",
         "@version": 5,
@@ -61986,6 +61414,648 @@
         "coordinates": [
           2.4536078,
           48.8321811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9050673264",
+        "@timestamp": "2025-09-15T14:02:35Z",
+        "@version": 5,
+        "@changeset": 171967141,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Metasequoia glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4463228,
+          48.8390839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052843649",
+        "@timestamp": "2025-09-26T15:57:39Z",
+        "@version": 4,
+        "@changeset": 172491174,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "0.77",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "10",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3381997,
+          48.8207553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052848856",
+        "@timestamp": "2025-09-28T13:36:46Z",
+        "@version": 4,
+        "@changeset": 172558415,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "13",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.337692,
+          48.8239616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052850118",
+        "@timestamp": "2025-09-28T13:37:37Z",
+        "@version": 4,
+        "@changeset": 172558415,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3376257,
+          48.8241261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052850693",
+        "@timestamp": "2025-09-28T14:17:58Z",
+        "@version": 4,
+        "@changeset": 172558415,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.2",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "16",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3374032,
+          48.8233947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052850802",
+        "@timestamp": "2025-10-12T22:18:52Z",
+        "@version": 3,
+        "@changeset": 173201494,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "0.5",
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "height": "7",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Metasequoia glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2961855,
+          48.8422262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052853203",
+        "@timestamp": "2025-09-26T15:57:34Z",
+        "@version": 4,
+        "@changeset": 172491174,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "0.57",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "8",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3381678,
+          48.8207172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052854550",
+        "@timestamp": "2025-10-03T03:46:58Z",
+        "@version": 4,
+        "@changeset": 172771011,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "0.95",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "7",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2974029,
+          48.8311827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052854616",
+        "@timestamp": "2025-09-21T16:23:46Z",
+        "@version": 4,
+        "@changeset": 172255175,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.63",
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Metasequoia glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2706497,
+          48.8293352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052855305",
+        "@timestamp": "2025-09-28T14:15:41Z",
+        "@version": 4,
+        "@changeset": 172558415,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.42",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "17",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3374285,
+          48.8233377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052857375",
+        "@timestamp": "2025-09-28T17:01:59Z",
+        "@version": 4,
+        "@changeset": 172575121,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.07",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "17",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3377644,
+          48.8240136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052859324",
+        "@timestamp": "2025-09-28T17:01:22Z",
+        "@version": 4,
+        "@changeset": 172575121,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.92",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "17",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3374157,
+          48.8236564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052860083",
+        "@timestamp": "2025-10-11T10:32:57Z",
+        "@version": 4,
+        "@changeset": 173130452,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "2.85",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "15",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2912521,
+          48.8371078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052860332",
+        "@timestamp": "2025-09-26T15:57:47Z",
+        "@version": 4,
+        "@changeset": 172491174,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.4",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "15",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.338228,
+          48.820719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052862746",
+        "@timestamp": "2025-09-21T20:50:29Z",
+        "@version": 4,
+        "@changeset": 172265081,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "2.29",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2678047,
+          48.8309848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052862800",
+        "@timestamp": "2025-09-28T13:36:57Z",
+        "@version": 4,
+        "@changeset": 172558415,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.77",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "18",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3374656,
+          48.8235142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052866004",
+        "@timestamp": "2025-10-03T03:47:35Z",
+        "@version": 4,
+        "@changeset": 172771011,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.25",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "10",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2974441,
+          48.8311587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052866123",
+        "@timestamp": "2025-09-28T17:04:16Z",
+        "@version": 4,
+        "@changeset": 172575121,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "3.3",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "29",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3381699,
+          48.8227733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052866823",
+        "@timestamp": "2025-09-26T20:47:13Z",
+        "@version": 4,
+        "@changeset": 172502647,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.86",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "18",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3400446,
+          48.8208582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052868670",
+        "@timestamp": "2025-09-23T16:33:54Z",
+        "@version": 4,
+        "@changeset": 172351727,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "3.4",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "25",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3369169,
+          48.8214441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052870908",
+        "@timestamp": "2025-09-23T16:26:36Z",
+        "@version": 5,
+        "@changeset": 172353030,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "4.02",
+        "denotation": "natural_monument",
+        "genus": "Sequoia",
+        "height": "22",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.336277,
+          48.8220251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052871548",
+        "@timestamp": "2025-10-03T03:47:17Z",
+        "@version": 4,
+        "@changeset": 172771011,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "0.95",
+        "denotation": "urban",
+        "genus": "Sequoiadendron",
+        "height": "8",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2974407,
+          48.8311919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052871964",
+        "@timestamp": "2025-09-28T17:01:31Z",
+        "@version": 4,
+        "@changeset": 172575121,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.02",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "15",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3374119,
+          48.8235938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052872382",
+        "@timestamp": "2025-09-26T15:28:34Z",
+        "@version": 4,
+        "@changeset": 172491174,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "1.36",
+        "denotation": "urban",
+        "genus": "Metasequoia",
+        "height": "17",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Metasequoia glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3383198,
+          48.8220366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9052873001",
+        "@timestamp": "2025-09-26T20:46:26Z",
+        "@version": 4,
+        "@changeset": 172502647,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "circumference": "2.27",
+        "denotation": "urban",
+        "genus": "Sequoia",
+        "height": "23",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "source": "opendata.paris.fr",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3411971,
+          48.8207144
         ]
       }
     },
@@ -68474,12 +68544,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752762616",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68496,12 +68566,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814217",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68518,12 +68588,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814218",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68540,12 +68610,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814219",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68562,12 +68632,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814220",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68584,12 +68654,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814221",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68606,12 +68676,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814222",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68628,12 +68698,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814223",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68650,12 +68720,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814224",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -68672,12 +68742,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9752814225",
-        "@timestamp": "2022-05-18T19:38:01Z",
-        "@version": 1,
-        "@changeset": 121161942,
-        "@user": "cOSMografix",
-        "@uid": 2212351,
-        "denotation": "alley",
+        "@timestamp": "2025-09-19T06:29:24Z",
+        "@version": 2,
+        "@changeset": 172143962,
+        "@user": "oldnab",
+        "@uid": 22832445,
+        "denotation": "avenue",
         "height": "30",
         "natural": "tree",
         "species": "Sequoia sempervirens"
@@ -70324,14 +70394,15 @@
       "type": "Feature",
       "properties": {
         "@id": "node/10054245206",
-        "@timestamp": "2022-09-26T17:34:12Z",
-        "@version": 1,
-        "@changeset": 126665814,
+        "@timestamp": "2025-10-09T14:52:50Z",
+        "@version": 2,
+        "@changeset": 173055242,
         "@user": "osm-user12",
         "@uid": 1031994,
         "denotation": "decoration",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
+        "mapillary": "2141779076219192",
         "natural": "tree",
         "species": "Sequoiadendron giganteum",
         "species:de": "Mammutbaum"
@@ -70550,6 +70621,32 @@
         "coordinates": [
           139.7687292,
           35.7149219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10108695771",
+        "@timestamp": "2025-10-27T08:24:18Z",
+        "@version": 2,
+        "@changeset": 173825790,
+        "@user": "Sylvain M",
+        "@uid": 672931,
+        "denotation": "natural_monument",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:fr": "Séquoia géant",
+        "species:wikidata": "Q149851",
+        "species:wikipedia": "fr:Séquoia géant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8288256,
+          48.5986596
         ]
       }
     },
@@ -74822,38 +74919,12 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/11243975369",
-        "@timestamp": "2025-07-11T22:44:56Z",
-        "@version": 4,
-        "@changeset": 168816249,
-        "@user": "Silentwriter_15",
-        "@uid": 13763455,
-        "height": "31",
-        "leaf_type": "needleleaved",
-        "name": "Mammutbaum",
-        "natural": "tree",
-        "species": "Sequoiadendron giganteum",
-        "taxon:subfamily": "Sequoioideae",
-        "taxon:subfamily:de": "Mammutbäume",
-        "tourism": "attraction"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.8120841,
-          51.8272227
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/11243975370",
-        "@timestamp": "2025-07-11T22:44:43Z",
-        "@version": 4,
-        "@changeset": 168816249,
-        "@user": "Silentwriter_15",
-        "@uid": 13763455,
+        "@timestamp": "2025-10-02T15:51:40Z",
+        "@version": 5,
+        "@changeset": 172755808,
+        "@user": "osm-user12",
+        "@uid": 1031994,
         "height": "31",
         "leaf_type": "needleleaved",
         "name": "Mammutbaum",
@@ -74866,8 +74937,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.8118799,
-          51.8271003
+          10.8118499,
+          51.8271008
         ]
       }
     },
@@ -76127,11 +76198,11 @@
       "type": "Feature",
       "properties": {
         "@id": "node/11432097540",
-        "@timestamp": "2025-07-11T22:44:33Z",
-        "@version": 4,
-        "@changeset": 168816249,
-        "@user": "Silentwriter_15",
-        "@uid": 13763455,
+        "@timestamp": "2025-10-02T15:51:40Z",
+        "@version": 5,
+        "@changeset": 172755808,
+        "@user": "osm-user12",
+        "@uid": 1031994,
         "height": "31",
         "leaf_type": "needleleaved",
         "name": "Mammutbaum",
@@ -76144,8 +76215,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.8118823,
-          51.8270478
+          10.8119263,
+          51.8270545
         ]
       }
     },
@@ -79111,11 +79182,11 @@
       "type": "Feature",
       "properties": {
         "@id": "node/11752982093",
-        "@timestamp": "2024-11-25T16:20:08Z",
-        "@version": 6,
-        "@changeset": 159580618,
-        "@user": "user_5589",
-        "@uid": 5589,
+        "@timestamp": "2025-10-21T19:36:23Z",
+        "@version": 7,
+        "@changeset": 173599083,
+        "@user": "DerSchmopf",
+        "@uid": 13357545,
         "denotation": "natural_monument",
         "genus": "Sequoiadendron",
         "height": "30",
@@ -79131,8 +79202,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.1030723,
-          50.5462016
+          7.1031397,
+          50.5461901
         ]
       }
     },
@@ -79169,11 +79240,11 @@
       "type": "Feature",
       "properties": {
         "@id": "node/11753522088",
-        "@timestamp": "2024-11-25T16:20:08Z",
-        "@version": 4,
-        "@changeset": 159580618,
-        "@user": "user_5589",
-        "@uid": 5589,
+        "@timestamp": "2025-10-10T21:35:45Z",
+        "@version": 5,
+        "@changeset": 173114069,
+        "@user": "limes11",
+        "@uid": 10236685,
         "denotation": "natural_monument",
         "genus": "Sequoiadendron",
         "leaf_cycle": "evergreen",
@@ -79186,8 +79257,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.1348423,
-          50.541963
+          7.1348202,
+          50.5419614
         ]
       }
     },
@@ -90549,12 +90620,13 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12506965556",
-        "@timestamp": "2025-01-16T13:25:16Z",
-        "@version": 1,
-        "@changeset": 161419132,
-        "@user": "Sylvain M",
-        "@uid": 672931,
+        "@timestamp": "2025-09-28T17:25:36Z",
+        "@version": 2,
+        "@changeset": 172575402,
+        "@user": "user_5589",
+        "@uid": 5589,
         "denotation": "park",
+        "genus": "Sequoiadendron",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
         "natural": "tree",
@@ -90575,12 +90647,13 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12506965557",
-        "@timestamp": "2025-01-16T13:25:16Z",
-        "@version": 1,
-        "@changeset": 161419132,
-        "@user": "Sylvain M",
-        "@uid": 672931,
+        "@timestamp": "2025-09-28T17:27:50Z",
+        "@version": 2,
+        "@changeset": 172575402,
+        "@user": "user_5589",
+        "@uid": 5589,
         "denotation": "park",
+        "genus": "Sequoiadendron",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
         "natural": "tree",
@@ -90601,15 +90674,15 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12506965558",
-        "@timestamp": "2025-03-31T12:04:40Z",
-        "@version": 3,
-        "@changeset": 164327240,
-        "@user": "Esperanza36",
-        "@uid": 83557,
+        "@timestamp": "2025-09-28T17:28:05Z",
+        "@version": 5,
+        "@changeset": 172575686,
+        "@user": "user_5589",
+        "@uid": 5589,
         "denotation": "natural_monument",
+        "genus": "Sequoiadendron",
         "leaf_cycle": "evergreen",
         "leaf_type": "needleleaved",
-        "name": "Séquoia géant",
         "natural": "tree",
         "species": "Sequoiadendron giganteum",
         "species:fr": "Séquoia géant",
@@ -93489,15 +93562,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12921229968",
-        "@timestamp": "2025-06-17T12:51:14Z",
-        "@version": 1,
-        "@changeset": 167737230,
-        "@user": "simo_fi",
-        "@uid": 18469761,
+        "@timestamp": "2025-09-30T05:48:01Z",
+        "@version": 2,
+        "@changeset": 172643010,
+        "@user": "mbyte",
+        "@uid": 505942,
         "circumference": "5",
         "denotation": "natural_monument",
         "ele": "15",
-        "fixme": "position",
         "genus": "Sequoia",
         "height": "35",
         "leaf_cycle": "evergreen",
@@ -93510,8 +93582,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.5111568,
-          43.841236
+          10.5111995,
+          43.8412241
         ]
       }
     },
@@ -94622,6 +94694,29 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/13026864972",
+        "@timestamp": "2025-10-11T15:58:09Z",
+        "@version": 5,
+        "@changeset": 173143451,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "park",
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5483099,
+          52.2868077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/13034322790",
         "@timestamp": "2025-07-29T17:30:20Z",
         "@version": 4,
@@ -95134,19 +95229,18 @@
       "type": "Feature",
       "properties": {
         "@id": "node/13069720863",
-        "@timestamp": "2025-08-14T22:24:20Z",
-        "@version": 2,
-        "@changeset": 170457937,
-        "@user": "user_5589",
-        "@uid": 5589,
+        "@timestamp": "2025-09-24T19:34:19Z",
+        "@version": 3,
+        "@changeset": 172409831,
+        "@user": "Sv8x",
+        "@uid": 12091827,
         "diameter_crown": "6.00",
         "genus": "Metasequoia",
         "height": "5.00",
         "leaf_cycle": "deciduous",
         "leaf_type": "needleleaved",
         "natural": "tree",
-        "species": "Metasequoia glyptostroboides",
-        "species:wikidata": "Q156800"
+        "species": "Metasequoia glyptostroboides"
       },
       "geometry": {
         "type": "Point",
@@ -95538,6 +95632,1604 @@
         "coordinates": [
           14.070665,
           50.9629417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13143860422",
+        "@timestamp": "2025-09-15T06:35:42Z",
+        "@version": 1,
+        "@changeset": 171947736,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.0437473,
+          51.9301179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151177798",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2310519,
+          51.8227179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151177799",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2311178,
+          51.8227261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184601",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2298877,
+          51.8243644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184602",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2296947,
+          51.8244122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184603",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2295589,
+          51.82444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184604",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2293093,
+          51.824482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184605",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2291696,
+          51.8244684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184606",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2288913,
+          51.8244672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184607",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2310002,
+          51.8241873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13151184608",
+        "@timestamp": "2025-09-17T19:23:05Z",
+        "@version": 1,
+        "@changeset": 172082325,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2311843,
+          51.8241497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13153854920",
+        "@timestamp": "2025-09-18T19:32:54Z",
+        "@version": 1,
+        "@changeset": 172130201,
+        "@user": "Emiv",
+        "@uid": 8857661,
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:en": "Giant Redwood",
+        "species:wikidata": "Q149851",
+        "species:wikipedia": "en:Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4893634,
+          57.33003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13153854921",
+        "@timestamp": "2025-09-18T19:32:54Z",
+        "@version": 1,
+        "@changeset": 172130201,
+        "@user": "Emiv",
+        "@uid": 8857661,
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:en": "Giant Redwood",
+        "species:wikidata": "Q149851",
+        "species:wikipedia": "en:Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4894036,
+          57.3298678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13153854922",
+        "@timestamp": "2025-09-18T19:32:54Z",
+        "@version": 1,
+        "@changeset": 172130201,
+        "@user": "Emiv",
+        "@uid": 8857661,
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:en": "Giant Redwood",
+        "species:wikidata": "Q149851",
+        "species:wikipedia": "en:Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4911375,
+          57.3275263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13157476341",
+        "@timestamp": "2025-09-20T05:28:55Z",
+        "@version": 3,
+        "@changeset": 172190125,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2432437,
+          49.9921507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13165738499",
+        "@timestamp": "2025-09-28T22:28:24Z",
+        "@version": 2,
+        "@changeset": 172586754,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "genus": "Metasequoia",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "note": "https://www.cascadiadaily.com/2025/sep/22/a-walking-tour-of-bellinghams-stately-tree-species/",
+        "species": "Metasequoia glyptostroboides",
+        "species:wikidata": "Q156800"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5065015,
+          48.774746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180697581",
+        "@timestamp": "2025-09-29T16:50:34Z",
+        "@version": 6,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "check_date": "2025-09-27",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "note": "vermutlich Sequoiadendron giganteum",
+        "sign": "no",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.709961,
+          49.4003488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180710752",
+        "@timestamp": "2025-09-29T16:50:26Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7103263,
+          49.4011769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180739078",
+        "@timestamp": "2025-09-29T16:50:26Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7102682,
+          49.4011251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180739079",
+        "@timestamp": "2025-09-29T16:50:35Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7093791,
+          49.4009103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180760805",
+        "@timestamp": "2025-09-29T16:50:21Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7101255,
+          49.4008459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180761049",
+        "@timestamp": "2025-09-29T16:50:33Z",
+        "@version": 6,
+        "@changeset": 172622909,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "note": "vermutlich Sequoiadendron giganteum",
+        "sign": "no",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7098476,
+          49.4004563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180840467",
+        "@timestamp": "2025-09-29T16:50:24Z",
+        "@version": 3,
+        "@changeset": 172622909,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7102295,
+          49.4008712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180914586",
+        "@timestamp": "2025-09-29T16:50:25Z",
+        "@version": 3,
+        "@changeset": 172622862,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref": "5",
+        "species": "Sequoiadendron giganteum",
+        "start_date": "1876"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7101072,
+          49.4011945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180960206",
+        "@timestamp": "2025-09-29T16:50:34Z",
+        "@version": 6,
+        "@changeset": 172622909,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "note": "vermutlich Sequoiadendron giganteum",
+        "sign": "no",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7099108,
+          49.4004322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180960250",
+        "@timestamp": "2025-09-29T16:50:36Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7091967,
+          49.4008239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180979487",
+        "@timestamp": "2025-09-29T16:50:22Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7100247,
+          49.4008953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180979489",
+        "@timestamp": "2025-09-29T16:50:25Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7101133,
+          49.4011057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13180980677",
+        "@timestamp": "2025-09-29T16:49:55Z",
+        "@version": 4,
+        "@changeset": 172622862,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref": "25",
+        "species": "Metasequoia glyptostroboides",
+        "start_date": "1960"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7081369,
+          49.3922152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181051531",
+        "@timestamp": "2025-09-29T16:50:23Z",
+        "@version": 3,
+        "@changeset": 172622909,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7100311,
+          49.4009431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181052025",
+        "@timestamp": "2025-09-29T16:50:36Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.709286,
+          49.4008652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181052727",
+        "@timestamp": "2025-09-29T16:50:24Z",
+        "@version": 3,
+        "@changeset": 172622909,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.710155,
+          49.4010066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181053928",
+        "@timestamp": "2025-09-29T16:50:23Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7100559,
+          49.4009951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181053929",
+        "@timestamp": "2025-09-30T16:19:50Z",
+        "@version": 3,
+        "@changeset": 172668561,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=14178",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7103095,
+          49.4013571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181055001",
+        "@timestamp": "2025-09-29T16:50:23Z",
+        "@version": 3,
+        "@changeset": 172622909,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7102832,
+          49.4009156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181055101",
+        "@timestamp": "2025-09-29T16:50:26Z",
+        "@version": 2,
+        "@changeset": 172622868,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7103258,
+          49.4012045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13181407303",
+        "@timestamp": "2025-09-29T20:10:56Z",
+        "@version": 1,
+        "@changeset": 172630579,
+        "@user": "Pfeiftafel",
+        "@uid": 13541579,
+        "denotation": "park",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.873528,
+          48.3076494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13184079344",
+        "@timestamp": "2025-09-30T15:06:37Z",
+        "@version": 3,
+        "@changeset": 172665242,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=8508",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2415231,
+          49.9902992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13184090998",
+        "@timestamp": "2025-09-30T15:06:37Z",
+        "@version": 3,
+        "@changeset": 172665242,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=8509",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2412767,
+          49.9904217
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13184115196",
+        "@timestamp": "2025-09-30T15:06:37Z",
+        "@version": 3,
+        "@changeset": 172665242,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=8508",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2414778,
+          49.9902964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13184118342",
+        "@timestamp": "2025-09-30T15:06:37Z",
+        "@version": 3,
+        "@changeset": 172665242,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=8507",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2402686,
+          49.989776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13184128047",
+        "@timestamp": "2025-09-30T15:06:37Z",
+        "@version": 3,
+        "@changeset": 172665242,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=8509",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.241276,
+          49.9903805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13184129489",
+        "@timestamp": "2025-09-30T15:06:37Z",
+        "@version": 3,
+        "@changeset": 172665242,
+        "@user": "Niiepce",
+        "@uid": 12992079,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=8509",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2412551,
+          49.9903838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13184623276",
+        "@timestamp": "2025-09-30T19:19:12Z",
+        "@version": 2,
+        "@changeset": 172675796,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "single",
+        "description": "NORA's Geburtstagsbaum",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum",
+        "start_date": "2024-05-05"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0367976,
+          51.6722504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13188989909",
+        "@timestamp": "2025-10-02T15:51:40Z",
+        "@version": 1,
+        "@changeset": 172755808,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "park",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "species:de": "Urweltmammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8128889,
+          51.8278779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13188989913",
+        "@timestamp": "2025-10-02T15:51:40Z",
+        "@version": 1,
+        "@changeset": 172755808,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "height": "31",
+        "leaf_type": "needleleaved",
+        "name": "Mammutbaum",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "taxon:subfamily": "Sequoioideae",
+        "taxon:subfamily:de": "Mammutbäume",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8119389,
+          51.8270971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13188989914",
+        "@timestamp": "2025-10-02T15:51:40Z",
+        "@version": 1,
+        "@changeset": 172755808,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "park",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "species:de": "Urweltmammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8121046,
+          51.8273319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13188989915",
+        "@timestamp": "2025-10-02T15:51:40Z",
+        "@version": 1,
+        "@changeset": 172755808,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "park",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8082731,
+          51.8265085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13192186533",
+        "@timestamp": "2025-10-04T09:07:11Z",
+        "@version": 1,
+        "@changeset": 172821980,
+        "@user": "Leporids",
+        "@uid": 10054659,
+        "natural": "tree",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0133105,
+          36.9700877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13192186534",
+        "@timestamp": "2025-10-04T09:07:11Z",
+        "@version": 1,
+        "@changeset": 172821980,
+        "@user": "Leporids",
+        "@uid": 10054659,
+        "natural": "tree",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0132764,
+          36.9698965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13192186536",
+        "@timestamp": "2025-10-04T09:07:11Z",
+        "@version": 1,
+        "@changeset": 172821980,
+        "@user": "Leporids",
+        "@uid": 10054659,
+        "natural": "tree",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.013116,
+          36.969767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13192186537",
+        "@timestamp": "2025-10-04T09:07:11Z",
+        "@version": 1,
+        "@changeset": 172821980,
+        "@user": "Leporids",
+        "@uid": 10054659,
+        "natural": "tree",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0134453,
+          36.9701442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13192186538",
+        "@timestamp": "2025-10-04T09:07:11Z",
+        "@version": 1,
+        "@changeset": 172821980,
+        "@user": "Leporids",
+        "@uid": 10054659,
+        "natural": "tree",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0134503,
+          36.9694898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13192268573",
+        "@timestamp": "2025-10-04T11:07:23Z",
+        "@version": 5,
+        "@changeset": 172823782,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "garden",
+        "genus": "Sequoiadendron",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5490534,
+          52.2891812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13198217109",
+        "@timestamp": "2025-10-06T16:47:11Z",
+        "@version": 4,
+        "@changeset": 172923065,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5305764,
+          52.3004406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13198233892",
+        "@timestamp": "2025-10-06T17:03:50Z",
+        "@version": 4,
+        "@changeset": 172923065,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "genus": "Sequoiadendron",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5319946,
+          52.2985968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13233017675",
+        "@timestamp": "2025-10-14T20:32:40Z",
+        "@version": 3,
+        "@changeset": 173293118,
+        "@user": "Awo",
+        "@uid": 196556,
+        "age": "mature",
+        "check_date": "2025-10-14",
+        "denotation": "garden",
+        "genus": "Sequoia",
+        "height": "30",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "object:city": "Valdivia",
+        "object:street": "Pasaje Sevilla",
+        "panoramax": "18492259-5633-4936-9b7a-c601961d54c1",
+        "ref:plantnet": "1029744567",
+        "species": "Sequoia sempervirens",
+        "species:es": "Sequoia",
+        "species:wikidata": "Q150129",
+        "website": "https://identify.plantnet.org/es/useful/observations/1029744567"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2313657,
+          -39.8079867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13243265044",
+        "@timestamp": "2025-10-30T10:15:49Z",
+        "@version": 2,
+        "@changeset": 173967903,
+        "@user": "user_5589",
+        "@uid": 5589,
+        "denotation": "park",
+        "genus": "Metasequoia",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "species:wikidata": "Q156800"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.9130697,
+          52.9585828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13248136406",
+        "@timestamp": "2025-10-21T16:28:31Z",
+        "@version": 1,
+        "@changeset": 173591559,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "park",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "species:de": "Chinesisches Rotholz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.306876,
+          51.6854665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13254406762",
+        "@timestamp": "2025-11-02T11:27:41Z",
+        "@version": 3,
+        "@changeset": 174097903,
+        "@user": "Sebas3",
+        "@uid": 21988563,
+        "denotation": "park",
+        "diameter:trunk:range": "0.3-0.5 m",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "taxon:genus": "Metasequoia",
+        "taxon:species": "glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.074144,
+          52.6389393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13254406771",
+        "@timestamp": "2025-11-02T11:27:41Z",
+        "@version": 3,
+        "@changeset": 174097903,
+        "@user": "Sebas3",
+        "@uid": 21988563,
+        "denotation": "park",
+        "diameter:trunk:range": "0.3-0.5 m",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "taxon:genus": "Metasequoia",
+        "taxon:species": "glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0737911,
+          52.6389486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13254406779",
+        "@timestamp": "2025-11-02T11:27:41Z",
+        "@version": 3,
+        "@changeset": 174097903,
+        "@user": "Sebas3",
+        "@uid": 21988563,
+        "denotation": "park",
+        "diameter:trunk:range": "0.3-0.5 m",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "taxon:genus": "Metasequoia",
+        "taxon:species": "glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0739987,
+          52.6388738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13261558178",
+        "@timestamp": "2025-10-27T13:57:44Z",
+        "@version": 1,
+        "@changeset": 173839659,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "single",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.9513961,
+          51.8156229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13261558179",
+        "@timestamp": "2025-10-27T13:57:44Z",
+        "@version": 1,
+        "@changeset": 173839659,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "single",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.9512198,
+          51.8154612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13267422132",
+        "@timestamp": "2025-10-29T16:48:38Z",
+        "@version": 2,
+        "@changeset": 173939154,
+        "@user": "Ekeefoof",
+        "@uid": 16076489,
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8028233,
+          51.1885391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13267423037",
+        "@timestamp": "2025-10-29T16:48:38Z",
+        "@version": 2,
+        "@changeset": 173939154,
+        "@user": "Ekeefoof",
+        "@uid": 16076489,
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8029845,
+          51.1885269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13267705747",
+        "@timestamp": "2025-10-29T19:20:29Z",
+        "@version": 1,
+        "@changeset": 173945056,
+        "@user": "Paauuuuul",
+        "@uid": 22728303,
+        "denotation": "natural_monument",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoia sempervirens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7109897,
+          49.1212048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13275096228",
+        "@timestamp": "2025-11-02T07:26:03Z",
+        "@version": 1,
+        "@changeset": 174089880,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "garden",
+        "leaf_cycle": "evergreen",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Sequoiadendron giganteum",
+        "species:de": "Mammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7156159,
+          51.6743846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13275096229",
+        "@timestamp": "2025-11-02T07:26:03Z",
+        "@version": 1,
+        "@changeset": 174089880,
+        "@user": "osm-user12",
+        "@uid": 1031994,
+        "denotation": "garden",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "needleleaved",
+        "natural": "tree",
+        "species": "Metasequoia glyptostroboides",
+        "species:de": "Urweltmammutbaum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7160326,
+          51.6746014
         ]
       }
     },
