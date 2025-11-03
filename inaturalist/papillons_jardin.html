@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papillons de mon jardin</title>
+    <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        #table-container {
+            margin-top: 20px;
+        }
+        .quality-flag {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+        }
+        .research-flag {
+            background-color: #74ac00;
+        }
+        .needsid-flag {
+            background-color: #ccc;
+        }
+        .scientific-name {
+            font-style: italic;
+        }
+        .month-box {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 1px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        .month-observed {
+            background-color: #74ac00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Papillons de mon jardin</h1>
+    <p>Synthèse des observations saisies sur iNaturalist</p>
+    <div id="table-container"></div>
 
+    <script>
+        // Noms complets des mois pour les info-bulles
+        const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+
+        fetch('papillons_jardin.json')
+            .then(response => response.json())
+            .then(data => {
+                const table = new Tabulator("#table-container", {
+                    data: data,
+                    layout: "fitColumns",
+                    responsiveLayout: "hide",
+                    pagination: "local",
+                    paginationSize: 500,
+                    //paginationSizeSelector: [10, 20, 50, 100],
+                    groupBy: ["groupe", "superfamily", "family"],
+                    groupHeader: function(value, count, data, group) {
+                        // Remplace "items" par "espèces"
+                        return value + " (" + count + " espèces)";
+                    },
+                    groupStartOpen: [true, true, true],
+                    columns: [
+                        {
+                            title: "Nom scientifique (et français)",
+                            field: "taxon_name",
+                            formatter: function(cell) {
+                                const rowData = cell.getRow().getData();
+                                let commonName = rowData.common_name ? ` (${rowData.common_name})` : "";
+                                let flag = "";
+                                if (rowData.quality_grade === "research") {
+                                    flag = `<span class="quality-flag research-flag" title="Niveau recherche"></span>`;
+                                } else if (rowData.quality_grade === "needs_id") {
+                                    flag = `<span class="quality-flag needsid-flag" title="Identification incertaine"></span>`;
+                                }
+                                return flag + `<span class="scientific-name">${cell.getValue()}</span>` + commonName;
+                            }
+                        },
+                        { title: "Nb obs.", field: "nb_obs" },
+                        { title: "Première obs.", field: "first_obs" },
+                        { title: "Dernière obs.", field: "last_obs" },
+                        { title: "Années", field: "annees" },
+                        {
+                            title: "Mois d'observation",
+                            field: "mois",
+                            formatter: function(cell) {
+                                const mois = cell.getValue();
+                                if (!mois) return "-";
+                                const observedMonths = mois.split(',').map(m => parseInt(m.trim(), 10));
+                                let boxes = [];
+                                for (let m = 1; m <= 12; m++) {
+                                    const isObserved = observedMonths.includes(m);
+                                    const className = isObserved ? "month-box month-observed" : "month-box";
+                                    boxes.push(`<span class="${className}" title="${monthNames[m-1]}"></span>`);
+                                }
+                                return boxes.join('');
+                            }
+                        },
+                    ],
+                    columnVisibility: {
+                        "groupe": false,
+                        "superfamily": false,
+                        "family": false,
+                        "quality_grade": false,
+                    },
+                });
+            })
+            .catch(error => {
+                console.error("Erreur :", error);
+                document.getElementById("table-container").innerHTML =
+                    "<p style='color:red;'>Erreur : Impossible de charger le fichier JSON.</p>";
+            });
+    </script>
+</body>
+</html>
