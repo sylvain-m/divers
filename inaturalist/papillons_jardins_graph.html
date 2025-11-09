@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumul des espèces de papillons observées</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .chart-box {
+            width: 700px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Cumul des espèces de papillons observées</h1>
+    <div class="chart-box">
+        <canvas id="cumulsChart"></canvas>
+    </div>
+
+    <script>
+        // Chargement des trois fichiers JSON
+        Promise.all([
+            fetch('cumuls_datobs_papillons_jardin.json').then(res => res.json()),
+            fetch('cumuls_datsaisie_papillons_jardin.json').then(res => res.json()),
+            fetch('especes_par_an_papillons_jardin.json').then(res => res.json())
+        ])
+        .then(([dataObs, dataSaisie, dataAn]) => {
+            const ctx = document.getElementById('cumulsChart');
+            ctx.style.width = '700px';
+            ctx.style.height = '400px';
+
+            // Préparation des données pour les barres (par an)
+            const annees = dataAn.map(item => item.annee);
+            const nbEspecesParAn = dataAn.map(item => item.nb_especes);
+
+			const chart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					datasets: [
+						{
+							label: 'Nombre d\'espèces par an',
+							data: annees.map((annee, index) => ({ x: annee.toString(), y: nbEspecesParAn[index] })),
+							type: 'bar',
+							backgroundColor: 'rgba(116, 172, 0, 0.7)',
+							borderColor: 'rgba(116, 172, 0, 1)',
+							borderWidth: 1,
+						},
+						{
+							label: 'Cumul par date d\'observation',
+							data: dataObs.map(item => ({ x: item.dateobs, y: item.cumul_nb_especes_obs })),
+							borderColor: 'rgba(54, 162, 235, 1)',
+							backgroundColor: 'rgba(54, 162, 235, 0.2)',
+							borderWidth: 2,
+							fill: false,
+							tension: 0.1,
+							pointRadius: 1.5,
+							pointBorderWidth: 1,
+							yAxisID: 'y1',
+						},
+						{
+							label: 'Cumul par date de saisie',
+							data: dataSaisie.map(item => ({ x: item.datesaisie, y: item.cumul_nb_especes_saisie })),
+							borderColor: 'rgba(255, 99, 132, 1)',
+							backgroundColor: 'rgba(255, 99, 132, 0.2)',
+							borderWidth: 2,
+							fill: false,
+							tension: 0.1,
+							pointRadius: 1.5,
+							pointBorderWidth: 1,
+							yAxisID: 'y1',
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					scales: {
+						x: {
+							type: 'time',
+							time: {
+								unit: 'year',
+								tooltipFormat: 'yyyy-MM-dd'
+							},
+							title: {
+								display: true,
+								text: 'Date / Année'
+							}
+						},
+						y: {
+							beginAtZero: true,
+							title: {
+								display: true,
+								text: 'Nombre d\'espèces par an',
+								color: 'rgba(116, 172, 0, 1)'
+							}
+						},
+						y1: {
+							type: 'linear',
+							display: true,
+							position: 'right',
+							beginAtZero: true,
+							title: {
+								display: true,
+								text: 'Nombre d\'espèces cumulées'
+							},
+							grid: {
+								drawOnChartArea: false,
+							}
+						}
+					},
+					plugins: {
+						legend: {
+							position: 'top',
+						},
+						tooltip: {
+							callbacks: {
+								label: function(context) {
+									return `${context.dataset.label}: ${context.raw.y}`;
+								}
+							}
+						}
+					}
+				}
+			});
+        })
+        .catch(error => console.error('Erreur:', error));
+    </script>
+</body>
+</html>
