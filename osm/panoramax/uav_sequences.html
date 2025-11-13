@@ -71,7 +71,7 @@
                         const producer = props['geovisio:producer'] || 'Inconnu';
                         const thumbnail = props['geovisio:thumbnail'];
                         const hdImage = props['geovisio:image'];
-                        const panoUrl = `https://panoramax.openstreetmap.fr/pictures/${id}`;
+                        const panoUrl = `https://api.panoramax.xyz/?focus=pic&pic=${id}`;
         
                         // Contenu HTML de la popup
                         const popupContent = `
