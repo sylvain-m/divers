@@ -58,16 +58,28 @@
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {
-                    pointToLayer: function(feature, latlng) {
+                    pointToLayer: function (feature, latlng) {
                         return L.marker(latlng, { icon: droneIcon });
                     },
-                    onEachFeature: function(feature, layer) {
-                        const properties = feature.properties;
+                    onEachFeature: function (feature, layer) {
+                        const props = feature.properties?.properties || {};
+                        
+                        // Extraction des infos
+                        const id = feature.id || feature.properties?.id || 'N/A';
+                        const datetime = props.datetime ? new Date(props.datetime).toLocaleString() : 'N/A';
+                        const created = props.created ? new Date(props.created).toLocaleString() : 'N/A';
+                        const thumbnail = props['geovisio:thumbnail'];
+        
+                        // Contenu HTML de la popup
                         const popupContent = `
-                            <b>ID :</b> ${properties.id || 'N/A'}<br>
-                            <b>Transport :</b> UAV<br>
-                            ${properties.semantics ? `<b>Semantics :</b> ${JSON.stringify(properties.semantics)}<br>` : ''}
+                            <div style="font-size: 14px; line-height: 1.4;">
+                                <b>ID :</b> ${id}<br>
+                                <b>Date de la prise :</b> ${datetime}<br>
+                                <b>Créé le :</b> ${created}<br>
+                                ${thumbnail ? `<img src="${thumbnail}" alt="vignette" style="margin-top: 8px; max-width: 200px; border-radius: 4px; border: 1px solid #ccc;">` : ''}
+                            </div>
                         `;
+        
                         layer.bindPopup(popupContent);
                     }
                 }).addTo(markers);
@@ -76,9 +88,10 @@
                 console.error('Erreur lors du chargement du GeoJSON :', error);
                 alert('Impossible de charger les données GeoJSON. Voir la console pour plus de détails.');
             });
-
+        
         // Ajouter le groupe de marqueurs à la carte
         map.addLayer(markers);
+
     </script>
 </body>
 </html>
