@@ -63,20 +63,32 @@
                     },
                     onEachFeature: function (feature, layer) {
                         const props = feature.properties?.properties || {};
-                        
-                        // Extraction des infos
+        
+                        // Extraire les informations nécessaires
                         const id = feature.id || feature.properties?.id || 'N/A';
                         const datetime = props.datetime ? new Date(props.datetime).toLocaleString() : 'N/A';
                         const created = props.created ? new Date(props.created).toLocaleString() : 'N/A';
+                        const producer = props['geovisio:producer'] || 'Inconnu';
                         const thumbnail = props['geovisio:thumbnail'];
+                        const hdImage = props['geovisio:image'];
+                        const panoUrl = `https://panoramax.openstreetmap.fr/pictures/${id}`;
         
                         // Contenu HTML de la popup
                         const popupContent = `
-                            <div style="font-size: 14px; line-height: 1.4;">
+                            <div style="font-size: 14px; line-height: 1.5;">
                                 <b>ID :</b> ${id}<br>
+                                <b>Producteur :</b> ${producer}<br>
                                 <b>Date de la prise :</b> ${datetime}<br>
                                 <b>Créé le :</b> ${created}<br>
-                                ${thumbnail ? `<img src="${thumbnail}" alt="vignette" style="margin-top: 8px; max-width: 200px; border-radius: 4px; border: 1px solid #ccc;">` : ''}
+                                ${thumbnail ? `
+                                    <div style="margin-top:8px;">
+                                        <img src="${thumbnail}" alt="Vignette" 
+                                             style="max-width:200px; border-radius:4px; border:1px solid #ccc;">
+                                    </div>` : ''}
+                                <div style="margin-top:8px;">
+                                    ${hdImage ? `<a href="${hdImage}" target="_blank" rel="noopener noreferrer">📷 Voir l’image HD</a><br>` : ''}
+                                    <a href="${panoUrl}" target="_blank" rel="noopener noreferrer">🌐 Voir sur Panoramax</a>
+                                </div>
                             </div>
                         `;
         
