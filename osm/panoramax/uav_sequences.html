@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panoramax - Séquences UAV</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet.markercluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <!-- Leaflet.markercluster Default CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet.markercluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        // Initialiser la carte
+        const map = L.map('map').setView([46.603354, 1.888334], 6); // Centré sur la France
+
+        // Ajouter une couche de tuiles OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Créer une icône personnalisée pour les drones
+        const droneIcon = L.icon({
+            iconUrl: 'uav.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16],
+            popupAnchor: [0, -16]
+        });
+
+        // Charger le GeoJSON depuis GitHub
+        const geojsonUrl = 'https://raw.githubusercontent.com/sylvain-m/divers/main/osm/panoramax/panoramax_osm_transport_uav_sequences.geojson';
+
+        // Créer un groupe de marqueurs avec clustering
+        const markers = L.markerClusterGroup();
+
+        // Charger le GeoJSON et ajouter les marqueurs
+        fetch(geojsonUrl)
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    pointToLayer: function(feature, latlng) {
+                        return L.marker(latlng, { icon: droneIcon });
+                    },
+                    onEachFeature: function(feature, layer) {
+                        const properties = feature.properties;
+                        const popupContent = `
+                            <b>ID :</b> ${properties.id || 'N/A'}<br>
+                            <b>Transport :</b> UAV<br>
+                            ${properties.semantics ? `<b>Semantics :</b> ${JSON.stringify(properties.semantics)}<br>` : ''}
+                        `;
+                        layer.bindPopup(popupContent);
+                    }
+                }).addTo(markers);
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du GeoJSON :', error);
+                alert('Impossible de charger les données GeoJSON. Voir la console pour plus de détails.');
+            });
+
+        // Ajouter le groupe de marqueurs à la carte
+        map.addLayer(markers);
+    </script>
+</body>
+</html>
