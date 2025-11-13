@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 # from datetime import datetime
@@ -12,8 +13,13 @@ transport = 'uav'
 # Configuration pour l'instance Panoramax OpenStreetMap France
 PANORAMAX_API_URL = "https://panoramax.openstreetmap.fr/api"
 SEARCH_ENDPOINT = f"{PANORAMAX_API_URL}/search"
-# OUTPUT_FILE = "panoramax_osm_transport_" + transport + "_sequences_" + nowtxt + ".geojson"  # version horodatée
-OUTPUT_FILE = "panoramax_osm_transport_" + transport + "_sequences.geojson"  # version non horodatée
+
+# Crée le chemin absolu vers le dossier de sortie
+output_dir = os.path.join(os.getcwd(), "osm", "panoramax")
+os.makedirs(output_dir, exist_ok=True)  # Crée le dossier s'il n'existe pas
+
+# Chemin complet du fichier de sortie
+OUTPUT_FILE = os.path.join(output_dir, "panoramax_osm_transport_uav_sequences.geojson")
 
 # Paramètres de recherche pour les séquences avec le tag "transport"
 search_sequences_params = {
