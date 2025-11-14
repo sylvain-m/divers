@@ -1,7 +1,7 @@
 import os
 import requests
 import json
-# from datetime import datetime
+from datetime import datetime
 
 # Mode de transport à exporter :
 transport = 'uav'
@@ -40,20 +40,22 @@ def fetch_transport_sequences():
 def export_sequences(sequences):
     # Vérifier si les séquences ont une géométrie
     has_geometry = any("geometry" in sequence for sequence in sequences)
-
     if has_geometry:
         # Exporter en GeoJSON
         geojson_output = {
             "type": "FeatureCollection",
+            "metadata": {  # Ajout des métadonnées
+                "export_date": datetime.now().isoformat(),
+                "source": "panoramax.openstreetmap.fr",
+                "transport_type": transport
+            },
             "features": []
         }
-
         for sequence in sequences:
             sequence_id = sequence.get("id")
             geometry = sequence.get("geometry", {})
             properties = sequence.get("properties", {})
             semantics = properties.get("collection", {}).get("semantics", [])
-
             geojson_feature = {
                 "type": "Feature",
                 "id": sequence_id,
@@ -64,23 +66,27 @@ def export_sequences(sequences):
                 }
             }
             geojson_output["features"].append(geojson_feature)
-
         with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
             json.dump(geojson_output, file, ensure_ascii=False, indent=2)
     else:
         # Exporter en JSON simple
-        json_output = []
+        json_output = {
+            "metadata": {  # Ajout des métadonnées
+                "export_date": datetime.now().isoformat(),
+                "source": "panoramax.openstreetmap.fr",
+                "transport_type": transport
+            },
+            "sequences": []
+        }
         for sequence in sequences:
             sequence_id = sequence.get("id")
             properties = sequence.get("properties", {})
             semantics = properties.get("collection", {}).get("semantics", [])
-
-            json_output.append({
+            json_output["sequences"].append({
                 "id": sequence_id,
                 "semantics": semantics,
                 "properties": properties
             })
-
         with open(OUTPUT_FILE.replace('.geojson', '.json'), "w", encoding="utf-8") as file:
             json.dump(json_output, file, ensure_ascii=False, indent=2)
 
