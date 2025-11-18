@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <title>Carte Leaflet WMTS</title>
+  <title>Orthophotos Historiques Leaflet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Feuille de style Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -20,7 +20,7 @@
   <!-- Librairie Leaflet -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <!-- Plugin WMTS -->
-  <script src="https://unpkg.com/leaflet-tilelayer-wmts/leaflet-tilelayer-wmts.js"></script>
+  <script src="https://unpkg.com/leaflet-tilelayer-wmts@1.0.0/dist/leaflet-tilelayer-wmts.js"></script>
 
   <script>
     // Initialisation de la carte
@@ -47,7 +47,7 @@
     // Contrôle des couches
     var baseMaps = {
       "OpenStreetMap": osmLayer,
-      "Orthophotos 1950-1965": wmtsLayer
+      "Orthophotos IGN 1950-1965": wmtsLayer
     };
 
     L.control.layers(baseMaps).addTo(map);
