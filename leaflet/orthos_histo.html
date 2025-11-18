@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Carte Leaflet WMTS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Feuille de style Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    html, body, #map {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Librairie Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Plugin WMTS -->
+  <script src="https://unpkg.com/leaflet-tilelayer-wmts/leaflet-tilelayer-wmts.js"></script>
+
+  <script>
+    // Initialisation de la carte
+    var map = L.map('map', {
+      center: [48.8566, 2.3522], // Paris par défaut
+      zoom: 12
+    });
+
+    // Fond OSM classique
+    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Fond WMTS (orthophotos 1950-1965)
+    var wmtsUrl = "https://data.geopf.fr/wmts";
+    var wmtsLayer = L.tileLayer.wmts(wmtsUrl, {
+      layer: "ORTHOIMAGERY.ORTHOPHOTOS.1950-1965",
+      style: "normal",
+      tilematrixSet: "PM_0_18",
+      format: "image/png",
+      attribution: "&copy; IGN - Orthophotos 1950-1965"
+    });
+
+    // Contrôle des couches
+    var baseMaps = {
+      "OpenStreetMap": osmLayer,
+      "Orthophotos 1950-1965": wmtsLayer
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+  </script>
+</body>
+</html>
