@@ -32,7 +32,7 @@
     // Fond OSM classique
     var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+    });
 
     // Fond WMTS (orthophotos 1950-1965)
     var wmtsUrl = "https://data.geopf.fr/wmts";
@@ -42,7 +42,7 @@
       tilematrixSet: "PM_0_18",
       format: "image/png",
       attribution: "&copy; IGN - Orthophotos 1950-1965"
-    });
+    }).addTo(map);
 
     // Contrôle des couches
     var baseMaps = {
