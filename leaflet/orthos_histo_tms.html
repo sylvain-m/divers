@@ -19,8 +19,6 @@
 
   <!-- Librairie Leaflet -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Plugin WMTS -->
-  <script src="https://unpkg.com/leaflet-tilelayer-wmts@1.0.0/dist/leaflet-tilelayer-wmts.js"></script>
 
   <script>
     // Initialisation de la carte
@@ -35,19 +33,24 @@
     });
 
     // Fond WMTS (orthophotos 1950-1965)
-    var wmtsUrl = "https://data.geopf.fr/wmts";
-    var wmtsLayer = L.tileLayer.wmts(wmtsUrl, {
-      layer: "ORTHOIMAGERY.ORTHOPHOTOS.1950-1965",
-      style: "normal",
-      tilematrixSet: "PM_0_18",
-      format: "image/png",
-      attribution: "&copy; IGN - Orthophotos 1950-1965"
-    }).addTo(map);
+
+    var orthohistoLayer = L.tileLayer(
+      "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0" +
+      "&LAYER=ORTHOIMAGERY.ORTHOPHOTOS.1950-1965&STYLE=normal&FORMAT=image/png" +
+      "&TILEMATRIXSET=PM_0_18&" +
+      "TILEMATRIX={z}&TILEROW={y}&TILECOL={x}", 
+      {
+        attribution: "&copy; IGN - Orthophotos 1950-1965",
+        tileSize: 256,
+        minZoom: 0,
+        maxZoom: 18
+      }
+    );
 
     // Contrôle des couches
     var baseMaps = {
       "OpenStreetMap": osmLayer,
-      "Orthophotos IGN 1950-1965": wmtsLayer
+      "Orthophotos IGN 1950-1965": orthohistoLayer
     };
 
     L.control.layers(baseMaps).addTo(map);
