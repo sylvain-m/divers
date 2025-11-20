@@ -118,7 +118,7 @@
         function convertGpsTimeOld() {
             const gpsTime = parseFloat(document.getElementById('gpsTime').value);
             if (isNaN(gpsTime)) {
-                document.getElementById('result').innerHTML = '<span class="text-danger">Veuillez entrer une valeur numérique valide.</span>';
+                document.getElementById('resultOld').innerHTML = '<span class="text-danger">Veuillez entrer une valeur numérique valide.</span>';
                 return;
             }
             const gpsEpoch = new Date(2011, 8, 14); // Mois est 0-indexé
