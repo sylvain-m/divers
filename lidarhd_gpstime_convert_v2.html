@@ -64,6 +64,12 @@
         a:hover {
             color: #4a7bcc;
         }
+        .result-box {
+            background-color: #2d2d2d;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -73,7 +79,6 @@
                 <div class="card">
                     <h1 class="text-center mb-4">Convertisseur GpsTime</h1>
                     <p class="text-center">
-                        <h3>Nouvelle version</h3>
                         Le formulaire ci-dessous permet de convertir et afficher la date des points des
                         <a href="https://geoservices.ign.fr/lidarhd" target="_blank">nuages de points Lidar HD IGN</a>.
                     </p>
@@ -86,45 +91,45 @@
                         <label for="gpsTime" class="form-label">Entrez la valeur GpsTime :</label>
                         <input type="number" class="form-control" id="gpsTime" step="any" placeholder="Ex: 385563600">
                     </div>
-                    <button onclick="convertGpsTime()" class="btn btn-primary w-100">Convertir</button>
-                    <p class="text-center"><p class="text-center">Nouvelles spécifications :</p></div>
-                    <div id="result" class="mt-3 p-3 text-center" style="background-color: #2d2d2d; border-radius: 0.375rem; min-height: 2.5rem;"></div>
-                    <p class="text-center"><p class="text-center">Anciennes spécifications :</p></div>
-                    <div id="resultOld" class="mt-3 p-3 text-center" style="background-color: #2d2d2d; border-radius: 0.375rem; min-height: 2.5rem;"></div>
+                    <button onclick="compareGpsTime()" class="btn btn-primary w-100">Comparer les résultats</button>
+                    <div class="mt-3">
+                        <div class="result-box">
+                            <h5>Ancienne méthode (époque 2011-09-14) :</h5>
+                            <p id="oldResult" class="mb-0"></p>
+                        </div>
+                        <div class="result-box">
+                            <h5>Nouvelle méthode (époque GPS 1980-01-06) :</h5>
+                            <p id="newResult" class="mb-0"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script>
-      function convertGpsTime() {
-          const gpsTimeInput = parseFloat(document.getElementById('gpsTime').value);
-          if (isNaN(gpsTimeInput)) {
-              document.getElementById('result').innerHTML =
-                  '<span class="text-danger">Veuillez entrer une valeur numérique valide.</span>';
-              return;
-          }
-      
-          // Époque GPS : 1980-01-06 00:00:00 UTC
-          const gpsEpoch = new Date(Date.UTC(1980, 0, 6, 0, 0, 0));
-      
-          // Standard GPS Time = GpsTime + 1 000 000 000 secondes
-          const standardGpsTime = gpsTimeInput + 1000000000;
-      
-          // Conversion en millisecondes et ajout à l'époque GPS
-          const convertedDate = new Date(gpsEpoch.getTime() + standardGpsTime * 1000);
-      
-          document.getElementById('result').innerText = convertedDate.toLocaleString();
-      };
-        function convertGpsTimeOld() {
-            const gpsTime = parseFloat(document.getElementById('gpsTime').value);
-            if (isNaN(gpsTime)) {
-                document.getElementById('resultOld').innerHTML = '<span class="text-danger">Veuillez entrer une valeur numérique valide.</span>';
-                return;
-            }
+        function convertOldGpsTime(gpsTime) {
             const gpsEpoch = new Date(2011, 8, 14); // Mois est 0-indexé
             const convertedDate = new Date(gpsEpoch.getTime() + gpsTime * 1000);
-            document.getElementById('resultOld').innerText = convertedDate.toLocaleString();
+            return convertedDate.toLocaleString();
+        }
+
+        function convertNewGpsTime(gpsTime) {
+            const gpsEpoch = new Date(Date.UTC(1980, 0, 6, 0, 0, 0));
+            const standardGpsTime = gpsTime + 1000000000;
+            const convertedDate = new Date(gpsEpoch.getTime() + standardGpsTime * 1000);
+            return convertedDate.toLocaleString();
+        }
+
+        function compareGpsTime() {
+            const gpsTimeInput = parseFloat(document.getElementById('gpsTime').value);
+            if (isNaN(gpsTimeInput)) {
+                document.getElementById('oldResult').innerHTML = '<span class="text-danger">Veuillez entrer une valeur numérique valide.</span>';
+                document.getElementById('newResult').innerHTML = '<span class="text-danger">Veuillez entrer une valeur numérique valide.</span>';
+                return;
+            }
+
+            document.getElementById('oldResult').innerText = convertOldGpsTime(gpsTimeInput);
+            document.getElementById('newResult').innerText = convertNewGpsTime(gpsTimeInput);
         }
     </script>
     <!-- Bootstrap 5 JS Bundle with Popper -->
