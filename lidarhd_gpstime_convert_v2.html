@@ -86,7 +86,10 @@
                         <input type="number" class="form-control" id="gpsTime" step="any" placeholder="Ex: 385563600">
                     </div>
                     <button onclick="convertGpsTime()" class="btn btn-primary w-100">Convertir</button>
+                    <p class="text-center"><p class="text-center">Nouvelles spécifications :</p></div>
                     <div id="result" class="mt-3 p-3 text-center" style="background-color: #2d2d2d; border-radius: 0.375rem; min-height: 2.5rem;"></div>
+                    <p class="text-center"><p class="text-center">Anciennes spécifications :</p></div>
+                    <div id="resultOld" class="mt-3 p-3 text-center" style="background-color: #2d2d2d; border-radius: 0.375rem; min-height: 2.5rem;"></div>
                 </div>
             </div>
         </div>
@@ -111,7 +114,17 @@
           const convertedDate = new Date(gpsEpoch.getTime() + standardGpsTime * 1000);
       
           document.getElementById('result').innerText = convertedDate.toLocaleString();
-      }
+      };
+        function convertGpsTimeOld() {
+            const gpsTime = parseFloat(document.getElementById('gpsTime').value);
+            if (isNaN(gpsTime)) {
+                document.getElementById('result').innerHTML = '<span class="text-danger">Veuillez entrer une valeur numérique valide.</span>';
+                return;
+            }
+            const gpsEpoch = new Date(2011, 8, 14); // Mois est 0-indexé
+            const convertedDate = new Date(gpsEpoch.getTime() + gpsTime * 1000);
+            document.getElementById('resultOld').innerText = convertedDate.toLocaleString();
+        }
     </script>
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
