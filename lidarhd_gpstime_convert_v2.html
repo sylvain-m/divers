@@ -83,9 +83,23 @@
                         <a href="https://geoservices.ign.fr/lidarhd" target="_blank">nuages de points Lidar HD IGN</a>.
                     </p>
                     <p>
-                        Chaque point Lidar contient un attribut <code>GpsTime</code>, dont la valeur correspond au nombre de secondes écoulées depuis le 14/09/2011 à 00:00:00 UTC.
-                        Dans QGIS par exemple, cette valeur peut être affichée en cliquant sur un point Lidar avec l'outil d'identification des entités.
-                        Ainsi, la valeur <code>GpsTime = 385563600</code> correspond à la date du <code>02/12/2023 12:00:00</code>.
+                        Chaque point Lidar contient un attribut <code>GpsTime</code>, dont la valeur permet de connaitre la date et heure précise d'acquisition.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Ancienne définition (incorrecte) :</strong><br>
+                            La valeur <code>GpsTime</code> était interprétée comme le nombre de secondes écoulées depuis le <code>14/09/2011 à 00:00:00 UTC</code>code>.<br>
+                            <em>Cette méthode est basée sur une époque GPS incorrecte et ne doit plus être utilisée</em>
+                        </li>
+                        <li>
+                            <strong>Nouvelle définition :</strong><br>
+                            La valeur <code>GpsTime</code> doit être augmentée de <strong>1 000 000 000 secondes</strong> pour obtenir le nombre de secondes écoulées depuis l'<strong>époque GPS (06/01/1980 à 00:00:00 UTC)</strong>.<br>
+                            <em>Cette méthode est conforme à la spécification LAS 1.4</em>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Exemple :</strong><br>
+                        Pour <code>GpsTime = 385563600</code>, la conversion donne la date du <code>02/12/2023 15:46:40</code> (heure locale France), soit <code>02/12/2023 14:46:40 UTC</code>.
                     </p>
                     <div class="mb-3">
                         <label for="gpsTime" class="form-label">Entrez la valeur GpsTime :</label>
@@ -118,24 +132,28 @@
             const standardGpsTime = gpsTime + 1000000000;
             const convertedDateUTC = new Date(gpsEpoch.getTime() + standardGpsTime * 1000);
         
-            // Affichage en fuseau horaire local (France métropolitaine)
-            const localDateString = convertedDateUTC.toLocaleString('fr-FR', {
-                timeZone: 'Europe/Paris',
-                weekday: 'short',
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
+            // Fonction pour formater une date en JJ/MM/AAAA HH:mm:ss
+            const formatDate = (date, timeZone) => {
+                return date.toLocaleString('fr-FR', {
+                    timeZone: timeZone,
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                }).replace(',', '');
+            };
         
-            // Affichage UTC entre parenthèses
-            const utcDateString = convertedDateUTC.toISOString().replace('T', ' ').replace(/\..+/, '');
+            // Date/heure en France métropolitaine (UTC+1/UTC+2)
+            const localDateString = formatDate(convertedDateUTC, 'Europe/Paris');
+        
+            // Date/heure en UTC
+            const utcDateString = formatDate(convertedDateUTC, 'UTC');
         
             return `${localDateString} (UTC: ${utcDateString})`;
         }
-
 
         function compareGpsTime() {
             const gpsTimeInput = parseFloat(document.getElementById('gpsTime').value);
