@@ -3,12 +3,8 @@ import requests
 import json
 from datetime import datetime
 
-# Mode de transport à exporter :
-transport = 'uav'
-
-# Horodatage de l'export (désactivé ici)
-# now = datetime.now()
-# nowtxt = now.strftime('%Y%m%d-%Hh%M')
+# Modes de transport à exporter :
+transports = ['uav', 'UAV', 'drone', 'DRONE']
 
 # Configuration pour l'instance Panoramax OpenStreetMap France
 PANORAMAX_API_URL = "https://panoramax.openstreetmap.fr/api"
@@ -21,20 +17,18 @@ os.makedirs(output_dir, exist_ok=True)  # Crée le dossier s'il n'existe pas
 # Chemin complet du fichier de sortie
 OUTPUT_FILE = os.path.join(output_dir, "panoramax_osm_transport_uav_sequences.geojson")
 
-# Paramètres de recherche pour les séquences avec le tag "transport"
-search_sequences_params = {
-    "filter": '"semantics.transport"=\'' + transport + '\'',
-    "limit": 10000
-}
-
-def fetch_transport_sequences():
+def fetch_transport_sequences(transport):
+    search_sequences_params = {
+        "filter": f'"semantics.transport"=\'{transport}\'',
+        "limit": 10000
+    }
     try:
         response = requests.get(SEARCH_ENDPOINT, params=search_sequences_params)
         response.raise_for_status()
         data = response.json()
         return data.get("features", [])
     except requests.exceptions.RequestException as e:
-        print(f"Erreur lors de la requête pour les séquences : {e}")
+        print(f"Erreur lors de la requête pour les séquences avec le tag '{transport}' : {e}")
         return []
 
 def export_sequences(sequences):
@@ -44,10 +38,10 @@ def export_sequences(sequences):
         # Exporter en GeoJSON
         geojson_output = {
             "type": "FeatureCollection",
-            "metadata": {  # Ajout des métadonnées
+            "metadata": {
                 "export_date": datetime.now().isoformat(),
                 "source": "panoramax.openstreetmap.fr",
-                "transport_type": transport
+                "transport_type": "uav/UAV"
             },
             "features": []
         }
@@ -71,10 +65,10 @@ def export_sequences(sequences):
     else:
         # Exporter en JSON simple
         json_output = {
-            "metadata": {  # Ajout des métadonnées
+            "metadata": {
                 "export_date": datetime.now().isoformat(),
                 "source": "panoramax.openstreetmap.fr",
-                "transport_type": transport
+                "transport_type": "uav/UAV"
             },
             "sequences": []
         }
@@ -91,11 +85,19 @@ def export_sequences(sequences):
             json.dump(json_output, file, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
-    print("Récupération des séquences avec le tag 'transport=" + transport + "' depuis panoramax.openstreetmap.fr...")
-    sequences = fetch_transport_sequences()
-    if sequences:
-        print(f"Trouvé {len(sequences)} séquences avec le tag 'transport=" + transport + "'.")
-        export_sequences(sequences)
+    all_sequences = []
+    for transport in transports:
+        print(f"Récupération des séquences avec le tag 'transport={transport}' depuis panoramax.openstreetmap.fr...")
+        sequences = fetch_transport_sequences(transport)
+        if sequences:
+            print(f"Trouvé {len(sequences)} séquences avec le tag 'transport={transport}'.")
+            all_sequences.extend(sequences)
+        else:
+            print(f"Aucune séquence trouvée avec le tag 'transport={transport}'.")
+
+    if all_sequences:
+        print(f"Total de {len(all_sequences)} séquences trouvées.")
+        export_sequences(all_sequences)
         print(f"Export terminé. Résultat enregistré dans {OUTPUT_FILE}.")
     else:
-        print("Aucune séquence trouvée avec le tag 'transport=" + transport + "'.")
+        print("Aucune séquence trouvée.")
