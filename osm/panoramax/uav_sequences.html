@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panoramax - Séquences UAV</title>
+    <title>Panoramax - Séquences Drones (UAV)</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Leaflet.markercluster CSS -->
@@ -120,8 +120,8 @@
         // Créer le contrôleur de couches
         const baseLayers = {};
         const overlays = {
-            "Séquences OSM": osmMarkers,
-            "Séquences Générales": generalMarkers
+            "Séquences Instance OSM France": osmMarkers,
+            "Séquences Instance Fédérée": generalMarkers
         };
         L.control.layers(baseLayers, overlays).addTo(map);
     </script>
