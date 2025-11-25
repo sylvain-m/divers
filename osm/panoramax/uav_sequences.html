@@ -24,12 +24,10 @@
 </head>
 <body>
     <div id="map"></div>
-
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Leaflet.markercluster JS -->
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-
     <script>
         // Initialiser la carte
         const map = L.map('map').setView([46.603354, 1.888334], 6); // Centré sur la France
@@ -47,14 +45,42 @@
             popupAnchor: [0, -16]
         });
 
-        // Charger le GeoJSON depuis GitHub
-        const geojsonUrl = 'https://raw.githubusercontent.com/sylvain-m/divers/main/osm/panoramax/panoramax_osm_transport_uav_sequences.geojson';
+        // Fonction pour créer une popup standardisée
+        function createPopupContent(feature) {
+            const props = feature.properties?.properties || {};
+            const id = feature.id || feature.properties?.id || 'N/A';
+            const datetime = props.datetime ? new Date(props.datetime).toLocaleString() : 'N/A';
+            const created = props.created ? new Date(props.created).toLocaleString() : 'N/A';
+            const producer = props['geovisio:producer'] || 'Inconnu';
+            const thumbnail = props['geovisio:thumbnail'];
+            const hdImage = props['geovisio:image'];
+            const panoUrl = `https://api.panoramax.xyz/?focus=pic&pic=${id}`;
 
-        // Créer un groupe de marqueurs avec clustering
-        const markers = L.markerClusterGroup();
+            return `
+                <div style="font-size: 14px; line-height: 1.5;">
+                    <b>ID :</b> ${id}<br>
+                    <b>Producteur :</b> ${producer}<br>
+                    <b>Date de la prise :</b> ${datetime}<br>
+                    <b>Créé le :</b> ${created}<br>
+                    ${thumbnail ? `
+                        <div style="margin-top:8px;">
+                            <img src="${thumbnail}" alt="Vignette"
+                                 style="max-width:200px; border-radius:4px; border:1px solid #ccc;">
+                        </div>` : ''}
+                    <div style="margin-top:8px;">
+                        ${hdImage ? `<a href="${hdImage}" target="_blank" rel="noopener noreferrer">📷 Voir l’image HD</a><br>` : ''}
+                        <a href="${panoUrl}" target="_blank" rel="noopener noreferrer">🌐 Voir sur Panoramax</a>
+                    </div>
+                </div>
+            `;
+        }
 
-        // Charger le GeoJSON et ajouter les marqueurs
-        fetch(geojsonUrl)
+        // Créer un groupe de marqueurs avec clustering pour chaque couche
+        const osmMarkers = L.markerClusterGroup();
+        const generalMarkers = L.markerClusterGroup();
+
+        // Charger le GeoJSON OSM
+        fetch('https://raw.githubusercontent.com/sylvain-m/divers/main/osm/panoramax/panoramax_osm_transport_uav_sequences.geojson')
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {
@@ -62,48 +88,42 @@
                         return L.marker(latlng, { icon: droneIcon });
                     },
                     onEachFeature: function (feature, layer) {
-                        const props = feature.properties?.properties || {};
-        
-                        // Extraire les informations nécessaires
-                        const id = feature.id || feature.properties?.id || 'N/A';
-                        const datetime = props.datetime ? new Date(props.datetime).toLocaleString() : 'N/A';
-                        const created = props.created ? new Date(props.created).toLocaleString() : 'N/A';
-                        const producer = props['geovisio:producer'] || 'Inconnu';
-                        const thumbnail = props['geovisio:thumbnail'];
-                        const hdImage = props['geovisio:image'];
-                        const panoUrl = `https://api.panoramax.xyz/?focus=pic&pic=${id}`;
-        
-                        // Contenu HTML de la popup
-                        const popupContent = `
-                            <div style="font-size: 14px; line-height: 1.5;">
-                                <b>ID :</b> ${id}<br>
-                                <b>Producteur :</b> ${producer}<br>
-                                <b>Date de la prise :</b> ${datetime}<br>
-                                <b>Créé le :</b> ${created}<br>
-                                ${thumbnail ? `
-                                    <div style="margin-top:8px;">
-                                        <img src="${thumbnail}" alt="Vignette" 
-                                             style="max-width:200px; border-radius:4px; border:1px solid #ccc;">
-                                    </div>` : ''}
-                                <div style="margin-top:8px;">
-                                    ${hdImage ? `<a href="${hdImage}" target="_blank" rel="noopener noreferrer">📷 Voir l’image HD</a><br>` : ''}
-                                    <a href="${panoUrl}" target="_blank" rel="noopener noreferrer">🌐 Voir sur Panoramax</a>
-                                </div>
-                            </div>
-                        `;
-        
-                        layer.bindPopup(popupContent);
+                        layer.bindPopup(createPopupContent(feature));
                     }
-                }).addTo(markers);
+                }).addTo(osmMarkers);
             })
             .catch(error => {
-                console.error('Erreur lors du chargement du GeoJSON :', error);
-                alert('Impossible de charger les données GeoJSON. Voir la console pour plus de détails.');
+                console.error('Erreur lors du chargement du GeoJSON OSM :', error);
             });
-        
-        // Ajouter le groupe de marqueurs à la carte
-        map.addLayer(markers);
 
+        // Charger le GeoJSON Général
+        fetch('https://raw.githubusercontent.com/sylvain-m/divers/main/osm/panoramax/panoramax_general_transport_uav_sequences.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, { icon: droneIcon });
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup(createPopupContent(feature));
+                    }
+                }).addTo(generalMarkers);
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du GeoJSON Général :', error);
+            });
+
+        // Ajouter les groupes de marqueurs à la carte
+        osmMarkers.addTo(map);
+        generalMarkers.addTo(map);
+
+        // Créer le contrôleur de couches
+        const baseLayers = {};
+        const overlays = {
+            "Séquences OSM": osmMarkers,
+            "Séquences Générales": generalMarkers
+        };
+        L.control.layers(baseLayers, overlays).addTo(map);
     </script>
 </body>
 </html>
