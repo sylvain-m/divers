@@ -15,7 +15,7 @@ output_dir = os.path.join(os.getcwd(), "osm", "panoramax")
 os.makedirs(output_dir, exist_ok=True)  # Crée le dossier s'il n'existe pas
 
 # Chemin complet du fichier de sortie
-OUTPUT_FILE = os.path.join(output_dir, "panoramax_osm_transport_uav_sequences.geojson")
+OUTPUT_FILE = os.path.join(output_dir, "panoramax_general_transport_uav_sequences.geojson")
 
 def fetch_transport_sequences(transport):
     search_sequences_params = {
