@@ -1,0 +1,29 @@
+name: Export General Panoramax UAV Sequences
+
+on:
+  schedule:
+    - cron: '45 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+      - name: Exécuter le script
+        run: python osm/panoramax/get_general_transport_uav_sequences.py
+      - name: Valider et pousser les changements
+        run: |
+          git config --global user.name "sylvain-m"
+          git config --global user.email "sylvain-m@users.noreply.github.com"
+          git add osm/panoramax/panoramax_general_transport_uav_sequences.geojson
+          git commit -m "Mise à jour automatique du fichier Panoramax UAV sequences"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
