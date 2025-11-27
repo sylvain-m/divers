@@ -1,11 +1,473 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "export_date": "2025-11-26T02:21:40.207745",
+    "export_date": "2025-11-27T02:18:38.231526",
     "source": "panoramax.openstreetmap.fr",
     "transport_type": "uav/UAV"
   },
   "features": [
+    {
+      "type": "Feature",
+      "id": "f06d3e60-2cf8-42c8-91d4-cf0285e8c681",
+      "geometry": {
+        "coordinates": [
+          1.406888861,
+          49.397208806
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav"
+          }
+        ],
+        "properties": {
+          "annotations": [
+            {
+              "id": "6a32087d-d62e-4f55-b2d3-8d580df13f12",
+              "semantics": [
+                {
+                  "key": "wd|P180",
+                  "value": "Q2142074"
+                }
+              ],
+              "shape": {
+                "coordinates": [
+                  [
+                    [
+                      8109,
+                      4418
+                    ],
+                    [
+                      6418,
+                      4418
+                    ],
+                    [
+                      6418,
+                      6626
+                    ],
+                    [
+                      8109,
+                      6626
+                    ],
+                    [
+                      8109,
+                      4418
+                    ]
+                  ]
+                ],
+                "type": "Polygon"
+              }
+            }
+          ],
+          "collection": {
+            "semantics": [
+              {
+                "key": "transport",
+                "value": "uav"
+              }
+            ]
+          },
+          "created": "2025-07-03T19:06:16.365806+00:00",
+          "datetime": "2025-07-03T12:15:14+00:00",
+          "datetimetz": "2025-07-03T14:15:14+02:00",
+          "exif": {
+            "Exif.GPSInfo.GPSAltitude": "248977/1000",
+            "Exif.GPSInfo.GPSAltitudeRef": "0",
+            "Exif.GPSInfo.GPSLatitude": "49/1 23/1 499517/10000",
+            "Exif.GPSInfo.GPSLatitudeRef": "N",
+            "Exif.GPSInfo.GPSLongitude": "1/1 24/1 247999/10000",
+            "Exif.GPSInfo.GPSLongitudeRef": "E",
+            "Exif.GPSInfo.GPSMapDatum": "WGS-84",
+            "Exif.GPSInfo.GPSStatus": "A",
+            "Exif.GPSInfo.GPSVersionID": "2 3 0 0",
+            "Exif.Image.DateTime": "2025:07:03 14:15:14",
+            "Exif.Image.ExifTag": "260",
+            "Exif.Image.GPSTag": "734",
+            "Exif.Image.ImageDescription": "default",
+            "Exif.Image.Make": "DJI",
+            "Exif.Image.Model": "M3M",
+            "Exif.Image.Orientation": "1",
+            "Exif.Image.ResolutionUnit": "2",
+            "Exif.Image.Software": "11.09.02.33",
+            "Exif.Image.XPComment": "0.9.142",
+            "Exif.Image.XPKeywords": "pano",
+            "Exif.Image.XResolution": "72/1",
+            "Exif.Image.YCbCrPositioning": "2",
+            "Exif.Image.YResolution": "72/1",
+            "Exif.Iop.InteroperabilityIndex": "R98",
+            "Exif.Iop.InteroperabilityVersion": "48 49 48 48",
+            "Exif.Photo.ApertureValue": "297/100",
+            "Exif.Photo.BodySerialNumber": "1581F5FKD23A700DJ7P3",
+            "Exif.Photo.ColorSpace": "1",
+            "Exif.Photo.ComponentsConfiguration": "1 2 3 0",
+            "Exif.Photo.Contrast": "0",
+            "Exif.Photo.CustomRendered": "0",
+            "Exif.Photo.DateTimeDigitized": "2025:07:03 14:15:14",
+            "Exif.Photo.DateTimeOriginal": "2025:07:03 14:15:14",
+            "Exif.Photo.DeviceSettingDescription": "0 0 0 0",
+            "Exif.Photo.DigitalZoomRatio": "100/100",
+            "Exif.Photo.ExifVersion": "48 50 51 48",
+            "Exif.Photo.ExposureBiasValue": "0/10",
+            "Exif.Photo.ExposureMode": "0",
+            "Exif.Photo.ExposureProgram": "2",
+            "Exif.Photo.ExposureTime": "1/1250",
+            "Exif.Photo.FNumber": "280/100",
+            "Exif.Photo.FileSource": "3",
+            "Exif.Photo.Flash": "0",
+            "Exif.Photo.FlashpixVersion": "48 49 48 48",
+            "Exif.Photo.FocalLength": "12290/1000",
+            "Exif.Photo.FocalLengthIn35mmFilm": "24",
+            "Exif.Photo.GainControl": "0",
+            "Exif.Photo.ISOSpeedRatings": "100",
+            "Exif.Photo.InteroperabilityTag": "848",
+            "Exif.Photo.LensSpecification": "240/1000 240/1000 280/100 1100/100",
+            "Exif.Photo.LightSource": "2",
+            "Exif.Photo.MaxApertureValue": "297/100",
+            "Exif.Photo.MeteringMode": "1",
+            "Exif.Photo.PixelXDimension": "14400",
+            "Exif.Photo.PixelYDimension": "7200",
+            "Exif.Photo.Saturation": "0",
+            "Exif.Photo.SceneCaptureType": "0",
+            "Exif.Photo.SceneType": "1",
+            "Exif.Photo.SensitivityType": "2",
+            "Exif.Photo.Sharpness": "0",
+            "Exif.Photo.ShutterSpeedValue": "102877/10000",
+            "Exif.Photo.SubjectDistance": "0/1",
+            "Exif.Photo.WhiteBalance": "0",
+            "Exif.Thumbnail.Compression": "7",
+            "Exif.Thumbnail.JPEGInterchangeFormat": "1334",
+            "Exif.Thumbnail.JPEGInterchangeFormatLength": "20714",
+            "Exif.Thumbnail.ResolutionUnit": "2",
+            "Exif.Thumbnail.XResolution": "72/1",
+            "Exif.Thumbnail.YResolution": "72/1",
+            "Xmp.GPano.CroppedAreaImageHeightPixels": "7200",
+            "Xmp.GPano.CroppedAreaImageWidthPixels": "14400",
+            "Xmp.GPano.CroppedAreaLeftPixels": "0",
+            "Xmp.GPano.CroppedAreaTopPixels": "0",
+            "Xmp.GPano.FullPanoHeightPixels": "7200",
+            "Xmp.GPano.FullPanoWidthPixels": "14400",
+            "Xmp.GPano.ProjectionType": "equirectangular",
+            "Xmp.GPano.UsePanoramaViewer": "True",
+            "Xmp.crs.AlreadyApplied": "False",
+            "Xmp.crs.HasCrop": "False",
+            "Xmp.crs.HasSettings": "False",
+            "Xmp.crs.Version": "7.0",
+            "Xmp.dc.format": "image/jpg",
+            "Xmp.drone-dji.AbsoluteAltitude": "+248.977",
+            "Xmp.drone-dji.AltitudeType": "GpsFusionAlt",
+            "Xmp.drone-dji.CamReverse": "0",
+            "Xmp.drone-dji.CameraSerialNumber": "493OK994AB0LY2",
+            "Xmp.drone-dji.DroneModel": "M3M",
+            "Xmp.drone-dji.DroneSerialNumber": "1581F5FKD23A700DJ7P3",
+            "Xmp.drone-dji.FlightPitchDegree": "-1.80",
+            "Xmp.drone-dji.FlightRollDegree": "-1.10",
+            "Xmp.drone-dji.FlightXSpeed": "0.0",
+            "Xmp.drone-dji.FlightYSpeed": "0.0",
+            "Xmp.drone-dji.FlightYawDegree": "+80.50",
+            "Xmp.drone-dji.FlightZSpeed": "0.0",
+            "Xmp.drone-dji.FocusDistance": "4201",
+            "Xmp.drone-dji.GimbalPitchDegree": "-17.60",
+            "Xmp.drone-dji.GimbalReverse": "0",
+            "Xmp.drone-dji.GimbalRollDegree": "+0.00",
+            "Xmp.drone-dji.GimbalYawDegree": "+79.50",
+            "Xmp.drone-dji.GpsLatitude": "+49.397208813",
+            "Xmp.drone-dji.GpsLongitude": "+1.406888873",
+            "Xmp.drone-dji.GpsStatus": "Normal",
+            "Xmp.drone-dji.PictureQuality": "90",
+            "Xmp.drone-dji.RelativeAltitude": "+74.803",
+            "Xmp.drone-dji.SelfData": "",
+            "Xmp.drone-dji.ShutterType": "Electronic",
+            "Xmp.drone-dji.SurveyingMode": "0",
+            "Xmp.drone-dji.Version": "1.6",
+            "Xmp.tiff.Make": "DJI",
+            "Xmp.tiff.Model": "M3M",
+            "Xmp.xmp.CreateDate": "2025-07-03T14:15:14+02:00",
+            "Xmp.xmp.ModifyDate": "2025-07-03T14:15:14+02:00"
+          },
+          "geovisio:image": "https://panoramax.openstreetmap.fr/api/pictures/f06d3e60-2cf8-42c8-91d4-cf0285e8c681/hd.jpg",
+          "geovisio:producer": "ONF Drone DT Seine-Nord",
+          "geovisio:rank_in_collection": 1,
+          "geovisio:thumbnail": "https://panoramax.openstreetmap.fr/api/pictures/f06d3e60-2cf8-42c8-91d4-cf0285e8c681/thumb.jpg",
+          "license": "CC-BY-SA-4.0",
+          "original_file:name": "DJI_20250703141514_0030_D.JPG",
+          "original_file:size": 43069440,
+          "panoramax:horizontal_pixel_density": 40,
+          "pers:interior_orientation": {
+            "camera_manufacturer": "DJI",
+            "camera_model": "M3M",
+            "field_of_view": 360,
+            "focal_length": 12.29,
+            "sensor_array_dimensions": [
+              14400,
+              7200
+            ]
+          },
+          "semantics": [
+            {
+              "key": "wd|P921",
+              "value": "Q2142074"
+            }
+          ],
+          "tiles:tile_matrix_sets": {
+            "geovisio": {
+              "identifier": "geovisio-f06d3e60-2cf8-42c8-91d4-cf0285e8c681",
+              "tileMatrix": [
+                {
+                  "identifier": "0",
+                  "matrixHeight": 8,
+                  "matrixWidth": 16,
+                  "scaleDenominator": 1,
+                  "tileHeight": 900.0,
+                  "tileWidth": 900.0,
+                  "topLeftCorner": [
+                    0,
+                    0
+                  ],
+                  "type": "TileMatrixType"
+                }
+              ],
+              "title": "GeoVisio tile matrix for picture f06d3e60-2cf8-42c8-91d4-cf0285e8c681",
+              "type": "TileMatrixSetType"
+            }
+          },
+          "updated": "2025-11-26T16:49:58.083197+00:00"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "e2bfc5c1-67dd-425a-b038-3a59b129a7ff",
+      "geometry": {
+        "coordinates": [
+          1.408236111,
+          49.397373667
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav"
+          }
+        ],
+        "properties": {
+          "annotations": [
+            {
+              "id": "442f0bff-cd25-4004-be86-48027055accb",
+              "semantics": [
+                {
+                  "key": "wd|P180",
+                  "value": "Q2142074"
+                }
+              ],
+              "shape": {
+                "coordinates": [
+                  [
+                    [
+                      5743,
+                      4236
+                    ],
+                    [
+                      8600,
+                      4236
+                    ],
+                    [
+                      8600,
+                      6826
+                    ],
+                    [
+                      5743,
+                      6826
+                    ],
+                    [
+                      5743,
+                      4236
+                    ]
+                  ]
+                ],
+                "type": "Polygon"
+              }
+            }
+          ],
+          "collection": {
+            "semantics": [
+              {
+                "key": "transport",
+                "value": "uav"
+              }
+            ]
+          },
+          "created": "2025-07-03T18:50:59.696510+00:00",
+          "datetime": "2025-07-03T12:13:07+00:00",
+          "datetimetz": "2025-07-03T14:13:07+02:00",
+          "exif": {
+            "Exif.GPSInfo.GPSAltitude": "191285/1000",
+            "Exif.GPSInfo.GPSAltitudeRef": "0",
+            "Exif.GPSInfo.GPSLatitude": "49/1 23/1 505452/10000",
+            "Exif.GPSInfo.GPSLatitudeRef": "N",
+            "Exif.GPSInfo.GPSLongitude": "1/1 24/1 296500/10000",
+            "Exif.GPSInfo.GPSLongitudeRef": "E",
+            "Exif.GPSInfo.GPSMapDatum": "WGS-84",
+            "Exif.GPSInfo.GPSStatus": "A",
+            "Exif.GPSInfo.GPSVersionID": "2 3 0 0",
+            "Exif.Image.DateTime": "2025:07:03 14:13:07",
+            "Exif.Image.ExifTag": "260",
+            "Exif.Image.GPSTag": "734",
+            "Exif.Image.ImageDescription": "default",
+            "Exif.Image.Make": "DJI",
+            "Exif.Image.Model": "M3M",
+            "Exif.Image.Orientation": "1",
+            "Exif.Image.ResolutionUnit": "2",
+            "Exif.Image.Software": "11.09.02.33",
+            "Exif.Image.XPComment": "0.9.142",
+            "Exif.Image.XPKeywords": "pano",
+            "Exif.Image.XResolution": "72/1",
+            "Exif.Image.YCbCrPositioning": "2",
+            "Exif.Image.YResolution": "72/1",
+            "Exif.Iop.InteroperabilityIndex": "R98",
+            "Exif.Iop.InteroperabilityVersion": "48 49 48 48",
+            "Exif.Photo.ApertureValue": "297/100",
+            "Exif.Photo.BodySerialNumber": "1581F5FKD23A700DJ7P3",
+            "Exif.Photo.ColorSpace": "1",
+            "Exif.Photo.ComponentsConfiguration": "1 2 3 0",
+            "Exif.Photo.Contrast": "0",
+            "Exif.Photo.CustomRendered": "0",
+            "Exif.Photo.DateTimeDigitized": "2025:07:03 14:13:07",
+            "Exif.Photo.DateTimeOriginal": "2025:07:03 14:13:07",
+            "Exif.Photo.DeviceSettingDescription": "0 0 0 0",
+            "Exif.Photo.DigitalZoomRatio": "100/100",
+            "Exif.Photo.ExifVersion": "48 50 51 48",
+            "Exif.Photo.ExposureBiasValue": "0/10",
+            "Exif.Photo.ExposureMode": "0",
+            "Exif.Photo.ExposureProgram": "2",
+            "Exif.Photo.ExposureTime": "1/1250",
+            "Exif.Photo.FNumber": "280/100",
+            "Exif.Photo.FileSource": "3",
+            "Exif.Photo.Flash": "0",
+            "Exif.Photo.FlashpixVersion": "48 49 48 48",
+            "Exif.Photo.FocalLength": "12290/1000",
+            "Exif.Photo.FocalLengthIn35mmFilm": "24",
+            "Exif.Photo.GainControl": "0",
+            "Exif.Photo.ISOSpeedRatings": "100",
+            "Exif.Photo.InteroperabilityTag": "848",
+            "Exif.Photo.LensSpecification": "240/1000 240/1000 280/100 1100/100",
+            "Exif.Photo.LightSource": "2",
+            "Exif.Photo.MaxApertureValue": "297/100",
+            "Exif.Photo.MeteringMode": "1",
+            "Exif.Photo.PixelXDimension": "14400",
+            "Exif.Photo.PixelYDimension": "7200",
+            "Exif.Photo.Saturation": "0",
+            "Exif.Photo.SceneCaptureType": "0",
+            "Exif.Photo.SceneType": "1",
+            "Exif.Photo.SensitivityType": "2",
+            "Exif.Photo.Sharpness": "0",
+            "Exif.Photo.ShutterSpeedValue": "102877/10000",
+            "Exif.Photo.SubjectDistance": "0/1",
+            "Exif.Photo.WhiteBalance": "0",
+            "Exif.Thumbnail.Compression": "7",
+            "Exif.Thumbnail.JPEGInterchangeFormat": "1334",
+            "Exif.Thumbnail.JPEGInterchangeFormatLength": "21066",
+            "Exif.Thumbnail.ResolutionUnit": "2",
+            "Exif.Thumbnail.XResolution": "72/1",
+            "Exif.Thumbnail.YResolution": "72/1",
+            "Xmp.GPano.CroppedAreaImageHeightPixels": "7200",
+            "Xmp.GPano.CroppedAreaImageWidthPixels": "14400",
+            "Xmp.GPano.CroppedAreaLeftPixels": "0",
+            "Xmp.GPano.CroppedAreaTopPixels": "0",
+            "Xmp.GPano.FullPanoHeightPixels": "7200",
+            "Xmp.GPano.FullPanoWidthPixels": "14400",
+            "Xmp.GPano.ProjectionType": "equirectangular",
+            "Xmp.GPano.UsePanoramaViewer": "True",
+            "Xmp.crs.AlreadyApplied": "False",
+            "Xmp.crs.HasCrop": "False",
+            "Xmp.crs.HasSettings": "False",
+            "Xmp.crs.Version": "7.0",
+            "Xmp.dc.format": "image/jpg",
+            "Xmp.drone-dji.AbsoluteAltitude": "+191.285",
+            "Xmp.drone-dji.AltitudeType": "GpsFusionAlt",
+            "Xmp.drone-dji.CamReverse": "0",
+            "Xmp.drone-dji.CameraSerialNumber": "493OK994AB0LY2",
+            "Xmp.drone-dji.DroneModel": "M3M",
+            "Xmp.drone-dji.DroneSerialNumber": "1581F5FKD23A700DJ7P3",
+            "Xmp.drone-dji.FlightPitchDegree": "-1.60",
+            "Xmp.drone-dji.FlightRollDegree": "-6.00",
+            "Xmp.drone-dji.FlightXSpeed": "0.0",
+            "Xmp.drone-dji.FlightYSpeed": "0.0",
+            "Xmp.drone-dji.FlightYawDegree": "+76.90",
+            "Xmp.drone-dji.FlightZSpeed": "0.0",
+            "Xmp.drone-dji.FocusDistance": "-1",
+            "Xmp.drone-dji.GimbalPitchDegree": "-17.60",
+            "Xmp.drone-dji.GimbalReverse": "0",
+            "Xmp.drone-dji.GimbalRollDegree": "+0.00",
+            "Xmp.drone-dji.GimbalYawDegree": "+74.50",
+            "Xmp.drone-dji.GpsLatitude": "+49.397373692",
+            "Xmp.drone-dji.GpsLongitude": "+1.408236118",
+            "Xmp.drone-dji.GpsStatus": "Normal",
+            "Xmp.drone-dji.PictureQuality": "90",
+            "Xmp.drone-dji.RelativeAltitude": "+17.111",
+            "Xmp.drone-dji.SelfData": "",
+            "Xmp.drone-dji.ShutterType": "Electronic",
+            "Xmp.drone-dji.SurveyingMode": "0",
+            "Xmp.drone-dji.Version": "1.6",
+            "Xmp.tiff.Make": "DJI",
+            "Xmp.tiff.Model": "M3M",
+            "Xmp.xmp.CreateDate": "2025-07-03T14:13:07+02:00",
+            "Xmp.xmp.ModifyDate": "2025-07-03T14:13:07+02:00"
+          },
+          "geovisio:image": "https://panoramax.openstreetmap.fr/api/pictures/e2bfc5c1-67dd-425a-b038-3a59b129a7ff/hd.jpg",
+          "geovisio:producer": "ONF Drone DT Seine-Nord",
+          "geovisio:rank_in_collection": 1,
+          "geovisio:thumbnail": "https://panoramax.openstreetmap.fr/api/pictures/e2bfc5c1-67dd-425a-b038-3a59b129a7ff/thumb.jpg",
+          "license": "CC-BY-SA-4.0",
+          "original_file:name": "DJI_20250703141307_0026_D.JPG",
+          "original_file:size": 44793856,
+          "panoramax:horizontal_pixel_density": 40,
+          "pers:interior_orientation": {
+            "camera_manufacturer": "DJI",
+            "camera_model": "M3M",
+            "field_of_view": 360,
+            "focal_length": 12.29,
+            "sensor_array_dimensions": [
+              14400,
+              7200
+            ]
+          },
+          "semantics": [
+            {
+              "key": "wd|P921",
+              "value": "Q2142074"
+            }
+          ],
+          "tiles:tile_matrix_sets": {
+            "geovisio": {
+              "identifier": "geovisio-e2bfc5c1-67dd-425a-b038-3a59b129a7ff",
+              "tileMatrix": [
+                {
+                  "identifier": "0",
+                  "matrixHeight": 8,
+                  "matrixWidth": 16,
+                  "scaleDenominator": 1,
+                  "tileHeight": 900.0,
+                  "tileWidth": 900.0,
+                  "topLeftCorner": [
+                    0,
+                    0
+                  ],
+                  "type": "TileMatrixType"
+                }
+              ],
+              "title": "GeoVisio tile matrix for picture e2bfc5c1-67dd-425a-b038-3a59b129a7ff",
+              "type": "TileMatrixSetType"
+            }
+          },
+          "updated": "2025-11-26T16:47:17.834271+00:00"
+        }
+      }
+    },
     {
       "type": "Feature",
       "id": "ba6ac9d0-cdf2-4734-8315-53c1e31cf1ae",
@@ -2698,384 +3160,6 @@
             }
           },
           "updated": "2025-07-03T19:08:00.295537+00:00"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "f06d3e60-2cf8-42c8-91d4-cf0285e8c681",
-      "geometry": {
-        "coordinates": [
-          1.406888861,
-          49.397208806
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "semantics": [
-          {
-            "key": "transport",
-            "value": "uav"
-          }
-        ],
-        "properties": {
-          "annotations": [],
-          "collection": {
-            "semantics": [
-              {
-                "key": "transport",
-                "value": "uav"
-              }
-            ]
-          },
-          "created": "2025-07-03T19:06:16.365806+00:00",
-          "datetime": "2025-07-03T12:15:14+00:00",
-          "datetimetz": "2025-07-03T14:15:14+02:00",
-          "exif": {
-            "Exif.GPSInfo.GPSAltitude": "248977/1000",
-            "Exif.GPSInfo.GPSAltitudeRef": "0",
-            "Exif.GPSInfo.GPSLatitude": "49/1 23/1 499517/10000",
-            "Exif.GPSInfo.GPSLatitudeRef": "N",
-            "Exif.GPSInfo.GPSLongitude": "1/1 24/1 247999/10000",
-            "Exif.GPSInfo.GPSLongitudeRef": "E",
-            "Exif.GPSInfo.GPSMapDatum": "WGS-84",
-            "Exif.GPSInfo.GPSStatus": "A",
-            "Exif.GPSInfo.GPSVersionID": "2 3 0 0",
-            "Exif.Image.DateTime": "2025:07:03 14:15:14",
-            "Exif.Image.ExifTag": "260",
-            "Exif.Image.GPSTag": "734",
-            "Exif.Image.ImageDescription": "default",
-            "Exif.Image.Make": "DJI",
-            "Exif.Image.Model": "M3M",
-            "Exif.Image.Orientation": "1",
-            "Exif.Image.ResolutionUnit": "2",
-            "Exif.Image.Software": "11.09.02.33",
-            "Exif.Image.XPComment": "0.9.142",
-            "Exif.Image.XPKeywords": "pano",
-            "Exif.Image.XResolution": "72/1",
-            "Exif.Image.YCbCrPositioning": "2",
-            "Exif.Image.YResolution": "72/1",
-            "Exif.Iop.InteroperabilityIndex": "R98",
-            "Exif.Iop.InteroperabilityVersion": "48 49 48 48",
-            "Exif.Photo.ApertureValue": "297/100",
-            "Exif.Photo.BodySerialNumber": "1581F5FKD23A700DJ7P3",
-            "Exif.Photo.ColorSpace": "1",
-            "Exif.Photo.ComponentsConfiguration": "1 2 3 0",
-            "Exif.Photo.Contrast": "0",
-            "Exif.Photo.CustomRendered": "0",
-            "Exif.Photo.DateTimeDigitized": "2025:07:03 14:15:14",
-            "Exif.Photo.DateTimeOriginal": "2025:07:03 14:15:14",
-            "Exif.Photo.DeviceSettingDescription": "0 0 0 0",
-            "Exif.Photo.DigitalZoomRatio": "100/100",
-            "Exif.Photo.ExifVersion": "48 50 51 48",
-            "Exif.Photo.ExposureBiasValue": "0/10",
-            "Exif.Photo.ExposureMode": "0",
-            "Exif.Photo.ExposureProgram": "2",
-            "Exif.Photo.ExposureTime": "1/1250",
-            "Exif.Photo.FNumber": "280/100",
-            "Exif.Photo.FileSource": "3",
-            "Exif.Photo.Flash": "0",
-            "Exif.Photo.FlashpixVersion": "48 49 48 48",
-            "Exif.Photo.FocalLength": "12290/1000",
-            "Exif.Photo.FocalLengthIn35mmFilm": "24",
-            "Exif.Photo.GainControl": "0",
-            "Exif.Photo.ISOSpeedRatings": "100",
-            "Exif.Photo.InteroperabilityTag": "848",
-            "Exif.Photo.LensSpecification": "240/1000 240/1000 280/100 1100/100",
-            "Exif.Photo.LightSource": "2",
-            "Exif.Photo.MaxApertureValue": "297/100",
-            "Exif.Photo.MeteringMode": "1",
-            "Exif.Photo.PixelXDimension": "14400",
-            "Exif.Photo.PixelYDimension": "7200",
-            "Exif.Photo.Saturation": "0",
-            "Exif.Photo.SceneCaptureType": "0",
-            "Exif.Photo.SceneType": "1",
-            "Exif.Photo.SensitivityType": "2",
-            "Exif.Photo.Sharpness": "0",
-            "Exif.Photo.ShutterSpeedValue": "102877/10000",
-            "Exif.Photo.SubjectDistance": "0/1",
-            "Exif.Photo.WhiteBalance": "0",
-            "Exif.Thumbnail.Compression": "7",
-            "Exif.Thumbnail.JPEGInterchangeFormat": "1334",
-            "Exif.Thumbnail.JPEGInterchangeFormatLength": "20714",
-            "Exif.Thumbnail.ResolutionUnit": "2",
-            "Exif.Thumbnail.XResolution": "72/1",
-            "Exif.Thumbnail.YResolution": "72/1",
-            "Xmp.GPano.CroppedAreaImageHeightPixels": "7200",
-            "Xmp.GPano.CroppedAreaImageWidthPixels": "14400",
-            "Xmp.GPano.CroppedAreaLeftPixels": "0",
-            "Xmp.GPano.CroppedAreaTopPixels": "0",
-            "Xmp.GPano.FullPanoHeightPixels": "7200",
-            "Xmp.GPano.FullPanoWidthPixels": "14400",
-            "Xmp.GPano.ProjectionType": "equirectangular",
-            "Xmp.GPano.UsePanoramaViewer": "True",
-            "Xmp.crs.AlreadyApplied": "False",
-            "Xmp.crs.HasCrop": "False",
-            "Xmp.crs.HasSettings": "False",
-            "Xmp.crs.Version": "7.0",
-            "Xmp.dc.format": "image/jpg",
-            "Xmp.drone-dji.AbsoluteAltitude": "+248.977",
-            "Xmp.drone-dji.AltitudeType": "GpsFusionAlt",
-            "Xmp.drone-dji.CamReverse": "0",
-            "Xmp.drone-dji.CameraSerialNumber": "493OK994AB0LY2",
-            "Xmp.drone-dji.DroneModel": "M3M",
-            "Xmp.drone-dji.DroneSerialNumber": "1581F5FKD23A700DJ7P3",
-            "Xmp.drone-dji.FlightPitchDegree": "-1.80",
-            "Xmp.drone-dji.FlightRollDegree": "-1.10",
-            "Xmp.drone-dji.FlightXSpeed": "0.0",
-            "Xmp.drone-dji.FlightYSpeed": "0.0",
-            "Xmp.drone-dji.FlightYawDegree": "+80.50",
-            "Xmp.drone-dji.FlightZSpeed": "0.0",
-            "Xmp.drone-dji.FocusDistance": "4201",
-            "Xmp.drone-dji.GimbalPitchDegree": "-17.60",
-            "Xmp.drone-dji.GimbalReverse": "0",
-            "Xmp.drone-dji.GimbalRollDegree": "+0.00",
-            "Xmp.drone-dji.GimbalYawDegree": "+79.50",
-            "Xmp.drone-dji.GpsLatitude": "+49.397208813",
-            "Xmp.drone-dji.GpsLongitude": "+1.406888873",
-            "Xmp.drone-dji.GpsStatus": "Normal",
-            "Xmp.drone-dji.PictureQuality": "90",
-            "Xmp.drone-dji.RelativeAltitude": "+74.803",
-            "Xmp.drone-dji.SelfData": "",
-            "Xmp.drone-dji.ShutterType": "Electronic",
-            "Xmp.drone-dji.SurveyingMode": "0",
-            "Xmp.drone-dji.Version": "1.6",
-            "Xmp.tiff.Make": "DJI",
-            "Xmp.tiff.Model": "M3M",
-            "Xmp.xmp.CreateDate": "2025-07-03T14:15:14+02:00",
-            "Xmp.xmp.ModifyDate": "2025-07-03T14:15:14+02:00"
-          },
-          "geovisio:image": "https://panoramax.openstreetmap.fr/api/pictures/f06d3e60-2cf8-42c8-91d4-cf0285e8c681/hd.jpg",
-          "geovisio:producer": "ONF Drone DT Seine-Nord",
-          "geovisio:rank_in_collection": 1,
-          "geovisio:thumbnail": "https://panoramax.openstreetmap.fr/api/pictures/f06d3e60-2cf8-42c8-91d4-cf0285e8c681/thumb.jpg",
-          "license": "CC-BY-SA-4.0",
-          "original_file:name": "DJI_20250703141514_0030_D.JPG",
-          "original_file:size": 43069440,
-          "panoramax:horizontal_pixel_density": 40,
-          "pers:interior_orientation": {
-            "camera_manufacturer": "DJI",
-            "camera_model": "M3M",
-            "field_of_view": 360,
-            "focal_length": 12.29,
-            "sensor_array_dimensions": [
-              14400,
-              7200
-            ]
-          },
-          "semantics": [],
-          "tiles:tile_matrix_sets": {
-            "geovisio": {
-              "identifier": "geovisio-f06d3e60-2cf8-42c8-91d4-cf0285e8c681",
-              "tileMatrix": [
-                {
-                  "identifier": "0",
-                  "matrixHeight": 8,
-                  "matrixWidth": 16,
-                  "scaleDenominator": 1,
-                  "tileHeight": 900.0,
-                  "tileWidth": 900.0,
-                  "topLeftCorner": [
-                    0,
-                    0
-                  ],
-                  "type": "TileMatrixType"
-                }
-              ],
-              "title": "GeoVisio tile matrix for picture f06d3e60-2cf8-42c8-91d4-cf0285e8c681",
-              "type": "TileMatrixSetType"
-            }
-          },
-          "updated": "2025-07-03T19:06:16.365806+00:00"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "e2bfc5c1-67dd-425a-b038-3a59b129a7ff",
-      "geometry": {
-        "coordinates": [
-          1.408236111,
-          49.397373667
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "semantics": [
-          {
-            "key": "transport",
-            "value": "uav"
-          }
-        ],
-        "properties": {
-          "annotations": [],
-          "collection": {
-            "semantics": [
-              {
-                "key": "transport",
-                "value": "uav"
-              }
-            ]
-          },
-          "created": "2025-07-03T18:50:59.696510+00:00",
-          "datetime": "2025-07-03T12:13:07+00:00",
-          "datetimetz": "2025-07-03T14:13:07+02:00",
-          "exif": {
-            "Exif.GPSInfo.GPSAltitude": "191285/1000",
-            "Exif.GPSInfo.GPSAltitudeRef": "0",
-            "Exif.GPSInfo.GPSLatitude": "49/1 23/1 505452/10000",
-            "Exif.GPSInfo.GPSLatitudeRef": "N",
-            "Exif.GPSInfo.GPSLongitude": "1/1 24/1 296500/10000",
-            "Exif.GPSInfo.GPSLongitudeRef": "E",
-            "Exif.GPSInfo.GPSMapDatum": "WGS-84",
-            "Exif.GPSInfo.GPSStatus": "A",
-            "Exif.GPSInfo.GPSVersionID": "2 3 0 0",
-            "Exif.Image.DateTime": "2025:07:03 14:13:07",
-            "Exif.Image.ExifTag": "260",
-            "Exif.Image.GPSTag": "734",
-            "Exif.Image.ImageDescription": "default",
-            "Exif.Image.Make": "DJI",
-            "Exif.Image.Model": "M3M",
-            "Exif.Image.Orientation": "1",
-            "Exif.Image.ResolutionUnit": "2",
-            "Exif.Image.Software": "11.09.02.33",
-            "Exif.Image.XPComment": "0.9.142",
-            "Exif.Image.XPKeywords": "pano",
-            "Exif.Image.XResolution": "72/1",
-            "Exif.Image.YCbCrPositioning": "2",
-            "Exif.Image.YResolution": "72/1",
-            "Exif.Iop.InteroperabilityIndex": "R98",
-            "Exif.Iop.InteroperabilityVersion": "48 49 48 48",
-            "Exif.Photo.ApertureValue": "297/100",
-            "Exif.Photo.BodySerialNumber": "1581F5FKD23A700DJ7P3",
-            "Exif.Photo.ColorSpace": "1",
-            "Exif.Photo.ComponentsConfiguration": "1 2 3 0",
-            "Exif.Photo.Contrast": "0",
-            "Exif.Photo.CustomRendered": "0",
-            "Exif.Photo.DateTimeDigitized": "2025:07:03 14:13:07",
-            "Exif.Photo.DateTimeOriginal": "2025:07:03 14:13:07",
-            "Exif.Photo.DeviceSettingDescription": "0 0 0 0",
-            "Exif.Photo.DigitalZoomRatio": "100/100",
-            "Exif.Photo.ExifVersion": "48 50 51 48",
-            "Exif.Photo.ExposureBiasValue": "0/10",
-            "Exif.Photo.ExposureMode": "0",
-            "Exif.Photo.ExposureProgram": "2",
-            "Exif.Photo.ExposureTime": "1/1250",
-            "Exif.Photo.FNumber": "280/100",
-            "Exif.Photo.FileSource": "3",
-            "Exif.Photo.Flash": "0",
-            "Exif.Photo.FlashpixVersion": "48 49 48 48",
-            "Exif.Photo.FocalLength": "12290/1000",
-            "Exif.Photo.FocalLengthIn35mmFilm": "24",
-            "Exif.Photo.GainControl": "0",
-            "Exif.Photo.ISOSpeedRatings": "100",
-            "Exif.Photo.InteroperabilityTag": "848",
-            "Exif.Photo.LensSpecification": "240/1000 240/1000 280/100 1100/100",
-            "Exif.Photo.LightSource": "2",
-            "Exif.Photo.MaxApertureValue": "297/100",
-            "Exif.Photo.MeteringMode": "1",
-            "Exif.Photo.PixelXDimension": "14400",
-            "Exif.Photo.PixelYDimension": "7200",
-            "Exif.Photo.Saturation": "0",
-            "Exif.Photo.SceneCaptureType": "0",
-            "Exif.Photo.SceneType": "1",
-            "Exif.Photo.SensitivityType": "2",
-            "Exif.Photo.Sharpness": "0",
-            "Exif.Photo.ShutterSpeedValue": "102877/10000",
-            "Exif.Photo.SubjectDistance": "0/1",
-            "Exif.Photo.WhiteBalance": "0",
-            "Exif.Thumbnail.Compression": "7",
-            "Exif.Thumbnail.JPEGInterchangeFormat": "1334",
-            "Exif.Thumbnail.JPEGInterchangeFormatLength": "21066",
-            "Exif.Thumbnail.ResolutionUnit": "2",
-            "Exif.Thumbnail.XResolution": "72/1",
-            "Exif.Thumbnail.YResolution": "72/1",
-            "Xmp.GPano.CroppedAreaImageHeightPixels": "7200",
-            "Xmp.GPano.CroppedAreaImageWidthPixels": "14400",
-            "Xmp.GPano.CroppedAreaLeftPixels": "0",
-            "Xmp.GPano.CroppedAreaTopPixels": "0",
-            "Xmp.GPano.FullPanoHeightPixels": "7200",
-            "Xmp.GPano.FullPanoWidthPixels": "14400",
-            "Xmp.GPano.ProjectionType": "equirectangular",
-            "Xmp.GPano.UsePanoramaViewer": "True",
-            "Xmp.crs.AlreadyApplied": "False",
-            "Xmp.crs.HasCrop": "False",
-            "Xmp.crs.HasSettings": "False",
-            "Xmp.crs.Version": "7.0",
-            "Xmp.dc.format": "image/jpg",
-            "Xmp.drone-dji.AbsoluteAltitude": "+191.285",
-            "Xmp.drone-dji.AltitudeType": "GpsFusionAlt",
-            "Xmp.drone-dji.CamReverse": "0",
-            "Xmp.drone-dji.CameraSerialNumber": "493OK994AB0LY2",
-            "Xmp.drone-dji.DroneModel": "M3M",
-            "Xmp.drone-dji.DroneSerialNumber": "1581F5FKD23A700DJ7P3",
-            "Xmp.drone-dji.FlightPitchDegree": "-1.60",
-            "Xmp.drone-dji.FlightRollDegree": "-6.00",
-            "Xmp.drone-dji.FlightXSpeed": "0.0",
-            "Xmp.drone-dji.FlightYSpeed": "0.0",
-            "Xmp.drone-dji.FlightYawDegree": "+76.90",
-            "Xmp.drone-dji.FlightZSpeed": "0.0",
-            "Xmp.drone-dji.FocusDistance": "-1",
-            "Xmp.drone-dji.GimbalPitchDegree": "-17.60",
-            "Xmp.drone-dji.GimbalReverse": "0",
-            "Xmp.drone-dji.GimbalRollDegree": "+0.00",
-            "Xmp.drone-dji.GimbalYawDegree": "+74.50",
-            "Xmp.drone-dji.GpsLatitude": "+49.397373692",
-            "Xmp.drone-dji.GpsLongitude": "+1.408236118",
-            "Xmp.drone-dji.GpsStatus": "Normal",
-            "Xmp.drone-dji.PictureQuality": "90",
-            "Xmp.drone-dji.RelativeAltitude": "+17.111",
-            "Xmp.drone-dji.SelfData": "",
-            "Xmp.drone-dji.ShutterType": "Electronic",
-            "Xmp.drone-dji.SurveyingMode": "0",
-            "Xmp.drone-dji.Version": "1.6",
-            "Xmp.tiff.Make": "DJI",
-            "Xmp.tiff.Model": "M3M",
-            "Xmp.xmp.CreateDate": "2025-07-03T14:13:07+02:00",
-            "Xmp.xmp.ModifyDate": "2025-07-03T14:13:07+02:00"
-          },
-          "geovisio:image": "https://panoramax.openstreetmap.fr/api/pictures/e2bfc5c1-67dd-425a-b038-3a59b129a7ff/hd.jpg",
-          "geovisio:producer": "ONF Drone DT Seine-Nord",
-          "geovisio:rank_in_collection": 1,
-          "geovisio:thumbnail": "https://panoramax.openstreetmap.fr/api/pictures/e2bfc5c1-67dd-425a-b038-3a59b129a7ff/thumb.jpg",
-          "license": "CC-BY-SA-4.0",
-          "original_file:name": "DJI_20250703141307_0026_D.JPG",
-          "original_file:size": 44793856,
-          "panoramax:horizontal_pixel_density": 40,
-          "pers:interior_orientation": {
-            "camera_manufacturer": "DJI",
-            "camera_model": "M3M",
-            "field_of_view": 360,
-            "focal_length": 12.29,
-            "sensor_array_dimensions": [
-              14400,
-              7200
-            ]
-          },
-          "semantics": [],
-          "tiles:tile_matrix_sets": {
-            "geovisio": {
-              "identifier": "geovisio-e2bfc5c1-67dd-425a-b038-3a59b129a7ff",
-              "tileMatrix": [
-                {
-                  "identifier": "0",
-                  "matrixHeight": 8,
-                  "matrixWidth": 16,
-                  "scaleDenominator": 1,
-                  "tileHeight": 900.0,
-                  "tileWidth": 900.0,
-                  "topLeftCorner": [
-                    0,
-                    0
-                  ],
-                  "type": "TileMatrixType"
-                }
-              ],
-              "title": "GeoVisio tile matrix for picture e2bfc5c1-67dd-425a-b038-3a59b129a7ff",
-              "type": "TileMatrixSetType"
-            }
-          },
-          "updated": "2025-07-03T18:50:59.696510+00:00"
         }
       }
     },
