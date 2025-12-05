@@ -133,24 +133,48 @@
         function zoomToFeature(layer) {
             map.fitBounds(layer.getBounds());
         }
-        function createPopupContent(feature, layer) {
-            // Récupération des coordonnées de l'emprise
-            const bounds = layer.getBounds();
-            const sw = bounds.getSouthWest();
-            const ne = bounds.getNorthEast();
-            // Construction de l'URL
-            const url = `https://www.inaturalist.org/observations?nelat=${ne.lat}&nelng=${ne.lng}&subview=map&swlat=${sw.lat}&swlng=${sw.lng}&user_id=sylvainm_53`;
-            return `
-                <div>
-                    <h5><span class="badge bg-warning text-dark">${feature.properties.nb_obs}</span><strong> observation(s)</strong></h5>
-                    <h5><span class="badge taxon-badge text-dark">${feature.properties.nb_taxons}</span><strong> taxon(s)</strong></h5>
-                    <h5><span class="badge bg-info text-dark">${feature.properties.date_nb}</span><strong> jour(s)</h5>
-                    <h5><span class="badge bg-info text-dark">${feature.properties.date_min} - ${feature.properties.date_max}</span><strong></h5>
-                    <button class="zoom-button" onclick="zoomToFeature(window.layer${L.stamp(layer)})">Zoom</button>
-                    <a href="${url}" target="_blank" class="url-button">Mes Obs. iNaturalist</a>
-                </div>
-            `;
-        }
+		
+		// Fonction pour construire les popups
+		function createPopupContent(feature, layer) {
+			// Récupération des coordonnées de l'emprise
+			const bounds = layer.getBounds();
+			const sw = bounds.getSouthWest();
+			const ne = bounds.getNorthEast();
+
+			// Construction de l'URL
+			const url = `https://www.inaturalist.org/observations?nelat=${ne.lat}&nelng=${ne.lng}&subview=map&swlat=${sw.lat}&swlng=${sw.lng}&user_id=sylvainm_53`;
+
+			// Fonction pour convertir une date AAAA-MM-JJ en JJ/MM/AAAA
+			const formatFrenchDate = (dateStr) => {
+				if (!dateStr) return '';
+				const [year, month, day] = dateStr.split('-');
+				return `${day}/${month}/${year}`;
+			};
+
+			// Gestion de l'affichage des dates
+			let dateDisplay;
+			const dateMin = formatFrenchDate(feature.properties.date_min);
+			const dateMax = formatFrenchDate(feature.properties.date_max);
+
+			if (dateMin === dateMax) {
+				dateDisplay = dateMin;
+			} else {
+				dateDisplay = `du ${dateMin} au ${dateMax}`;
+			}
+
+			return `
+				<div>
+					<h5><span class="badge bg-warning text-dark">${feature.properties.nb_obs}</span><strong> observation(s)</strong></h5>
+					<h5><span class="badge taxon-badge text-dark">${feature.properties.nb_taxons}</span><strong> taxon(s)</strong></h5>
+					<h5><span class="badge bg-info text-dark">${feature.properties.date_nb}</span><strong> jour(s)</strong></h5>
+					<h5><span class="badge bg-info text-dark">${dateDisplay}</span><strong></h5>
+					<button class="zoom-button" onclick="zoomToFeature(window.layer${L.stamp(layer)})">Zoom</button>
+					<a href="${url}" target="_blank" class="url-button">Mes Obs. iNaturalist</a>
+				</div>
+			`;
+		}
+
+
 
         // Fonction pour charger un GeoJSON et l'ajouter à la carte
         function loadGeoJson(url, minZoom, maxZoom) {
