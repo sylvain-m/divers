@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observations iNaturalist Map</title>
+    <!-- Feuille de style pour Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <!-- Feuille de style pour Font-Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS pour les badges -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        .badge {
+            margin-right: 3px;
+            margin-bottom: 3px;
+        }
+		a.badge {
+			text-decoration: none !important;
+		}
+        .taxon-badge {
+            background-color: #74ac00;
+        }
+        .zoom-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #74ac00;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .zoom-button:hover {
+            background-color: #ffc107;
+        }
+        .url-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #74ac00;
+            color: white !important;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .url-button:hover {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <!-- Bibliothèque Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script>
+        // Déclaration des couches de tuiles
+        var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.inaturalist.org/copyright">OpenStreetMap</a> contributors'
+        });
+        var Stadia_StamenTonerLite = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.{ext}', {
+            minZoom: 0,
+            maxZoom: 20,
+            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            ext: 'png'
+        });
+		
+		var OrthoIGN = L.tileLayer(
+				"https://data.geopf.fr/wmts?" +
+				"&REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0" +
+				"&STYLE=normal" +
+				"&TILEMATRIXSET=PM" +
+				"&FORMAT=image/jpeg"+
+				"&LAYER=ORTHOIMAGERY.ORTHOPHOTOS"+
+			"&TILEMATRIX={z}" +
+				"&TILEROW={y}" +
+				"&TILECOL={x}",
+			{
+				minZoom : 0,
+				maxZoom : 18,
+						attribution : "IGN-F/Geoportail",
+				tileSize : 256 // les tuiles du Géooportail font 256x256px
+			}
+		);
+		
+		const accessToken = 'wOkzl0QMwqKh8iYLsz1k9DETbKbuYdVkrzYZUzXNeVwqkUQqIgjhN6cCdSjA4r3b';
+		var Jawg_Dark = L.tileLayer(
+		  `https://tile.jawg.io/jawg-dark/{z}/{x}/{y}.png?access-token=${accessToken}`, {
+			attribution: '<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OpenStreetMap</a>',
+			maxZoom: 22
+		  }
+		);
+
+        // Initialisation de la carte avec la couche OSM par défaut
+        const map = L.map('map').setView([46.603354, 1.888334], 6);
+        osmLayer.addTo(map);
+
+        // Ajout du contrôle des couches en bas à droite
+        var baseLayers = {
+            "OpenStreetMap (OSM)": osmLayer,
+			"Photos aériennes (IGN)" : OrthoIGN,
+            "OSM Toner (Stadia/Stamen)": Stadia_StamenTonerLite,
+			"OSM Dark (Jawg Maps)": Jawg_Dark
+        };
+        L.control.layers(baseLayers, {}, { position: 'bottomright' }).addTo(map);
+
+        // Fonction pour déterminer la couleur en fonction de nb_obs
+        function getColor(nb_obs) {
+            if (nb_obs < 10) return '#FFFF00'; // jaune
+            else if (nb_obs < 50) return '#FFCC00'; // jaune-orange
+            else if (nb_obs < 100) return '#FF9900'; // orange
+            else if (nb_obs < 500) return '#FF6600'; // orange-rouge
+            else if (nb_obs < 1000) return '#FF0000'; // rouge
+            else return '#990000'; // rouge-foncé
+        }
+
+        // Fonction pour zoomer sur l'emprise d'un polygone
+        function zoomToFeature(layer) {
+            map.fitBounds(layer.getBounds());
+        }
+        function createPopupContent(feature, layer) {
+            // Récupération des coordonnées de l'emprise
+            const bounds = layer.getBounds();
+            const sw = bounds.getSouthWest();
+            const ne = bounds.getNorthEast();
+            // Construction de l'URL
+            const url = `https://www.inaturalist.org/observations?nelat=${ne.lat}&nelng=${ne.lng}&subview=map&swlat=${sw.lat}&swlng=${sw.lng}&user_id=sylvainm_53`;
+            return `
+                <div>
+                    <h5><span class="badge bg-warning text-dark">${feature.properties.nb_obs}</span><strong> observation(s)</strong></h5>
+                    <h5><span class="badge taxon-badge text-dark">${feature.properties.nb_taxons}</span><strong> taxon(s)</strong></h5>
+                    <h5><span class="badge bg-info text-dark">${feature.properties.date_nb}</span><strong> jour(s)</h5>
+                    <h5><span class="badge bg-info text-dark">${feature.properties.date_min} - ${feature.properties.date_max}</span><strong></h5>
+                    <button class="zoom-button" onclick="zoomToFeature(window.layer${L.stamp(layer)})">Zoom</button>
+                    <a href="${url}" target="_blank" class="url-button">Mes Obs. iNaturalist</a>
+                </div>
+            `;
+        }
+
+        // Fonction pour charger un GeoJSON et l'ajouter à la carte
+        function loadGeoJson(url, minZoom, maxZoom) {
+            return fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    return L.geoJSON(data, {
+                        style: function(feature) {
+                            return {
+                                color: 'DimGray',
+                                weight: 1.5,
+								opacity: 1,
+                                fillColor: getColor(feature.properties.nb_obs),
+                                fillOpacity: 0.5
+                            };
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const layerId = L.stamp(layer);
+                            window[`layer${layerId}`] = layer;
+                            layer.on('click', function() {
+                                const popupContent = createPopupContent(feature, layer);
+                                layer.bindPopup(popupContent).openPopup();
+                            });
+                        }
+                    });
+                });
+        }
+
+        // Chemins vers les GeoJSON
+        const geoJsonFiles = [
+            { url: 'obs_hexgrid_050000m.geojson', minZoom: 0, maxZoom: 6 },
+            { url: 'obs_hexgrid_005000m.geojson', minZoom: 7, maxZoom: 10 },
+            { url: 'obs_hexgrid_000500m.geojson', minZoom: 11, maxZoom: 20 }
+        ];
+
+        // Tableau pour stocker les couches GeoJSON
+        const geoJsonLayers = [];
+
+        // Chargement initial des GeoJSON
+        geoJsonFiles.forEach(file => {
+            loadGeoJson(file.url, file.minZoom, file.maxZoom)
+                .then(layer => {
+                    geoJsonLayers.push({ layer: layer, minZoom: file.minZoom, maxZoom: file.maxZoom });
+                    // Ajout initial à la carte si le zoom actuel correspond
+                    if (map.getZoom() >= file.minZoom && map.getZoom() <= file.maxZoom) {
+                        layer.addTo(map);
+                    }
+                });
+        });
+
+        // Gestion de l'événement de changement de zoom
+        map.on('zoomend', function() {
+            const currentZoom = map.getZoom();
+            geoJsonLayers.forEach(geoJson => {
+                if (currentZoom >= geoJson.minZoom && currentZoom <= geoJson.maxZoom) {
+                    if (!map.hasLayer(geoJson.layer)) {
+                        geoJson.layer.addTo(map);
+                    }
+                } else {
+                    if (map.hasLayer(geoJson.layer)) {
+                        map.removeLayer(geoJson.layer);
+                    }
+                }
+            });
+        });
+
+		// Ajout du titre en haut à droite (masquable)
+		const titleControl = L.control({ position: 'topright' });
+		let titleExpanded = true; // État initial : titre visible
+		titleControl.onAdd = function(map) {
+			const div = L.DomUtil.create('div', 'info legend');
+			div.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+			div.style.padding = '5px 10px';
+			div.style.borderRadius = '5px';
+			div.style.fontFamily = 'Arial, sans-serif';
+			div.style.cursor = 'pointer';
+			// Fonction pour mettre à jour l'affichage du titre
+			function updateTitle() {
+				if (titleExpanded) {
+					div.innerHTML = `<h4 style="margin: 0;"><i class="fa-regular fa-images"></i> Obs. iNaturalist sylvainm_53</h4>`;
+				} else {
+					div.innerHTML = `<h4 style="margin: 0;"><i class="fa-regular fa-images"></i></h4>`;
+				}
+			}
+			// Gestion du clic pour masquer/afficher
+			div.addEventListener('click', function() {
+				titleExpanded = !titleExpanded;
+				updateTitle();
+			});
+			updateTitle(); // Initialisation
+			return div;
+		};
+		titleControl.addTo(map);
+
+		// Ajout de la légende en bas à gauche (repliable)
+		const legendControl = L.control({ position: 'bottomleft' });
+		let legendExpanded = true; // État initial : légende déployée
+		legendControl.onAdd = function(map) {
+			const div = L.DomUtil.create('div', 'info legend');
+			div.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+			div.style.padding = '10px';
+			div.style.borderRadius = '5px';
+			div.style.fontFamily = 'Arial, sans-serif';
+			div.style.cursor = 'pointer';
+			// Fonction pour mettre à jour l'affichage de la légende
+			function updateLegend() {
+				if (legendExpanded) {
+					div.innerHTML = `
+						<div style="display: flex; align-items: center; margin-bottom: 5px;">
+							<h5 style="margin: 0;">Nb. Observations</h5>
+							<i class="fa-regular fa-circle-xmark" style="margin-left: 8px;"></i>
+						</div>
+						<div><i style="background:${getColor(5)}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 5px;"></i> < 10</div>
+						<div><i style="background:${getColor(20)}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 5px;"></i> 10–50</div>
+						<div><i style="background:${getColor(75)}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 5px;"></i> 50–100</div>
+						<div><i style="background:${getColor(200)}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 5px;"></i> 100–500</div>
+						<div><i style="background:${getColor(750)}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 5px;"></i> 500–1000</div>
+						<div><i style="background:${getColor(2000)}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 5px;"></i> > 1000</div>
+					`;
+				} else {
+					div.innerHTML = `
+						<div style="display: flex; align-items: center;">
+							<h5 style="margin: 0;">Légende</h5>
+							<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 8px;"></i>
+						</div>
+					`;
+				}
+			}
+			// Gestion du clic pour replier/déplier
+			div.addEventListener('click', function() {
+				legendExpanded = !legendExpanded;
+				updateLegend();
+			});
+			updateLegend(); // Initialisation
+			return div;
+		};
+		legendControl.addTo(map);
+    </script>
+</body>
+</html>
