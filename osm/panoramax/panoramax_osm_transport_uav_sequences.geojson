@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "export_date": "2025-12-26T02:29:02.899523",
+    "export_date": "2025-12-27T02:26:59.383877",
     "source": "panoramax.openstreetmap.fr",
     "transport_type": "uav/UAV"
   },
@@ -8176,6 +8176,112 @@
           },
           "updated": "2025-08-18T13:40:02.149911+00:00",
           "view:azimuth": 0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "92d15979-11fd-4a25-8aa3-1e20b6dc9eba",
+      "geometry": {
+        "coordinates": [
+          5.68967325,
+          45.223343944
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone"
+          }
+        ],
+        "properties": {
+          "annotations": [],
+          "collection": {
+            "semantics": [
+              {
+                "key": "transport",
+                "value": "drone"
+              }
+            ]
+          },
+          "created": "2025-12-26T15:12:17.764592+00:00",
+          "datetime": "2025-12-26T14:00:17+00:00",
+          "datetimetz": "2025-12-26T15:00:17+01:00",
+          "exif": {
+            "Exif.GPSInfo.GPSAltitude": "260963/1000",
+            "Exif.GPSInfo.GPSAltitudeRef": "0",
+            "Exif.GPSInfo.GPSLatitude": "45/1 13/1 240382000/10000000",
+            "Exif.GPSInfo.GPSLongitude": "5/1 41/1 228237000/10000000",
+            "Exif.Image.DateTime": "2025:12:26 15:00:17",
+            "Exif.Image.ExifTag": "137",
+            "Exif.Image.GPSTag": "291",
+            "Exif.Image.ImageLength": "2048",
+            "Exif.Image.ImageWidth": "4096",
+            "Exif.Image.Make": "DJI",
+            "Exif.Image.Model": "FC7703",
+            "Exif.Image.Orientation": "0",
+            "Exif.Photo.DateTimeOriginal": "2025:12:26 15:00:17",
+            "Exif.Photo.ExposureBiasValue": "0/3",
+            "Exif.Photo.ExposureTime": "5/10000",
+            "Exif.Photo.FNumber": "28000/10000",
+            "Exif.Photo.FocalLength": "449/100",
+            "Exif.Photo.FocalLengthIn35mmFilm": "24",
+            "Exif.Photo.ISOSpeedRatings": "100",
+            "Exif.Photo.LightSource": "0",
+            "Xmp.GPano.CroppedAreaImageHeightPixels": "2048",
+            "Xmp.GPano.CroppedAreaImageWidthPixels": "4096",
+            "Xmp.GPano.CroppedAreaLeftPixels": "0",
+            "Xmp.GPano.CroppedAreaTopPixels": "0",
+            "Xmp.GPano.FullPanoHeightPixels": "2048",
+            "Xmp.GPano.FullPanoWidthPixels": "4096",
+            "Xmp.GPano.ProjectionType": "equirectangular",
+            "Xmp.GPano.UsePanoramaViewer": "True"
+          },
+          "geovisio:image": "https://panoramax.openstreetmap.fr/api/pictures/92d15979-11fd-4a25-8aa3-1e20b6dc9eba/hd.jpg",
+          "geovisio:producer": "tadkozh",
+          "geovisio:rank_in_collection": 1,
+          "geovisio:thumbnail": "https://panoramax.openstreetmap.fr/api/pictures/92d15979-11fd-4a25-8aa3-1e20b6dc9eba/thumb.jpg",
+          "license": "CC-BY-SA-4.0",
+          "original_file:name": "dji_fly_20251226_150016_42_1766758170434_pano_optimized.jpg",
+          "original_file:size": 2833119,
+          "panoramax:horizontal_pixel_density": 11,
+          "pers:interior_orientation": {
+            "camera_manufacturer": "DJI",
+            "camera_model": "FC7703",
+            "field_of_view": 360,
+            "focal_length": 4.49,
+            "sensor_array_dimensions": [
+              4096,
+              2048
+            ]
+          },
+          "semantics": [],
+          "tiles:tile_matrix_sets": {
+            "geovisio": {
+              "identifier": "geovisio-92d15979-11fd-4a25-8aa3-1e20b6dc9eba",
+              "tileMatrix": [
+                {
+                  "identifier": "0",
+                  "matrixHeight": 4,
+                  "matrixWidth": 8,
+                  "scaleDenominator": 1,
+                  "tileHeight": 512.0,
+                  "tileWidth": 512.0,
+                  "topLeftCorner": [
+                    0,
+                    0
+                  ],
+                  "type": "TileMatrixType"
+                }
+              ],
+              "title": "GeoVisio tile matrix for picture 92d15979-11fd-4a25-8aa3-1e20b6dc9eba",
+              "type": "TileMatrixSetType"
+            }
+          },
+          "updated": "2025-12-26T15:14:03.283092+00:00",
+          "view:azimuth": -135
         }
       }
     }
