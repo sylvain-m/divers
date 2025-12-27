@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "export_date": "2025-12-25T02:35:29.885490",
+    "export_date": "2025-12-27T02:31:57.880761",
     "source": "panoramax.openstreetmap.fr",
     "transport_type": "uav/UAV"
   },
@@ -6558,6 +6558,114 @@
           },
           "geovisio:rank_in_collection": 1,
           "panoramax:horizontal_pixel_density": 23
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "92d15979-11fd-4a25-8aa3-1e20b6dc9eba",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.68967325,
+          45.223343944
+        ]
+      },
+      "properties": {
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone"
+          }
+        ],
+        "properties": {
+          "exif": {
+            "Exif.Image.Make": "DJI",
+            "Exif.Image.Model": "FC7703",
+            "Exif.Image.GPSTag": "291",
+            "Exif.Image.ExifTag": "137",
+            "Exif.Photo.FNumber": "28000/10000",
+            "Exif.Image.DateTime": "2025:12:26 15:00:17",
+            "Exif.Image.ImageWidth": "4096",
+            "Exif.Image.ImageLength": "2048",
+            "Exif.Image.Orientation": "0",
+            "Exif.Photo.FocalLength": "449/100",
+            "Exif.Photo.LightSource": "0",
+            "Exif.Photo.ExposureTime": "5/10000",
+            "Exif.GPSInfo.GPSAltitude": "260963/1000",
+            "Exif.GPSInfo.GPSLatitude": "45/1 13/1 240382000/10000000",
+            "Xmp.GPano.ProjectionType": "equirectangular",
+            "Exif.GPSInfo.GPSLongitude": "5/1 41/1 228237000/10000000",
+            "Exif.Photo.ISOSpeedRatings": "100",
+            "Exif.GPSInfo.GPSAltitudeRef": "0",
+            "Exif.Photo.DateTimeOriginal": "2025:12:26 15:00:17",
+            "Xmp.GPano.UsePanoramaViewer": "True",
+            "Exif.Photo.ExposureBiasValue": "0/3",
+            "Xmp.GPano.FullPanoWidthPixels": "4096",
+            "Xmp.GPano.CroppedAreaTopPixels": "0",
+            "Xmp.GPano.FullPanoHeightPixels": "2048",
+            "Xmp.GPano.CroppedAreaLeftPixels": "0",
+            "Exif.Photo.FocalLengthIn35mmFilm": "24",
+            "Xmp.GPano.CroppedAreaImageWidthPixels": "4096",
+            "Xmp.GPano.CroppedAreaImageHeightPixels": "2048"
+          },
+          "created": "2025-12-26T15:12:17.764592+00:00",
+          "license": "CC-BY-SA-4.0",
+          "updated": "2025-12-26T15:14:03.283092+00:00",
+          "datetime": "2025-12-26T14:00:17+00:00",
+          "semantics": [],
+          "collection": {
+            "semantics": [
+              {
+                "key": "transport",
+                "value": "drone"
+              }
+            ]
+          },
+          "datetimetz": "2025-12-26T15:00:17+01:00",
+          "annotations": [],
+          "view:azimuth": -135,
+          "geovisio:image": "https://panoramax.openstreetmap.fr/images/92/d1/59/79/11fd-4a25-8aa3-1e20b6dc9eba.jpg",
+          "geovisio:status": "ready",
+          "geovisio:producer": "tadkozh",
+          "geovisio:thumbnail": "https://panoramax.openstreetmap.fr/derivates/92/d1/59/79/11fd-4a25-8aa3-1e20b6dc9eba/thumb.jpg",
+          "original_file:name": "dji_fly_20251226_150016_42_1766758170434_pano_optimized.jpg",
+          "original_file:size": 2833119,
+          "geovisio:visibility": "anyone",
+          "tiles:tile_matrix_sets": {
+            "geovisio": {
+              "type": "TileMatrixSetType",
+              "title": "GeoVisio tile matrix for picture 92d15979-11fd-4a25-8aa3-1e20b6dc9eba",
+              "identifier": "geovisio-92d15979-11fd-4a25-8aa3-1e20b6dc9eba",
+              "tileMatrix": [
+                {
+                  "type": "TileMatrixType",
+                  "tileWidth": 512.0,
+                  "identifier": "0",
+                  "tileHeight": 512.0,
+                  "matrixWidth": 8,
+                  "matrixHeight": 4,
+                  "topLeftCorner": [
+                    0,
+                    0
+                  ],
+                  "scaleDenominator": 1
+                }
+              ]
+            }
+          },
+          "pers:interior_orientation": {
+            "camera_model": "FC7703",
+            "focal_length": 4.49,
+            "field_of_view": 360,
+            "camera_manufacturer": "DJI",
+            "sensor_array_dimensions": [
+              4096,
+              2048
+            ]
+          },
+          "geovisio:rank_in_collection": 1,
+          "panoramax:horizontal_pixel_density": 11
         }
       }
     },
