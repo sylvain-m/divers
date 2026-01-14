@@ -6,8 +6,8 @@ from datetime import datetime
 # Modes de transport à exporter :
 transports = ['uav', 'UAV', 'drone', 'DRONE']
 
-# Configuration pour l'instance Panoramax OpenStreetMap France
-PANORAMAX_API_URL = "https://api.panoramax.xyz/api"
+# Configuration pour l'instance Panoramax
+PANORAMAX_API_URL = "https://explore.panoramax.fr/api"
 SEARCH_ENDPOINT = f"{PANORAMAX_API_URL}/search"
 
 # Crée le chemin absolu vers le dossier de sortie
