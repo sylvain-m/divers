@@ -3,37 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Récupérer les IDs d'observations iNaturalist par ID OSM</title>
+    <title>Récupérer les IDs d'observations iNaturalist par identifiant OSM</title>
     <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #e0e0e0;
+            --input-bg: #2d2d2d;
+            --input-text: #ffffff;
+            --border-color: #444;
+            --button-bg: #3a7ca5;
+            --button-hover: #2d6382;
+            --result-bg: #1a1a1a;
+        }
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        h1 {
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 20px;
         }
         input, button {
-            padding: 8px;
-            margin: 5px 0;
+            padding: 10px;
+            margin: 8px 0;
             width: 100%;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background-color: var(--input-bg);
+            color: var(--input-text);
+        }
+        button {
+            background-color: var(--button-bg);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: var(--button-hover);
         }
         #result {
             margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            background-color: var(--result-bg);
+            border-radius: 4px;
             white-space: pre-wrap;
+            word-break: break-all;
+            font-family: monospace;
         }
         #copyButton {
             display: none;
             margin-top: 10px;
             background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
+        }
+        #copyButton:hover {
+            background-color: #3e8e41;
+        }
+        .explanation {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--result-bg);
+        }
+        .explanation h2 {
+            color: var(--text-color);
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
-    <h1>Récupérer les IDs d'observations iNaturalist par ID OSM</h1>
+    <h1>Récupérer les IDs d'observations iNaturalist par identifiant OSM</h1>
     <form id="osmForm">
         <label for="osm_url">URL du nœud OSM :</label>
         <input type="text" id="osm_url" name="osm_url"
@@ -42,6 +90,28 @@
     </form>
     <div id="result"></div>
     <button id="copyButton">Copier les IDs</button>
+
+    <div class="explanation">
+        <h2>Comment ça marche ?</h2>
+        <p>
+            Cette page permet de récupérer les identifiants des observations naturalistes (iNaturalist)
+            associées à un lieu précis sur OpenStreetMap (OSM).
+        </p>
+        <p>
+            <strong>Comment faire ?</strong>
+            <ol>
+                <li>Copiez l'URL d'un nœud OSM (par exemple, un point d'intérêt sur <a href="https://www.openstreetmap.org" style="color: #3a7ca5;">OpenStreetMap</a>).</li>
+                <li>Collez cette URL dans le champ ci-dessus et cliquez sur "Récupérer les IDs".</li>
+                <li>Les identifiants des observations iNaturalist liées à ce lieu s'affichent.</li>
+                <li>Utilisez le bouton "Copier les IDs" pour les copier dans votre presse-papiers.</li>
+            </ol>
+        </p>
+        <p>
+            <strong>À quoi ça sert ?</strong><br>
+            Cela permet de retrouver facilement toutes les observations naturalistes (plantes, animaux, etc.)
+            enregistrées sur iNaturalist pour un lieu spécifique, comme un jardin, un parc ou un point d'intérêt naturel.
+        </p>
+    </div>
 
     <script>
         document.getElementById('osmForm').addEventListener('submit', async (e) => {
@@ -53,13 +123,11 @@
             copyButton.style.display = 'none';
 
             try {
-                // Construction de l'URL de l'API iNaturalist
                 const apiUrl = new URL('https://api.inaturalist.org/v1/observations');
                 apiUrl.searchParams.append('field:OpenStreetMap (OSM)', osm_url);
                 apiUrl.searchParams.append('verifiable', 'any');
                 apiUrl.searchParams.append('per_page', '200');
 
-                // Appel à l'API
                 const response = await fetch(apiUrl);
                 if (!response.ok) {
                     throw new Error(`Erreur API : ${response.status}`);
@@ -67,10 +135,7 @@
                 const data = await response.json();
                 const observation_ids = data.results.map(obs => obs.id);
 
-                // Affichage des résultats (séparés par des points-virgules)
                 resultDiv.textContent = observation_ids.join(';');
-
-                // Affichage du bouton "Copier"
                 copyButton.style.display = 'block';
                 copyButton.dataset.ids = observation_ids.join(';');
             } catch (error) {
