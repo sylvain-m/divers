@@ -22,10 +22,18 @@
             border: 1px solid #ccc;
             white-space: pre-wrap;
         }
+        #copyButton {
+            display: none;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>Récupérer les IDs d'observations iNaturalist par OSM</h1>
+    <h1>Récupérer les IDs d'observations iNaturalist par ID OSM</h1>
     <form id="osmForm">
         <label for="osm_url">URL du nœud OSM :</label>
         <input type="text" id="osm_url" name="osm_url"
@@ -33,13 +41,16 @@
         <button type="submit">Récupérer les IDs</button>
     </form>
     <div id="result"></div>
+    <button id="copyButton">Copier les IDs</button>
 
     <script>
         document.getElementById('osmForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const osm_url = document.getElementById('osm_url').value;
             const resultDiv = document.getElementById('result');
+            const copyButton = document.getElementById('copyButton');
             resultDiv.textContent = "Chargement...";
+            copyButton.style.display = 'none';
 
             try {
                 // Construction de l'URL de l'API iNaturalist
@@ -56,11 +67,22 @@
                 const data = await response.json();
                 const observation_ids = data.results.map(obs => obs.id);
 
-                // Affichage des résultats
-                resultDiv.textContent = observation_ids.join(', ');
+                // Affichage des résultats (séparés par des points-virgules)
+                resultDiv.textContent = observation_ids.join(';');
+
+                // Affichage du bouton "Copier"
+                copyButton.style.display = 'block';
+                copyButton.dataset.ids = observation_ids.join(';');
             } catch (error) {
                 resultDiv.textContent = `Erreur : ${error.message}`;
             }
+        });
+
+        document.getElementById('copyButton').addEventListener('click', () => {
+            const copyButton = document.getElementById('copyButton');
+            navigator.clipboard.writeText(copyButton.dataset.ids)
+                .then(() => alert('IDs copiés dans le presse-papiers !'))
+                .catch(err => alert(`Erreur lors de la copie : ${err}`));
         });
     </script>
 </body>
