@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récupérer les IDs d'observations iNaturalist par ID OSM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Récupérer les IDs d'observations iNaturalist par OSM</h1>
+    <form id="osmForm">
+        <label for="osm_url">URL du nœud OSM :</label>
+        <input type="text" id="osm_url" name="osm_url"
+               placeholder="Ex: https://www.openstreetmap.org/node/9922802696" required>
+        <button type="submit">Récupérer les IDs</button>
+    </form>
+    <div id="result"></div>
 
+    <script>
+        document.getElementById('osmForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const osm_url = document.getElementById('osm_url').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = "Chargement...";
+
+            try {
+                // Construction de l'URL de l'API iNaturalist
+                const apiUrl = new URL('https://api.inaturalist.org/v1/observations');
+                apiUrl.searchParams.append('field:OpenStreetMap (OSM)', osm_url);
+                apiUrl.searchParams.append('verifiable', 'any');
+                apiUrl.searchParams.append('per_page', '200');
+
+                // Appel à l'API
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Erreur API : ${response.status}`);
+                }
+                const data = await response.json();
+                const observation_ids = data.results.map(obs => obs.id);
+
+                // Affichage des résultats
+                resultDiv.textContent = observation_ids.join(', ');
+            } catch (error) {
+                resultDiv.textContent = `Erreur : ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
