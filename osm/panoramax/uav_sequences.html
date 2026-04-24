@@ -78,7 +78,25 @@
         // Créer un groupe de marqueurs avec clustering pour chaque couche
         const osmMarkers = L.markerClusterGroup();
         const generalMarkers = L.markerClusterGroup();
+        const ParketMarkers = L.markerClusterGroup();
 
+        // Charger le GeoJSON issu du Parket
+        fetch('https://raw.githubusercontent.com/sylvain-m/divers/main/osm/panoramax/sequences_uav_drone.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, { icon: droneIcon });
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup(createPopupContent(feature));
+                    }
+                }).addTo(ParketMarkers);
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du GeoJSON Parket :', error);
+            });
+        
         // Charger le GeoJSON OSM
         fetch('https://raw.githubusercontent.com/sylvain-m/divers/main/osm/panoramax/panoramax_osm_transport_uav_sequences.geojson')
             .then(response => response.json())
@@ -114,12 +132,14 @@
             });
 
         // Ajouter les groupes de marqueurs à la carte
+        ParketMarkers.addTo(map);
         osmMarkers.addTo(map);
         generalMarkers.addTo(map);
 
         // Créer le contrôleur de couches
         const baseLayers = {};
         const overlays = {
+            "Séquences Panoramax Parquet": ParketMarkers,
             "Séquences Instance OSM France": osmMarkers,
             "Séquences Instance Fédérée": generalMarkers
         };
