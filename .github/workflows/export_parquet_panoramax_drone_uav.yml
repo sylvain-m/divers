@@ -2,8 +2,8 @@ name: Export Panoramax UAV/Drone Sequences
 
 on:
   schedule:
-    - cron: '30 2 * * *'  # Exécute tous les jours à 2h30 UTC
-  workflow_dispatch:     # Permet de déclencher manuellement
+    - cron: '30 2 * * *'  # 2h30 UTC
+  workflow_dispatch:
 
 jobs:
   export:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main  # Travaille sur la branche main
+          ref: main
 
       - name: Install DuckDB
         run: pip install duckdb
@@ -22,7 +22,7 @@ jobs:
 
       - name: Run DuckDB query and export GeoJSON
         run: |
-          python -c "
+          python3 -c "
           import duckdb
           conn = duckdb.connect()
           conn.execute('''
@@ -36,7 +36,8 @@ jobs:
                     (LOWER(s.value) = 'uav' OR LOWER(s.value) = 'drone')
                 )) > 0
             ) TO 'osm/panoramax/sequences_uav_drone.geojson' WITH (FORMAT GDAL, DRIVER 'GeoJSON');
-          ''')
+          ')
+          "
 
       - name: Commit and push GeoJSON
         run: |
