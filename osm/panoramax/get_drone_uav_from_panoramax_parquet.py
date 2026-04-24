@@ -8,7 +8,8 @@ conn.execute("""
     INSTALL spatial;
     LOAD spatial;
     COPY (
-        SELECT *
+        SELECT *,
+            providers[1].name as provider_name
         FROM 'https://api.panoramax.xyz/data/geoparquet/panoramax.parquet'
         WHERE length(list_filter(semantics, s ->
             s.key = 'transport' AND
