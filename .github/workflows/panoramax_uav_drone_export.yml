@@ -1,0 +1,29 @@
+name: Export Panoramax UAV/Drone Sequences
+
+on:
+  schedule:
+    - cron: '30 2 * * *'  # Exécution tous les jours à 2h30 UTC
+  workflow_dispatch:     # Permet de déclencher manuellement
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main  # Travaille sur la branche main
+
+      - name: Install DuckDB
+        run: pip install duckdb
+
+      - name: Run DuckDB query and export GeoJSON
+        run: python3 osm/panoramax/get_drone_uav_from_panoramax_parquet.py
+
+      - name: Commit and push GeoJSON
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add osm/panoramax/sequences_uav_drone.geojson
+          git commit -m "Mise à jour des séquences UAV/Drone (automatique)"
+          git push
