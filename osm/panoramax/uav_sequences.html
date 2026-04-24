@@ -135,15 +135,13 @@
 
         // Ajouter les groupes de marqueurs à la carte
         ParketMarkers.addTo(map);
-        osmMarkers.addTo(map);
-        generalMarkers.addTo(map);
 
         // Créer le contrôleur de couches
         const baseLayers = {};
         const overlays = {
             "Séquences Panoramax Parquet": ParketMarkers,
-            "Séquences Instance OSM France": osmMarkers,
-            "Séquences Instance Fédérée": generalMarkers
+            "Séquences Instance OSM France (OLD)": osmMarkers,
+            "Séquences Instance Fédérée (OLD)": generalMarkers
         };
         L.control.layers(baseLayers, overlays).addTo(map);
     </script>
