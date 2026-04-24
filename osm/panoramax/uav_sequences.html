@@ -52,6 +52,7 @@
             const datetime = props.datetime ? new Date(props.datetime).toLocaleString() : 'N/A';
             const created = props.created ? new Date(props.created).toLocaleString() : 'N/A';
             const producer = props['geovisio:producer'] || 'Inconnu';
+            const provider = props.provider_name;
             const thumbnail = props['geovisio:thumbnail'];
             const hdImage = props['geovisio:image'];
             const panoUrl = `https://api.panoramax.xyz/?focus=pic&pic=${id}`;
@@ -60,6 +61,7 @@
                 <div style="font-size: 14px; line-height: 1.5;">
                     <b>ID :</b> ${id}<br>
                     <b>Producteur :</b> ${producer}<br>
+                    <b>Provider :</b> ${provider}<br>
                     <b>Date de la prise :</b> ${datetime}<br>
                     <b>Créé le :</b> ${created}<br>
                     ${thumbnail ? `
