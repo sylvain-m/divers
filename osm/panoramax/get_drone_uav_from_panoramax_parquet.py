@@ -1,4 +1,6 @@
 import duckdb
+import json
+from datetime import datetime
 
 # Connexion à DuckDB
 conn = duckdb.connect()
