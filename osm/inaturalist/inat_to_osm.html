@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau des observations iNaturalist par identifiant OSM v3</title>
+    <title>Tableau des observations iNaturalist par identifiant OSM v16h</title>
     <style>
         :root {
             --bg-color: #1e1e1e;
@@ -91,54 +91,60 @@
                 <li><strong>observations</strong> : Liste des identifiants des observations iNaturalist, séparés par des points-virgules.</li>
             </ul>
         </p>
-        <p>
-            Les données sont chargées directement depuis l'API iNaturalist.
-            Le tableau est mis à jour automatiquement au chargement de la page.
-        </p>
     </div>
 
     <script>
-        // Fonction pour récupérer les observations avec un champ OSM
         async function fetchObservationsByOSMField() {
             const tableContainer = document.getElementById('tableContainer');
             tableContainer.innerHTML = '<div class="loading">Chargement des données...</div>';
-        
+
             try {
-                // On utilise le paramètre correct pour filtrer par ID de champ
-                const apiUrl = new URL('https://api.inaturalist.org/v1/observations');
-                apiUrl.searchParams.append('observation_field_values.field_id', '17260');
-                apiUrl.searchParams.append('verifiable', 'any');
-                apiUrl.searchParams.append('per_page', '200');
-                apiUrl.searchParams.append('fields', 'observation_field_values'); // Inclure les champs d'observation
-        
-                const response = await fetch(apiUrl);
-                if (!response.ok) {
-                    throw new Error(`Erreur API : ${response.status}`);
+                // Étape 1: Récupérer les valeurs uniques du champ "OpenStreetMap (OSM)"
+                const fieldValuesUrl = new URL('https://api.inaturalist.org/v1/observation_field_values');
+                fieldValuesUrl.searchParams.append('field_id', '17260');
+                fieldValuesUrl.searchParams.append('per_page', '200');
+
+                const fieldValuesResponse = await fetch(fieldValuesUrl);
+                if (!fieldValuesResponse.ok) {
+                    throw new Error(`Erreur lors de la récupération des valeurs de champ OSM: ${fieldValuesResponse.status}`);
                 }
-                const data = await response.json();
-                const observations = data.results;
-        
-                // On regroupe les observations par URL OSM
+                const fieldValuesData = await fieldValuesResponse.json();
+                const osmFieldValues = fieldValuesData.results;
+
+                if (!osmFieldValues || osmFieldValues.length === 0) {
+                    tableContainer.innerHTML = '<div class="loading">Aucune valeur de champ OSM trouvée.</div>';
+                    return;
+                }
+
+                // Étape 2: Pour chaque valeur OSM, récupérer les observations associées
                 const osmMap = {};
-                observations.forEach(obs => {
-                    if (obs.observation_field_values && Array.isArray(obs.observation_field_values)) {
-                        const osmField = obs.observation_field_values.find(f => f.field_id == 17260);
-                        if (osmField && osmField.value) {
-                            const osmValue = osmField.value;
-                            if (!osmMap[osmValue]) {
-                                osmMap[osmValue] = [];
-                            }
-                            osmMap[osmValue].push(obs.id);
-                        }
+                for (const fieldValue of osmFieldValues) {
+                    const osmUrl = fieldValue.value;
+                    const observationsUrl = new URL('https://api.inaturalist.org/v1/observations');
+                    observationsUrl.searchParams.append('field:OpenStreetMap (OSM)', osmUrl);
+                    observationsUrl.searchParams.append('verifiable', 'any');
+                    observationsUrl.searchParams.append('per_page', '200');
+
+                    const observationsResponse = await fetch(observationsUrl);
+                    if (!observationsResponse.ok) {
+                        console.error(`Erreur lors de la récupération des observations pour ${osmUrl}`);
+                        continue;
                     }
-                });
-        
+                    const observationsData = await observationsResponse.json();
+                    const observations = observationsData.results;
+
+                    if (observations && observations.length > 0) {
+                        const obsIds = observations.map(obs => obs.id);
+                        osmMap[osmUrl] = obsIds;
+                    }
+                }
+
                 // On génère le tableau HTML
                 if (Object.keys(osmMap).length === 0) {
                     tableContainer.innerHTML = '<div class="loading">Aucune observation trouvée avec un champ OSM.</div>';
                     return;
                 }
-        
+
                 let tableHTML = `
                     <table>
                         <thead>
@@ -149,7 +155,7 @@
                         </thead>
                         <tbody>
                 `;
-        
+
                 for (const [osmUrl, obsIds] of Object.entries(osmMap)) {
                     tableHTML += `
                         <tr>
@@ -158,12 +164,12 @@
                         </tr>
                     `;
                 }
-        
+
                 tableHTML += `
                         </tbody>
                     </table>
                 `;
-        
+
                 tableContainer.innerHTML = tableHTML;
             } catch (error) {
                 tableContainer.innerHTML = `<div class="loading">Erreur : ${error.message}</div>`;
