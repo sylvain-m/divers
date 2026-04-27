@@ -17,3 +17,11 @@ conn.execute("""
         )) > 0
     ) TO 'osm/panoramax/sequences_uav_drone.geojson' WITH (FORMAT GDAL, DRIVER 'GeoJSON');
 """)
+
+# Ajouter la métadonnée de date
+with open('osm/panoramax/sequences_uav_drone.geojson', 'r+', encoding='utf-8') as f:
+    data = json.load(f)
+    data['metadata'] = {'export_date': datetime.now().isoformat()}
+    f.seek(0)
+    json.dump(data, f, indent=2, ensure_ascii=False)
+    f.truncate()
