@@ -120,13 +120,16 @@ async function fetchObservationsByOSMField() {
         // On regroupe les observations par URL OSM
         const osmMap = {};
         observations.forEach(obs => {
-            const osmField = obs.observation_field_values.find(f => f.field_id == 17260);
-            if (osmField) {
-                const osmValue = osmField.value;
-                if (!osmMap[osmValue]) {
-                    osmMap[osmValue] = [];
+            // Vérification que observation_field_values existe et est un tableau
+            if (obs.observation_field_values && Array.isArray(obs.observation_field_values)) {
+                const osmField = obs.observation_field_values.find(f => f.field_id == 17260);
+                if (osmField && osmField.value) {
+                    const osmValue = osmField.value;
+                    if (!osmMap[osmValue]) {
+                        osmMap[osmValue] = [];
+                    }
+                    osmMap[osmValue].push(obs.id);
                 }
-                osmMap[osmValue].push(obs.id);
             }
         });
 
