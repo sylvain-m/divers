@@ -99,75 +99,73 @@
 
     <script>
         // Fonction pour récupérer les observations avec un champ OSM
-        async function fetchObservationsByOSMField() {
-            const tableContainer = document.getElementById('tableContainer');
-            tableContainer.innerHTML = '<div class="loading">Chargement des données...</div>';
+async function fetchObservationsByOSMField() {
+    const tableContainer = document.getElementById('tableContainer');
+    tableContainer.innerHTML = '<div class="loading">Chargement des données...</div>';
 
-            try {
-                // On récupère toutes les observations avec un champ "OpenStreetMap (OSM)"
-                // Note : L'API iNaturalist ne permet pas de lister tous les champs OSM en une requête,
-                // donc on récupère d'abord une liste d'observations avec ce champ, puis on les regroupe.
-                // Ici, on limite à 200 résultats pour éviter de surcharger l'API.
-                const apiUrl = new URL('https://api.inaturalist.org/v1/observations');
-                apiUrl.searchParams.append('field:OpenStreetMap (OSM)', '*');
-                apiUrl.searchParams.append('verifiable', 'any');
-                apiUrl.searchParams.append('per_page', '200');
+    try {
+        // On utilise le paramètre correct pour filtrer par ID de champ
+        const apiUrl = new URL('https://api.inaturalist.org/v1/observations');
+        apiUrl.searchParams.append('observation_field_values.field_id', '17260');
+        apiUrl.searchParams.append('verifiable', 'any');
+        apiUrl.searchParams.append('per_page', '200');
 
-                const response = await fetch(apiUrl);
-                if (!response.ok) {
-                    throw new Error(`Erreur API : ${response.status}`);
-                }
-                const data = await response.json();
-                const observations = data.results;
-
-                // On regroupe les observations par URL OSM
-                const osmMap = {};
-                observations.forEach(obs => {
-                    const osmValue = obs.observation_field_values.find(f => f.field_id === 17260)?.value;
-                    if (osmValue) {
-                        if (!osmMap[osmValue]) {
-                            osmMap[osmValue] = [];
-                        }
-                        osmMap[osmValue].push(obs.id);
-                    }
-                });
-
-                // On génère le tableau HTML
-                if (Object.keys(osmMap).length === 0) {
-                    tableContainer.innerHTML = '<div class="loading">Aucune observation trouvée avec un champ OSM.</div>';
-                    return;
-                }
-
-                let tableHTML = `
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>OSM</th>
-                                <th>Observations</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                `;
-
-                for (const [osmUrl, obsIds] of Object.entries(osmMap)) {
-                    tableHTML += `
-                        <tr>
-                            <td><a href="${osmUrl}" style="color: #3a7ca5;">${osmUrl}</a></td>
-                            <td>${obsIds.join(';')}</td>
-                        </tr>
-                    `;
-                }
-
-                tableHTML += `
-                        </tbody>
-                    </table>
-                `;
-
-                tableContainer.innerHTML = tableHTML;
-            } catch (error) {
-                tableContainer.innerHTML = `<div class="loading">Erreur : ${error.message}</div>`;
-            }
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`Erreur API : ${response.status}`);
         }
+        const data = await response.json();
+        const observations = data.results;
+
+        // On regroupe les observations par URL OSM
+        const osmMap = {};
+        observations.forEach(obs => {
+            const osmField = obs.observation_field_values.find(f => f.field_id == 17260);
+            if (osmField) {
+                const osmValue = osmField.value;
+                if (!osmMap[osmValue]) {
+                    osmMap[osmValue] = [];
+                }
+                osmMap[osmValue].push(obs.id);
+            }
+        });
+
+        // On génère le tableau HTML
+        if (Object.keys(osmMap).length === 0) {
+            tableContainer.innerHTML = '<div class="loading">Aucune observation trouvée avec un champ OSM.</div>';
+            return;
+        }
+
+        let tableHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>OSM</th>
+                        <th>Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        for (const [osmUrl, obsIds] of Object.entries(osmMap)) {
+            tableHTML += `
+                <tr>
+                    <td><a href="${osmUrl}" style="color: #3a7ca5;">${osmUrl}</a></td>
+                    <td>${obsIds.join(';')}</td>
+                </tr>
+            `;
+        }
+
+        tableHTML += `
+                </tbody>
+            </table>
+        `;
+
+        tableContainer.innerHTML = tableHTML;
+    } catch (error) {
+        tableContainer.innerHTML = `<div class="loading">Erreur : ${error.message}</div>`;
+    }
+}
 
         // Chargement automatique au démarrage
         document.addEventListener('DOMContentLoaded', fetchObservationsByOSMField);
