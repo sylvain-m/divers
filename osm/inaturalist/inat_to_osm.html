@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des observations iNaturalist par identifiant OSM</title>
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #e0e0e0;
+            --input-bg: #2d2d2d;
+            --input-text: #ffffff;
+            --border-color: #444;
+            --button-bg: #3a7ca5;
+            --button-hover: #2d6382;
+            --result-bg: #1a1a1a;
+            --table-header: #2d2d2d;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        h1 {
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: var(--result-bg);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--table-header);
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .explanation {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--result-bg);
+        }
+        .explanation h2 {
+            color: var(--text-color);
+            margin-top: 0;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tableau des observations iNaturalist par identifiant OSM</h1>
+
+    <div id="tableContainer">
+        <div class="loading">Chargement des données...</div>
+    </div>
+
+    <div class="explanation">
+        <h2>À propos de cette page</h2>
+        <p>
+            Cette page affiche un tableau récapitulatif de toutes les observations iNaturalist
+            associées à un identifiant OpenStreetMap (OSM).
+        </p>
+        <p>
+            <strong>Colonnes :</strong>
+            <ul>
+                <li><strong>osm</strong> : URL du nœud OSM associé aux observations.</li>
+                <li><strong>observations</strong> : Liste des identifiants des observations iNaturalist, séparés par des points-virgules.</li>
+            </ul>
+        </p>
+        <p>
+            Les données sont chargées directement depuis l'API iNaturalist.
+            Le tableau est mis à jour automatiquement au chargement de la page.
+        </p>
+    </div>
+
+    <script>
+        // Fonction pour récupérer les observations avec un champ OSM
+        async function fetchObservationsByOSMField() {
+            const tableContainer = document.getElementById('tableContainer');
+            tableContainer.innerHTML = '<div class="loading">Chargement des données...</div>';
+
+            try {
+                // On récupère toutes les observations avec un champ "OpenStreetMap (OSM)"
+                // Note : L'API iNaturalist ne permet pas de lister tous les champs OSM en une requête,
+                // donc on récupère d'abord une liste d'observations avec ce champ, puis on les regroupe.
+                // Ici, on limite à 200 résultats pour éviter de surcharger l'API.
+                const apiUrl = new URL('https://api.inaturalist.org/v1/observations');
+                apiUrl.searchParams.append('field:OpenStreetMap (OSM)', '*');
+                apiUrl.searchParams.append('verifiable', 'any');
+                apiUrl.searchParams.append('per_page', '200');
+
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Erreur API : ${response.status}`);
+                }
+                const data = await response.json();
+                const observations = data.results;
+
+                // On regroupe les observations par URL OSM
+                const osmMap = {};
+                observations.forEach(obs => {
+                    const osmValue = obs.observation_field_values.find(f => f.field_id === 17260)?.value;
+                    if (osmValue) {
+                        if (!osmMap[osmValue]) {
+                            osmMap[osmValue] = [];
+                        }
+                        osmMap[osmValue].push(obs.id);
+                    }
+                });
+
+                // On génère le tableau HTML
+                if (Object.keys(osmMap).length === 0) {
+                    tableContainer.innerHTML = '<div class="loading">Aucune observation trouvée avec un champ OSM.</div>';
+                    return;
+                }
+
+                let tableHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>OSM</th>
+                                <th>Observations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                for (const [osmUrl, obsIds] of Object.entries(osmMap)) {
+                    tableHTML += `
+                        <tr>
+                            <td><a href="${osmUrl}" style="color: #3a7ca5;">${osmUrl}</a></td>
+                            <td>${obsIds.join(';')}</td>
+                        </tr>
+                    `;
+                }
+
+                tableHTML += `
+                        </tbody>
+                    </table>
+                `;
+
+                tableContainer.innerHTML = tableHTML;
+            } catch (error) {
+                tableContainer.innerHTML = `<div class="loading">Erreur : ${error.message}</div>`;
+            }
+        }
+
+        // Chargement automatique au démarrage
+        document.addEventListener('DOMContentLoaded', fetchObservationsByOSMField);
+    </script>
+</body>
+</html>
