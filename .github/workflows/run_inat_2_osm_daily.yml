@@ -2,12 +2,8 @@ name: Run iNat to OSM CSV Script Daily
 
 on:
   schedule:
-    # Exécution tous les jours à 07h00 (heure UTC)
-    # Pour 07h00 heure de Paris (UTC+2 en été, UTC+1 en hiver), utilise :
-    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 heure de Paris (en été)
-    # Pour 07h00 UTC toute l'année, utilise :
-    # - cron: '0 7 * * *'
-  workflow_dispatch:  # Permet de lancer manuellement le workflow depuis l'interface GitHub
+    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 heure de Paris (été)
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -19,24 +15,37 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'  # ou la version que tu utilises
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests pandas
 
-      - name: Run the script
+      - name: Run the script (with logs)
         run: |
-          python osm/inaturalist/inat_2_osm.py
+          cd osm/inaturalist
+          python inat_2_osm.py
+          cd ../..
+
+      - name: Debug - List files in osm/inaturalist/
+        run: |
+          ls -lh osm/inaturalist/
+
+      - name: Debug - Show content of CSV files
+        run: |
+          echo "Contenu de inat_osm.csv :"
+          cat osm/inaturalist/inat_osm.csv || echo "Fichier vide ou introuvable"
+          echo -e "\nContenu de osm_inat.csv :"
+          cat osm/inaturalist/osm_inat.csv || echo "Fichier vide ou introuvable"
 
       - name: Generate log file
         run: |
           # Récupérer la date/heure actuelle
           CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
           # Compter le nombre de lignes dans chaque CSV (en excluant l'en-tête)
-          INAT_OSM_LINES=$(wc -l < osm/inaturalist/inat_osm.csv)
-          OSM_INAT_LINES=$(wc -l < osm/inaturalist/osm_inat.csv)
+          INAT_OSM_LINES=$(wc -l < osm/inaturalist/inat_osm.csv 2>/dev/null || echo "0")
+          OSM_INAT_LINES=$(wc -l < osm/inaturalist/osm_inat.csv 2>/dev/null || echo "0")
           # Écrire dans le fichier de log
           echo "Dernière exécution : $CURRENT_DATE" > osm/inaturalist/inat_2_csv_log.txt
           echo "Nombre de lignes dans inat_osm.csv : $((INAT_OSM_LINES - 1))" >> osm/inaturalist/inat_2_csv_log.txt
@@ -47,5 +56,6 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add osm/inaturalist/inat_osm.csv osm/inaturalist/osm_inat.csv osm/inaturalist/inat_2_csv_log.txt
-          git diff --quiet && git diff --staged --quiet || git commit -m "Mise à jour automatique des CSV et du log (exécution quotidienne)"
+          # Forcer le commit même si les fichiers sont vides
+          git commit -m "Mise à jour automatique des CSV et du log (exécution quotidienne)" --allow-empty
           git push
