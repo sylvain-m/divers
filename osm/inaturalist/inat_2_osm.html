@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iNat 2 OSM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        th {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #2a2a2a;
+        }
+        a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>iNat 2 OSM</h1>
+        <table id="osmTable">
+            <thead>
+                <tr>
+                    <th>OSM Element</th>
+                    <th>OSM ID</th>
+                    <th>OSM URL</th>
+                    <th>iNat Observations IDs</th>
+                    <th>iNat Observations URL</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Charger le fichier CSV et afficher son contenu dans le tableau
+        fetch('osm_inat.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n');
+                const header = rows[0].split(',');
+                const tableBody = document.getElementById('tableBody');
+
+                // Parcourir les lignes du CSV (en excluant l'en-tête)
+                for (let i = 1; i < rows.length; i++) {
+                    if (rows[i].trim() === '') continue; // Ignorer les lignes vides
+
+                    const rowData = rows[i].split(',');
+                    const row = document.createElement('tr');
+
+                    // osm_element
+                    const osmElementCell = document.createElement('td');
+                    osmElementCell.textContent = rowData[0].replace(/"/g, '').trim();
+                    row.appendChild(osmElementCell);
+
+                    // osm_id
+                    const osmIdCell = document.createElement('td');
+                    osmIdCell.textContent = rowData[1].replace(/"/g, '').trim();
+                    row.appendChild(osmIdCell);
+
+                    // osm_url (lien cliquable)
+                    const osmUrlCell = document.createElement('td');
+                    const osmUrl = rowData[2].replace(/"/g, '').trim();
+                    const osmUrlLink = document.createElement('a');
+                    osmUrlLink.href = osmUrl;
+                    osmUrlLink.textContent = osmUrl;
+                    osmUrlLink.target = "_blank";
+                    osmUrlCell.appendChild(osmUrlLink);
+                    row.appendChild(osmUrlCell);
+
+                    // obs_ids
+                    const obsIdsCell = document.createElement('td');
+                    obsIdsCell.textContent = rowData[3].replace(/"/g, '').trim();
+                    row.appendChild(obsIdsCell);
+
+                    // obs_url (lien cliquable)
+                    const obsUrlCell = document.createElement('td');
+                    const obsUrl = rowData[4].replace(/"/g, '').trim();
+                    const obsUrlLink = document.createElement('a');
+                    obsUrlLink.href = obsUrl;
+                    obsUrlLink.textContent = obsUrl;
+                    obsUrlLink.target = "_blank";
+                    obsUrlCell.appendChild(obsUrlLink);
+                    row.appendChild(obsUrlCell);
+
+                    tableBody.appendChild(row);
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du CSV:', error);
+                const tableBody = document.getElementById('tableBody');
+                const errorRow = document.createElement('tr');
+                const errorCell = document.createElement('td');
+                errorCell.colSpan = 5;
+                errorCell.textContent = 'Erreur lors du chargement des données. Vérifiez que le fichier osm_inat.csv existe et est accessible.';
+                errorCell.style.color = '#ff6b6b';
+                errorRow.appendChild(errorCell);
+                tableBody.appendChild(errorRow);
+            });
+    </script>
+</body>
+</html>
