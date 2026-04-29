@@ -1,0 +1,51 @@
+name: Run iNat to OSM CSV Script Daily
+
+on:
+  schedule:
+    # Exécution tous les jours à 07h00 (heure UTC)
+    # Pour 07h00 heure de Paris (UTC+2 en été, UTC+1 en hiver), utilise :
+    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 heure de Paris (en été)
+    # Pour 07h00 UTC toute l'année, utilise :
+    # - cron: '0 7 * * *'
+  workflow_dispatch:  # Permet de lancer manuellement le workflow depuis l'interface GitHub
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'  # ou la version que tu utilises
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas
+
+      - name: Run the script
+        run: |
+          python osm/inaturalist/inat_2_osm.py
+
+      - name: Generate log file
+        run: |
+          # Récupérer la date/heure actuelle
+          CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
+          # Compter le nombre de lignes dans chaque CSV (en excluant l'en-tête)
+          INAT_OSM_LINES=$(wc -l < osm/inaturalist/inat_osm.csv)
+          OSM_INAT_LINES=$(wc -l < osm/inaturalist/osm_inat.csv)
+          # Écrire dans le fichier de log
+          echo "Dernière exécution : $CURRENT_DATE" > osm/inaturalist/inat_2_csv_log.txt
+          echo "Nombre de lignes dans inat_osm.csv : $((INAT_OSM_LINES - 1))" >> osm/inaturalist/inat_2_csv_log.txt
+          echo "Nombre de lignes dans osm_inat.csv : $((OSM_INAT_LINES - 1))" >> osm/inaturalist/inat_2_csv_log.txt
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add osm/inaturalist/inat_osm.csv osm/inaturalist/osm_inat.csv osm/inaturalist/inat_2_csv_log.txt
+          git diff --quiet && git diff --staged --quiet || git commit -m "Mise à jour automatique des CSV et du log (exécution quotidienne)"
+          git push
