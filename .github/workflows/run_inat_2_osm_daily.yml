@@ -22,40 +22,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas
 
-      - name: Run the script (with logs)
+      - name: Run the script
         run: |
           cd osm/inaturalist
           python inat_2_osm.py
           cd ../..
-
-      - name: Debug - List files in osm/inaturalist/
-        run: |
-          ls -lh osm/inaturalist/
-
-      - name: Debug - Show content of CSV files
-        run: |
-          echo "Contenu de inat_osm.csv :"
-          cat osm/inaturalist/inat_osm.csv || echo "Fichier vide ou introuvable"
-          echo -e "\nContenu de osm_inat.csv :"
-          cat osm/inaturalist/osm_inat.csv || echo "Fichier vide ou introuvable"
-
-      - name: Generate log file
-        run: |
-          # Récupérer la date/heure actuelle
-          CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
-          # Compter le nombre de lignes dans chaque CSV (en excluant l'en-tête)
-          INAT_OSM_LINES=$(wc -l < osm/inaturalist/inat_osm.csv 2>/dev/null || echo "0")
-          OSM_INAT_LINES=$(wc -l < osm/inaturalist/osm_inat.csv 2>/dev/null || echo "0")
-          # Écrire dans le fichier de log
-          echo "Dernière exécution : $CURRENT_DATE" > osm/inaturalist/inat_2_csv_log.txt
-          echo "Nombre de lignes dans inat_osm.csv : $((INAT_OSM_LINES - 1))" >> osm/inaturalist/inat_2_csv_log.txt
-          echo "Nombre de lignes dans osm_inat.csv : $((OSM_INAT_LINES - 1))" >> osm/inaturalist/inat_2_csv_log.txt
 
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add osm/inaturalist/inat_osm.csv osm/inaturalist/osm_inat.csv osm/inaturalist/inat_2_csv_log.txt
-          # Forcer le commit même si les fichiers sont vides
           git commit -m "Mise à jour automatique des CSV et du log (exécution quotidienne)" --allow-empty
           git push
