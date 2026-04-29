@@ -11,7 +11,7 @@
             color: #e0e0e0;
             margin: 0;
             padding: 20px;
-            font-size: 14px; /* Taille de police légèrement réduite */
+            font-size: 14px;
         }
         h1 {
             color: #ffffff;
@@ -35,9 +35,9 @@
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #333;
-            max-width: 20%; /* Limite chaque colonne à 20% de la largeur */
-            word-wrap: break-word; /* Permet le retour à la ligne pour les textes longs */
-            overflow-wrap: break-word;
+            max-width: 20%;
+            word-break: break-all; /* Force le retour à la ligne même sans espaces */
+            overflow-wrap: anywhere;
         }
         th {
             background-color: #2d2d2d;
@@ -50,6 +50,7 @@
         a {
             color: #4da6ff;
             text-decoration: none;
+            word-break: break-all; /* Force le retour à la ligne pour les liens */
         }
         a:hover {
             text-decoration: underline;
@@ -109,22 +110,23 @@
                 for (let i = 1; i < rows.length; i++) {
                     if (rows[i].trim() === '') continue; // Ignorer les lignes vides
 
-                    const rowData = rows[i].split(',');
+                    // Utiliser une expression régulière pour gérer les guillemets et les virgules dans les CSV
+                    const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
                     const row = document.createElement('tr');
 
                     // osm_element
                     const osmElementCell = document.createElement('td');
-                    osmElementCell.textContent = rowData[0].replace(/"/g, '').trim();
+                    osmElementCell.textContent = rowData[0] ? rowData[0].replace(/"/g, '').trim() : '';
                     row.appendChild(osmElementCell);
 
                     // osm_id
                     const osmIdCell = document.createElement('td');
-                    osmIdCell.textContent = rowData[1].replace(/"/g, '').trim();
+                    osmIdCell.textContent = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
                     row.appendChild(osmIdCell);
 
                     // osm_url (lien cliquable)
                     const osmUrlCell = document.createElement('td');
-                    const osmUrl = rowData[2].replace(/"/g, '').trim();
+                    const osmUrl = rowData[2] ? rowData[2].replace(/"/g, '').trim() : '';
                     const osmUrlLink = document.createElement('a');
                     osmUrlLink.href = osmUrl;
                     osmUrlLink.textContent = osmUrl;
@@ -132,17 +134,20 @@
                     osmUrlCell.appendChild(osmUrlLink);
                     row.appendChild(osmUrlCell);
 
-                    // obs_ids
+                    // obs_ids (retour à la ligne forcé)
                     const obsIdsCell = document.createElement('td');
-                    obsIdsCell.textContent = rowData[3].replace(/"/g, '').trim();
+                    obsIdsCell.textContent = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
                     row.appendChild(obsIdsCell);
 
-                    // obs_url (lien cliquable)
+                    // obs_url (lien cliquable avec tous les IDs)
                     const obsUrlCell = document.createElement('td');
-                    const obsUrl = rowData[4].replace(/"/g, '').trim();
+                    const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
+                    const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
+                    // Si obs_url est vide, on le reconstruit à partir des obs_ids
+                    const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIds.replace(/;/g, ',')}`;
                     const obsUrlLink = document.createElement('a');
-                    obsUrlLink.href = obsUrl;
-                    obsUrlLink.textContent = obsUrl;
+                    obsUrlLink.href = finalObsUrl;
+                    obsUrlLink.textContent = finalObsUrl;
                     obsUrlLink.target = "_blank";
                     obsUrlCell.appendChild(obsUrlLink);
                     row.appendChild(obsUrlCell);
