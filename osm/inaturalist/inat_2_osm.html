@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iNat 2 OSM</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Table CSS -->
+    <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,70 +15,61 @@
             color: #e0e0e0;
             margin: 0;
             padding: 20px;
-            font-size: 14px;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
         }
         h1 {
             color: #ffffff;
             text-align: center;
             margin-bottom: 10px;
             font-size: 2em;
-            position: sticky;
-            top: 0;
-            background-color: #1e1e1e;
-            z-index: 100;
-            padding: 10px 0;
         }
         .log-info {
             text-align: center;
             margin-bottom: 20px;
             color: #a0a0a0;
             font-size: 0.9em;
-            position: sticky;
-            top: 60px;
-            background-color: #1e1e1e;
-            z-index: 100;
-            padding: 5px 0;
         }
-        .table-container {
-            max-height: calc(100vh - 120px);
-            overflow-y: auto;
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #333;
-            max-width: 20%;
-            word-break: break-all;
-            overflow-wrap: anywhere;
-        }
-        th {
+        /* Thème sombre pour Bootstrap */
+        .table {
+            color: #e0e0e0;
             background-color: #2d2d2d;
+            border-color: #333;
+        }
+        .table thead th {
+            background-color: #1e1e1e;
             color: #ffffff;
-            font-weight: bold;
+            border-bottom: 1px solid #333;
             position: sticky;
-            top: 100px;
+            top: 0;
             z-index: 10;
         }
-        tr:hover {
+        .table tbody td {
+            border-bottom: 1px solid #333;
+        }
+        .table-hover tbody tr:hover {
             background-color: #2a2a2a;
         }
         a {
             color: #4da6ff;
             text-decoration: none;
-            word-break: break-all;
         }
         a:hover {
             text-decoration: underline;
         }
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
+        /* Limiter la largeur des colonnes */
+        .table td, .table th {
+            max-width: 20%;
+            word-break: break-all;
+            overflow-wrap: anywhere;
+        }
+        /* Conteneur du tableau avec défilement */
+        .table-container {
+            max-height: calc(100vh - 150px);
+            overflow-y: auto;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -83,14 +78,24 @@
         <h1>iNat 2 OSM</h1>
         <div id="logInfo" class="log-info">Chargement du log...</div>
         <div class="table-container">
-            <table id="osmTable">
+            <table
+                id="osmTable"
+                class="table table-hover table-borderless"
+                data-toggle="table"
+                data-height="100%"
+                data-pagination="false"
+                data-search="false"
+                data-show-columns="false"
+                data-show-refresh="false"
+                data-show-toggle="false"
+            >
                 <thead>
                     <tr>
-                        <th>OSM Element</th>
-                        <th>OSM ID</th>
-                        <th>OSM URL</th>
-                        <th>iNat Observations IDs</th>
-                        <th>iNat Observations URL</th>
+                        <th data-field="osm_element">OSM Element</th>
+                        <th data-field="osm_id">OSM ID</th>
+                        <th data-field="osm_url">OSM URL</th>
+                        <th data-field="obs_ids">iNat Observations IDs</th>
+                        <th data-field="obs_url">iNat Observations URL</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -99,6 +104,11 @@
             </table>
         </div>
     </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Table JS -->
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
     <script>
         // Fonction pour charger le fichier de log et afficher la dernière ligne
