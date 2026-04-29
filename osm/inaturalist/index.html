@@ -37,6 +37,8 @@
             color: #e0e0e0;
             background-color: #1e1e1e;
             border-color: #333;
+            table-layout: fixed; /* Pour forcer le respect des largeurs de colonnes */
+            width: 100%;
         }
         .table thead th {
             background-color: #2d2d2d;
@@ -45,10 +47,14 @@
             position: sticky;
             top: 0;
             z-index: 10;
+            width: 33.33%; /* Largeur égale pour chaque colonne */
+            text-align: center;
         }
         .table tbody td {
             border-bottom: 1px solid #333;
             background-color: #1e1e1e;
+            width: 33.33%; /* Largeur égale pour chaque colonne */
+            vertical-align: top; /* Alignement en haut pour le retour à la ligne */
         }
         .table-hover tbody tr:hover {
             background-color: #2a2a2a;
@@ -88,6 +94,11 @@
             max-height: calc(100vh - 150px);
             overflow-y: auto;
             margin-bottom: 20px;
+        }
+        /* Retour à la ligne pour la colonne obs_ids */
+        .obs-ids-cell {
+            word-break: break-all;
+            white-space: normal;
         }
     </style>
 </head>
@@ -207,6 +218,7 @@
 
                     // obs_ids (badges verts cliquables pour chaque ID)
                     const obsIdsCell = document.createElement('td');
+                    obsIdsCell.className = 'obs-ids-cell'; // Classe pour le retour à la ligne
                     const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
                     if (obsIds) {
                         const ids = obsIds.split(';');
