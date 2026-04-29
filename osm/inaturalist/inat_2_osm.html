@@ -11,12 +11,19 @@
             color: #e0e0e0;
             margin: 0;
             padding: 20px;
+            font-size: 14px; /* Taille de police légèrement réduite */
         }
         h1 {
             color: #ffffff;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             font-size: 2em;
+        }
+        .log-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #a0a0a0;
+            font-size: 0.9em;
         }
         table {
             width: 100%;
@@ -25,9 +32,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         th, td {
-            padding: 12px 15px;
+            padding: 10px;
             text-align: left;
             border-bottom: 1px solid #333;
+            max-width: 20%; /* Limite chaque colonne à 20% de la largeur */
+            word-wrap: break-word; /* Permet le retour à la ligne pour les textes longs */
+            overflow-wrap: break-word;
         }
         th {
             background-color: #2d2d2d;
@@ -45,7 +55,7 @@
             text-decoration: underline;
         }
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
         }
     </style>
@@ -53,6 +63,7 @@
 <body>
     <div class="container">
         <h1>iNat 2 OSM</h1>
+        <div id="logInfo" class="log-info">Chargement du log...</div>
         <table id="osmTable">
             <thead>
                 <tr>
@@ -70,12 +81,28 @@
     </div>
 
     <script>
+        // Fonction pour charger le fichier de log et afficher la dernière ligne
+        fetch('inat_2_csv_log.txt')
+            .then(response => response.text())
+            .then(data => {
+                const lines = data.split('\n').filter(line => line.trim() !== '');
+                if (lines.length > 0) {
+                    const lastLine = lines[lines.length - 1];
+                    document.getElementById('logInfo').textContent = lastLine;
+                } else {
+                    document.getElementById('logInfo').textContent = "Aucune information de log disponible.";
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du log:', error);
+                document.getElementById('logInfo').textContent = "Erreur lors du chargement du log.";
+            });
+
         // Charger le fichier CSV et afficher son contenu dans le tableau
         fetch('osm_inat.csv')
             .then(response => response.text())
             .then(data => {
                 const rows = data.split('\n');
-                const header = rows[0].split(',');
                 const tableBody = document.getElementById('tableBody');
 
                 // Parcourir les lignes du CSV (en excluant l'en-tête)
