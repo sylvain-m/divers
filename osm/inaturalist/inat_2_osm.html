@@ -8,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Table CSS -->
     <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
-    <!-- Font Awesome pour l'icône iNaturalist -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -72,10 +70,11 @@
             display: inline-block;
             font-size: 0.85em;
         }
-        /* Icône iNaturalist */
-        .inat-icon {
-            color: #4da6ff;
-            font-size: 1.2em;
+        /* Image iNaturalist */
+        .inat-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
         }
         /* Conteneur du tableau avec défilement */
         .table-container {
@@ -104,8 +103,8 @@
                 <thead>
                     <tr>
                         <th data-field="osm_link">OSM Element & ID</th>
+                        <th data-field="inat_link">iNat Link</th>
                         <th data-field="obs_ids">iNat Observations IDs</th>
-                        <th data-field="obs_url">iNat</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -165,32 +164,39 @@
                     osmLinkCell.appendChild(osmLink);
                     row.appendChild(osmLinkCell);
 
-                    // obs_ids (badges verts pour chaque ID)
+                    // iNat Link (image iNaturalist)
+                    const inatLinkCell = document.createElement('td');
+                    const obsIdsForUrl = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
+                    const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
+                    const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl.replace(/;/g, ',')}`;
+                    const imgLink = document.createElement('a');
+                    imgLink.href = finalObsUrl;
+                    imgLink.target = "_blank";
+                    const img = document.createElement('img');
+                    img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
+                    img.className = 'inat-img';
+                    img.alt = 'iNaturalist';
+                    imgLink.appendChild(img);
+                    inatLinkCell.appendChild(imgLink);
+                    row.appendChild(inatLinkCell);
+
+                    // obs_ids (badges verts cliquables pour chaque ID)
                     const obsIdsCell = document.createElement('td');
                     const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
                     if (obsIds) {
                         const ids = obsIds.split(';');
                         ids.forEach(id => {
+                            const badgeLink = document.createElement('a');
+                            badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
+                            badgeLink.target = "_blank";
                             const badge = document.createElement('span');
                             badge.className = 'id-badge';
-                            badge.textContent = id;
-                            obsIdsCell.appendChild(badge);
+                            badge.textContent = id.trim();
+                            badgeLink.appendChild(badge);
+                            obsIdsCell.appendChild(badgeLink);
                         });
                     }
                     row.appendChild(obsIdsCell);
-
-                    // obs_url (icône iNaturalist)
-                    const obsUrlCell = document.createElement('td');
-                    const obsIdsForUrl = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
-                    const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
-                    const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl.replace(/;/g, ',')}`;
-                    const iconLink = document.createElement('a');
-                    iconLink.href = finalObsUrl;
-                    iconLink.target = "_blank";
-                    iconLink.className = 'inat-icon';
-                    iconLink.innerHTML = '<i class="fab fa-inaturalist"></i>';
-                    obsUrlCell.appendChild(iconLink);
-                    row.appendChild(obsUrlCell);
 
                     tableBody.appendChild(row);
                 }
