@@ -70,7 +70,13 @@
             display: inline-block;
             font-size: 0.85em;
         }
-        /* Image iNaturalist */
+        /* Images pour OSM et iNaturalist */
+        .osm-img {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
         .inat-img {
             width: 32px;
             height: 32px;
@@ -102,7 +108,7 @@
             >
                 <thead>
                     <tr>
-                        <th data-field="osm_link">OSM Element & ID</th>
+                        <th data-field="osm_link">OSM Link</th>
                         <th data-field="inat_link">iNat Link</th>
                         <th data-field="obs_ids">iNat Observations IDs</th>
                     </tr>
@@ -152,15 +158,24 @@
                     const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
                     const row = document.createElement('tr');
 
-                    // osm_element + osm_id (lien vers osm_url)
+                    // OSM Link (icône + osm_element + osm_id, lien vers osm_url)
                     const osmLinkCell = document.createElement('td');
                     const osmElement = rowData[0] ? rowData[0].replace(/"/g, '').trim() : '';
                     const osmId = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
                     const osmUrl = rowData[2] ? rowData[2].replace(/"/g, '').trim() : '';
                     const osmLink = document.createElement('a');
                     osmLink.href = osmUrl;
-                    osmLink.textContent = `${osmElement} ${osmId}`;
                     osmLink.target = "_blank";
+
+                    // Ajouter l'icône OSM
+                    const osmImg = document.createElement('img');
+                    osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
+                    osmImg.className = 'osm-img';
+                    osmImg.alt = 'OpenStreetMap';
+                    osmLink.appendChild(osmImg);
+
+                    // Ajouter le texte (osm_element + osm_id)
+                    osmLink.appendChild(document.createTextNode(`${osmElement} ${osmId}`));
                     osmLinkCell.appendChild(osmLink);
                     row.appendChild(osmLinkCell);
 
