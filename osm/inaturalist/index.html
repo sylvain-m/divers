@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iNat 2 OSM</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Table CSS -->
+    <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .log-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #a0a0a0;
+            font-size: 0.9em;
+        }
+        /* Thème sombre pour Bootstrap */
+        .table {
+            color: #e0e0e0;
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+        .table thead th {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .table tbody td {
+            border-bottom: 1px solid #333;
+            background-color: #1e1e1e;
+        }
+        .table-hover tbody tr:hover {
+            background-color: #2a2a2a;
+        }
+        a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Badges verts pour les IDs */
+        .id-badge {
+            background-color: #74ac00;
+            color: #ffffff;
+            margin: 2px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.85em;
+        }
+        /* Images pour OSM et iNaturalist */
+        .osm-img {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        .inat-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+        }
+        /* Conteneur du tableau avec défilement */
+        .table-container {
+            max-height: calc(100vh - 150px);
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>iNat 2 OSM</h1>
+        <div id="logInfo" class="log-info">Chargement du log...</div>
+        <div class="table-container">
+            <table
+                id="osmTable"
+                class="table table-hover table-borderless"
+                data-toggle="table"
+                data-height="100%"
+                data-pagination="false"
+                data-search="false"
+                data-show-columns="false"
+                data-show-refresh="false"
+                data-show-toggle="false"
+            >
+                <thead>
+                    <tr>
+                        <th data-field="osm_link">OSM Link</th>
+                        <th data-field="inat_link">iNat Link</th>
+                        <th data-field="obs_ids">iNat Observations IDs</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Table JS -->
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+
+    <script>
+        // Fonction pour charger le fichier de log et afficher la dernière ligne
+        fetch('inat_2_csv_log.txt')
+            .then(response => response.text())
+            .then(data => {
+                const lines = data.split('\n').filter(line => line.trim() !== '');
+                if (lines.length > 0) {
+                    const lastLine = lines[lines.length - 1];
+                    document.getElementById('logInfo').textContent = lastLine;
+                } else {
+                    document.getElementById('logInfo').textContent = "Aucune information de log disponible.";
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du log:', error);
+                document.getElementById('logInfo').textContent = "Erreur lors du chargement du log.";
+            });
+
+        // Charger le fichier CSV et afficher son contenu dans le tableau
+        fetch('osm_inat.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n');
+                const tableBody = document.getElementById('tableBody');
+
+                // Parcourir les lignes du CSV (en excluant l'en-tête)
+                for (let i = 1; i < rows.length; i++) {
+                    if (rows[i].trim() === '') continue;
+
+                    // Utiliser une expression régulière pour gérer les guillemets et les virgules dans les CSV
+                    const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
+                    const row = document.createElement('tr');
+
+                    // OSM Link (icône + osm_element + osm_id, lien vers osm_url)
+                    const osmLinkCell = document.createElement('td');
+                    const osmElement = rowData[0] ? rowData[0].replace(/"/g, '').trim() : '';
+                    const osmId = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
+                    const osmUrl = rowData[2] ? rowData[2].replace(/"/g, '').trim() : '';
+                    const osmLink = document.createElement('a');
+                    osmLink.href = osmUrl;
+                    osmLink.target = "_blank";
+
+                    // Ajouter l'icône OSM
+                    const osmImg = document.createElement('img');
+                    osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
+                    osmImg.className = 'osm-img';
+                    osmImg.alt = 'OpenStreetMap';
+                    osmLink.appendChild(osmImg);
+
+                    // Ajouter le texte (osm_element + osm_id)
+                    osmLink.appendChild(document.createTextNode(`${osmElement} ${osmId}`));
+                    osmLinkCell.appendChild(osmLink);
+                    row.appendChild(osmLinkCell);
+
+                    // iNat Link (image iNaturalist)
+                    const inatLinkCell = document.createElement('td');
+                    const obsIdsForUrl = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
+                    const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
+                    const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl.replace(/;/g, ',')}`;
+                    const imgLink = document.createElement('a');
+                    imgLink.href = finalObsUrl;
+                    imgLink.target = "_blank";
+                    const img = document.createElement('img');
+                    img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
+                    img.className = 'inat-img';
+                    img.alt = 'iNaturalist';
+                    imgLink.appendChild(img);
+                    inatLinkCell.appendChild(imgLink);
+                    row.appendChild(inatLinkCell);
+
+                    // obs_ids (badges verts cliquables pour chaque ID)
+                    const obsIdsCell = document.createElement('td');
+                    const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
+                    if (obsIds) {
+                        const ids = obsIds.split(';');
+                        ids.forEach(id => {
+                            const badgeLink = document.createElement('a');
+                            badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
+                            badgeLink.target = "_blank";
+                            const badge = document.createElement('span');
+                            badge.className = 'id-badge';
+                            badge.textContent = id.trim();
+                            badgeLink.appendChild(badge);
+                            obsIdsCell.appendChild(badgeLink);
+                        });
+                    }
+                    row.appendChild(obsIdsCell);
+
+                    tableBody.appendChild(row);
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du CSV:', error);
+                const tableBody = document.getElementById('tableBody');
+                const errorRow = document.createElement('tr');
+                const errorCell = document.createElement('td');
+                errorCell.colSpan = 3;
+                errorCell.textContent = 'Erreur lors du chargement des données. Vérifiez que le fichier osm_inat.csv existe et est accessible.';
+                errorCell.style.color = '#ff6b6b';
+                errorRow.appendChild(errorCell);
+                tableBody.appendChild(errorRow);
+            });
+    </script>
+</body>
+</html>
