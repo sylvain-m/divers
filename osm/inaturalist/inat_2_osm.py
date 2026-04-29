@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import time
+from datetime import datetime
 
 # --- Configuration ---
 INATURALIST_API_URL = "https://api.inaturalist.org/v1"
@@ -9,8 +10,14 @@ FIELD_NAME_OSM = "OpenStreetMap (OSM)"
 PAGE_SIZE = 200
 CSV_INPUT = "inat_osm.csv"
 CSV_OUTPUT = "osm_inat.csv"
+LOG_FILE = "inat_2_csv_log.txt"
 
-# --- Fonction pour récupérer les observations avec le champ OSM ---
+# --- Function to write to the log file ---
+def write_to_log(inat_lines, osm_lines):
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} : {inat_lines} iNat observations for {osm_lines} OSM objects\n")
+
+# --- Function to fetch observations with the OSM field ---
 def fetch_observations_with_osm_field():
     observations = []
     page = 1
@@ -23,31 +30,36 @@ def fetch_observations_with_osm_field():
             "field:{}".format(FIELD_NAME_OSM): "",
         }
 
-        print(f"Récupération de la page {page}...")
-        response = requests.get(
-            f"{INATURALIST_API_URL}{OBSERVATIONS_ENDPOINT}",
-            params=params
-        )
-        print(f"Statut de la réponse : {response.status_code}")  # Debug
-        response.raise_for_status()
-        data = response.json()
+        print(f"Fetching page {page}...")
+        try:
+            response = requests.get(
+                f"{INATURALIST_API_URL}{OBSERVATIONS_ENDPOINT}",
+                params=params
+            )
+            print(f"Response status: {response.status_code}")
+            response.raise_for_status()
+            data = response.json()
 
-        if total_results is None:
-            total_results = data["total_results"]
-            print(f"Nombre total d'observations à récupérer : {total_results}")
+            if total_results is None:
+                total_results = data["total_results"]
+                print(f"Total observations to fetch: {total_results}")
 
-        observations.extend(data["results"])
-        print(f"Observations récupérées jusqu'à présent : {len(observations)}")
+            observations.extend(data["results"])
+            print(f"Observations fetched so far: {len(observations)}")
 
-        if len(observations) >= total_results:
+            if len(observations) >= total_results:
+                break
+
+            page += 1
+            time.sleep(1)  # Respect API rate limits
+
+        except Exception as e:
+            print(f"Error fetching observations (page {page}): {str(e)}")
             break
-
-        page += 1
-        time.sleep(1)  # Respecter les limites de l'API
 
     return observations
 
-# --- Fonction pour extraire les données OSM des observations ---
+# --- Function to extract OSM data from observations ---
 def extract_osm_data(observations):
     osm_data = []
     for obs in observations:
@@ -59,22 +71,19 @@ def extract_osm_data(observations):
                         "obs_id": obs["id"],
                         "osm_url": osm_url
                     })
-    print(f"Nombre total d'observations avec champ OSM : {len(osm_data)}")  # Debug
+    print(f"Total observations with OSM field: {len(osm_data)}")
     return osm_data
 
-# --- Fonction pour transformer les données OSM ---
+# --- Function to transform OSM data ---
 def transform_osm_data(osm_data):
     if not osm_data:
-        print("Aucune donnée OSM à transformer.")
+        print("No OSM data to transform.")
         return pd.DataFrame(columns=["osm_element", "osm_id", "osm_url", "obs_ids", "obs_url"])
 
     df = pd.DataFrame(osm_data)
-
-    # Supprimer les doublons et forcer une copie
     df_unique = df.drop_duplicates(subset=["osm_url"]).copy()
-    print(f"Nombre d'URLs OSM uniques : {len(df_unique)}")  # Debug
+    print(f"Number of unique OSM URLs: {len(df_unique)}")
 
-    # Extraire osm_element et osm_id
     def parse_osm_url(url):
         parts = url.split("/")
         osm_element = parts[-2]
@@ -85,12 +94,10 @@ def transform_osm_data(osm_data):
         lambda x: pd.Series(parse_osm_url(x))
     )
 
-    # Regrouper par osm_url et agréger les obs_id (triés par ordre ascendant)
     df_grouped = df.groupby("osm_url").agg({
         "obs_id": lambda x: ";".join(map(str, sorted(x, key=int)))
     }).reset_index()
 
-    # Fusionner avec les données uniques
     df_final = pd.merge(
         df_unique[["osm_url", "osm_element", "osm_id"]],
         df_grouped,
@@ -98,43 +105,45 @@ def transform_osm_data(osm_data):
         how="left"
     )
 
-    # Renommer la colonne obs_id en obs_ids
     df_final = df_final.rename(columns={"obs_id": "obs_ids"})
-
-    # Ajouter la colonne obs_url
     df_final["obs_url"] = df_final["obs_ids"].apply(
         lambda x: f"https://www.inaturalist.org/observations?verifiable=any&id={x.replace(';', ',')}"
     )
-
-    # Réorganiser les colonnes dans l'ordre souhaité
     df_final = df_final[["osm_element", "osm_id", "osm_url", "obs_ids", "obs_url"]]
-    print(f"Nombre de lignes dans le DataFrame final : {len(df_final)}")  # Debug
-
+    print(f"Number of rows in final DataFrame: {len(df_final)}")
     return df_final
 
-# --- Exécution ---
+# --- Execution ---
 if __name__ == "__main__":
-    print("=== Début de l'exécution du script ===")
-    print("Récupération des observations avec le champ OSM...")
-    observations = fetch_observations_with_osm_field()
+    print("=== Script execution started ===")
 
-    print("\nExtraction des données OSM...")
-    osm_data = extract_osm_data(observations)
+    try:
+        print("Fetching observations with OSM field...")
+        observations = fetch_observations_with_osm_field()
 
-    if not osm_data:
-        print("Aucune observation avec le champ OSM trouvée.")
-        # Créer des fichiers CSV vides avec les en-têtes
-        pd.DataFrame(columns=["obs_id", "osm_url"]).to_csv(CSV_INPUT, index=False)
-        pd.DataFrame(columns=["osm_element", "osm_id", "osm_url", "obs_ids", "obs_url"]).to_csv(CSV_OUTPUT, index=False)
-    else:
-        # Sauvegarder le CSV intermédiaire
-        df_osm = pd.DataFrame(osm_data)
-        df_osm.to_csv(CSV_INPUT, index=False)
-        print(f"Fichier intermédiaire '{CSV_INPUT}' généré avec {len(df_osm)} lignes.")
+        print("\nExtracting OSM data...")
+        osm_data = extract_osm_data(observations)
 
-        # Transformer les données
-        df_final = transform_osm_data(osm_data)
-        df_final.to_csv(CSV_OUTPUT, index=False)
-        print(f"Fichier final '{CSV_OUTPUT}' généré avec {len(df_final)} lignes.")
+        if not osm_data:
+            print("No observations with OSM field found.")
+            # Create empty CSV files with headers
+            pd.DataFrame(columns=["obs_id", "osm_url"]).to_csv(CSV_INPUT, index=False)
+            pd.DataFrame(columns=["osm_element", "osm_id", "osm_url", "obs_ids", "obs_url"]).to_csv(CSV_OUTPUT, index=False)
+            write_to_log(0, 0)  # Log with 0 observations and 0 OSM objects
+        else:
+            df_osm = pd.DataFrame(osm_data)
+            df_osm.to_csv(CSV_INPUT, index=False)
+            print(f"Intermediate file '{CSV_INPUT}' generated with {len(df_osm)} rows.")
 
-    print("=== Fin de l'exécution du script ===")
+            df_final = transform_osm_data(osm_data)
+            df_final.to_csv(CSV_OUTPUT, index=False)
+            print(f"Final file '{CSV_OUTPUT}' generated with {len(df_final)} rows.")
+
+            # Write to log
+            write_to_log(len(df_osm), len(df_final))
+
+    except Exception as e:
+        print(f"CRITICAL ERROR: {str(e)}")
+        write_to_log(0, 0)  # Log with 0 in case of error
+
+    print("=== Script execution finished ===")
