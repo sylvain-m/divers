@@ -3,182 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau des observations iNaturalist par identifiant OSM v16h</title>
+    <title>iNat 2 OSM</title>
     <style>
-        :root {
-            --bg-color: #1e1e1e;
-            --text-color: #e0e0e0;
-            --input-bg: #2d2d2d;
-            --input-text: #ffffff;
-            --border-color: #444;
-            --button-bg: #3a7ca5;
-            --button-hover: #2d6382;
-            --result-bg: #1a1a1a;
-            --table-header: #2d2d2d;
-        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            margin: 0;
             padding: 20px;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-size: 14px; /* Taille de police légèrement réduite */
         }
         h1 {
-            color: var(--text-color);
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .log-info {
             text-align: center;
             margin-bottom: 20px;
+            color: #a0a0a0;
+            font-size: 0.9em;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background-color: var(--result-bg);
-            border-radius: 4px;
-            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         th, td {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #333;
+            max-width: 20%; /* Limite chaque colonne à 20% de la largeur */
+            word-wrap: break-word; /* Permet le retour à la ligne pour les textes longs */
+            overflow-wrap: break-word;
         }
         th {
-            background-color: var(--table-header);
+            background-color: #2d2d2d;
+            color: #ffffff;
             font-weight: bold;
         }
-        tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.02);
-        }
         tr:hover {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #2a2a2a;
         }
-        .explanation {
-            margin-top: 30px;
-            padding: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            background-color: var(--result-bg);
+        a {
+            color: #4da6ff;
+            text-decoration: none;
         }
-        .explanation h2 {
-            color: var(--text-color);
-            margin-top: 0;
+        a:hover {
+            text-decoration: underline;
         }
-        .loading {
-            text-align: center;
-            padding: 20px;
-            font-style: italic;
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <h1>Tableau des observations iNaturalist par identifiant OSM</h1>
-
-    <div id="tableContainer">
-        <div class="loading">Chargement des données...</div>
-    </div>
-
-    <div class="explanation">
-        <h2>À propos de cette page</h2>
-        <p>
-            Cette page affiche un tableau récapitulatif de toutes les observations iNaturalist
-            associées à un identifiant OpenStreetMap (OSM).
-        </p>
-        <p>
-            <strong>Colonnes :</strong>
-            <ul>
-                <li><strong>osm</strong> : URL du nœud OSM associé aux observations.</li>
-                <li><strong>observations</strong> : Liste des identifiants des observations iNaturalist, séparés par des points-virgules.</li>
-            </ul>
-        </p>
+    <div class="container">
+        <h1>iNat 2 OSM</h1>
+        <div id="logInfo" class="log-info">Chargement du log...</div>
+        <table id="osmTable">
+            <thead>
+                <tr>
+                    <th>OSM Element</th>
+                    <th>OSM ID</th>
+                    <th>OSM URL</th>
+                    <th>iNat Observations IDs</th>
+                    <th>iNat Observations URL</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+            </tbody>
+        </table>
     </div>
 
     <script>
-        async function fetchObservationsByOSMField() {
-            const tableContainer = document.getElementById('tableContainer');
-            tableContainer.innerHTML = '<div class="loading">Chargement des données...</div>';
-
-            try {
-                // Étape 1: Récupérer les valeurs uniques du champ "OpenStreetMap (OSM)"
-                const fieldValuesUrl = new URL('https://api.inaturalist.org/v1/observation_field_values');
-                fieldValuesUrl.searchParams.append('field_id', '17260');
-                fieldValuesUrl.searchParams.append('per_page', '200');
-
-                const fieldValuesResponse = await fetch(fieldValuesUrl);
-                if (!fieldValuesResponse.ok) {
-                    throw new Error(`Erreur lors de la récupération des valeurs de champ OSM: ${fieldValuesResponse.status}`);
+        // Fonction pour charger le fichier de log et afficher la dernière ligne
+        fetch('inat_2_csv_log.txt')
+            .then(response => response.text())
+            .then(data => {
+                const lines = data.split('\n').filter(line => line.trim() !== '');
+                if (lines.length > 0) {
+                    const lastLine = lines[lines.length - 1];
+                    document.getElementById('logInfo').textContent = lastLine;
+                } else {
+                    document.getElementById('logInfo').textContent = "Aucune information de log disponible.";
                 }
-                const fieldValuesData = await fieldValuesResponse.json();
-                const osmFieldValues = fieldValuesData.results;
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du log:', error);
+                document.getElementById('logInfo').textContent = "Erreur lors du chargement du log.";
+            });
 
-                if (!osmFieldValues || osmFieldValues.length === 0) {
-                    tableContainer.innerHTML = '<div class="loading">Aucune valeur de champ OSM trouvée.</div>';
-                    return;
+        // Charger le fichier CSV et afficher son contenu dans le tableau
+        fetch('osm_inat.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n');
+                const tableBody = document.getElementById('tableBody');
+
+                // Parcourir les lignes du CSV (en excluant l'en-tête)
+                for (let i = 1; i < rows.length; i++) {
+                    if (rows[i].trim() === '') continue; // Ignorer les lignes vides
+
+                    const rowData = rows[i].split(',');
+                    const row = document.createElement('tr');
+
+                    // osm_element
+                    const osmElementCell = document.createElement('td');
+                    osmElementCell.textContent = rowData[0].replace(/"/g, '').trim();
+                    row.appendChild(osmElementCell);
+
+                    // osm_id
+                    const osmIdCell = document.createElement('td');
+                    osmIdCell.textContent = rowData[1].replace(/"/g, '').trim();
+                    row.appendChild(osmIdCell);
+
+                    // osm_url (lien cliquable)
+                    const osmUrlCell = document.createElement('td');
+                    const osmUrl = rowData[2].replace(/"/g, '').trim();
+                    const osmUrlLink = document.createElement('a');
+                    osmUrlLink.href = osmUrl;
+                    osmUrlLink.textContent = osmUrl;
+                    osmUrlLink.target = "_blank";
+                    osmUrlCell.appendChild(osmUrlLink);
+                    row.appendChild(osmUrlCell);
+
+                    // obs_ids
+                    const obsIdsCell = document.createElement('td');
+                    obsIdsCell.textContent = rowData[3].replace(/"/g, '').trim();
+                    row.appendChild(obsIdsCell);
+
+                    // obs_url (lien cliquable)
+                    const obsUrlCell = document.createElement('td');
+                    const obsUrl = rowData[4].replace(/"/g, '').trim();
+                    const obsUrlLink = document.createElement('a');
+                    obsUrlLink.href = obsUrl;
+                    obsUrlLink.textContent = obsUrl;
+                    obsUrlLink.target = "_blank";
+                    obsUrlCell.appendChild(obsUrlLink);
+                    row.appendChild(obsUrlCell);
+
+                    tableBody.appendChild(row);
                 }
-
-                // Étape 2: Pour chaque valeur OSM, récupérer les observations associées
-                const osmMap = {};
-                for (const fieldValue of osmFieldValues) {
-                    const osmUrl = fieldValue.value;
-                    const observationsUrl = new URL('https://api.inaturalist.org/v1/observations');
-                    observationsUrl.searchParams.append('field:OpenStreetMap (OSM)', osmUrl);
-                    observationsUrl.searchParams.append('verifiable', 'any');
-                    observationsUrl.searchParams.append('per_page', '200');
-
-                    const observationsResponse = await fetch(observationsUrl);
-                    if (!observationsResponse.ok) {
-                        console.error(`Erreur lors de la récupération des observations pour ${osmUrl}`);
-                        continue;
-                    }
-                    const observationsData = await observationsResponse.json();
-                    const observations = observationsData.results;
-
-                    if (observations && observations.length > 0) {
-                        const obsIds = observations.map(obs => obs.id);
-                        osmMap[osmUrl] = obsIds;
-                    }
-                }
-
-                // On génère le tableau HTML
-                if (Object.keys(osmMap).length === 0) {
-                    tableContainer.innerHTML = '<div class="loading">Aucune observation trouvée avec un champ OSM.</div>';
-                    return;
-                }
-
-                let tableHTML = `
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>OSM</th>
-                                <th>Observations</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                `;
-
-                for (const [osmUrl, obsIds] of Object.entries(osmMap)) {
-                    tableHTML += `
-                        <tr>
-                            <td><a href="${osmUrl}" style="color: #3a7ca5;" target="_blank">${osmUrl}</a></td>
-                            <td>${obsIds.join(';')}</td>
-                        </tr>
-                    `;
-                }
-
-                tableHTML += `
-                        </tbody>
-                    </table>
-                `;
-
-                tableContainer.innerHTML = tableHTML;
-            } catch (error) {
-                tableContainer.innerHTML = `<div class="loading">Erreur : ${error.message}</div>`;
-                console.error(error);
-            }
-        }
-
-        // Chargement automatique au démarrage
-        document.addEventListener('DOMContentLoaded', fetchObservationsByOSMField);
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du CSV:', error);
+                const tableBody = document.getElementById('tableBody');
+                const errorRow = document.createElement('tr');
+                const errorCell = document.createElement('td');
+                errorCell.colSpan = 5;
+                errorCell.textContent = 'Erreur lors du chargement des données. Vérifiez que le fichier osm_inat.csv existe et est accessible.';
+                errorCell.style.color = '#ff6b6b';
+                errorRow.appendChild(errorCell);
+                tableBody.appendChild(errorRow);
+            });
     </script>
 </body>
 </html>
