@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Table CSS -->
     <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
+    <!-- Font Awesome pour l'icône iNaturalist -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,11 +37,11 @@
         /* Thème sombre pour Bootstrap */
         .table {
             color: #e0e0e0;
-            background-color: #2d2d2d;
+            background-color: #1e1e1e;
             border-color: #333;
         }
         .table thead th {
-            background-color: #1e1e1e;
+            background-color: #2d2d2d;
             color: #ffffff;
             border-bottom: 1px solid #333;
             position: sticky;
@@ -48,6 +50,7 @@
         }
         .table tbody td {
             border-bottom: 1px solid #333;
+            background-color: #1e1e1e;
         }
         .table-hover tbody tr:hover {
             background-color: #2a2a2a;
@@ -59,11 +62,20 @@
         a:hover {
             text-decoration: underline;
         }
-        /* Limiter la largeur des colonnes */
-        .table td, .table th {
-            max-width: 20%;
-            word-break: break-all;
-            overflow-wrap: anywhere;
+        /* Badges verts pour les IDs */
+        .id-badge {
+            background-color: #74ac00;
+            color: #ffffff;
+            margin: 2px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.85em;
+        }
+        /* Icône iNaturalist */
+        .inat-icon {
+            color: #4da6ff;
+            font-size: 1.2em;
         }
         /* Conteneur du tableau avec défilement */
         .table-container {
@@ -91,11 +103,9 @@
             >
                 <thead>
                     <tr>
-                        <th data-field="osm_element">OSM Element</th>
-                        <th data-field="osm_id">OSM ID</th>
-                        <th data-field="osm_url">OSM URL</th>
+                        <th data-field="osm_link">OSM Element & ID</th>
                         <th data-field="obs_ids">iNat Observations IDs</th>
-                        <th data-field="obs_url">iNat Observations URL</th>
+                        <th data-field="obs_url">iNat</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -143,41 +153,43 @@
                     const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
                     const row = document.createElement('tr');
 
-                    // osm_element
-                    const osmElementCell = document.createElement('td');
-                    osmElementCell.textContent = rowData[0] ? rowData[0].replace(/"/g, '').trim() : '';
-                    row.appendChild(osmElementCell);
-
-                    // osm_id
-                    const osmIdCell = document.createElement('td');
-                    osmIdCell.textContent = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
-                    row.appendChild(osmIdCell);
-
-                    // osm_url (lien cliquable)
-                    const osmUrlCell = document.createElement('td');
+                    // osm_element + osm_id (lien vers osm_url)
+                    const osmLinkCell = document.createElement('td');
+                    const osmElement = rowData[0] ? rowData[0].replace(/"/g, '').trim() : '';
+                    const osmId = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
                     const osmUrl = rowData[2] ? rowData[2].replace(/"/g, '').trim() : '';
-                    const osmUrlLink = document.createElement('a');
-                    osmUrlLink.href = osmUrl;
-                    osmUrlLink.textContent = osmUrl;
-                    osmUrlLink.target = "_blank";
-                    osmUrlCell.appendChild(osmUrlLink);
-                    row.appendChild(osmUrlCell);
+                    const osmLink = document.createElement('a');
+                    osmLink.href = osmUrl;
+                    osmLink.textContent = `${osmElement} ${osmId}`;
+                    osmLink.target = "_blank";
+                    osmLinkCell.appendChild(osmLink);
+                    row.appendChild(osmLinkCell);
 
-                    // obs_ids (retour à la ligne forcé)
+                    // obs_ids (badges verts pour chaque ID)
                     const obsIdsCell = document.createElement('td');
-                    obsIdsCell.textContent = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
+                    const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
+                    if (obsIds) {
+                        const ids = obsIds.split(';');
+                        ids.forEach(id => {
+                            const badge = document.createElement('span');
+                            badge.className = 'id-badge';
+                            badge.textContent = id;
+                            obsIdsCell.appendChild(badge);
+                        });
+                    }
                     row.appendChild(obsIdsCell);
 
-                    // obs_url (lien cliquable avec tous les IDs)
+                    // obs_url (icône iNaturalist)
                     const obsUrlCell = document.createElement('td');
-                    const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
+                    const obsIdsForUrl = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
                     const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
-                    const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIds.replace(/;/g, ',')}`;
-                    const obsUrlLink = document.createElement('a');
-                    obsUrlLink.href = finalObsUrl;
-                    obsUrlLink.textContent = finalObsUrl;
-                    obsUrlLink.target = "_blank";
-                    obsUrlCell.appendChild(obsUrlLink);
+                    const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl.replace(/;/g, ',')}`;
+                    const iconLink = document.createElement('a');
+                    iconLink.href = finalObsUrl;
+                    iconLink.target = "_blank";
+                    iconLink.className = 'inat-icon';
+                    iconLink.innerHTML = '<i class="fab fa-inaturalist"></i>';
+                    obsUrlCell.appendChild(iconLink);
                     row.appendChild(obsUrlCell);
 
                     tableBody.appendChild(row);
@@ -188,7 +200,7 @@
                 const tableBody = document.getElementById('tableBody');
                 const errorRow = document.createElement('tr');
                 const errorCell = document.createElement('td');
-                errorCell.colSpan = 5;
+                errorCell.colSpan = 3;
                 errorCell.textContent = 'Erreur lors du chargement des données. Vérifiez que le fichier osm_inat.csv existe et est accessible.';
                 errorCell.style.color = '#ff6b6b';
                 errorRow.appendChild(errorCell);
