@@ -81,6 +81,7 @@
             width: 32px;
             height: 32px;
             border-radius: 4px;
+            margin-right: 8px;
         }
         /* Conteneur du tableau avec défilement */
         .table-container {
@@ -179,7 +180,7 @@
                     osmLinkCell.appendChild(osmLink);
                     row.appendChild(osmLinkCell);
 
-                    // iNat Link (image iNaturalist)
+                    // iNat Link (image iNaturalist + texte "{n} Observation(s)")
                     const inatLinkCell = document.createElement('td');
                     const obsIdsForUrl = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
                     const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
@@ -187,11 +188,20 @@
                     const imgLink = document.createElement('a');
                     imgLink.href = finalObsUrl;
                     imgLink.target = "_blank";
+
+                    // Ajouter l'icône iNaturalist
                     const img = document.createElement('img');
                     img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
                     img.className = 'inat-img';
                     img.alt = 'iNaturalist';
                     imgLink.appendChild(img);
+
+                    // Compter le nombre d'IDs dans obsIdsForUrl
+                    const obsIdsArray = obsIdsForUrl.split(';').filter(id => id.trim() !== '');
+                    const obsCount = obsIdsArray.length;
+                    const obsText = document.createTextNode(`${obsCount} Observation${obsCount > 1 ? 's' : ''}`);
+                    imgLink.appendChild(obsText);
+
                     inatLinkCell.appendChild(imgLink);
                     row.appendChild(inatLinkCell);
 
@@ -201,6 +211,7 @@
                     if (obsIds) {
                         const ids = obsIds.split(';');
                         ids.forEach(id => {
+                            if (id.trim() === '') return;
                             const badgeLink = document.createElement('a');
                             badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
                             badgeLink.target = "_blank";
