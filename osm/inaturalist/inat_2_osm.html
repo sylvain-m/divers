@@ -18,17 +18,31 @@
             text-align: center;
             margin-bottom: 10px;
             font-size: 2em;
+            position: sticky;
+            top: 0;
+            background-color: #1e1e1e;
+            z-index: 100;
+            padding: 10px 0;
         }
         .log-info {
             text-align: center;
             margin-bottom: 20px;
             color: #a0a0a0;
             font-size: 0.9em;
+            position: sticky;
+            top: 60px;
+            background-color: #1e1e1e;
+            z-index: 100;
+            padding: 5px 0;
+        }
+        .table-container {
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         th, td {
@@ -36,13 +50,16 @@
             text-align: left;
             border-bottom: 1px solid #333;
             max-width: 20%;
-            word-break: break-all; /* Force le retour à la ligne même sans espaces */
+            word-break: break-all;
             overflow-wrap: anywhere;
         }
         th {
             background-color: #2d2d2d;
             color: #ffffff;
             font-weight: bold;
+            position: sticky;
+            top: 100px;
+            z-index: 10;
         }
         tr:hover {
             background-color: #2a2a2a;
@@ -50,7 +67,7 @@
         a {
             color: #4da6ff;
             text-decoration: none;
-            word-break: break-all; /* Force le retour à la ligne pour les liens */
+            word-break: break-all;
         }
         a:hover {
             text-decoration: underline;
@@ -65,20 +82,22 @@
     <div class="container">
         <h1>iNat 2 OSM</h1>
         <div id="logInfo" class="log-info">Chargement du log...</div>
-        <table id="osmTable">
-            <thead>
-                <tr>
-                    <th>OSM Element</th>
-                    <th>OSM ID</th>
-                    <th>OSM URL</th>
-                    <th>iNat Observations IDs</th>
-                    <th>iNat Observations URL</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                <!-- Le contenu sera chargé dynamiquement via JavaScript -->
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table id="osmTable">
+                <thead>
+                    <tr>
+                        <th>OSM Element</th>
+                        <th>OSM ID</th>
+                        <th>OSM URL</th>
+                        <th>iNat Observations IDs</th>
+                        <th>iNat Observations URL</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
@@ -108,7 +127,7 @@
 
                 // Parcourir les lignes du CSV (en excluant l'en-tête)
                 for (let i = 1; i < rows.length; i++) {
-                    if (rows[i].trim() === '') continue; // Ignorer les lignes vides
+                    if (rows[i].trim() === '') continue;
 
                     // Utiliser une expression régulière pour gérer les guillemets et les virgules dans les CSV
                     const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
@@ -143,7 +162,6 @@
                     const obsUrlCell = document.createElement('td');
                     const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
                     const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
-                    // Si obs_url est vide, on le reconstruit à partir des obs_ids
                     const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIds.replace(/;/g, ',')}`;
                     const obsUrlLink = document.createElement('a');
                     obsUrlLink.href = finalObsUrl;
