@@ -30,12 +30,14 @@ def build_overpass_query(df):
     if not query_parts:
         return None
 
-    return f"""[out:json];
+    return """[out:json];
 (
-{";\n".join(query_parts)}
+{query_elements}
 );
 out geom meta;
-"""
+""".format(query_elements=";\n".join(query_parts))
+
+
 
 def fetch_all_osm_elements(df):
     query = build_overpass_query(df)
