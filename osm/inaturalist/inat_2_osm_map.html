@@ -124,7 +124,7 @@
                 document.getElementById('osm-count').innerHTML =
                     `<a href="https://www.openstreetmap.org" target="_blank" class="badge-custom">${osmElementCount}</a>`;
                 document.getElementById('obs-count').innerHTML =
-                    `<a href="https://www.inaturalist.org" target="_blank" class="badge-custom">${inatObsCount}</a>`;
+                    `<a href="https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:OpenStreetMap%20(OSM)" target="_blank" class="badge-custom">${inatObsCount}</a>`;
 
                 // Add markers to the map
                 data.features.forEach(feature => {
