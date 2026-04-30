@@ -103,10 +103,10 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
     <script>
-        // Custom icon for trees
+        // Custom icon for all markers
         const treeIcon = L.icon({
             iconUrl: '../tree.png',
-            iconSize: [32, 32], // Adjust size as needed
+            iconSize: [32, 32],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
         });
@@ -141,12 +141,9 @@
                     const lon = coords[0];
                     const props = feature.properties;
 
-                    // Check if the feature is a tree
-                    const isTree = props.tags && props.tags.natural === 'tree';
-
-                    // Create marker with custom icon if it's a tree, otherwise use default
+                    // Use the custom icon for all markers
                     const marker = L.marker([lat, lon], {
-                        icon: isTree ? treeIcon : undefined
+                        icon: treeIcon
                     }).bindPopup(createPopupContent(props));
 
                     markers.addLayer(marker);
