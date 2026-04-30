@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iNat 2 OSM</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <!-- Bootstrap CSS pour les badges -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        #header h1 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        #header p {
+            margin: 0;
+            color: #666;
+        }
+        #map {
+            height: calc(100vh - 120px);
+            width: 100%;
+        }
+        .popup-content {
+            padding: 10px;
+            max-width: 300px;
+        }
+        .popup-content table {
+            font-size: 12px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .popup-content th {
+            text-align: left;
+            padding: 2px 5px;
+            background-color: #f1f1f1;
+        }
+        .popup-content td {
+            padding: 2px 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .osm-logo {
+            width: 128px;
+            height: auto;
+            vertical-align: middle;
+        }
+        .inat-logo {
+            width: 128px;
+            height: auto;
+            vertical-align: middle;
+        }
+        .badge {
+            margin: 2px;
+            display: inline-block;
+        }
+        .obs-count {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>iNat 2 OSM</h1>
+        <p>OSM elements linked with iNaturalist Observations</p>
+    </div>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        // Initialisation de la carte
+        const map = L.map('map').setView([46.603354, 1.888334], 6); // Centre sur la France
+
+        // Ajout du fond de carte OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Initialisation du groupe de clusters
+        const markers = L.markerClusterGroup();
+
+        // Chargement du GeoJSON
+        fetch('osm_inat.geojson')
+            .then(response => response.json())
+            .then(data => {
+                // Création des marqueurs pour chaque feature
+                data.features.forEach(feature => {
+                    const coords = feature.geometry.coordinates;
+                    const lat = coords[1];
+                    const lon = coords[0];
+                    const props = feature.properties;
+
+                    // Création du contenu du popup
+                    const popupContent = createPopupContent(props);
+
+                    // Création du marqueur
+                    const marker = L.marker([lat, lon]).bindPopup(popupContent);
+                    markers.addLayer(marker);
+                });
+
+                // Ajout des marqueurs à la carte
+                map.addLayer(markers);
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du GeoJSON:', error);
+                // En cas d'erreur, on affiche un message
+                const errorMarker = L.marker([46.603354, 1.888334]).bindPopup(
+                    '<div class="popup-content">' +
+                    '<p style="color:red;">Erreur de chargement des données GeoJSON.</p>' +
+                    '</div>'
+                );
+                errorMarker.addTo(map);
+            });
+
+        // Fonction pour créer le contenu du popup
+        function createPopupContent(props) {
+            // Création du lien OSM
+            const osmLink = `https://www.openstreetmap.org/${props.type}/${props.id}`;
+            const osmIcon = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OSM Logo">';
+
+            // Création de la liste des tags sous forme de tableau
+            let tagsTable = '<table><tr><th>Clé</th><th>Valeur</th></tr>';
+            for (const [key, value] of Object.entries(props.tags)) {
+                tagsTable += `<tr><td>${key}</td><td>${value}</td></tr>`;
+            }
+            tagsTable += '</table>';
+
+            // Création des badges pour les observations
+            const obsIds = props.obs_ids.split(';');
+            let obsBadges = '';
+            obsIds.forEach(obsId => {
+                obsBadges += `<a href="https://www.inaturalist.org/observations/${obsId}" target="_blank" class="badge bg-success">${obsId}</a>`;
+            });
+
+            // Création du lien iNaturalist
+            const inatIcon = '<img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">';
+            const inatLink = `<a href="${props.obs_url}" target="_blank">${inatIcon} All iNat Obs. Link</a>`;
+
+            // Assemblage du contenu
+            return `
+                <div class="popup-content">
+                    <div style="margin-bottom: 10px;">
+                        <a href="${osmLink}" target="_blank">${osmIcon} ${props.type}/${props.id}</a>
+                    </div>
+                    <div class="obs-count">Nb. Observation(s) : ${obsIds.length}</div>
+                    <div style="margin-bottom: 10px;">${obsBadges}</div>
+                    <div style="margin-bottom: 10px;">${inatLink}</div>
+                    <div>${tagsTable}</div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
