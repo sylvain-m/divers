@@ -103,6 +103,14 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
     <script>
+        // Custom icon for trees
+        const treeIcon = L.icon({
+            iconUrl: 'osm/tree.png',
+            iconSize: [32, 32], // Adjust size as needed
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
         const map = L.map('map').setView([46.603354, 1.888334], 6);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -132,8 +140,16 @@
                     const lat = coords[1];
                     const lon = coords[0];
                     const props = feature.properties;
-                    const popupContent = createPopupContent(props);
-                    markers.addLayer(L.marker([lat, lon]).bindPopup(popupContent));
+
+                    // Check if the feature is a tree
+                    const isTree = props.tags && props.tags.natural === 'tree';
+
+                    // Create marker with custom icon if it's a tree, otherwise use default
+                    const marker = L.marker([lat, lon], {
+                        icon: isTree ? treeIcon : undefined
+                    }).bindPopup(createPopupContent(props));
+
+                    markers.addLayer(marker);
                 });
                 map.addLayer(markers);
             });
