@@ -1,8 +1,8 @@
-name: Run iNat to OSM CSV Script Daily
+name: Run iNat to OSM Scripts Daily
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 heure de Paris (été)
+    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 Paris time (summer)
   workflow_dispatch:
 
 jobs:
@@ -22,16 +22,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas
 
-      - name: Run the script
+      - name: Run inat_2_osm.py
+        id: run_inat_to_osm
         run: |
           cd osm/inaturalist
           python inat_2_osm.py
           cd ../..
+        continue-on-error: false  # Arrête le workflow si cette étape échoue
+
+      - name: Run inat_2_osm_geojson.py (if previous step succeeded)
+        if: steps.run_inat_to_osm.outcome == 'success'
+        run: |
+          cd osm/inaturalist
+          python inat_2_osm_geojson.py
+          cd ../..
 
       - name: Commit and push changes
+        if: steps.run_inat_to_osm.outcome == 'success'  # Commit uniquement si tout a réussi
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add osm/inaturalist/inat_osm.csv osm/inaturalist/osm_inat.csv osm/inaturalist/inat_2_csv_log.txt
-          git commit -m "Mise à jour automatique des CSV et du log (exécution quotidienne)" --allow-empty
+          git add osm/inaturalist/inat_osm.csv osm/inaturalist/osm_inat.csv osm/inaturalist/inat_2_csv_log.txt osm/inaturalist/osm_inat.geojson
+          git commit -m "Automated update: iNat to OSM CSV and GeoJSON (daily run)" --allow-empty
           git push
