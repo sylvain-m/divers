@@ -23,6 +23,10 @@
         #header h1 {
             margin-bottom: 5px;
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
         #header p {
             margin: 0;
@@ -71,12 +75,29 @@
             align-items: center;
             gap: 8px;
         }
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
     <div id="header">
-        <h1>iNat 2 OSM</h1>
-        <p>OSM elements linked with iNaturalist Observations</p>
+        <h1>
+            <a href="https://www.inaturalist.org" target="_blank">
+                <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">
+            </a>
+            iNat 2 OSM
+            <a href="https://www.openstreetmap.org" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OpenStreetMap Logo">
+            </a>
+        </h1>
+        <p>
+            OSM elements linked with iNaturalist Observations |
+            <span id="osm-count"></span> OSM elements |
+            <span id="obs-count"></span> iNaturalist Observations
+        </p>
     </div>
     <div id="map"></div>
 
@@ -94,6 +115,20 @@
         fetch('osm_inat.geojson')
             .then(response => response.json())
             .then(data => {
+                // Count OSM elements and iNaturalist observations
+                const osmElementCount = data.features.length;
+                const allObsIds = data.features.flatMap(feature =>
+                    feature.properties.obs_ids.split(';')
+                );
+                const inatObsCount = allObsIds.length;
+
+                // Update header counts
+                document.getElementById('osm-count').innerHTML =
+                    `<a href="https://www.openstreetmap.org" target="_blank" class="badge-custom">${osmElementCount}</a>`;
+                document.getElementById('obs-count').innerHTML =
+                    `<a href="https://www.inaturalist.org" target="_blank" class="badge-custom">${inatObsCount}</a>`;
+
+                // Add markers to the map
                 data.features.forEach(feature => {
                     const coords = feature.geometry.coordinates;
                     const lat = coords[1];
