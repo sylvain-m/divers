@@ -155,7 +155,7 @@
             const osmLink = `https://www.openstreetmap.org/${props.type}/${props.id}`;
             const osmIcon = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OSM Logo">';
 
-            let tagsTable = '<table><tr><th>Key</th><th>Value</th></tr>';
+            let tagsTable = 'OSM Tags :<br><table><tr><th>Key</th><th>Value</th></tr>';
             for (const [key, value] of Object.entries(props.tags)) {
                 tagsTable += `<tr><td>${key}</td><td>${value}</td></tr>`;
             }
