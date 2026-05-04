@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "name": "sequences_uav_drone",
   "metadata": {
-    "export_date": "2026-05-03T05:59:11.234850"
+    "export_date": "2026-05-04T06:03:12.287689"
   },
   "features": [
     {
@@ -87,12 +87,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/16f784d6-864a-4495-8a2d-4db93cca0aff/items/92d15979-11fd-4a25-8aa3-1e20b6dc9eba",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -108,6 +102,106 @@
         "coordinates": [
           5.68967325,
           45.223343944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "f197596c-29e1-4ccb-a9ea-54d46696b9d7",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 5.772481361,
+        "bbox.ymin": 46.21119875,
+        "bbox.xmax": 5.772481361,
+        "bbox.ymax": 46.21119875,
+        "collection": "036a4c37-7cd5-4ae9-bef9-2e497f943c7d",
+        "created": "2025-06-05T10:50:12.963Z",
+        "updated": "2025-06-05T10:50:12.963Z",
+        "datetime": "2025-06-05T10:12:33",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 33009664,
+        "original_file:name": "DJI_20250605121233_0007_D.JPG",
+        "panoramax:horizontal_pixel_density": 40,
+        "quality:horizontal_accuracy": null,
+        "view:azimuth": null,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "M3M",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 12.29,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          14400,
+          7200
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/f1/97/59/6c/29e1-4ccb-a9ea-54d46696b9d7.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/f1/97/59/6c/29e1-4ccb-a9ea-54d46696b9d7/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/f1/97/59/6c/29e1-4ccb-a9ea-54d46696b9d7/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "52e28607-f1c4-4f29-a41b-db416f865518",
+            "name": "Sylvain M",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "Sylvain M"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.772481361,
+          46.21119875
         ]
       }
     },
@@ -192,12 +286,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/25060e69-4375-449d-8396-fbc108005f14/items/9fc44acc-26a1-4ce8-970e-f51a11912ea0",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -299,12 +387,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/14341854-85e4-422b-9e28-f8b26ed789cb/items/a60c1f33-37b5-4513-9051-c6c27ba02a3c",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -404,12 +486,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/c1f556cb-4bbf-4124-a0ec-4f7b17456bba/items/8f8403b2-72e6-4eb3-bd06-532a286c5e11",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -511,12 +587,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/f154b0af-bede-474e-949f-5a33fd746900/items/fda609bf-7e29-4ace-8174-186bc5c3db98",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -532,6 +602,206 @@
         "coordinates": [
           0.464839333,
           48.689631111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ae359586-004d-432e-b544-471a4c95916d",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 2.958072083,
+        "bbox.ymin": 49.388289667,
+        "bbox.xmax": 2.958072083,
+        "bbox.ymax": 49.388289667,
+        "collection": "0097c92a-6822-4c2a-9abb-0b395392a9a8",
+        "created": "2025-06-19T12:06:10.409Z",
+        "updated": "2025-06-19T12:06:10.409Z",
+        "datetime": "2025-06-06T08:16:56",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 14879525,
+        "original_file:name": "DJI_0647.JPG",
+        "panoramax:horizontal_pixel_density": 23,
+        "quality:horizontal_accuracy": null,
+        "view:azimuth": null,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC3411",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.3800001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          8192,
+          4096
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/ae/35/95/86/004d-432e-b544-471a4c95916d.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/ae/35/95/86/004d-432e-b544-471a4c95916d/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/ae/35/95/86/004d-432e-b544-471a4c95916d/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "84a337b7-9acf-4b4b-a7be-276c3fc5075b",
+            "name": "ONF Drone DT Seine-Nord",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "ONF Drone DT Seine-Nord"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.958072083,
+          49.388289667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6ba98782-3495-4bb9-8123-7b4f509c38a0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 1.4001105,
+        "bbox.ymin": 49.394566194,
+        "bbox.xmax": 1.4001105,
+        "bbox.ymax": 49.394566194,
+        "collection": "3afc954e-c802-4b72-b1ee-ce91a8e1950b",
+        "created": "2025-07-03T19:08:00.296Z",
+        "updated": "2025-07-03T19:08:00.296Z",
+        "datetime": "2025-07-03T12:07:59",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 49025024,
+        "original_file:name": "DJI_20250703140759_0014_D.JPG",
+        "panoramax:horizontal_pixel_density": 40,
+        "quality:horizontal_accuracy": null,
+        "view:azimuth": null,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "M3M",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 12.29,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          14400,
+          7200
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/6b/a9/87/82/3495-4bb9-8123-7b4f509c38a0.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/6b/a9/87/82/3495-4bb9-8123-7b4f509c38a0/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/6b/a9/87/82/3495-4bb9-8123-7b4f509c38a0/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "84a337b7-9acf-4b4b-a7be-276c3fc5075b",
+            "name": "ONF Drone DT Seine-Nord",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "ONF Drone DT Seine-Nord"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4001105,
+          49.394566194
         ]
       }
     },
@@ -630,12 +900,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/63df2e09-3c87-4f1c-9f9a-f1bcc71550e4/items/f06d3e60-2cf8-42c8-91d4-cf0285e8c681",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -751,12 +1015,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/4568988b-6fa4-4309-9ba5-137e7168e1c1/items/e2bfc5c1-67dd-425a-b038-3a59b129a7ff",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -856,12 +1114,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/347f34ee-7f9f-4434-af88-a05c2f744197/items/8b90ea9a-f974-4f56-9715-b86e67adf8e0",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -963,12 +1215,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/7f785e1b-92b5-4679-9ba3-43f633b98528/items/081993a0-c770-4226-88c6-8942992dbb27",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -1068,12 +1314,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/26c54c41-afe6-48b6-b5a0-4f125566abb6/items/05f9d06e-d33c-4b3b-b200-5b064d638f03",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -1175,12 +1415,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/461ffc28-fa5f-49d1-ad29-64864b61ff16/items/61f26e45-f85e-47a6-aafa-02d4b701d3f8",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -1280,12 +1514,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/ed226804-e273-42d9-8b1e-3e18225996e9/items/197e50d0-83bd-4a98-96c2-7a9226a6b0e7",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -1387,12 +1615,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/1f573c7d-0795-457e-ba66-22f27695fa49/items/528c948c-ed52-4e68-b77d-04fc26671c47",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -1492,12 +1714,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/cc6b8b15-2cb8-4b07-ae1e-eef9f815d51d/items/0006ddb8-623d-4f17-898d-586d572c7ba4",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -1599,12 +1815,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/66312162-f51c-4f81-b81c-414fc2d155c8/items/24fae8e5-1d28-40b4-b421-1f26af19e789",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -1704,12 +1914,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/f6a0f85b-bbf1-470b-8539-d5f8c5b0d049/items/e2da31eb-4518-4035-9c41-026f6948a00c",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -1811,12 +2015,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/880c9e22-3044-4bd4-ad9b-bd95811442d7/items/09204e9a-d1b3-4b8c-b667-94f386f67f15",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -1916,12 +2114,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/f6a0f85b-bbf1-470b-8539-d5f8c5b0d049/items/2441cc5d-3062-45db-b241-452bd04c45b0",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -2023,12 +2215,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/0292373a-8140-4fff-8b5e-1930f2de00be/items/e5371f74-227d-4b14-8eba-3beedf962895",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -2128,12 +2314,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/a4edb28b-4e73-4c0a-a336-51333b3e96de/items/bf5111a1-3e15-47fa-96ed-c30ffb1c46e9",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -2235,12 +2415,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/6016e7b8-1009-4391-a440-e381d90d6637/items/1ac45e1e-067d-4e6b-b520-0e8edb25cdf6",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -2340,12 +2514,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/6b4fc833-cc2d-4a4b-95db-f223ac16677a/items/bdb5e0d3-54ba-4b5e-bcdb-d20b36f113fa",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -2447,12 +2615,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/ec3a61b7-6154-483c-bcd6-3bcb86266306/items/22a9adc6-c4a7-46f0-b7bc-40711cae9e1b",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -2552,12 +2714,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/ec3a61b7-6154-483c-bcd6-3bcb86266306/items/70c0f0b5-0725-46ea-a777-d31b9c74f94f",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -2659,12 +2815,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/4b6fd2ce-eed4-4033-bfc6-557e30656337/items/f44a2a64-976a-4b40-8c32-f77caf86ed0c",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -2764,12 +2914,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/6bdf9b78-9643-4969-8a2b-2bfab49daeab/items/6ab09538-ee14-4f6f-be11-3fe1fafd901a",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -2871,12 +3015,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/6bdf9b78-9643-4969-8a2b-2bfab49daeab/items/bae69940-8db1-4f88-bff8-d0a8e934d398",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -2976,12 +3114,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/f6b68ec0-3361-446c-b85a-254e85214963/items/ee97d3c7-dee3-4ae7-9940-7f95a001620e",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -3083,12 +3215,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/3d19d2ca-8915-472d-8f7d-da45c3cea654/items/30e76af5-90ea-4ece-a5ca-818fd25d754d",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -3189,12 +3315,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/3d19d2ca-8915-472d-8f7d-da45c3cea654/items/e9ee71da-5e9d-4758-9f79-0bf2470f4dc4",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -3210,6 +3330,206 @@
         "coordinates": [
           -1.542918917,
           49.16357675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "e92808a6-b82e-4afe-8d4f-1200ee05a1ef",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": -1.541959222,
+        "bbox.ymin": 49.163136306,
+        "bbox.xmax": -1.541959222,
+        "bbox.ymax": 49.163136306,
+        "collection": "a0b47a50-25a6-4455-a2f5-42a4cbe9b3b3",
+        "created": "2025-10-16T14:51:21.152Z",
+        "updated": "2025-10-16T14:51:21.152Z",
+        "datetime": "2025-10-14T14:19:42",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 37543936,
+        "original_file:name": "DJI_20251014161942_0013_D.JPG",
+        "panoramax:horizontal_pixel_density": 40,
+        "quality:horizontal_accuracy": null,
+        "view:azimuth": 0,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "M3M",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 12.29,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          14400,
+          7200
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/e9/28/08/a6/b82e-4afe-8d4f-1200ee05a1ef.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/e9/28/08/a6/b82e-4afe-8d4f-1200ee05a1ef/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/e9/28/08/a6/b82e-4afe-8d4f-1200ee05a1ef/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "84a337b7-9acf-4b4b-a7be-276c3fc5075b",
+            "name": "ONF Drone DT Seine-Nord",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "ONF Drone DT Seine-Nord"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.541959222,
+          49.163136306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "9a7c28b0-f63c-447c-8aac-1f54f30f16fa",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": -1.489256833,
+        "bbox.ymin": 49.219286639,
+        "bbox.xmax": -1.489256833,
+        "bbox.ymax": 49.219286639,
+        "collection": "685a3ae3-a3b9-4667-b032-92fd2e5182e2",
+        "created": "2025-10-16T18:58:39.561Z",
+        "updated": "2025-10-16T18:58:39.561Z",
+        "datetime": "2025-10-14T10:32:42",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 44318720,
+        "original_file:name": "DJI_20251014123242_0002_D.JPG",
+        "panoramax:horizontal_pixel_density": 40,
+        "quality:horizontal_accuracy": null,
+        "view:azimuth": 0,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "M3M",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 12.29,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          14400,
+          7200
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/9a/7c/28/b0/f63c-447c-8aac-1f54f30f16fa.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/9a/7c/28/b0/f63c-447c-8aac-1f54f30f16fa/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/9a/7c/28/b0/f63c-447c-8aac-1f54f30f16fa/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "84a337b7-9acf-4b4b-a7be-276c3fc5075b",
+            "name": "ONF Drone DT Seine-Nord",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "ONF Drone DT Seine-Nord"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.489256833,
+          49.219286639
         ]
       }
     },
@@ -3247,7 +3567,7 @@
         "semantics": [
           {
             "key": "transport",
-            "value": "drone",
+            "value": "uav",
             "on": {
               "field": "collection",
               "id": null,
@@ -3294,12 +3614,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/8d3c5bef-dc4a-4b45-a63e-ca8cdb1539c3/items/6ae16bdd-758b-439a-a655-3b00781d99e5",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -3396,12 +3710,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/d901fef4-8ab6-4984-85b6-a5369865d0d9/items/94d4d959-7222-444f-98dd-6ff39a7f165c",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -3512,12 +3820,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/dcc7078d-63a8-44f5-be0e-25d93d3646ee/items/3633276c-7564-479c-8c2d-aedce7a47675",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -3613,12 +3915,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/551713f6-9b09-44a1-874c-272146268ec7/items/f69d3ab1-9e9b-4266-8dff-c198c367b0b1",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -3716,12 +4012,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/47677b16-7ce7-44e3-94cc-f98656dbdffd/items/581f6b4c-d437-4b52-93bd-4804d0560623",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -3817,12 +4107,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/cf0b0a75-f338-4b5d-96d0-a543016548df/items/e30ad458-7dc0-4db9-9a58-a69a63e17572",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -3920,12 +4204,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/b89074de-ba49-4c9b-8538-dca1df24fdf0/items/527acb9d-d7c1-4849-8526-52819d06eb9e",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -4022,12 +4300,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/551713f6-9b09-44a1-874c-272146268ec7/items/0c1b29d5-67ea-4ea8-92eb-76bf3702ee8a",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -4123,12 +4395,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/78799328-f30a-45be-9816-4e4f2381553b/items/902ca492-2180-43cc-9147-4f621350adcc",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -4230,12 +4496,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/b5f9350f-49ec-4d39-8b05-3a158fc3b2f2/items/1e7be9a1-0df9-4dde-8443-a9acf1300896",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -4335,12 +4595,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/67396e0c-539a-4556-b10f-b746f4bf569e/items/d8f47eb1-cee4-4712-bcee-8eb38a4810ec",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -4442,12 +4696,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/6d46f971-c074-47be-8171-cab9e1e90559/items/48ada132-c839-4c33-bb04-8e06491fe948",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -4500,7 +4748,7 @@
         "semantics": [
           {
             "key": "transport",
-            "value": "drone",
+            "value": "uav",
             "on": {
               "field": "collection",
               "id": null,
@@ -4547,12 +4795,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/bf956797-d8db-4387-ad29-b791b73a79b7/items/ff8e0b93-3a94-4ff3-b8cd-aa06bdb88ce2",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -4606,7 +4848,7 @@
         "semantics": [
           {
             "key": "transport",
-            "value": "drone",
+            "value": "uav",
             "on": {
               "field": "collection",
               "id": null,
@@ -4654,12 +4896,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/0cff12c2-5379-4e00-a809-80b5ff832c46/items/7d52da5f-44cc-4d93-a339-64c0200b1a94",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -4675,6 +4911,206 @@
         "coordinates": [
           -0.144711278,
           48.450158556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6eb48975-cb25-4981-8b94-773e8f550d64",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": -0.144380444,
+        "bbox.ymin": 48.449857778,
+        "bbox.xmax": -0.144380444,
+        "bbox.ymax": 48.449857778,
+        "collection": "4f79aa19-c028-4c4d-b7ed-ab8232a55777",
+        "created": "2025-11-01T21:05:11.541Z",
+        "updated": "2025-11-01T21:05:11.541Z",
+        "datetime": "2025-11-01T14:22:26",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 47955968,
+        "original_file:name": "DJI_20251101152226_0003_D.JPG",
+        "panoramax:horizontal_pixel_density": 40,
+        "quality:horizontal_accuracy": null,
+        "view:azimuth": 0,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "M3M",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 12.29,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          14400,
+          7200
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/6e/b4/89/75/cb25-4981-8b94-773e8f550d64.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/6e/b4/89/75/cb25-4981-8b94-773e8f550d64/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/6e/b4/89/75/cb25-4981-8b94-773e8f550d64/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "52e28607-f1c4-4f29-a41b-db416f865518",
+            "name": "Sylvain M",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "Sylvain M"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.144380444,
+          48.449857778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "de61fd58-2264-41e1-a346-d8530ac2d382",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": -0.144451194,
+        "bbox.ymin": 48.45052125,
+        "bbox.xmax": -0.144451194,
+        "bbox.ymax": 48.45052125,
+        "collection": "9e8e5bd5-ddef-419a-a937-93fd914a5cbf",
+        "created": "2025-11-01T20:50:23.510Z",
+        "updated": "2025-11-01T20:50:23.510Z",
+        "datetime": "2025-11-01T14:45:30",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 41537536,
+        "original_file:name": "DJI_20251101154530_0023_D.JPG",
+        "panoramax:horizontal_pixel_density": 40,
+        "quality:horizontal_accuracy": null,
+        "view:azimuth": 0,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "M3M",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 12.29,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          14400,
+          7200
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "uav",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/de/61/fd/58/2264-41e1-a346-d8530ac2d382.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/de/61/fd/58/2264-41e1-a346-d8530ac2d382/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/de/61/fd/58/2264-41e1-a346-d8530ac2d382/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "52e28607-f1c4-4f29-a41b-db416f865518",
+            "name": "Sylvain M",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "Sylvain M"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.144451194,
+          48.45052125
         ]
       }
     },
@@ -4712,7 +5148,7 @@
         "semantics": [
           {
             "key": "transport",
-            "value": "drone",
+            "value": "uav",
             "on": {
               "field": "collection",
               "id": null,
@@ -4759,12 +5195,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/8f50b857-8d75-4f53-be01-748b29933ad2/items/1ad5cfae-89cf-4926-8e5b-87aa87a03c72",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -4866,12 +5296,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/bf454197-cc5e-43b0-8086-7578b44ad5bc/items/a646e99a-198f-4747-b32c-df3a52bf4623",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -4972,12 +5396,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/28b65ea8-da77-4293-ad1f-37c539b13bb6/items/ba6ac9d0-cdf2-4734-8315-53c1e31cf1ae",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
             "title": "License for this object (CC-BY-SA-4.0)",
@@ -5077,12 +5495,6 @@
           }
         ],
         "links": [
-          {
-            "href": "https://api.panoramax.xyz/api/collections/bba4a6c7-b48a-4e69-822b-d8101d253d7f/items/4c7e2672-6032-41dd-9d31-f40ec29c6980",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
           {
             "href": "https://creativecommons.org/licenses/by-sa/4.0/",
             "rel": "license",
@@ -5193,13 +5605,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/4444a6dd-df63-4ea8-8e0a-e25534ff44c9/items/b458ca7d-f353-4c40-a65a-837f30117ed4",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -5299,13 +5705,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/923484b8-a56c-404b-9841-7798e0cde0bc/items/f56449af-bc84-4855-9744-51cec7ebca02",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -5405,13 +5805,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/781edb3c-f9c7-45a8-b378-593a2cda1e07/items/cd6256da-985e-47f7-b108-01d15ae8f9db",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -5518,12 +5912,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/6a53b8f0-ecce-4d45-af83-117a2ea0e5cb/items/3c40a366-b633-4ef3-a24b-d0ddc492c46b",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
@@ -5624,13 +6012,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/054af74a-77fb-417e-bae3-d7dd91eb7c03/items/8e2dbb45-cf35-434c-8c5b-e4f40e1717d9",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -5730,13 +6112,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/11bb941e-6493-4ae2-bf4e-23f1be88e582/items/f47c1a06-1f0d-4c98-b0d5-66e5732ce033",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -5836,13 +6212,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/044a57ab-1ade-4685-bc34-15be40ec2bb3/items/4785d5da-094f-4414-977a-8c5825a75771",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -5942,13 +6312,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/a5f1e5dc-80b3-44cf-96cd-c6c92238ab8e/items/4a79399f-617a-410d-b941-b5db53ba4277",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6048,13 +6412,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/3949a778-db3c-42a9-afbd-7b6808cd1d30/items/63fb789c-474f-411d-a14c-95e2d14f186d",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6154,13 +6512,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/46c68cfc-4b21-4103-9c3b-c5c150faa685/items/e679f558-7964-4711-ae70-8c1e9ae66582",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6267,13 +6619,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/3b70b53c-16f4-4851-a187-6e15ade692f7/items/8c30d5b7-81cf-4ff5-b766-046a0b4aa52d",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6373,13 +6719,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/bc62e793-1631-4112-80bb-507ad4cd4c2c/items/885c2c32-d668-4e89-aec7-eb6547aaf01d",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6479,13 +6819,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/0194b6cd-8dc2-492f-bb1d-0b9a73f5f809/items/23e8a14f-92a0-46d5-bf3b-7053ab8fa5b8",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6585,13 +6919,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/2fcab983-9eda-4c5d-94d3-c5d184fa64c1/items/51af2054-fcdb-41d9-b989-b7eca7cd5a96",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6691,13 +7019,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/a11dd49b-8bd9-4086-a67d-ba895ed9fde9/items/34b86b22-864a-4590-acad-2b9fa5542b1f",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6804,13 +7126,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/1d1d249a-4d91-4418-83ad-30a972649322/items/42bcbc8a-606d-4114-9fef-a9abd6512788",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -6917,12 +7233,6 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/1caa62c6-0e65-4955-90d5-d9ff236f8e1c/items/b831892d-019c-4f96-9681-684d8712cb6e",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
             "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
@@ -7023,13 +7333,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/8e6ce0cf-376f-4426-95de-a9fac7052729/items/08549cb2-7598-40c2-ab6a-7272925e88c8",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7129,13 +7433,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/a3497256-b59d-4198-b8b6-f94bac93c0fe/items/06e70ec9-c9a2-4b42-906b-0fb7ce29c16b",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7235,13 +7533,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/cc737f9b-ca6b-4130-9552-e8b4b98a7e66/items/0c86668d-a067-4a86-9d9a-5b873a53b874",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7341,13 +7633,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/ac30f450-1162-4301-b5a2-90fa564b98c5/items/a326ab59-4f40-4599-8ea3-11f0cad2b136",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7447,13 +7733,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/58a93f43-a2f8-4755-9848-8616ff1b73c5/items/1c9c261f-c5df-4840-bfac-f46f5b8f2d53",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7553,13 +7833,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/ad1f12e7-f7b9-488e-8d3e-a8788be67de3/items/7f4d0a7f-b6c2-483e-80c5-64fb064d6301",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7659,13 +7933,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/114a6f8a-8c8f-40e9-88b1-d73599831a68/items/368007b4-8320-4be2-833b-7f851232c065",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7765,13 +8033,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/4dcb86ef-5299-408f-9db8-421bfde595d4/items/2816f186-5fed-4c4d-a62a-d2638a08af07",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7870,13 +8132,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/ec7ffaa6-d730-4d6f-8392-d2274cd29ebf/items/6efd10a7-35e5-4503-a421-27142e29f782",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -7976,13 +8232,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/3b2e9dc3-abab-42e2-a641-9a8fd11721ba/items/edd6fe18-04b9-403d-b406-a1d2b06dc051",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -8082,13 +8332,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/9fdd1acc-0197-4499-be63-93f6a3295360/items/b54cd8cf-7d91-4426-b35b-b6164f43e7f3",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -8188,13 +8432,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/67a9f996-2c5d-41b7-a440-a506456105e9/items/a1f8dfd5-3cb5-46e9-86de-eae4b2748dcd",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -8294,13 +8532,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/f412ac5e-6307-4a0d-ab45-d1221a1f0fcc/items/da8ff7d6-43df-44a5-87d8-3e3559bd51ff",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -8400,13 +8632,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/4b182b22-0bda-4d88-8d0d-253c948d3284/items/481ad5c4-05f8-4748-9679-fb21804d1e90",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
@@ -8506,13 +8732,7 @@
         ],
         "links": [
           {
-            "href": "https://api.panoramax.xyz/api/collections/8990f1e1-3852-430a-ab05-28fc97ff7530/items/1cc00297-860c-4b2a-a91f-7a64979503b2",
-            "rel": "self",
-            "title": null,
-            "type": "application/geo+json"
-          },
-          {
-            "href": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
             "rel": "license",
             "title": "License for this object (etalab-2.0)",
             "type": null
