@@ -11,7 +11,17 @@ def build_overpass_query(df):
 
     for _, row in df.iterrows():
         element_type = row["osm_element"]
-        element_id = int(row["osm_id"])
+        element_id = row["osm_id"]
+
+        # Sauter si osm_id est NaN ou vide
+        if pd.isna(element_id) or element_id == "":
+            continue
+
+        try:
+            element_id = int(element_id)
+        except ValueError:
+            continue  # Sauter si la conversion échoue
+
         if element_type == "node":
             nodes.append(f"node({element_id});")
         elif element_type == "way":
@@ -37,12 +47,10 @@ def build_overpass_query(df):
 out geom meta;
 """.format(query_elements=";\n".join(query_parts))
 
-
-
 def fetch_all_osm_elements(df):
     query = build_overpass_query(df)
     if not query:
-        print("Warning: No elements to query in the CSV.")
+        print("Warning: No valid elements to query in the CSV.")
         return []
 
     print("Sending Overpass query (POST)...")
@@ -76,11 +84,17 @@ def main():
 
     osm_to_obs = {}
     for _, row in df.iterrows():
-        key = (row["osm_element"], int(row["osm_id"]))
-        osm_to_obs[key] = {
-            "obs_ids": row.get("obs_ids", ""),
-            "obs_url": row.get("obs_url", "")
-        }
+        element_id = row["osm_id"]
+        if pd.isna(element_id) or element_id == "":
+            continue
+        try:
+            key = (row["osm_element"], int(element_id))
+            osm_to_obs[key] = {
+                "obs_ids": row.get("obs_ids", ""),
+                "obs_url": row.get("obs_url", "")
+            }
+        except ValueError:
+            continue
 
     features = []
     for element in elements:
