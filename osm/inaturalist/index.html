@@ -171,36 +171,47 @@
             .then(data => {
                 const rows = data.split('\n');
                 const tableBody = document.getElementById('tableBody');
-
+        
                 // Parcourir les lignes du CSV (en excluant l'en-tête)
                 for (let i = 1; i < rows.length; i++) {
                     if (rows[i].trim() === '') continue;
-
+        
                     // Utiliser une expression régulière pour gérer les guillemets et les virgules dans les CSV
                     const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
                     const row = document.createElement('tr');
-
+        
                     // OSM Link (icône + osm_element + osm_id, lien vers osm_url)
                     const osmLinkCell = document.createElement('td');
                     const osmElement = rowData[0] ? rowData[0].replace(/"/g, '').trim() : '';
-                    const osmId = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
+                    const osmIdRaw = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
                     const osmUrl = rowData[2] ? rowData[2].replace(/"/g, '').trim() : '';
+        
+                    // Nettoyer l'URL pour extraire l'ID correctement
+                    let osmId = osmIdRaw;
+                    if (osmUrl) {
+                        const urlParts = osmUrl.split('/');
+                        const lastPart = urlParts[urlParts.length - 1];
+                        if (lastPart) {
+                            osmId = lastPart.replace(/\/$/, ''); // Supprimer le "/" final si présent
+                        }
+                    }
+        
                     const osmLink = document.createElement('a');
                     osmLink.href = osmUrl;
                     osmLink.target = "_blank";
-
+        
                     // Ajouter l'icône OSM
                     const osmImg = document.createElement('img');
                     osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
                     osmImg.className = 'osm-img';
                     osmImg.alt = 'OpenStreetMap';
                     osmLink.appendChild(osmImg);
-
+        
                     // Ajouter le texte (osm_element + osm_id)
                     osmLink.appendChild(document.createTextNode(`${osmElement} ${osmId}`));
                     osmLinkCell.appendChild(osmLink);
                     row.appendChild(osmLinkCell);
-
+        
                     // iNat Link (image iNaturalist + texte "{n} Observation(s)")
                     const inatLinkCell = document.createElement('td');
                     const obsIdsForUrl = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
@@ -209,26 +220,26 @@
                     const imgLink = document.createElement('a');
                     imgLink.href = finalObsUrl;
                     imgLink.target = "_blank";
-
+        
                     // Ajouter l'icône iNaturalist
                     const img = document.createElement('img');
                     img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
                     img.className = 'inat-img';
                     img.alt = 'iNaturalist';
                     imgLink.appendChild(img);
-
+        
                     // Compter le nombre d'IDs dans obsIdsForUrl
                     const obsIdsArray = obsIdsForUrl.split(';').filter(id => id.trim() !== '');
                     const obsCount = obsIdsArray.length;
                     const obsText = document.createTextNode(`${obsCount} Observation${obsCount > 1 ? 's' : ''}`);
                     imgLink.appendChild(obsText);
-
+        
                     inatLinkCell.appendChild(imgLink);
                     row.appendChild(inatLinkCell);
-
+        
                     // obs_ids (badges verts cliquables pour chaque ID)
                     const obsIdsCell = document.createElement('td');
-                    obsIdsCell.className = 'obs-ids-cell'; // Classe pour le retour à la ligne
+                    obsIdsCell.className = 'obs-ids-cell';
                     const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
                     if (obsIds) {
                         const ids = obsIds.split(';');
@@ -245,7 +256,7 @@
                         });
                     }
                     row.appendChild(obsIdsCell);
-
+        
                     tableBody.appendChild(row);
                 }
             })
@@ -260,6 +271,7 @@
                 errorRow.appendChild(errorCell);
                 tableBody.appendChild(errorRow);
             });
+
     </script>
 </body>
 </html>
