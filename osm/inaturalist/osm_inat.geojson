@@ -104,8 +104,8 @@
           "url": "https://youtu.be/aVIdV4p7bHM",
           "wikidata": "Q252182"
         },
-        "obs_ids": "141505757;160796615;182929280;190554685;193733460;194028297;198160162;202006256;203767850;220381320;251379729;316337232",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=141505757,160796615,182929280,190554685,193733460,194028297,198160162,202006256,203767850,220381320,251379729,316337232"
+        "obs_ids": "130953597;141505757;160796615;182929280;190554685;193733460;194028297;195514174;198160162;202006256;203767850;213546513;220381320;251379729;260532972;260679186;269077094;316337232;323609267;327440910;339768356;339770528;341785337;357767034",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=130953597,141505757,160796615,182929280,190554685,193733460,194028297,195514174,198160162,202006256,203767850,213546513,220381320,251379729,260532972,260679186,269077094,316337232,323609267,327440910,339768356,339770528,341785337,357767034"
       },
       "geometry": {
         "type": "Point",
@@ -335,6 +335,38 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 1357054945,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "diameter_crown": "50",
+          "genus": "Ficus",
+          "height": "23",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Wonderboom",
+          "natural": "tree",
+          "species": "Ficus salicifolia",
+          "species:wikidata": "Q55865401",
+          "species:wikipedia": "fr:Ficus salicifolia",
+          "wikidata": "Q30602264",
+          "wikimedia_commons": "Category:Wonderboom fig of Pretoria",
+          "wikipedia": "en:Wonderboom (tree)"
+        },
+        "obs_ids": "9155467;192192420",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=9155467,192192420"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.1917745,
+          -25.6872921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 1371366506,
         "type": "node",
         "tags": {
@@ -392,6 +424,41 @@
         "coordinates": [
           -0.7029403,
           49.2757242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1500151302,
+        "type": "node",
+        "tags": {
+          "age": "1100",
+          "circumference": "9 m",
+          "denotation": "natural_monument",
+          "description": "Найбільше дерево України",
+          "diameter": "286cm",
+          "genus": "Quercus",
+          "genus:uk": "Дуб",
+          "height": "30",
+          "historic": "yes",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Дуб Максима Залізняка",
+          "name:uk": "Дуб Максима Залізняка",
+          "natural": "tree",
+          "tourism": "attraction",
+          "wikidata": "Q4169050",
+          "wikipedia": "uk:Дуб Максима Залізняка"
+        },
+        "obs_ids": "129546444;152270197;152286496;202025279;203603436;296866457",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=129546444,152270197,152286496,202025279,203603436,296866457"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.2605408,
+          49.109834
         ]
       }
     },
@@ -724,6 +791,50 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 3244460373,
+        "type": "node",
+        "tags": {
+          "age": "mature",
+          "circumference": "18",
+          "crown_type": "c",
+          "denotation": "natural_monument",
+          "diameter_crown": "15.7",
+          "genus": "Cupressus",
+          "health": "5",
+          "height": "28",
+          "heritage": "yes",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "monument": "tree",
+          "name": "سرو ابرکوه",
+          "name:de": "Zypresse",
+          "name:en": "Cypress",
+          "name:es": "Ciprés Milenário",
+          "name:fr": "cyprès millénaire",
+          "natural": "tree",
+          "object:city": "Abarkuh",
+          "species": "Cupressus sempervirens",
+          "species:es": "Ciprés Mediterráneo",
+          "species:wikidata": "Q147513",
+          "start_date": "-1976",
+          "wikidata": "Q245835",
+          "wikimedia_commons": "File:4000_years_old_tree_-_panoramio.jpg",
+          "wikipedia": "fa:سرو ابرکوه"
+        },
+        "obs_ids": "69053937;70514416;293240660",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=69053937,70514416,293240660"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          53.2798341,
+          31.1225843
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 3681196077,
         "type": "node",
         "tags": {
@@ -772,6 +883,76 @@
         "coordinates": [
           0.9664874,
           44.0619719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3855696279,
+        "type": "node",
+        "tags": {
+          "age": "mature",
+          "circumference": "14.76",
+          "denotation": "park",
+          "description": "Possibly the oldest tree on the planet (2022) (Third older tree in the planet)",
+          "diameter": "4700",
+          "genus": "Fitzroya",
+          "health": "3",
+          "height": "30",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "monument": "tree",
+          "name": "Gran Abuelo Alerce",
+          "natural": "tree",
+          "source": "https://www.science.org/content/article/world-s-oldest-tree-growing-ravine-chile",
+          "species": "Fitzroya cupressoides",
+          "species:es": "Alerce",
+          "species:mp": "Lawal",
+          "species:wikidata": "Q847304",
+          "start_date": "-3378",
+          "wikimedia_commons": "File:\"El Gran Abuelo\". Alerce Milenario de 3.500 años aprox.jpg"
+        },
+        "obs_ids": "98852372;259081297;260413038;261808893;263944390;339580750",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=98852372,259081297,260413038,261808893,263944390,339580750"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.4511986,
+          -40.1951633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3985701984,
+        "type": "node",
+        "tags": {
+          "age": "mature",
+          "denotation": "natural_monument",
+          "genus": "Ficus",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "monument": "tree",
+          "name": "Thimmamma Marrimanu",
+          "natural": "tree",
+          "object:city": "Andhra Pradesh",
+          "species": "Ficus benghalensis",
+          "species:en": "Banyan",
+          "species:es": "Baniano",
+          "subject:wikidata": "Q7784222",
+          "wikipedia": "en:Thimmamma Marrimanu"
+        },
+        "obs_ids": "113736743;144542001",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=113736743,144542001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3251182,
+          14.0280474
         ]
       }
     },
@@ -886,8 +1067,8 @@
           "wikimedia_commons": "File:Starr-010914-0080-Ficus benghalensis-trunk and aerial roots-Lahaina-Maui (23914049274).jpg",
           "wikipedia": "en:Lahaina Banyan Tree"
         },
-        "obs_ids": "35683184;193932353",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=35683184,193932353"
+        "obs_ids": "35683184;193932353;244650191",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=35683184,193932353,244650191"
       },
       "geometry": {
         "type": "Point",
@@ -1180,6 +1361,64 @@
         "coordinates": [
           13.7728466,
           -18.3633084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6832096587,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "description": "A small seedling growing from a submerged log",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Fairy Lake Tree",
+          "natural": "tree",
+          "species": "Picea sitchensis",
+          "species:wikidata": "Q147426",
+          "species:wikipedia": "en:Picea sitchensis",
+          "tourism": "attraction"
+        },
+        "obs_ids": "3861364;176287431;275347130",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=3861364,176287431,275347130"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.3483658,
+          48.5886754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7161353478,
+        "type": "node",
+        "tags": {
+          "denotation": "natural_monument",
+          "diameter": "5.25 meters",
+          "height": "65",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Big Tree",
+          "natural": "tree",
+          "species": "Khaya anthotheca",
+          "species:wikidata": "Q291815",
+          "species:wikipedia": "en:Khaya anthotheca",
+          "wikidata": "Q18358030",
+          "wikipedia": "en:Big Tree in Chirinda Forest"
+        },
+        "obs_ids": "107076110;178005298;178505462;247616243;278150080;308165622;324230448",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=107076110,178005298,178505462,247616243,278150080,308165622,324230448"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.7043786,
+          -20.4414302
         ]
       }
     },
@@ -3827,14 +4066,14 @@
         "tags": {
           "denotation": "landmark",
           "description": "Curiosité botanique : l'arbre est un Chataignier (Castanea sativa) greffé en 1910 sur un tronc de Chêne pédonculé (Quercus robur). Plus d'infos sur le site de la commune : https://stmarsdoutille.fr/decouvrir/chene-chataignier/",
-          "fixme": "Position exacte à confirmer",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "name": "Chêne Châtaignier",
           "natural": "tree",
           "ref:inaturalist.org": "337310512",
           "start_date": "1910",
-          "website": "https://stmarsdoutille.fr/decouvrir/chene-chataignier/"
+          "website": "https://stmarsdoutille.fr/decouvrir/chene-chataignier/",
+          "wikimedia_commons": "File:Ch%C3%AAne-Ch%C3%A2taigner_1.jpg"
         },
         "obs_ids": "337310512",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=337310512"
@@ -3842,8 +4081,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.3296207,
-          47.8513947
+          0.3295712,
+          47.8514742
         ]
       }
     },
