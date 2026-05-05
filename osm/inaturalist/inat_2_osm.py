@@ -85,6 +85,7 @@ def transform_osm_data(osm_data):
     print(f"Number of unique OSM URLs: {len(df_unique)}")
 
     def parse_osm_url(url):
+        url = url.rstrip('/')
         parts = url.split("/")
         osm_element = parts[-2]
         osm_id = parts[-1]
