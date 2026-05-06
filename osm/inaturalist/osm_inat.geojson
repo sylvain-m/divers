@@ -2346,8 +2346,8 @@
           "start_date": "~1000",
           "website": "http://www.tree-flower.jp/29/kasuga_ohsugi_477/syatou_ohsugi.html"
         },
-        "obs_ids": "65913030",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=65913030"
+        "obs_ids": "38610038;65913030;163199915;246531059",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=38610038,65913030,163199915,246531059"
       },
       "geometry": {
         "type": "Point",
@@ -4402,6 +4402,28 @@
         "coordinates": [
           18.4182288,
           -33.9258096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13785259599,
+        "type": "node",
+        "tags": {
+          "denotation": "urban",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "species": "Ulmus pumila"
+        },
+        "obs_ids": "357919694",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=357919694"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.419962,
+          45.3202369
         ]
       }
     }
