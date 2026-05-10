@@ -4454,6 +4454,84 @@
           45.3202369
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13812125188,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "345919257",
+          "species": "Sequoiadendron giganteum",
+          "species:fr": "Séquoia géant",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        },
+        "obs_ids": "345919257",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=345919257"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0115408,
+          46.5968855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13812214430,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "269370946",
+          "species": "Sequoia sempervirens",
+          "species:wikidata": "Q150129",
+          "species:wikipedia": "fr:Sequoia sempervirens"
+        },
+        "obs_ids": "269370946",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=269370946"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9987409,
+          43.2445827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13812227489,
+        "type": "node",
+        "tags": {
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "252156630",
+          "species": "Sequoia sempervirens",
+          "species:fr": "Séquoia à feuilles d'if",
+          "species:wikidata": "Q150129"
+        },
+        "obs_ids": "252156630",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=252156630"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1864586,
+          43.7683331
+        ]
+      }
     }
   ]
 }
