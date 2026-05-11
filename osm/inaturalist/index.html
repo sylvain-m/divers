@@ -37,6 +37,11 @@
             color: #a0a0a0;
             font-size: 0.9em;
         }
+        .osm-logo, .inat-logo {
+            width: 48px;
+            height: auto;
+            vertical-align: middle;
+        }
         /* Thème sombre pour Bootstrap */
         .table {
             color: #e0e0e0;
@@ -116,7 +121,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>iNat 2 OSM</h1>
+        <h1>
+            <a href="https://www.inaturalist.org" target="_blank">
+                <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">
+            </a>
+            iNat 2 OSM
+            <a href="https://www.openstreetmap.org" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OpenStreetMap Logo">
+            </a>
+        </h1>
         <div id="logInfo" class="log-info">Chargement du log...</div>
         <div><a href="inat_2_osm_map.html" class="btn" style="background-color: #86a91c; color: white;"><i class="bi bi-map"></i> Map View</a></div>
         <div class="table-container">
