@@ -152,7 +152,7 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+                    <!-- content loaded dynamically via JavaScript -->
                 </tbody>
             </table>
         </div>
@@ -164,23 +164,25 @@
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css"></script>
 
     <script>
-        // Fonction pour charger le fichier de log et afficher la dernière ligne
+        // Function to load the log file and display the last line
         fetch('inat_2_csv_log.txt')
             .then(response => response.text())
             .then(data => {
                 const lines = data.split('\n').filter(line => line.trim() !== '');
+                const logElement = document.getElementById('logInfo');
+        
                 if (lines.length > 0) {
                     const lastLine = lines[lines.length - 1];
-                    document.getElementById('logInfo').textContent = lastLine;
+                    logElement.innerHTML = `${lastLine} <br> daily update (<a href="inat_2_csv_log.txt">history</a>)`;
                 } else {
-                    document.getElementById('logInfo').textContent = "Aucune information de log disponible.";
+                    logElement.textContent = "No log information available.";
                 }
             })
             .catch(error => {
-                console.error('Erreur lors du chargement du log:', error);
-                document.getElementById('logInfo').textContent = "Erreur lors du chargement du log.";
+                console.error('Error loading the log:', error);
+                document.getElementById('logInfo').textContent = "Error loading the log.";
             });
-
+        
         // Charger le fichier CSV et afficher son contenu dans le tableau
         fetch('osm_inat.csv')
             .then(response => response.text())
