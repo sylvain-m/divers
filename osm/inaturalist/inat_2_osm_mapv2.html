@@ -177,10 +177,19 @@
         // Écouteur pour détecter l'ouverture des popups
         map.on('popupopen', async function(e) {
             const popup = e.popup;
-            const content = popup.getContent();
-            if (content && content.includes('data-obs-ids')) {
-                await loadThumbnailsForPopup(popup);
-            }
+            const popupElement = popup.getElement();
+            if (!popupElement) return;
+
+            // Attendre que le contenu soit effectivement dans le DOM
+            await new Promise(resolve => setTimeout(resolve, 50));
+
+            const popupContent = popupElement.querySelector('.popup-content');
+            if (!popupContent) return;
+
+            const obsIds = popupContent.getAttribute('data-obs-ids')?.split(';');
+            if (!obsIds) return;
+
+            await loadThumbnailsForPopup(popupContent, obsIds);
         });
 
         fetch('osm_inat.geojson')
@@ -242,7 +251,7 @@
                         <span>iNaturalist Observation(s)</span>
                     </div>
                     <div style="margin-bottom: 10px;">${obsBadges}</div>
-                    <div class="thumbnail-container" id="thumbnail-container-${props.obs_ids}">
+                    <div class="thumbnail-container">
                         ${obsIds.map(obsId => `
                             <div class="thumbnail-placeholder" data-obs-id="${obsId}">
                                 <div class="loading-spinner"></div>
@@ -255,17 +264,8 @@
         }
 
         // Charge les vignettes pour une popup ouverte
-        async function loadThumbnailsForPopup(popup) {
-            const content = popup.getContent();
-            if (!content) return;
-
-            const popupDiv = popup.getElement();
-            if (!popupDiv) return;
-
-            const obsIds = content.querySelector('[data-obs-ids]')?.getAttribute('data-obs-ids')?.split(';');
-            if (!obsIds) return;
-
-            const thumbnailContainer = content.querySelector('.thumbnail-container');
+        async function loadThumbnailsForPopup(popupContent, obsIds) {
+            const thumbnailContainer = popupContent.querySelector('.thumbnail-container');
             if (!thumbnailContainer) return;
 
             for (const obsId of obsIds) {
@@ -302,15 +302,29 @@
             try {
                 const response = await fetch(`${CORS_PROXY}https://api.inaturalist.org/v1/observations/${obsId}?photo_license=any`);
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    console.error(`Erreur HTTP ${response.status} pour l'observation ${obsId}`);
+                    thumbnailCache.set(obsId, null);
+                    return null;
                 }
                 const text = await response.text();
-                const data = JSON.parse(text);
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (e) {
+                    console.error(`Erreur de parsing JSON pour l'observation ${obsId}:`, e);
+                    thumbnailCache.set(obsId, null);
+                    return null;
+                }
+
                 if (data.results?.[0]?.photos?.[0]?.url) {
                     const photoUrl = data.results[0].photos[0].url;
                     const thumbnailUrl = photoUrl.replace(/\/large\./, '/square.');
                     thumbnailCache.set(obsId, thumbnailUrl);
                     return thumbnailUrl;
+                } else {
+                    console.error(`Aucune photo trouvée pour l'observation ${obsId}`);
+                    thumbnailCache.set(obsId, null);
+                    return null;
                 }
             } catch (error) {
                 console.error(`Erreur pour l'observation ${obsId}:`, error);
