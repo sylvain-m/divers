@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iNat 2 OSM</title>
-    <link rel="icon" href="data:,"> <!-- Désactive la requête de favicon -->
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
@@ -119,8 +119,6 @@
             justify-content: center;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 10px;
-            color: #999;
         }
         .loading-spinner {
             width: 20px;
@@ -174,45 +172,127 @@
         const markers = L.markerClusterGroup();
         const previewContainer = document.getElementById('thumbnail-preview-container');
         const thumbnailCache = new Map();
-
-        // Proxy CORS alternatif (plus fiable que cors-anywhere)
         const CORS_PROXY = 'https://thingproxy.freeboard.io/fetch/';
+
+        // Écouteur pour détecter l'ouverture des popups
+        map.on('popupopen', async function(e) {
+            const popup = e.popup;
+            const content = popup.getContent();
+            if (content && content.includes('data-obs-ids')) {
+                await loadThumbnailsForPopup(popup);
+            }
+        });
 
         fetch('osm_inat.geojson')
             .then(response => response.json())
             .then(data => {
-                // Count OSM elements and iNaturalist observations
                 const osmElementCount = data.features.length;
                 const allObsIds = data.features.flatMap(feature =>
                     feature.properties.obs_ids.split(';')
                 );
                 const inatObsCount = allObsIds.length;
 
-                // Update header counts
                 document.getElementById('osm-count').innerHTML =
                     `<a href="https://www.openstreetmap.org" target="_blank" class="badge-custom">${osmElementCount}</a>`;
                 document.getElementById('obs-count').innerHTML =
                     `<a href="https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:OpenStreetMap%20(OSM)" target="_blank" class="badge-custom">${inatObsCount}</a>`;
 
-                // Add markers to the map
                 data.features.forEach(feature => {
                     const coords = feature.geometry.coordinates;
                     const lat = coords[1];
                     const lon = coords[0];
                     const props = feature.properties;
 
-                    // Utiliser une fonction pour générer le contenu de la popup à la demande
                     const marker = L.marker([lat, lon], { icon: treeIcon })
-                        .bindPopup(async () => {
-                            return await createPopupContent(props);
-                        });
+                        .bindPopup(createStaticPopupContent(props));
 
                     markers.addLayer(marker);
                 });
                 map.addLayer(markers);
             });
 
-        // Fonction pour récupérer l'URL de la vignette d'une observation
+        // Crée le contenu STATIQUE de la popup (sans les vignettes)
+        function createStaticPopupContent(props) {
+            const osmLink = `https://www.openstreetmap.org/${props.type}/${props.id}`;
+            const osmIcon = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OSM Logo">';
+
+            let tagsTable = 'OSM Tags :<br><table><tr><th>Key</th><th>Value</th></tr>';
+            for (const [key, value] of Object.entries(props.tags)) {
+                tagsTable += `<tr><td>${key}</td><td>${value}</td></tr>`;
+            }
+            tagsTable += '</table>';
+
+            const obsIds = props.obs_ids.split(';');
+            let obsBadges = '';
+            obsIds.forEach(obsId => {
+                obsBadges += `<a href="https://www.inaturalist.org/observations/${obsId}" target="_blank" class="badge-custom">${obsId}</a>`;
+            });
+
+            const inatIcon = '<img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">';
+            const inatBadge = `<a href="${props.obs_url}" target="_blank" class="badge-custom">${obsIds.length}</a>`;
+
+            return `
+                <div class="popup-content" data-obs-ids="${props.obs_ids}">
+                    <div style="margin-bottom: 10px;">
+                        <a href="${osmLink}" target="_blank">${osmIcon} ${props.type}/${props.id}</a>
+                    </div>
+                    <div class="inat-link-container">
+                        ${inatIcon}
+                        ${inatBadge}
+                        <span>iNaturalist Observation(s)</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">${obsBadges}</div>
+                    <div class="thumbnail-container" id="thumbnail-container-${props.obs_ids}">
+                        ${obsIds.map(obsId => `
+                            <div class="thumbnail-placeholder" data-obs-id="${obsId}">
+                                <div class="loading-spinner"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div>${tagsTable}</div>
+                </div>
+            `;
+        }
+
+        // Charge les vignettes pour une popup ouverte
+        async function loadThumbnailsForPopup(popup) {
+            const content = popup.getContent();
+            if (!content) return;
+
+            const popupDiv = popup.getElement();
+            if (!popupDiv) return;
+
+            const obsIds = content.querySelector('[data-obs-ids]')?.getAttribute('data-obs-ids')?.split(';');
+            if (!obsIds) return;
+
+            const thumbnailContainer = content.querySelector('.thumbnail-container');
+            if (!thumbnailContainer) return;
+
+            for (const obsId of obsIds) {
+                const placeholder = thumbnailContainer.querySelector(`[data-obs-id="${obsId}"]`);
+                if (!placeholder) continue;
+
+                const thumbnailUrl = await getObservationThumbnailUrl(obsId);
+                if (thumbnailUrl) {
+                    const thumbnailImg = document.createElement('img');
+                    thumbnailImg.src = thumbnailUrl;
+                    thumbnailImg.className = 'thumbnail';
+                    thumbnailImg.alt = `Observation ${obsId}`;
+                    thumbnailImg.onmouseover = (e) => showPreview(e, thumbnailUrl);
+                    thumbnailImg.onmouseout = hidePreview;
+                    thumbnailImg.onclick = () => window.open(`https://www.inaturalist.org/observations/${obsId}`, '_blank');
+                    placeholder.replaceWith(thumbnailImg);
+                } else {
+                    const errorPlaceholder = document.createElement('div');
+                    errorPlaceholder.className = 'thumbnail-placeholder';
+                    errorPlaceholder.innerHTML = '<i class="bi bi-image" style="font-size: 20px; color: #ccc;"></i>';
+                    placeholder.replaceWith(errorPlaceholder);
+                }
+                await new Promise(resolve => setTimeout(resolve, 100)); // Délai pour éviter le throttling
+            }
+        }
+
+        // Récupère l'URL de la vignette
         async function getObservationThumbnailUrl(obsId) {
             if (thumbnailCache.has(obsId)) {
                 return thumbnailCache.get(obsId);
@@ -226,7 +306,7 @@
                 }
                 const text = await response.text();
                 const data = JSON.parse(text);
-                if (data.results && data.results[0]?.photos?.[0]?.url) {
+                if (data.results?.[0]?.photos?.[0]?.url) {
                     const photoUrl = data.results[0].photos[0].url;
                     const thumbnailUrl = photoUrl.replace(/\/large\./, '/square.');
                     thumbnailCache.set(obsId, thumbnailUrl);
@@ -239,7 +319,7 @@
             }
         }
 
-        // Fonction pour afficher l'aperçu au survol
+        // Affiche l'aperçu au survol
         function showPreview(event, previewUrl) {
             const previewImg = document.createElement('img');
             previewImg.src = previewUrl.replace(/\/square\./, '/medium.');
@@ -254,90 +334,6 @@
 
         function hidePreview() {
             previewContainer.innerHTML = '';
-        }
-
-        // Fonction pour créer le contenu de la popup (retourne une Promise<string>)
-        async function createPopupContent(props) {
-            const osmLink = `https://www.openstreetmap.org/${props.type}/${props.id}`;
-            const osmIcon = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OSM Logo">';
-
-            let tagsTable = 'OSM Tags :<br><table><tr><th>Key</th><th>Value</th></tr>';
-            for (const [key, value] of Object.entries(props.tags)) {
-                tagsTable += `<tr><td>${key}</td><td>${value}</td></tr>`;
-            }
-            tagsTable += '</table>';
-
-            const obsIds = props.obs_ids.split(';');
-
-            // Créer les badges
-            let obsBadges = '';
-            obsIds.forEach(obsId => {
-                obsBadges += `<a href="https://www.inaturalist.org/observations/${obsId}" target="_blank" class="badge-custom">${obsId}</a>`;
-            });
-
-            // Conteneur pour les vignettes (en HTML string)
-            let thumbnailsHtml = '<div class="thumbnail-container">';
-
-            // Charger les vignettes avec un délai pour éviter le throttling
-            for (const obsId of obsIds) {
-                thumbnailsHtml += '<div class="thumbnail-placeholder"><div class="loading-spinner"></div></div>';
-            }
-
-            thumbnailsHtml += '</div>';
-
-            const inatIcon = '<img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">';
-            const inatBadge = `<a href="${props.obs_url}" target="_blank" class="badge-custom">${obsIds.length}</a>`;
-
-            // Contenu initial de la popup (avec placeholders)
-            let popupHtml = `
-                <div class="popup-content">
-                    <div style="margin-bottom: 10px;">
-                        <a href="${osmLink}" target="_blank">${osmIcon} ${props.type}/${props.id}</a>
-                    </div>
-                    <div class="inat-link-container">
-                        ${inatIcon}
-                        ${inatBadge}
-                        <span>iNaturalist Observation(s)</span>
-                    </div>
-                    <div style="margin-bottom: 10px;">${obsBadges}</div>
-                    ${thumbnailsHtml}
-                    <div>${tagsTable}</div>
-                </div>
-            `;
-
-            // Remplacer les placeholders par les vraies vignettes (après affichage de la popup)
-            setTimeout(async () => {
-                const popup = document.querySelector('.leaflet-popup-content');
-                if (!popup) return;
-
-                const placeholders = popup.querySelectorAll('.thumbnail-placeholder');
-                for (let i = 0; i < placeholders.length; i++) {
-                    const obsId = obsIds[i];
-                    const thumbnailUrl = await getObservationThumbnailUrl(obsId);
-
-                    if (thumbnailUrl) {
-                        const thumbnailImg = document.createElement('img');
-                        thumbnailImg.src = thumbnailUrl;
-                        thumbnailImg.className = 'thumbnail';
-                        thumbnailImg.alt = `Observation ${obsId}`;
-                        thumbnailImg.onmouseover = (e) => showPreview(e, thumbnailUrl);
-                        thumbnailImg.onmouseout = hidePreview;
-                        thumbnailImg.onclick = () => window.open(`https://www.inaturalist.org/observations/${obsId}`, '_blank');
-                        placeholders[i].replaceWith(thumbnailImg);
-                    } else {
-                        // Remplacer par une icône d'erreur
-                        const errorPlaceholder = document.createElement('div');
-                        errorPlaceholder.className = 'thumbnail-placeholder';
-                        errorPlaceholder.innerHTML = '<i class="bi bi-image" style="font-size: 20px; color: #ccc;"></i>';
-                        placeholders[i].replaceWith(errorPlaceholder);
-                    }
-
-                    // Délai pour éviter le throttling
-                    await new Promise(resolve => setTimeout(resolve, 100));
-                }
-            }, 0);
-
-            return popupHtml;
         }
     </script>
 </body>
