@@ -119,6 +119,9 @@
             justify-content: center;
             border: 1px solid #ddd;
             border-radius: 4px;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
         }
         .loading-spinner {
             width: 20px;
@@ -130,6 +133,20 @@
         }
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+        .thumbnail-error {
+            width: 100px;
+            height: 100px;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 10px;
+            color: #999;
+            text-align: center;
         }
     </style>
 </head>
@@ -172,7 +189,30 @@
         const markers = L.markerClusterGroup();
         const previewContainer = document.getElementById('thumbnail-preview-container');
         const thumbnailCache = new Map();
-        const CORS_PROXY = 'https://thingproxy.freeboard.io/fetch/';
+
+        // Liste de proxies CORS à essayer (par ordre de priorité)
+        const CORS_PROXIES = [
+            'https://corsproxy.io/?',
+            'https://api.allorigins.win/raw?url=',
+            'https://thingproxy.freeboard.io/fetch/'
+        ];
+
+        // Fonction pour obtenir un proxy CORS fonctionnel
+        async function getWorkingCorsProxy() {
+            for (const proxy of CORS_PROXIES) {
+                try {
+                    // Tester le proxy avec une requête simple
+                    const testUrl = `${proxy}https://api.inaturalist.org/v1/observations/1?photo_license=any`;
+                    const response = await fetch(testUrl, { method: 'HEAD', mode: 'no-cors' });
+                    if (response.ok || response.type === 'opaque') {
+                        return proxy;
+                    }
+                } catch (e) {
+                    console.warn(`Proxy ${proxy} non fonctionnel, essai du suivant...`);
+                }
+            }
+            return null; // Aucun proxy fonctionnel
+        }
 
         // Écouteur pour détecter l'ouverture des popups
         map.on('popupopen', async function(e) {
@@ -268,11 +308,25 @@
             const thumbnailContainer = popupContent.querySelector('.thumbnail-container');
             if (!thumbnailContainer) return;
 
+            // Trouver un proxy CORS fonctionnel
+            const corsProxy = await getWorkingCorsProxy();
+            if (!corsProxy) {
+                console.error("Aucun proxy CORS fonctionnel trouvé. Les vignettes ne pourront pas être chargées.");
+                // Remplacer tous les placeholders par des icônes d'erreur
+                thumbnailContainer.querySelectorAll('.thumbnail-placeholder').forEach(placeholder => {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'thumbnail-error';
+                    errorDiv.innerHTML = '<i class="bi bi-image" style="font-size: 20px; color: #ccc;"></i><span>Proxy CORS indisponible</span>';
+                    placeholder.replaceWith(errorDiv);
+                });
+                return;
+            }
+
             for (const obsId of obsIds) {
                 const placeholder = thumbnailContainer.querySelector(`[data-obs-id="${obsId}"]`);
                 if (!placeholder) continue;
 
-                const thumbnailUrl = await getObservationThumbnailUrl(obsId);
+                const thumbnailUrl = await getObservationThumbnailUrl(obsId, corsProxy);
                 if (thumbnailUrl) {
                     const thumbnailImg = document.createElement('img');
                     thumbnailImg.src = thumbnailUrl;
@@ -283,51 +337,63 @@
                     thumbnailImg.onclick = () => window.open(`https://www.inaturalist.org/observations/${obsId}`, '_blank');
                     placeholder.replaceWith(thumbnailImg);
                 } else {
-                    const errorPlaceholder = document.createElement('div');
-                    errorPlaceholder.className = 'thumbnail-placeholder';
-                    errorPlaceholder.innerHTML = '<i class="bi bi-image" style="font-size: 20px; color: #ccc;"></i>';
-                    placeholder.replaceWith(errorPlaceholder);
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'thumbnail-error';
+                    errorDiv.innerHTML = '<i class="bi bi-image" style="font-size: 20px; color: #ccc;"></i><span>Aucune photo</span>';
+                    placeholder.replaceWith(errorDiv);
                 }
                 await new Promise(resolve => setTimeout(resolve, 100)); // Délai pour éviter le throttling
             }
         }
 
         // Récupère l'URL de la vignette
-        async function getObservationThumbnailUrl(obsId) {
+        async function getObservationThumbnailUrl(obsId, corsProxy) {
             if (thumbnailCache.has(obsId)) {
                 return thumbnailCache.get(obsId);
             }
 
             thumbnailCache.set(obsId, 'loading');
             try {
-                const response = await fetch(`${CORS_PROXY}https://api.inaturalist.org/v1/observations/${obsId}?photo_license=any`);
+                const apiUrl = `https://api.inaturalist.org/v1/observations/${obsId}?photo_license=any`;
+                const response = await fetch(`${corsProxy}${apiUrl}`);
                 if (!response.ok) {
-                    console.error(`Erreur HTTP ${response.status} pour l'observation ${obsId}`);
-                    thumbnailCache.set(obsId, null);
-                    return null;
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
                 let data;
                 try {
                     data = JSON.parse(text);
                 } catch (e) {
-                    console.error(`Erreur de parsing JSON pour l'observation ${obsId}:`, e);
-                    thumbnailCache.set(obsId, null);
-                    return null;
+                    throw new Error(`Erreur de parsing JSON: ${e.message}`);
                 }
 
                 if (data.results?.[0]?.photos?.[0]?.url) {
                     const photoUrl = data.results[0].photos[0].url;
+                    // Remplacer par la version 'square' pour les vignettes
                     const thumbnailUrl = photoUrl.replace(/\/large\./, '/square.');
                     thumbnailCache.set(obsId, thumbnailUrl);
                     return thumbnailUrl;
                 } else {
-                    console.error(`Aucune photo trouvée pour l'observation ${obsId}`);
+                    console.warn(`Aucune photo trouvée pour l'observation ${obsId}`);
                     thumbnailCache.set(obsId, null);
                     return null;
                 }
             } catch (error) {
                 console.error(`Erreur pour l'observation ${obsId}:`, error);
+
+                // Essayer de charger directement l'URL de l'image (si disponible)
+                try {
+                    // Certaines images iNaturalist sont accessibles directement
+                    const directUrl = `https://static.inaturalist.org/photos/${obsId}/square.jpg`;
+                    const directResponse = await fetch(directUrl, { method: 'HEAD' });
+                    if (directResponse.ok) {
+                        thumbnailCache.set(obsId, directUrl);
+                        return directUrl;
+                    }
+                } catch (e) {
+                    console.warn(`Échec du chargement direct pour ${obsId}:`, e);
+                }
+
                 thumbnailCache.set(obsId, null);
                 return null;
             }
