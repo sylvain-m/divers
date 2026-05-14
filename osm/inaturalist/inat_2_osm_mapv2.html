@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iNat 2 OSM</title>
-    <link rel="icon" href="data:,"> <!-- Désactive la requête de favicon par défaut -->
+    <link rel="icon" href="data:,"> <!-- Désactive la requête de favicon -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
@@ -77,11 +77,6 @@
             align-items: center;
             gap: 8px;
         }
-        .header-logos {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
         .thumbnail-container {
             display: flex;
             flex-wrap: wrap;
@@ -126,7 +121,6 @@
             border-radius: 4px;
             font-size: 10px;
             color: #999;
-            text-align: center;
         }
         .loading-spinner {
             width: 20px;
@@ -135,7 +129,6 @@
             border-radius: 50%;
             border-top-color: #74ac00;
             animation: spin 1s ease-in-out infinite;
-            margin: 0 auto;
         }
         @keyframes spin {
             to { transform: rotate(360deg); }
@@ -181,10 +174,9 @@
         const markers = L.markerClusterGroup();
         const previewContainer = document.getElementById('thumbnail-preview-container');
         const thumbnailCache = new Map();
-        let isLoading = false;
 
-        // Proxy CORS (à remplacer par votre propre proxy si nécessaire)
-        const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+        // Proxy CORS alternatif (plus fiable que cors-anywhere)
+        const CORS_PROXY = 'https://thingproxy.freeboard.io/fetch/';
 
         fetch('osm_inat.geojson')
             .then(response => response.json())
@@ -209,10 +201,11 @@
                     const lon = coords[0];
                     const props = feature.properties;
 
-                    // Use the custom icon for all markers
-                    const marker = L.marker([lat, lon], {
-                        icon: treeIcon
-                    }).bindPopup(() => createPopupContent(props));
+                    // Utiliser une fonction pour générer le contenu de la popup à la demande
+                    const marker = L.marker([lat, lon], { icon: treeIcon })
+                        .bindPopup(async () => {
+                            return await createPopupContent(props);
+                        });
 
                     markers.addLayer(marker);
                 });
@@ -225,13 +218,15 @@
                 return thumbnailCache.get(obsId);
             }
 
-            // Marquer comme en cours de chargement
             thumbnailCache.set(obsId, 'loading');
             try {
-                // Utilisation du proxy CORS
                 const response = await fetch(`${CORS_PROXY}https://api.inaturalist.org/v1/observations/${obsId}?photo_license=any`);
-                const data = await response.json();
-                if (data.results && data.results[0] && data.results[0].photos && data.results[0].photos[0]) {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                const data = JSON.parse(text);
+                if (data.results && data.results[0]?.photos?.[0]?.url) {
                     const photoUrl = data.results[0].photos[0].url;
                     const thumbnailUrl = photoUrl.replace(/\/large\./, '/square.');
                     thumbnailCache.set(obsId, thumbnailUrl);
@@ -261,7 +256,7 @@
             previewContainer.innerHTML = '';
         }
 
-        // Fonction pour créer le contenu de la popup (appelée uniquement à l'ouverture)
+        // Fonction pour créer le contenu de la popup (retourne une Promise<string>)
         async function createPopupContent(props) {
             const osmLink = `https://www.openstreetmap.org/${props.type}/${props.id}`;
             const osmIcon = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OSM Logo">';
@@ -280,61 +275,69 @@
                 obsBadges += `<a href="https://www.inaturalist.org/observations/${obsId}" target="_blank" class="badge-custom">${obsId}</a>`;
             });
 
-            // Conteneur pour les vignettes
-            const thumbnailsHtml = document.createElement('div');
-            thumbnailsHtml.className = 'thumbnail-container';
+            // Conteneur pour les vignettes (en HTML string)
+            let thumbnailsHtml = '<div class="thumbnail-container">';
 
-            // Charger les vignettes une par une avec un délai
+            // Charger les vignettes avec un délai pour éviter le throttling
             for (const obsId of obsIds) {
-                const thumbnailPlaceholder = document.createElement('div');
-                thumbnailPlaceholder.className = 'thumbnail-placeholder';
-                thumbnailPlaceholder.innerHTML = '<div class="loading-spinner"></div>';
-                thumbnailsHtml.appendChild(thumbnailPlaceholder);
-
-                // Attendre un peu avant de charger la prochaine vignette
-                await new Promise(resolve => setTimeout(resolve, 100));
-
-                const thumbnailUrl = await getObservationThumbnailUrl(obsId);
-                if (thumbnailUrl) {
-                    const thumbnailImg = document.createElement('img');
-                    thumbnailImg.src = thumbnailUrl;
-                    thumbnailImg.className = 'thumbnail';
-                    thumbnailImg.alt = `Observation ${obsId}`;
-                    thumbnailImg.onmouseover = (e) => showPreview(e, thumbnailUrl);
-                    thumbnailImg.onmouseout = hidePreview;
-                    thumbnailImg.onclick = () => window.open(`https://www.inaturalist.org/observations/${obsId}`, '_blank');
-
-                    // Remplacer le placeholder par l'image
-                    thumbnailsHtml.replaceChild(thumbnailImg, thumbnailPlaceholder);
-                } else {
-                    // Remplacer par une icône de remplacement
-                    const errorPlaceholder = document.createElement('div');
-                    errorPlaceholder.className = 'thumbnail-placeholder';
-                    errorPlaceholder.innerHTML = '<i class="bi bi-image" style="font-size: 20px; color: #ccc;"></i>';
-                    thumbnailsHtml.replaceChild(errorPlaceholder, thumbnailPlaceholder);
-                }
+                thumbnailsHtml += '<div class="thumbnail-placeholder"><div class="loading-spinner"></div></div>';
             }
+
+            thumbnailsHtml += '</div>';
 
             const inatIcon = '<img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">';
             const inatBadge = `<a href="${props.obs_url}" target="_blank" class="badge-custom">${obsIds.length}</a>`;
 
-            const popupContent = document.createElement('div');
-            popupContent.className = 'popup-content';
-            popupContent.innerHTML = `
-                <div style="margin-bottom: 10px;">
-                    <a href="${osmLink}" target="_blank">${osmIcon} ${props.type}/${props.id}</a>
+            // Contenu initial de la popup (avec placeholders)
+            let popupHtml = `
+                <div class="popup-content">
+                    <div style="margin-bottom: 10px;">
+                        <a href="${osmLink}" target="_blank">${osmIcon} ${props.type}/${props.id}</a>
+                    </div>
+                    <div class="inat-link-container">
+                        ${inatIcon}
+                        ${inatBadge}
+                        <span>iNaturalist Observation(s)</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">${obsBadges}</div>
+                    ${thumbnailsHtml}
+                    <div>${tagsTable}</div>
                 </div>
-                <div class="inat-link-container">
-                    <a href="${props.obs_url}" target="_blank">${inatIcon}</a>
-                    ${inatBadge}
-                    <span>iNaturalist Observation(s)</span>
-                </div>
-                <div style="margin-bottom: 10px;">${obsBadges}</div>
             `;
-            popupContent.appendChild(thumbnailsHtml);
-            popupContent.innerHTML += `<div>${tagsTable}</div>`;
 
-            return popupContent;
+            // Remplacer les placeholders par les vraies vignettes (après affichage de la popup)
+            setTimeout(async () => {
+                const popup = document.querySelector('.leaflet-popup-content');
+                if (!popup) return;
+
+                const placeholders = popup.querySelectorAll('.thumbnail-placeholder');
+                for (let i = 0; i < placeholders.length; i++) {
+                    const obsId = obsIds[i];
+                    const thumbnailUrl = await getObservationThumbnailUrl(obsId);
+
+                    if (thumbnailUrl) {
+                        const thumbnailImg = document.createElement('img');
+                        thumbnailImg.src = thumbnailUrl;
+                        thumbnailImg.className = 'thumbnail';
+                        thumbnailImg.alt = `Observation ${obsId}`;
+                        thumbnailImg.onmouseover = (e) => showPreview(e, thumbnailUrl);
+                        thumbnailImg.onmouseout = hidePreview;
+                        thumbnailImg.onclick = () => window.open(`https://www.inaturalist.org/observations/${obsId}`, '_blank');
+                        placeholders[i].replaceWith(thumbnailImg);
+                    } else {
+                        // Remplacer par une icône d'erreur
+                        const errorPlaceholder = document.createElement('div');
+                        errorPlaceholder.className = 'thumbnail-placeholder';
+                        errorPlaceholder.innerHTML = '<i class="bi bi-image" style="font-size: 20px; color: #ccc;"></i>';
+                        placeholders[i].replaceWith(errorPlaceholder);
+                    }
+
+                    // Délai pour éviter le throttling
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            }, 0);
+
+            return popupHtml;
         }
     </script>
 </body>
