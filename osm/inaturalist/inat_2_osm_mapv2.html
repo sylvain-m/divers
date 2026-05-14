@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iNat 2 OSM</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        #header h1 {
+            margin-bottom: 5px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        #header p {
+            margin: 0;
+            color: #666;
+        }
+        #map {
+            height: calc(100vh - 120px);
+            width: 100%;
+        }
+        .popup-content {
+            padding: 10px;
+            max-width: 300px;
+        }
+        .popup-content table {
+            font-size: 12px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .popup-content th {
+            text-align: left;
+            padding: 2px 5px;
+            background-color: #f1f1f1;
+        }
+        .popup-content td {
+            padding: 2px 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .osm-logo, .inat-logo {
+            width: 48px;
+            height: auto;
+            vertical-align: middle;
+        }
+        .badge-custom {
+            margin: 2px;
+            display: inline-block;
+            background-color: #74ac00;
+            color: white !important;
+            text-decoration: none !important;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .inat-link-container {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .thumbnail:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .thumbnail-preview {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #fff;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
+            z-index: 1000;
+            pointer-events: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>
+            <a href="https://www.inaturalist.org" target="_blank">
+                <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">
+            </a>
+            iNat 2 OSM
+            <a href="https://www.openstreetmap.org" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OpenStreetMap Logo">
+            </a>
+        </h1>
+        <p>
+            <span id="osm-count"></span> OSM elements linked with <span id="obs-count"></span> iNaturalist Observations | Daily update (<a href="inat_2_csv_log.txt">history</a>)
+        </p>
+        <div><a href="index.html" class="btn" style="background-color: #86a91c; color: white;"><i class="bi bi-table"></i> Table View</a></div>
+    </div>
+    <div id="map"></div>
+    <div id="thumbnail-preview-container" style="position: absolute; pointer-events: none; z-index: 1000;"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        // Custom icon for all markers
+        const treeIcon = L.icon({
+            iconUrl: '../tree.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
+        const map = L.map('map').setView([46.603354, 1.888334], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | <a href="https://www.inaturalist.org">iNaturalist</a> Observations'
+        }).addTo(map);
+
+        const markers = L.markerClusterGroup();
+        const previewContainer = document.getElementById('thumbnail-preview-container');
+
+        // Cache pour les vignettes déjà chargées
+        const thumbnailCache = new Map();
+
+        fetch('osm_inat.geojson')
+            .then(response => response.json())
+            .then(data => {
+                // Count OSM elements and iNaturalist observations
+                const osmElementCount = data.features.length;
+                const allObsIds = data.features.flatMap(feature =>
+                    feature.properties.obs_ids.split(';')
+                );
+                const inatObsCount = allObsIds.length;
+
+                // Update header counts
+                document.getElementById('osm-count').innerHTML =
+                    `<a href="https://www.openstreetmap.org" target="_blank" class="badge-custom">${osmElementCount}</a>`;
+                document.getElementById('obs-count').innerHTML =
+                    `<a href="https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:OpenStreetMap%20(OSM)" target="_blank" class="badge-custom">${inatObsCount}</a>`;
+
+                // Add markers to the map
+                data.features.forEach(feature => {
+                    const coords = feature.geometry.coordinates;
+                    const lat = coords[1];
+                    const lon = coords[0];
+                    const props = feature.properties;
+
+                    // Use the custom icon for all markers
+                    const marker = L.marker([lat, lon], {
+                        icon: treeIcon
+                    }).bindPopup(createPopupContent(props));
+
+                    markers.addLayer(marker);
+                });
+                map.addLayer(markers);
+            });
+
+        // Fonction pour récupérer l'URL de la vignette d'une observation
+        async function getObservationThumbnailUrl(obsId) {
+            if (thumbnailCache.has(obsId)) {
+                return thumbnailCache.get(obsId);
+            }
+
+            try {
+                const response = await fetch(`https://api.inaturalist.org/v1/observations/${obsId}?photo_license=any&taxon_geojson=true`);
+                const data = await response.json();
+                if (data.results && data.results[0] && data.results[0].photos && data.results[0].photos[0]) {
+                    const photoUrl = data.results[0].photos[0].url;
+                    // Remplacer le format par 'square' pour obtenir une vignette carrée
+                    const thumbnailUrl = photoUrl.replace(/\/large\./, '/square.');
+                    thumbnailCache.set(obsId, thumbnailUrl);
+                    return thumbnailUrl;
+                }
+            } catch (error) {
+                console.error(`Erreur lors de la récupération de la vignette pour l'observation ${obsId}:`, error);
+            }
+            return null;
+        }
+
+        // Fonction pour afficher l'aperçu au survol
+        function showPreview(event, previewUrl) {
+            const previewImg = document.createElement('img');
+            previewImg.src = previewUrl.replace(/\/square\./, '/medium.');
+            previewImg.className = 'thumbnail-preview';
+            previewImg.style.left = `${event.pageX + 10}px`;
+            previewImg.style.top = `${event.pageY + 10}px`;
+            previewImg.style.display = 'block';
+
+            // Supprimer les aperçus existants
+            previewContainer.innerHTML = '';
+            previewContainer.appendChild(previewImg);
+        }
+
+        function hidePreview() {
+            previewContainer.innerHTML = '';
+        }
+
+        async function createPopupContent(props) {
+            const osmLink = `https://www.openstreetmap.org/${props.type}/${props.id}`;
+            const osmIcon = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OSM Logo">';
+
+            let tagsTable = 'OSM Tags :<br><table><tr><th>Key</th><th>Value</th></tr>';
+            for (const [key, value] of Object.entries(props.tags)) {
+                tagsTable += `<tr><td>${key}</td><td>${value}</td></tr>`;
+            }
+            tagsTable += '</table>';
+
+            const obsIds = props.obs_ids.split(';');
+
+            // Créer les badges et les vignettes
+            let obsBadges = '';
+            let thumbnailsHtml = '<div class="thumbnail-container">';
+
+            for (const obsId of obsIds) {
+                // Badge
+                obsBadges += `<a href="https://www.inaturalist.org/observations/${obsId}" target="_blank" class="badge-custom">${obsId}</a>`;
+
+                // Vignette
+                const thumbnailUrl = await getObservationThumbnailUrl(obsId);
+                if (thumbnailUrl) {
+                    thumbnailsHtml += `
+                        <img
+                            src="${thumbnailUrl}"
+                            class="thumbnail"
+                            alt="Observation ${obsId}"
+                            onmouseover="showPreview(event, '${thumbnailUrl}')"
+                            onmouseout="hidePreview()"
+                            onclick="window.open('https://www.inaturalist.org/observations/${obsId}', '_blank')"
+                        >
+                    `;
+                }
+            }
+
+            thumbnailsHtml += '</div>';
+            const inatIcon = '<img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">';
+            const inatBadge = `<a href="${props.obs_url}" target="_blank" class="badge-custom">${obsIds.length}</a>`;
+
+            return `
+                <div class="popup-content">
+                    <div style="margin-bottom: 10px;">
+                        <a href="${osmLink}" target="_blank">${osmIcon} ${props.type}/${props.id}</a>
+                    </div>
+                    <div class="inat-link-container">
+                        <a href="${props.obs_url}" target="_blank">${inatIcon}</a>
+                        ${inatBadge}
+                        <span>iNaturalist Observation(s)</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">${obsBadges}</div>
+                    ${thumbnailsHtml}
+                    <div>${tagsTable}</div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
