@@ -153,6 +153,25 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 354833632,
+        "type": "node",
+        "tags": {
+          "natural": "tree"
+        },
+        "obs_ids": "349280239;349280280;349280284",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=349280239,349280280,349280284"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7373469,
+          40.5057798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 450143062,
         "type": "node",
         "tags": {
@@ -533,6 +552,25 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 1721577600,
+        "type": "node",
+        "tags": {
+          "natural": "tree"
+        },
+        "obs_ids": "16875246;32084171;108423252;146640492;152013119;154730341;232367230;252417314;276800564;292734469;350269809",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=16875246,32084171,108423252,146640492,152013119,154730341,232367230,252417314,276800564,292734469,350269809"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.98789,
+          37.3840998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 1794962343,
         "type": "node",
         "tags": {
@@ -559,6 +597,28 @@
         "coordinates": [
           -0.3997822,
           48.5667917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1976832593,
+        "type": "node",
+        "tags": {
+          "family:fr": "Marronnier d'Inde",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "species": "Aesculus hippocastanum"
+        },
+        "obs_ids": "326520299",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=326520299"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9503626,
+          48.7181741
         ]
       }
     },
@@ -629,6 +689,29 @@
         "coordinates": [
           -80.0804039,
           32.717045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2394144219,
+        "type": "node",
+        "tags": {
+          "genus": "Quercus",
+          "genus:de": "Eiche",
+          "leaf_type": "broadleaved",
+          "name": "Hirschkäfereiche",
+          "natural": "tree"
+        },
+        "obs_ids": "360532793",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=360532793"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0898054,
+          51.7372423
         ]
       }
     },
@@ -853,6 +936,59 @@
         "coordinates": [
           -2.3738978,
           55.0035721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3024026843,
+        "type": "node",
+        "tags": {
+          "circumference": "4.50",
+          "denotation": "natural_monument",
+          "genus": "Quercus",
+          "height": "20",
+          "leaf_type": "broadleaved",
+          "monument": "yes",
+          "name": "Roure del Giol",
+          "name:ca": "Roure del Giol",
+          "natural": "tree",
+          "protected": "yes",
+          "ref": "MA-42.055.01",
+          "species": "Quercus pubescens",
+          "species:ca": "Roure martinenc",
+          "wikidata": "Q11946352",
+          "wikipedia": "ca:Roure del Giol"
+        },
+        "obs_ids": "148314368;236686895;358912422;359858670",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=148314368,236686895,358912422,359858670"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1680486,
+          41.7946793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3131913605,
+        "type": "node",
+        "tags": {
+          "natural": "tree",
+          "species:es": "Acebuche"
+        },
+        "obs_ids": "78614679;145844881;173694980;189428669;204156332;233243612;269017747;350280723;352597391",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=78614679,145844881,173694980,189428669,204156332,233243612,269017747,350280723,352597391"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.482575,
+          37.1285546
         ]
       }
     },
@@ -1269,6 +1405,33 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 5624084691,
+        "type": "node",
+        "tags": {
+          "circumference": "2.51",
+          "denotation": "landmark",
+          "genus": "Quercus",
+          "height": "21",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Chêne de la Croix du Grand Veneur",
+          "natural": "tree",
+          "species": "Quercus robur"
+        },
+        "obs_ids": "70009391",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=70009391"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9038664,
+          48.6337882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 5803910238,
         "type": "node",
         "tags": {
@@ -1503,6 +1666,31 @@
         "coordinates": [
           -124.3483658,
           48.5886754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6920880887,
+        "type": "node",
+        "tags": {
+          "name": "Baladre de Balada",
+          "name:ca": "Baladre de Balada",
+          "natural": "tree",
+          "protected": "yes",
+          "ref": "MA-22.902.01",
+          "species": "Nerium oleander",
+          "species:ca": "baladre"
+        },
+        "obs_ids": "101379654",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=101379654"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6833,
+          40.7117
         ]
       }
     },
@@ -2051,6 +2239,34 @@
         "coordinates": [
           77.5828679,
           12.9499723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10034072371,
+        "type": "node",
+        "tags": {
+          "denotation": "memorial",
+          "description": "\"Arbre de la liberté\" planté le 21 mars 1989 (bicentenaire de la révolution)",
+          "genus": "Tilia",
+          "genus:fr": "Tilleul",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Arbre de la liberté",
+          "natural": "tree",
+          "species:wikidata": "Q127849",
+          "start_date": "1989-03-21"
+        },
+        "obs_ids": "308386832",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=308386832"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.100616,
+          48.398284
         ]
       }
     },
