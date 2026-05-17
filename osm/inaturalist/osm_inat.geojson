@@ -156,7 +156,12 @@
         "id": 354833632,
         "type": "node",
         "tags": {
-          "natural": "tree"
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851"
         },
         "obs_ids": "349280239;349280280;349280284",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=349280239,349280280,349280284"
@@ -164,8 +169,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.7373469,
-          40.5057798
+          -3.7374747,
+          40.5057401
         ]
       }
     },
@@ -555,7 +560,15 @@
         "id": 1721577600,
         "type": "node",
         "tags": {
-          "natural": "tree"
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Ficus de los Jardines de Murillo",
+          "natural": "tree",
+          "ref:inaturalist.org": "350269809",
+          "species": "Ficus macrophylla",
+          "species:wikidata": "Q1439079",
+          "species:wikipedia": "es:Ficus macrophylla"
         },
         "obs_ids": "16875246;32084171;108423252;146640492;152013119;154730341;232367230;252417314;276800564;292734469;350269809",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=16875246,32084171,108423252,146640492,152013119,154730341,232367230,252417314,276800564,292734469,350269809"
@@ -617,8 +630,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.9503626,
-          48.7181741
+          4.9502485,
+          48.7181753
         ]
       }
     },
@@ -698,11 +711,15 @@
         "id": 2394144219,
         "type": "node",
         "tags": {
-          "genus": "Quercus",
+          "denotation": "landmark",
           "genus:de": "Eiche",
+          "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "name": "Hirschkäfereiche",
-          "natural": "tree"
+          "natural": "tree",
+          "species": "Quercus robur",
+          "species:de": "Stieleiche",
+          "species:wikidata": "Q165145"
         },
         "obs_ids": "360532793",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=360532793"
@@ -978,8 +995,14 @@
         "id": 3131913605,
         "type": "node",
         "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "El Abuelo",
           "natural": "tree",
-          "species:es": "Acebuche"
+          "species": "Olea europaea",
+          "species:es": "Acebuche",
+          "species:wikidata": "Q37083"
         },
         "obs_ids": "78614679;145844881;173694980;189428669;204156332;233243612;269017747;350280723;352597391",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=78614679,145844881,173694980,189428669,204156332,233243612,269017747,350280723,352597391"
@@ -1196,13 +1219,16 @@
         "id": 4429089292,
         "type": "node",
         "tags": {
+          "alt_name": "Ohrid Plane",
           "denotation": "natural_monument",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "name": "Стар чинар",
           "name:en": "Old plane tree",
           "name:mk": "Стар чинар",
-          "natural": "tree"
+          "natural": "tree",
+          "species": "Platanus orientalis",
+          "species:wikidata": "Q161105"
         },
         "obs_ids": "15665182;195948089;219554454;253169326;344743806",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=15665182,195948089,219554454,253169326,344743806"
@@ -1364,9 +1390,15 @@
         "id": 5293753815,
         "type": "node",
         "tags": {
+          "denotation": "urban",
+          "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "source": "Bing"
+          "ref:inaturalist.org": "360554812",
+          "source": "Bing",
+          "species": "Broussonetia papyrifera",
+          "species:wikidata": "Q389185",
+          "species:wikipedia": "fr:Broussonetia papyrifera"
         },
         "obs_ids": "360554812",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=360554812"
@@ -1374,8 +1406,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.0835709,
-          48.4294123
+          0.0835506,
+          48.4294038
         ]
       }
     },
@@ -1675,13 +1707,15 @@
         "id": 6920880887,
         "type": "node",
         "tags": {
+          "leaf_type": "broadleaved",
           "name": "Baladre de Balada",
           "name:ca": "Baladre de Balada",
           "natural": "tree",
           "protected": "yes",
           "ref": "MA-22.902.01",
           "species": "Nerium oleander",
-          "species:ca": "baladre"
+          "species:ca": "baladre",
+          "species:wikidata": "Q155833"
         },
         "obs_ids": "101379654",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=101379654"
@@ -1689,8 +1723,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.6833,
-          40.7117
+          0.6833747,
+          40.711782
         ]
       }
     },
@@ -2443,8 +2477,14 @@
         "id": 10935096569,
         "type": "node",
         "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
           "name": "La Gran Ceiba de Vieques",
           "natural": "tree",
+          "species": "Ceiba pentandra",
+          "species:wikidata": "Q138617",
+          "species:wikipedia": "en:Ceiba pentandra",
           "website": "https://vieques.com/vieques-attractions-ceiba-tree/",
           "wikidata": "Q124336024"
         },
@@ -4425,7 +4465,7 @@
           "ref:inaturalist.org": "337310512",
           "start_date": "1910",
           "website": "https://stmarsdoutille.fr/decouvrir/chene-chataignier/",
-          "wikimedia_commons": "File:Ch%C3%AAne-Ch%C3%A2taigner_1.jpg"
+          "wikimedia_commons": "File:Chêne-Châtaigner_1.jpg"
         },
         "obs_ids": "337310512",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=337310512"
@@ -4776,6 +4816,186 @@
         "coordinates": [
           8.419962,
           45.3202369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13812125188,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "345919257",
+          "species": "Sequoiadendron giganteum",
+          "species:fr": "Séquoia géant",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        },
+        "obs_ids": "345919257",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=345919257"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0115408,
+          46.5968855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13812214430,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "269370946",
+          "species": "Sequoia sempervirens",
+          "species:wikidata": "Q150129",
+          "species:wikipedia": "fr:Sequoia sempervirens"
+        },
+        "obs_ids": "269370946",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=269370946"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9987409,
+          43.2445827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13812227489,
+        "type": "node",
+        "tags": {
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "252156630",
+          "species": "Sequoia sempervirens",
+          "species:fr": "Séquoia à feuilles d'if",
+          "species:wikidata": "Q150129"
+        },
+        "obs_ids": "252156630",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=252156630"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1864586,
+          43.7683331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13814277408,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "338867126",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        },
+        "obs_ids": "338867126",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=338867126"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7883659,
+          48.5050187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13814304147,
+        "type": "node",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "351650405",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        },
+        "obs_ids": "351650405",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=351650405"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0346672,
+          48.583936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13814370099,
+        "type": "node",
+        "tags": {
+          "denotation": "park",
+          "genus": "Thuja",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "360132501"
+        },
+        "obs_ids": "360132501",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=360132501"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0977974,
+          48.3966678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13821554406,
+        "type": "node",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Drago de La Culata",
+          "natural": "tree",
+          "ref:inaturalist.org": "340839714",
+          "species": "Dracaena draco",
+          "species:wikidata": "Q157952"
+        },
+        "obs_ids": "134439562;268812352;321600103;336100656;340839714",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=134439562,268812352,321600103,336100656,340839714"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7583894,
+          28.363591
         ]
       }
     }
