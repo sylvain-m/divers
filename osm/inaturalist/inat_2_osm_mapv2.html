@@ -262,7 +262,7 @@
 
         // Crée le contenu STATIQUE de la popup (sans les vignettes)
         function createStaticPopupContent(props) {
-            const osmLink = `https://www.openstreetmap.org/${props.type}/${props.id}`;
+            const osmLink = `https://www.openstreetmap.org/${props.osm_element}/${props.osm_id}`;
             const osmIcon = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OSM Logo">';
 
             let tagsTable = 'OSM Tags :<br><table><tr><th>Key</th><th>Value</th></tr>';
@@ -283,7 +283,7 @@
             return `
                 <div class="popup-content" data-obs-ids="${props.obs_ids}">
                     <div style="margin-bottom: 10px;">
-                        <a href="${osmLink}" target="_blank">${osmIcon} ${props.type}/${props.id}</a>
+                        <a href="${osmLink}" target="_blank">${osmIcon} ${props.osm_element}/${props.osm_id}</a>
                     </div>
                     <div class="inat-link-container">
                         ${inatIcon}
