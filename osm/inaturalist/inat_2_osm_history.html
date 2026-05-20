@@ -52,6 +52,9 @@
         // URL of the log file on GitHub (replace with your actual URL)
         const logFileUrl = 'inat_2_csv_log.txt';
 
+        // Global variable to store the chart instance
+        let inatOsmChart = null;
+
         // Function to parse log data
         function parseLogData(logText) {
             const lines = logText.trim().split('\n');
@@ -82,11 +85,11 @@
             const ctx = document.getElementById('inatOsmChart').getContext('2d');
 
             // Destroy previous chart if it exists
-            if (window.inatOsmChart) {
-                window.inatOsmChart.destroy();
+            if (inatOsmChart !== null) {
+                inatOsmChart.destroy();
             }
 
-            window.inatOsmChart = new Chart(ctx, {
+            inatOsmChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: labels,
