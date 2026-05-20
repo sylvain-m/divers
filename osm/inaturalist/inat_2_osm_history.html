@@ -78,7 +78,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OpenStreetMap Logo">
             </a>
         </h1>
-        <p>Chart showing the trend in iNaturalist observations<br>linked to OpenStreetMap features (updated daily)</p>
+        <p>Chart showing the trend in iNaturalist observations<br>linked to OpenStreetMap elements (updated daily)</p>
     </div>
     <div class="chart-container">
         <div id="loading" class="loading">Loading data from GitHub...</div>
@@ -145,7 +145,7 @@
                             fill: false
                         },
                         {
-                            label: 'OSM objects',
+                            label: 'OSM elements',
                             data: osmData,
                             borderColor: 'rgba(112, 146, 255, 1)',
                             backgroundColor: 'rgba(112, 146, 255, 0.2)',
@@ -184,7 +184,7 @@
                         y: {
                             title: {
                                 display: true,
-                                text: 'Nb. objects'
+                                text: 'Nb. elements'
                             }
                         }
                     }
