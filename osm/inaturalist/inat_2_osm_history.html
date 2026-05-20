@@ -10,18 +10,29 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Full viewport height */
         }
         .header {
-            height: 200px;
+            height: 100px; /* Reduced from 200px to 100px */
             background-color: #f0f8ff;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
         }
         .chart-container {
+            flex: 1; /* Takes remaining height */
             width: 100%;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        #inatOsmChart {
+            flex: 1; /* Chart takes all available height in container */
+            min-height: 0; /* Fix for flexbox in some browsers */
         }
         .loading {
             text-align: center;
@@ -114,7 +125,7 @@
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: false, /* Allows chart to fill container height */
                     scales: {
                         x: {
                             title: {
