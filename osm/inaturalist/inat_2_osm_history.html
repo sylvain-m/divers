@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iNat 2 OSM - History</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            height: 200px;
+            background-color: #f0f8ff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .chart-container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        .error {
+            text-align: center;
+            padding: 20px;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>iNat 2 OSM</h1>
+        <p>A daily update of iNat observations linked to OSM objects</p>
+    </div>
+    <div class="chart-container">
+        <div id="loading" class="loading">Loading data from GitHub...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <canvas id="inatOsmChart" style="display: none;"></canvas>
+    </div>
+
+    <script>
+        // URL of the log file on GitHub (replace with your actual URL)
+        const logFileUrl = 'inat_2_csv_log.txt';
+
+        // Function to parse log data
+        function parseLogData(logText) {
+            const lines = logText.trim().split('\n');
+            const labels = [];
+            const inatData = [];
+            const osmData = [];
+
+            lines.forEach(line => {
+                const [dateTime, rest] = line.split(' : ');
+                if (dateTime && rest) {
+                    labels.push(dateTime);
+
+                    const inatMatch = rest.match(/(\d+) iNat observations/);
+                    const osmMatch = rest.match(/(\d+) OSM objects/);
+
+                    if (inatMatch && osmMatch) {
+                        inatData.push(parseInt(inatMatch[1]));
+                        osmData.push(parseInt(osmMatch[1]));
+                    }
+                }
+            });
+
+            return { labels, inatData, osmData };
+        }
+
+        // Function to create or update the chart
+        function createChart(labels, inatData, osmData) {
+            const ctx = document.getElementById('inatOsmChart').getContext('2d');
+
+            // Destroy previous chart if it exists
+            if (window.inatOsmChart) {
+                window.inatOsmChart.destroy();
+            }
+
+            window.inatOsmChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'iNat observations',
+                            data: inatData,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.1,
+                            fill: false
+                        },
+                        {
+                            label: 'OSM objects',
+                            data: osmData,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            tension: 0.1,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date/Time'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Nb. objects'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Function to load and process the log file
+        async function loadLogFile() {
+            try {
+                const response = await fetch(logFileUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const logText = await response.text();
+                const { labels, inatData, osmData } = parseLogData(logText);
+
+                // Hide loading/error messages and show the chart
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'none';
+                document.getElementById('inatOsmChart').style.display = 'block';
+
+                createChart(labels, inatData, osmData);
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').textContent = `Error loading data: ${error.message}`;
+                document.getElementById('error').style.display = 'block';
+                console.error('Error loading log file:', error);
+            }
+        }
+
+        // Load the log file when the page loads
+        document.addEventListener('DOMContentLoaded', loadLogFile);
+    </script>
+</body>
+</html>
