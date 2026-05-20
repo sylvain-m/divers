@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iNat 2 OSM - History</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,10 +14,11 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
+            overflow: hidden; /* Prevents scrolling */
         }
         .header {
-            height: 100px; /* Reduced from 200px to 100px */
+            height: 100px;
             background-color: #f0f8ff;
             padding: 10px;
             text-align: center;
@@ -23,15 +26,22 @@
             box-sizing: border-box;
         }
         .chart-container {
-            flex: 1; /* Takes remaining height */
+            flex: 1;
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            overflow: hidden; /* Prevents container overflow */
+        }
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
         }
         #inatOsmChart {
-            flex: 1; /* Chart takes all available height in container */
+            width: 100%;
+            height: 100%;
             min-height: 0; /* Fix for flexbox in some browsers */
         }
         .loading {
@@ -56,7 +66,9 @@
     <div class="chart-container">
         <div id="loading" class="loading">Loading data from GitHub...</div>
         <div id="error" class="error" style="display: none;"></div>
-        <canvas id="inatOsmChart" style="display: none;"></canvas>
+        <div class="chart-wrapper">
+            <canvas id="inatOsmChart" style="display: none;"></canvas>
+        </div>
     </div>
 
     <script>
@@ -66,7 +78,7 @@
         // Global variable to store the chart instance
         let inatOsmChart = null;
 
-        // Function to parse log data
+        // Function to parse log data and convert dates to Luxon DateTime objects
         function parseLogData(logText) {
             const lines = logText.trim().split('\n');
             const labels = [];
@@ -74,8 +86,10 @@
             const osmData = [];
 
             lines.forEach(line => {
-                const [dateTime, rest] = line.split(' : ');
-                if (dateTime && rest) {
+                const [dateTimeStr, rest] = line.split(' : ');
+                if (dateTimeStr && rest) {
+                    // Parse the date string into a Luxon DateTime object
+                    const dateTime = luxon.DateTime.fromFormat(dateTimeStr, 'yyyy-MM-dd HH:mm:ss');
                     labels.push(dateTime);
 
                     const inatMatch = rest.match(/(\d+) iNat observations/);
@@ -125,9 +139,20 @@
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false, /* Allows chart to fill container height */
+                    maintainAspectRatio: false,
                     scales: {
                         x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day',
+                                tooltipFormat: 'yyyy-MM-dd HH:mm:ss',
+                                displayFormats: {
+                                    hour: 'HH:mm',
+                                    day: 'yyyy-MM-dd',
+                                    week: 'yyyy-MM-dd',
+                                    month: 'yyyy-MM'
+                                }
+                            },
                             title: {
                                 display: true,
                                 text: 'Date/Time'
