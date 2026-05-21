@@ -4419,24 +4419,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.6418571,
-          19.1210314
+          -82.0541917,
+          26.934728
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 6253504394,
-        "osm_url": "https://www.openstreetmap.org/node/6253504394",
-        "obs_ids": "199728257;200034736",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=199728257,200034736",
+        "osm_id": 5895219394,
+        "osm_url": "https://www.openstreetmap.org/node/5895219394",
+        "obs_ids": "26976350;26976377;55182972;57941507;103753338;112609523;194787871;232692519",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=26976350,26976377,55182972,57941507,103753338,112609523,194787871,232692519",
         "tags": {
           "denotation": "natural_monument",
+          "genus": "Ficus",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "199728257;200034736",
-          "species": "Samanea saman",
-          "species:wikidata": "Q259500",
-          "species:wikipedia": "en:Samanea saman"
+          "ref:inaturalist.org": "112609523"
         }
       }
     },
@@ -4681,43 +4679,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -118.751443,
-          36.5816453
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 313753662,
-        "osm_url": "https://www.openstreetmap.org/node/313753662",
-        "obs_ids": "5497827;133859764;147777726;182591581",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=5497827,133859764,147777726,182591581",
-        "tags": {
-          "denotation": "natural_monument",
-          "diameter": "7.7 m",
-          "height": "83.8",
-          "historic": "tree",
-          "landmark": "16",
-          "leaf_cycle": "evergreen",
-          "name": "General Sherman Tree",
-          "name:da": "General Sherman",
-          "name:etymology": "William Tecumseh Sherman",
-          "name:etymology:wikidata": "Q188936",
-          "name:tr": "General Sherman Ağacı",
-          "natural": "tree",
-          "ref:inaturalist.org": "133859764;147777726;182591581;5497827",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851",
-          "tourism": "attraction",
-          "wikidata": "Q152482",
-          "wikipedia": "en:General Sherman (tree)"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           23.8991772,
           -33.9647132
         ]
@@ -4843,6 +4804,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -70.6418571,
+          19.1210314
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 6253504394,
+        "osm_url": "https://www.openstreetmap.org/node/6253504394",
+        "obs_ids": "199728257;200034736",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=199728257,200034736",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "199728257;200034736",
+          "species": "Samanea saman",
+          "species:wikidata": "Q259500",
+          "species:wikipedia": "en:Samanea saman"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.2711642,
           48.7711684
         ]
@@ -4867,35 +4854,6 @@
           "tourism": "attraction",
           "wikimedia_commons": "File:Cedre pleureur.jpg",
           "wikipedia": "fr:Arboretum_de_la_Vallée-aux-Loups#Le_cèdre_bleu_pleureur_de_l'Atlas"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.4587222,
-          37.1586667
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 9447131898,
-        "osm_url": "https://www.openstreetmap.org/node/9447131898",
-        "obs_ids": "187081959",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=187081959",
-        "tags": {
-          "denotation": "natural_monument",
-          "historic": "tree",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "name": "Oliveira Milenar",
-          "natural": "tree",
-          "ref:inaturalist.org": "187081959",
-          "species": "Olea europaea",
-          "species:wikidata": "Q37083",
-          "species:wikipedia": "pt:Oliveira"
         }
       }
     },
@@ -4993,6 +4951,71 @@
           "species:es": "Palma Chilena",
           "species:mp": "Lilla",
           "species:wikidata": "Q290967"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.40449,
+          17.8031849
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13856339454,
+        "osm_url": "https://www.openstreetmap.org/node/13856339454",
+        "obs_ids": "204478316",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=204478316",
+        "tags": {
+          "denotation": "landmark",
+          "description": "A tree with quite an interesting story. When the road was built, the tree was about to be felled. The population began to protest until the plans were changed and the tree remained standing. Arcoa",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "204478316",
+          "source": "iNaturalist",
+          "species": "Arcoa gonavensis",
+          "species:wikidata": "Q15501908",
+          "species:wikipedia": "en:Arcoa gonavensis"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.751443,
+          36.5816453
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 313753662,
+        "osm_url": "https://www.openstreetmap.org/node/313753662",
+        "obs_ids": "5497827;133859764;147777726;182591581",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=5497827,133859764,147777726,182591581",
+        "tags": {
+          "denotation": "natural_monument",
+          "diameter": "7.7 m",
+          "height": "83.8",
+          "historic": "tree",
+          "landmark": "16",
+          "leaf_cycle": "evergreen",
+          "name": "General Sherman Tree",
+          "name:da": "General Sherman",
+          "name:etymology": "William Tecumseh Sherman",
+          "name:etymology:wikidata": "Q188936",
+          "name:tr": "General Sherman Ağacı",
+          "natural": "tree",
+          "ref:inaturalist.org": "133859764;147777726;182591581;5497827",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "tourism": "attraction",
+          "wikidata": "Q152482",
+          "wikipedia": "en:General Sherman (tree)"
         }
       }
     },
@@ -5137,6 +5160,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -8.4587222,
+          37.1586667
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 9447131898,
+        "osm_url": "https://www.openstreetmap.org/node/9447131898",
+        "obs_ids": "187081959",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=187081959",
+        "tags": {
+          "denotation": "natural_monument",
+          "historic": "tree",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Oliveira Milenar",
+          "natural": "tree",
+          "ref:inaturalist.org": "187081959",
+          "species": "Olea europaea",
+          "species:wikidata": "Q37083",
+          "species:wikipedia": "pt:Oliveira"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -16.7773258,
           14.173519
         ]
@@ -5217,76 +5269,6 @@
           "species": "Acer macrophyllum",
           "species:wikidata": "Q599523",
           "species:wikipedia": "fr:Érable à grandes feuilles"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.245699,
-          -34.9283247
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11955120730,
-        "osm_url": "https://www.openstreetmap.org/node/11955120730",
-        "obs_ids": "150268578",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=150268578",
-        "tags": {
-          "age": "mature",
-          "crown_type": "i",
-          "denotation": "garden",
-          "description": "Jch n°2804",
-          "genus": "Jubaea",
-          "height": "12",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "palm",
-          "natural": "tree",
-          "object:city": "Isla Marchant",
-          "object:street": "Ruta J-580",
-          "ref:inaturalist.org": "150268578",
-          "species": "Jubaea chilensis",
-          "species:en": "Chilean Wine Palm",
-          "species:es": "Palma Chilena",
-          "species:mp": "Lilla"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.5200375,
-          -33.0428223
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11963657577,
-        "osm_url": "https://www.openstreetmap.org/node/11963657577",
-        "obs_ids": "145710297",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=145710297",
-        "tags": {
-          "age": "mature",
-          "crown_type": "i",
-          "denotation": "garden",
-          "description": "Jch n°2814",
-          "genus": "Jubaea",
-          "height": "15",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "palm",
-          "natural": "tree",
-          "object:city": "Viña del Mar",
-          "object:street": "Limache",
-          "ref:inaturalist.org": "145710297",
-          "species": "Jubaea chilensis",
-          "species:en": "Chilean Wine Palm",
-          "species:es": "Palma Chilena",
-          "species:mp": "Lilla"
         }
       }
     },
@@ -5462,25 +5444,68 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.0203937,
-          48.6789814
+          -71.245699,
+          -34.9283247
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 11460965392,
-        "osm_url": "https://www.openstreetmap.org/node/11460965392",
-        "obs_ids": "106638425",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=106638425",
+        "osm_id": 11955120730,
+        "osm_url": "https://www.openstreetmap.org/node/11955120730",
+        "obs_ids": "150268578",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=150268578",
         "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
+          "age": "mature",
+          "crown_type": "i",
+          "denotation": "garden",
+          "description": "Jch n°2804",
+          "genus": "Jubaea",
+          "height": "12",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "palm",
           "natural": "tree",
-          "ref:inaturalist.org": "106638425",
-          "species": "Fraxinus excelsior",
-          "species:wikidata": "Q156907",
-          "species:wikipedia": "fr:Frêne élevé"
+          "object:city": "Isla Marchant",
+          "object:street": "Ruta J-580",
+          "ref:inaturalist.org": "150268578",
+          "species": "Jubaea chilensis",
+          "species:en": "Chilean Wine Palm",
+          "species:es": "Palma Chilena",
+          "species:mp": "Lilla"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5200375,
+          -33.0428223
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11963657577,
+        "osm_url": "https://www.openstreetmap.org/node/11963657577",
+        "obs_ids": "145710297",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=145710297",
+        "tags": {
+          "age": "mature",
+          "crown_type": "i",
+          "denotation": "garden",
+          "description": "Jch n°2814",
+          "genus": "Jubaea",
+          "height": "15",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "palm",
+          "natural": "tree",
+          "object:city": "Viña del Mar",
+          "object:street": "Limache",
+          "ref:inaturalist.org": "145710297",
+          "species": "Jubaea chilensis",
+          "species:en": "Chilean Wine Palm",
+          "species:es": "Palma Chilena",
+          "species:mp": "Lilla"
         }
       }
     },
@@ -5547,41 +5572,6 @@
           "object:city": "Paredones",
           "object:street": "M. Urzua",
           "ref:inaturalist.org": "118363459",
-          "species": "Jubaea chilensis",
-          "species:en": "Chilean Wine Palm",
-          "species:es": "Palma Chilena",
-          "species:mp": "Lilla"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -72.0179987,
-          -34.4824084
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11993067611,
-        "osm_url": "https://www.openstreetmap.org/node/11993067611",
-        "obs_ids": "105770891",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=105770891",
-        "tags": {
-          "age": "mature",
-          "crown_type": "i",
-          "denotation": "garden",
-          "description": "Jch n°3062",
-          "genus": "Jubaea",
-          "height": "12",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "palm",
-          "natural": "tree",
-          "object:city": "El Pangal",
-          "object:street": "Ruta I-502",
-          "ref:inaturalist.org": "105770891",
           "species": "Jubaea chilensis",
           "species:en": "Chilean Wine Palm",
           "species:es": "Palma Chilena",
@@ -5791,33 +5781,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.3239182,
-          51.8656654
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11140177384,
-        "osm_url": "https://www.openstreetmap.org/node/11140177384",
-        "obs_ids": "33194565",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=33194565",
-        "tags": {
-          "genus": "Taxus",
-          "genus:ru": "Тис",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "33194565",
-          "taxon": "Taxus baccata",
-          "taxon:ru": "Тис ягодный или европейский"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.832808,
           -12.4205727
         ]
@@ -5874,23 +5837,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.9723924,
-          38.3832855
+          2.0203937,
+          48.6789814
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 11547491555,
-        "osm_url": "https://www.openstreetmap.org/node/11547491555",
-        "obs_ids": "10361574",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=10361574",
+        "osm_id": 11460965392,
+        "osm_url": "https://www.openstreetmap.org/node/11460965392",
+        "obs_ids": "106638425",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=106638425",
         "tags": {
-          "denotation": "natural_monument",
-          "description": "Old Oak Tree",
+          "denotation": "landmark",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
-          "name": "Old Oak Tree",
-          "natural": "tree"
+          "natural": "tree",
+          "ref:inaturalist.org": "106638425",
+          "species": "Fraxinus excelsior",
+          "species:wikidata": "Q156907",
+          "species:wikipedia": "fr:Frêne élevé"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.0179987,
+          -34.4824084
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11993067611,
+        "osm_url": "https://www.openstreetmap.org/node/11993067611",
+        "obs_ids": "105770891",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=105770891",
+        "tags": {
+          "age": "mature",
+          "crown_type": "i",
+          "denotation": "garden",
+          "description": "Jch n°3062",
+          "genus": "Jubaea",
+          "height": "12",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "palm",
+          "natural": "tree",
+          "object:city": "El Pangal",
+          "object:street": "Ruta I-502",
+          "ref:inaturalist.org": "105770891",
+          "species": "Jubaea chilensis",
+          "species:en": "Chilean Wine Palm",
+          "species:es": "Palma Chilena",
+          "species:mp": "Lilla"
         }
       }
     },
@@ -5923,6 +5923,58 @@
           "species:fr": "Baobab Africain",
           "species:wikidata": "Q158742",
           "species:wikipedia": "fr:Baobab africain"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3239182,
+          51.8656654
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11140177384,
+        "osm_url": "https://www.openstreetmap.org/node/11140177384",
+        "obs_ids": "33194565",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=33194565",
+        "tags": {
+          "genus": "Taxus",
+          "genus:ru": "Тис",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "33194565",
+          "taxon": "Taxus baccata",
+          "taxon:ru": "Тис ягодный или европейский"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9723924,
+          38.3832855
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11547491555,
+        "osm_url": "https://www.openstreetmap.org/node/11547491555",
+        "obs_ids": "10361574",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=10361574",
+        "tags": {
+          "denotation": "natural_monument",
+          "description": "Old Oak Tree",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Old Oak Tree",
+          "natural": "tree"
         }
       }
     }
