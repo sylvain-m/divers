@@ -181,87 +181,86 @@
       }
     
       // ✅ Fonction dédiée pour initialiser le tableau
-        function initTable() {
-          fetch('osm_inat.csv')
-            .then(response => {
-              if (!response.ok) throw new Error('CSV introuvable');
-              return response.text();
-            })
-            .then(data => {
-              const rows = data.split('\n');
-              const tableData = []; // Tableau pour stocker les données
-        
-              // Saute la première ligne (en-têtes du CSV)
-              for (let i = 1; i < rows.length; i++) {
-                if (rows[i].trim() === '') continue;
-                const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
-                  .map(s => s?.replace(/"/g, '').trim() || '');
-                const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
-        
-                // ✅ Construis les cellules en HTML (pour les liens/images)
-                const osmLink = `
-                  <a href="${osmUrl}" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-img">
-                    ${osmElement} ${osmId}
-                  </a>`;
-        
-                const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
-                const inatLink = `
-                  <a href="${obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`}" target="_blank">
-                    <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-img">
-                    ${obsCount} Observation${obsCount > 1 ? 's' : ''}
-                  </a>`;
-        
-                const obsIds = (obsIdsForUrl?.split(';') || [])
-                  .filter(id => id.trim())
-                  .map(id => `
-                    <a href="https://www.inaturalist.org/observations/${id.trim()}" target="_blank" class="badge bg-success me-1">
-                      ${id.trim()}
-                    </a>`)
-                  .join('');
-        
-                // Ajoute une ligne de données
-                tableData.push({
-                  osm_link: osmLink,
-                  inat_link: inatLink,
-                  obs_ids: obsIds
-                });
-              }
-        
-              // ✅ Initialise Bootstrap Table avec les données et les colonnes
-              $('#osmTable').bootstrapTable({
-                data: tableData,
-                columns: [
-                  { field: 'osm_link', title: 'OSM Link', align: 'center' },
-                  { field: 'inat_link', title: 'iNat Link', align: 'center' },
-                  { field: 'obs_ids', title: 'iNat Observations IDs', align: 'center' }
-                ],
-                height: '100%',
-                pagination: false,
-                search: false,
-                showColumns: false,
-                showRefresh: false,
-                showToggle: false,
-                clickToSelect: false,
-                singleSelect: false
-              });
-            })
-            .catch(error => {
-              console.error('Erreur:', error);
-              $('#osmTable').bootstrapTable({
-                data: [{
-                  osm_link: '<span class="text-danger">Erreur : fichier CSV introuvable</span>',
-                  inat_link: '',
-                  obs_ids: ''
-                }],
-                columns: [
-                  { field: 'osm_link', title: 'OSM Link' },
-                  { field: 'inat_link', title: 'iNat Link' },
-                  { field: 'obs_ids', title: 'iNat Observations IDs' }
-                ]
-              });
-            });
-        }
+function initTable() {
+  // ✅ Crée le tableau dynamiquement via jQuery
+  const $table = $('<table>', {
+    id: 'osmTable',
+    class: 'table table-hover table-borderless'
+  }).appendTo('#tableContainer');
+
+  fetch('osm_inat.csv')
+    .then(response => {
+      if (!response.ok) throw new Error('CSV introuvable');
+      return response.text();
+    })
+    .then(data => {
+      const rows = data.split('\n');
+      const tableData = []; // Tableau de données pour Bootstrap Table
+
+      // Parse le CSV (saute la 1ère ligne = en-têtes)
+      for (let i = 1; i < rows.length; i++) {
+        if (rows[i].trim() === '') continue;
+        const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
+          .map(s => s?.replace(/"/g, '').trim() || '');
+        const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
+
+        // Construis les cellules en HTML (pour les liens/images)
+        const osmLink = `
+          <a href="${osmUrl}" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-img">
+            ${osmElement} ${osmId}
+          </a>`;
+
+        const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
+        const inatLink = `
+          <a href="${obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`}" target="_blank">
+            <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-img">
+            ${obsCount} Observation${obsCount > 1 ? 's' : ''}
+          </a>`;
+
+        const obsIds = (obsIdsForUrl?.split(';') || [])
+          .filter(id => id.trim())
+          .map(id => `
+            <a href="https://www.inaturalist.org/observations/${id.trim()}" target="_blank" class="badge bg-success me-1">
+              ${id.trim()}
+            </a>`)
+          .join('');
+
+        // Ajoute une ligne de données
+        tableData.push({
+          osm_link: osmLink,
+          inat_link: inatLink,
+          obs_ids: obsIds
+        });
+      }
+
+      // ✅ Initialise Bootstrap Table avec les données et colonnes
+      $table.bootstrapTable({
+        data: tableData,
+        columns: [
+          { field: 'osm_link', title: 'OSM Link', align: 'center' },
+          { field: 'inat_link', title: 'iNat Link', align: 'center' },
+          { field: 'obs_ids', title: 'iNat Observations IDs', align: 'center' }
+        ],
+        height: '100%',
+        pagination: false,
+        search: false,
+        showColumns: false,
+        showRefresh: false,
+        showToggle: false,
+        clickToSelect: false,
+        singleSelect: false,
+        undefinedText: '', // Évite les "undefined" dans les cellules vides
+        escape: false      // Permet le HTML dans les cellules
+      });
+    })
+    .catch(error => {
+      console.error('Erreur:', error);
+      $('#tableContainer').html(
+        '<div class="text-danger text-center p-3">Erreur : fichier CSV introuvable ou invalide.</div>'
+      );
+    });
+}
     
       // Initialise le toggle switch
       async function init() {
