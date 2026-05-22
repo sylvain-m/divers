@@ -144,12 +144,12 @@
     }
     /* Conteneur du tableau avec défilement */
     .table-container {
-        max-height: calc(100vh - 150px);
-        overflow-y: auto;
-        overflow-x: auto; /* Débordement horizontal si nécessaire */
-        margin-bottom: 20px;
-        width: 100%;
-        max-width: 900px; /* Largeur maximale du conteneur */
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      overflow-x: auto;
+      margin: 0 auto; /* ✅ Ajoute cette ligne pour centrer */
+      width: 100%;
+      max-width: 900px;
     }
     /* Retour à la ligne pour la colonne obs_ids */
     .obs-ids-cell {
