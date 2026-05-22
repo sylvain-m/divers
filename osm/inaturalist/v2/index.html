@@ -244,8 +244,14 @@
       initTable();
     }
 
-    // ✅ SOLUTION DÉFINITIVE : Tableau 100% géré par Bootstrap Table (pas de HTML manuel)
+    // Variable globale pour éviter les réinitialisations multiples
+    let tableInitialized = false;
+    
     function initTable() {
+      // ✅ 1. Si déjà initialisé, on ne fait rien
+      if (tableInitialized) return;
+      tableInitialized = true;
+    
       fetch('osm_inat.csv')
         .then(response => {
           if (!response.ok) throw new Error('CSV introuvable');
@@ -254,27 +260,26 @@
         .then(data => {
           const rows = data.split('\n');
           const tableData = [];
-
+    
           for (let i = 1; i < rows.length; i++) {
             if (rows[i].trim() === '') continue;
             const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
               .map(s => s?.replace(/"/g, '').trim() || '');
             const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
-
-            // Construis les cellules en HTML
+    
             const osmLink = `
               <a href="${osmUrl}" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-img">
                 ${osmElement} ${osmId}
               </a>`;
-
+    
             const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
             const inatLink = `
               <a href="${obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`}" target="_blank">
                 <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-img">
                 ${obsCount} Observation${obsCount > 1 ? 's' : ''}
               </a>`;
-
+    
             const obsIds = (obsIdsForUrl?.split(';') || [])
               .filter(id => id.trim())
               .map(id => `
@@ -282,15 +287,21 @@
                   ${id.trim()}
                 </a>`)
               .join(' ');
-
+    
             tableData.push({
               osm_link: osmLink,
               inat_link: inatLink,
               obs_ids: obsIds
             });
           }
-
-          // ✅ Initialise Bootstrap Table avec les données et colonnes
+    
+          // ✅ 2. Désactive Bootstrap Table s'il existe déjà
+          if ($('#osmTable').hasClass('bootstrap-table')) {
+            $('#osmTable').bootstrapTable('destroy');
+            $('#osmTable').empty(); // Vide le tableau
+          }
+    
+          // ✅ 3. Initialise avec TOUTES les options pour désactiver les fonctionnalités automatiques
           $('#osmTable').bootstrapTable({
             data: tableData,
             columns: [
@@ -306,24 +317,33 @@
             showToggle: false,
             clickToSelect: false,
             singleSelect: false,
+            detailView: false,
+            cardView: false,
             undefinedText: '',
-            escape: false // ✅ Permet le HTML dans les cellules
+            escape: false,
+            // ✅ 4. Désactive la génération automatique des entêtes
+            showHeader: true, // Affiche les entêtes (mais une seule fois)
+            headerStyle: function() {
+              return { display: '' }; // Style par défaut
+            }
           });
         })
         .catch(error => {
           console.error('Erreur:', error);
-          $('#osmTable').bootstrapTable({
-            data: [{
-              osm_link: '<span class="text-danger">Erreur : fichier CSV introuvable</span>',
-              inat_link: '',
-              obs_ids: ''
-            }],
-            columns: [
-              { field: 'osm_link', title: 'OSM Link' },
-              { field: 'inat_link', title: 'iNat Link' },
-              { field: 'obs_ids', title: 'iNat Observations IDs' }
-            ]
-          });
+          if (!$('#osmTable').hasClass('bootstrap-table')) {
+            $('#osmTable').bootstrapTable({
+              data: [{
+                osm_link: '<span class="text-danger">Erreur : fichier CSV introuvable</span>',
+                inat_link: '',
+                obs_ids: ''
+              }],
+              columns: [
+                { field: 'osm_link', title: 'OSM Link' },
+                { field: 'inat_link', title: 'iNat Link' },
+                { field: 'obs_ids', title: 'iNat Observations IDs' }
+              ]
+            });
+          }
         });
     }
   </script>
