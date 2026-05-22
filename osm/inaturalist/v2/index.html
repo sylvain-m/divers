@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    #header-container {
+      height: 200px;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #main-container {
+      height: calc(100vh - 200px);
+      background: #fff;
+      overflow: auto;
+    }
+    /* Style du toggle switch segmenté */
+    .toggle-switch {
+      display: flex;
+      background: #e9ecef;
+      border-radius: 8px;
+      overflow: hidden;
+      width: fit-content;
+    }
+    .toggle-switch input[type="radio"] {
+      display: none;
+    }
+    .toggle-switch label {
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .toggle-switch input[type="radio"]:checked + label {
+      background: #007bff;
+      color: white;
+      font-weight: bold;
+    }
+    .toggle-switch label:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+    .toggle-switch label:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+  <div id="main-container"></div>
+
+  <script>
+    // Charge un fichier HTML dans un conteneur
+    async function loadHTML(url, containerId) {
+      const response = await fetch(url);
+      const html = await response.text();
+      document.getElementById(containerId).innerHTML = html;
+    }
+
+    // Initialise le toggle switch
+    async function init() {
+      await loadHTML("header.html", "header-container");
+      await loadHTML("map.html", "main-container"); // Page par défaut
+
+      // Écoute les changements de sélection
+      const radios = document.querySelectorAll('#header-container input[name="page"]');
+      radios.forEach(radio => {
+        radio.addEventListener('change', async (e) => {
+          await loadHTML(`${e.target.value}.html`, "main-container");
+        });
+      });
+    }
+
+    // Démarre au chargement
+    init();
+  </script>
+</body>
+</html>
