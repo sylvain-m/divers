@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>iNat 2 OSM</title>
 
-  <!-- Bootstrap 5 + Bootstrap Table + Icons -->
+  <!-- Bibliothèques CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <style>
-    /* ===== TON CSS EXISTANT (INTÉGRAL) ===== */
+    /* ===== TON CSS COMPLET ===== */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #1e1e1e;
@@ -158,8 +158,7 @@
         word-break: break-all;
         white-space: normal;
     }
-
-    /* ===== NOUVEAUX STYLES ===== */
+    /* Styles pour les pages masquées */
     .page {
       display: none;
       height: 100%;
@@ -167,14 +166,13 @@
     .page.active {
       display: block;
     }
-    /* Fix pour les icônes Bootstrap Icons dans le toggle */
     .toggle-switch i {
       font-size: 1.2em;
     }
   </style>
 </head>
 <body>
-  <!-- Header avec ton contenu exact -->
+  <!-- ===== HEADER AVEC TON CONTENU EXACT ===== -->
   <div id="header-container">
     <h1>
       <a href="https://www.inaturalist.org" target="_blank">
@@ -188,16 +186,14 @@
     <div class="toggle-switch">
       <input type="radio" id="map" name="page" value="map" checked>
       <label for="map"><i class="bi bi-map"></i> Map</label>
-
       <input type="radio" id="table" name="page" value="table">
       <label for="table"><i class="bi bi-table"></i> Table</label>
-
       <input type="radio" id="graph" name="page" value="graph">
       <label for="graph"><i class="bi bi-graph-up"></i> Graph</label>
     </div>
   </div>
 
-  <!-- Conteneur principal -->
+  <!-- ===== CONTENEUR PRINCIPAL ===== -->
   <div id="main-container">
     <!-- Page Carte -->
     <div id="map-page" class="page active">
@@ -207,8 +203,8 @@
     <!-- Page Tableau -->
     <div id="table-page" class="page">
       <div class="table-container">
-        <!-- ✅ Tableau SANS data-toggle="table" (pour éviter les conflits) -->
-        <table id="osmTable" class="table table-hover table-borderless"></table>
+        <!-- ✅ TABLEAU VIDE : Bootstrap Table le remplira entièrement -->
+        <table id="osmTable"></table>
       </div>
     </div>
 
@@ -224,127 +220,144 @@
   <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
   <script>
-    // Toggle entre les pages
+    // ===== VARIABLES GLOBALES =====
+    let tableInitialized = false;
+    let tableData = null; // Cache des données du CSV
+
+    // ===== TOGGLE ENTRE LES PAGES =====
     document.querySelectorAll('input[name="page"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
+        // Masque toutes les pages
         document.querySelectorAll('.page').forEach(page => {
           page.classList.remove('active');
         });
+        // Affiche la page sélectionnée
         document.getElementById(`${e.target.value}-page`).classList.add('active');
 
-        // Initialise le tableau SI on passe sur la page "table"
-        if (e.target.value === 'table') {
+        // Initialise le tableau UNIQUEMENT si on passe sur "table" et qu'il n'est pas déjà chargé
+        if (e.target.value === 'table' && !tableInitialized) {
           initTable();
         }
       });
     });
 
-    // Initialise le tableau au chargement si la page "table" est active
-    if (document.querySelector('input[name="page"]:checked').value === 'table') {
-      initTable();
+    // ===== CHARGE LES DONNÉES DU CSV (1 SEULE FOIS) =====
+    async function loadTableData() {
+      if (tableData) return tableData; // Retourne le cache si déjà chargé
+
+      const response = await fetch('osm_inat.csv');
+      if (!response.ok) throw new Error('Fichier CSV introuvable');
+      const data = await response.text();
+      const rows = data.split('\n');
+      tableData = [];
+
+      for (let i = 1; i < rows.length; i++) {
+        if (rows[i].trim() === '') continue;
+        // Nettoie les données du CSV (supprime les guillemets)
+        const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
+          .map(s => s?.replace(/"/g, '').trim() || '');
+        const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
+
+        // Construis les cellules en HTML
+        const osmLink = `
+          <a href="${osmUrl}" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-img">
+            ${osmElement} ${osmId}
+          </a>`;
+
+        const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
+        const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`;
+        const inatLink = `
+          <a href="${finalObsUrl}" target="_blank">
+            <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-img">
+            ${obsCount} Observation${obsCount > 1 ? 's' : ''}
+          </a>`;
+
+        const obsIds = (obsIdsForUrl?.split(';') || [])
+          .filter(id => id.trim())
+          .map(id => `
+            <a href="https://www.inaturalist.org/observations/${id.trim()}" target="_blank" class="id-badge">
+              ${id.trim()}
+            </a>`)
+          .join(' ');
+
+        tableData.push({
+          osm_link: osmLink,
+          inat_link: inatLink,
+          obs_ids: obsIds
+        });
+      }
+      return tableData;
     }
 
-    // Variable globale pour éviter les réinitialisations multiples
-    let tableInitialized = false;
-    
-    function initTable() {
-      // ✅ 1. Si déjà initialisé, on ne fait rien
-      if (tableInitialized) return;
+    // ===== INITIALISE LE TABLEAU (1 SEULE FOIS) =====
+    async function initTable() {
+      if (tableInitialized) return; // ✅ Empêche les réinitialisations multiples
       tableInitialized = true;
-    
-      fetch('osm_inat.csv')
-        .then(response => {
-          if (!response.ok) throw new Error('CSV introuvable');
-          return response.text();
-        })
-        .then(data => {
-          const rows = data.split('\n');
-          const tableData = [];
-    
-          for (let i = 1; i < rows.length; i++) {
-            if (rows[i].trim() === '') continue;
-            const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
-              .map(s => s?.replace(/"/g, '').trim() || '');
-            const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
-    
-            const osmLink = `
-              <a href="${osmUrl}" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-img">
-                ${osmElement} ${osmId}
-              </a>`;
-    
-            const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
-            const inatLink = `
-              <a href="${obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`}" target="_blank">
-                <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-img">
-                ${obsCount} Observation${obsCount > 1 ? 's' : ''}
-              </a>`;
-    
-            const obsIds = (obsIdsForUrl?.split(';') || [])
-              .filter(id => id.trim())
-              .map(id => `
-                <a href="https://www.inaturalist.org/observations/${id.trim()}" target="_blank" class="id-badge">
-                  ${id.trim()}
-                </a>`)
-              .join(' ');
-    
-            tableData.push({
-              osm_link: osmLink,
-              inat_link: inatLink,
-              obs_ids: obsIds
-            });
-          }
-    
-          // ✅ 2. Désactive Bootstrap Table s'il existe déjà
-          if ($('#osmTable').hasClass('bootstrap-table')) {
-            $('#osmTable').bootstrapTable('destroy');
-            $('#osmTable').empty(); // Vide le tableau
-          }
-    
-          // ✅ 3. Initialise avec TOUTES les options pour désactiver les fonctionnalités automatiques
-          $('#osmTable').bootstrapTable({
-            data: tableData,
-            columns: [
-              { field: 'osm_link', title: 'OSM Link', align: 'center' },
-              { field: 'inat_link', title: 'iNat Link', align: 'center' },
-              { field: 'obs_ids', title: 'iNat Observations IDs', align: 'center' }
-            ],
-            height: '100%',
-            pagination: false,
-            search: false,
-            showColumns: false,
-            showRefresh: false,
-            showToggle: false,
-            clickToSelect: false,
-            singleSelect: false,
-            detailView: false,
-            cardView: false,
-            undefinedText: '',
-            escape: false,
-            // ✅ 4. Désactive la génération automatique des entêtes
-            showHeader: true, // Affiche les entêtes (mais une seule fois)
-            headerStyle: function() {
-              return { display: '' }; // Style par défaut
-            }
-          });
-        })
-        .catch(error => {
-          console.error('Erreur:', error);
-          if (!$('#osmTable').hasClass('bootstrap-table')) {
-            $('#osmTable').bootstrapTable({
-              data: [{
-                osm_link: '<span class="text-danger">Erreur : fichier CSV introuvable</span>',
-                inat_link: '',
-                obs_ids: ''
-              }],
-              columns: [
-                { field: 'osm_link', title: 'OSM Link' },
-                { field: 'inat_link', title: 'iNat Link' },
-                { field: 'obs_ids', title: 'iNat Observations IDs' }
-              ]
-            });
+
+      try {
+        const data = await loadTableData();
+
+        // ✅ Désactive Bootstrap Table s'il existe déjà
+        if ($('#osmTable').hasClass('bootstrap-table')) {
+          $('#osmTable').bootstrapTable('destroy');
+          $('#osmTable').empty();
+        }
+
+        // ✅ Initialise Bootstrap Table avec TOUTES les options pour éviter les comportements automatiques
+        $('#osmTable').bootstrapTable({
+          data: data,
+          columns: [
+            { field: 'osm_link', title: 'OSM Link', align: 'center', valign: 'middle' },
+            { field: 'inat_link', title: 'iNat Link', align: 'center', valign: 'middle' },
+            { field: 'obs_ids', title: 'iNat Observations IDs', align: 'center', valign: 'middle' }
+          ],
+          height: '100%',
+          pagination: false,
+          search: false,
+          showColumns: false,
+          showRefresh: false,
+          showToggle: false,
+          clickToSelect: false,
+          singleSelect: false,
+          detailView: false,
+          cardView: false,
+          undefinedText: '',
+          escape: false, // ✅ Permet le HTML dans les cellules
+          // Style personnalisé pour les entêtes (correspond à ton CSS)
+          headerStyle: function() {
+            return {
+              'background-color': '#2d2d2d',
+              'color': '#ffffff',
+              'border-bottom': '1px solid #333',
+              'text-align': 'center',
+              'max-width': '300px',
+              'width': '300px'
+            };
           }
         });
+      } catch (error) {
+        console.error('Erreur:', error);
+        $('#osmTable').bootstrapTable({
+          data: [{
+            osm_link: '<span class="text-danger">Erreur : fichier CSV introuvable</span>',
+            inat_link: '',
+            obs_ids: ''
+          }],
+          columns: [
+            { field: 'osm_link', title: 'OSM Link' },
+            { field: 'inat_link', title: 'iNat Link' },
+            { field: 'obs_ids', title: 'iNat Observations IDs' }
+          ],
+          height: '100%'
+        });
+      }
+    }
+
+    // ===== INITIALISATION AU CHARGEMENT =====
+    // Initialise le tableau si la page "table" est active au chargement
+    if (document.querySelector('input[name="page"]:checked').value === 'table') {
+      initTable();
     }
   </script>
 </body>
