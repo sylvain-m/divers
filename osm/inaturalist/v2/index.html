@@ -182,92 +182,84 @@
     
       // ✅ Fonction dédiée pour initialiser le tableau
         function initTable() {
-          // ✅ Initialise Bootstrap Table AVANT de peupler le tbody
-          $('#osmTable').bootstrapTable({
-            clickToSelect: false,
-            singleSelect: false,
-            // Désactive la génération automatique de colonnes
-            columns: [
-              { field: '0', title: 'OSM Link', visible: true },
-              { field: '1', title: 'iNat Link', visible: true },
-              { field: '2', title: 'iNat Observations IDs', visible: true }
-            ]
-          });
-        
           fetch('osm_inat.csv')
-            .then(response => response.text())
+            .then(response => {
+              if (!response.ok) throw new Error('CSV introuvable');
+              return response.text();
+            })
             .then(data => {
               const rows = data.split('\n');
-              const tableBody = document.getElementById('tableBody');
+              const tableData = []; // Tableau pour stocker les données
         
+              // Saute la première ligne (en-têtes du CSV)
               for (let i = 1; i < rows.length; i++) {
                 if (rows[i].trim() === '') continue;
                 const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
                   .map(s => s?.replace(/"/g, '').trim() || '');
                 const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
-                const row = document.createElement('tr');
         
-                // --- OSM Link (sans data-field) ---
-                const osmLinkCell = document.createElement('td');
-                const osmLink = document.createElement('a');
-                osmLink.href = osmUrl;
-                osmLink.target = "_blank";
-                const osmImg = document.createElement('img');
-                osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
-                osmImg.className = 'osm-img';
-                osmLink.append(osmImg, ` ${osmElement} ${osmId}`);
-                osmLinkCell.appendChild(osmLink);
-                row.appendChild(osmLinkCell);
+                // ✅ Construis les cellules en HTML (pour les liens/images)
+                const osmLink = `
+                  <a href="${osmUrl}" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-img">
+                    ${osmElement} ${osmId}
+                  </a>`;
         
-                // --- iNat Link (sans data-field) ---
-                const inatLinkCell = document.createElement('td');
-                const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`;
-                const imgLink = document.createElement('a');
-                imgLink.href = finalObsUrl;
-                imgLink.target = "_blank";
-                const img = document.createElement('img');
-                img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
-                img.className = 'inat-img';
                 const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
-                imgLink.append(img, ` ${obsCount} Observation${obsCount > 1 ? 's' : ''}`);
-                inatLinkCell.appendChild(imgLink);
-                row.appendChild(inatLinkCell);
+                const inatLink = `
+                  <a href="${obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`}" target="_blank">
+                    <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-img">
+                    ${obsCount} Observation${obsCount > 1 ? 's' : ''}
+                  </a>`;
         
-                // --- Obs IDs (sans data-field) ---
-                const obsIdsCell = document.createElement('td');
-                obsIdsCell.className = 'obs-ids-cell';
-                (obsIdsForUrl?.split(';') || []).forEach(id => {
-                  if (!id.trim()) return;
-                  const badgeLink = document.createElement('a');
-                  badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
-                  badgeLink.target = "_blank";
-                  const badge = document.createElement('span');
-                  badge.className = 'badge bg-success me-1';
-                  badge.textContent = id.trim();
-                  badgeLink.appendChild(badge);
-                  obsIdsCell.appendChild(badgeLink);
+                const obsIds = (obsIdsForUrl?.split(';') || [])
+                  .filter(id => id.trim())
+                  .map(id => `
+                    <a href="https://www.inaturalist.org/observations/${id.trim()}" target="_blank" class="badge bg-success me-1">
+                      ${id.trim()}
+                    </a>`)
+                  .join('');
+        
+                // Ajoute une ligne de données
+                tableData.push({
+                  osm_link: osmLink,
+                  inat_link: inatLink,
+                  obs_ids: obsIds
                 });
-                row.appendChild(obsIdsCell);
-        
-                tableBody.appendChild(row);
               }
         
-              // ✅ Met à jour Bootstrap Table après peuplement
-              $('#osmTable').bootstrapTable('load', Array.from(tableBody.rows).map(row => ({
-                0: row.cells[0].innerHTML,
-                1: row.cells[1].innerHTML,
-                2: row.cells[2].innerHTML
-              })));
+              // ✅ Initialise Bootstrap Table avec les données et les colonnes
+              $('#osmTable').bootstrapTable({
+                data: tableData,
+                columns: [
+                  { field: 'osm_link', title: 'OSM Link', align: 'center' },
+                  { field: 'inat_link', title: 'iNat Link', align: 'center' },
+                  { field: 'obs_ids', title: 'iNat Observations IDs', align: 'center' }
+                ],
+                height: '100%',
+                pagination: false,
+                search: false,
+                showColumns: false,
+                showRefresh: false,
+                showToggle: false,
+                clickToSelect: false,
+                singleSelect: false
+              });
             })
             .catch(error => {
               console.error('Erreur:', error);
-              const errorRow = document.createElement('tr');
-              const errorCell = document.createElement('td');
-              errorCell.colSpan = 3;
-              errorCell.textContent = 'Erreur : fichier CSV introuvable ou invalide.';
-              errorCell.className = 'text-danger text-center';
-              errorRow.appendChild(errorCell);
-              document.getElementById('tableBody').appendChild(errorRow);
+              $('#osmTable').bootstrapTable({
+                data: [{
+                  osm_link: '<span class="text-danger">Erreur : fichier CSV introuvable</span>',
+                  inat_link: '',
+                  obs_ids: ''
+                }],
+                columns: [
+                  { field: 'osm_link', title: 'OSM Link' },
+                  { field: 'inat_link', title: 'iNat Link' },
+                  { field: 'obs_ids', title: 'iNat Observations IDs' }
+                ]
+              });
             });
         }
     
