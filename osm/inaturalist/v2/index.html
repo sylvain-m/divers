@@ -38,9 +38,16 @@
     #header-container {
       height: 150px;
       display: flex;
-      align-items: center;
-      padding: 0 20px;
+      flex-direction: column;    /* Empile les éléments verticalement */
+      justify-content: center;   /* Centre verticalement */
+      align-items: center;      /* Centre horizontalement */
+      padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;        /* Centre le texte (h1) */
+    }
+    /* Espacement entre le h1 et le toggle */
+    #header-container h1 {
+      margin: 0 0 20px 0;  /* Marge en bas pour séparer du toggle */
     }
     #main-container {
       height: calc(100vh - 150px);
