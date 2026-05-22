@@ -182,27 +182,33 @@
     
       // ✅ Fonction dédiée pour initialiser le tableau
         function initTable() {
+          // ✅ Initialise Bootstrap Table AVANT de peupler le tbody
+          $('#osmTable').bootstrapTable({
+            clickToSelect: false,
+            singleSelect: false,
+            // Désactive la génération automatique de colonnes
+            columns: [
+              { field: '0', title: 'OSM Link', visible: true },
+              { field: '1', title: 'iNat Link', visible: true },
+              { field: '2', title: 'iNat Observations IDs', visible: true }
+            ]
+          });
+        
           fetch('osm_inat.csv')
-            .then(response => {
-              if (!response.ok) throw new Error('CSV introuvable');
-              return response.text();
-            })
+            .then(response => response.text())
             .then(data => {
               const rows = data.split('\n');
               const tableBody = document.getElementById('tableBody');
         
               for (let i = 1; i < rows.length; i++) {
                 if (rows[i].trim() === '') continue;
-                // ✅ Nettoie TOUTES les données du CSV (supprime les guillemets)
                 const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
                   .map(s => s?.replace(/"/g, '').trim() || '');
-                
                 const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
                 const row = document.createElement('tr');
         
-                // --- OSM Link ---
+                // --- OSM Link (sans data-field) ---
                 const osmLinkCell = document.createElement('td');
-                osmLinkCell.setAttribute('data-field', 'osm_link');
                 const osmLink = document.createElement('a');
                 osmLink.href = osmUrl;
                 osmLink.target = "_blank";
@@ -213,9 +219,8 @@
                 osmLinkCell.appendChild(osmLink);
                 row.appendChild(osmLinkCell);
         
-                // --- iNat Link
+                // --- iNat Link (sans data-field) ---
                 const inatLinkCell = document.createElement('td');
-                inatLinkCell.setAttribute('data-field', 'inat_link');
                 const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`;
                 const imgLink = document.createElement('a');
                 imgLink.href = finalObsUrl;
@@ -228,9 +233,8 @@
                 inatLinkCell.appendChild(imgLink);
                 row.appendChild(inatLinkCell);
         
-                // --- Obs IDs (badges) ---
+                // --- Obs IDs (sans data-field) ---
                 const obsIdsCell = document.createElement('td');
-                obsIdsCell.setAttribute('data-field', 'obs_ids');
                 obsIdsCell.className = 'obs-ids-cell';
                 (obsIdsForUrl?.split(';') || []).forEach(id => {
                   if (!id.trim()) return;
@@ -248,11 +252,12 @@
                 tableBody.appendChild(row);
               }
         
-              // ✅ Désactive les fonctionnalités de sélection (évite la colonne dupliquée)
-              $('#osmTable').bootstrapTable({
-                clickToSelect: false,
-                singleSelect: false
-              });
+              // ✅ Met à jour Bootstrap Table après peuplement
+              $('#osmTable').bootstrapTable('load', Array.from(tableBody.rows).map(row => ({
+                0: row.cells[0].innerHTML,
+                1: row.cells[1].innerHTML,
+                2: row.cells[2].innerHTML
+              })));
             })
             .catch(error => {
               console.error('Erreur:', error);
