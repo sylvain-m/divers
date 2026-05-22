@@ -25,6 +25,11 @@
         margin-bottom: 10px;
         font-size: 2em;
     }
+    h1 a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
     .log-info {
         text-align: center;
         margin-bottom: 20px;
@@ -68,6 +73,9 @@
       padding: 12px 24px;
       cursor: pointer;
       transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .toggle-switch input[type="radio"]:checked + label {
       background: #74ac00;
@@ -151,26 +159,41 @@
         white-space: normal;
     }
 
-    /* ===== NOUVEAUX STYLES POUR LES PAGES MASQUÉES ===== */
+    /* ===== NOUVEAUX STYLES ===== */
     .page {
       display: none;
+      height: 100%;
     }
     .page.active {
       display: block;
     }
+    /* Fix pour les icônes Bootstrap Icons dans le toggle */
+    .toggle-switch i {
+      font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
-  <!-- Bandeau avec toggle -->
+  <!-- Header avec ton contenu exact -->
   <div id="header-container">
-    <h1>iNat 2 OSM</h1>
+    <h1>
+      <a href="https://www.inaturalist.org" target="_blank">
+        <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-logo" alt="iNaturalist Logo">
+      </a>
+      iNat 2 OSM
+      <a href="https://www.openstreetmap.org" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-logo" alt="OpenStreetMap Logo">
+      </a>
+    </h1>
     <div class="toggle-switch">
       <input type="radio" id="map" name="page" value="map" checked>
-      <label for="map">Carte</label>
+      <label for="map"><i class="bi bi-map"></i> Map</label>
+
       <input type="radio" id="table" name="page" value="table">
-      <label for="table">Tableau</label>
+      <label for="table"><i class="bi bi-table"></i> Table</label>
+
       <input type="radio" id="graph" name="page" value="graph">
-      <label for="graph">Graphique</label>
+      <label for="graph"><i class="bi bi-graph-up"></i> Graph</label>
     </div>
   </div>
 
@@ -184,24 +207,8 @@
     <!-- Page Tableau -->
     <div id="table-page" class="page">
       <div class="table-container">
-        <table
-          id="osmTable"
-          class="table table-hover table-borderless"
-          data-height="100%"
-          data-pagination="false"
-          data-search="false"
-          data-show-columns="false"
-          data-show-refresh="false"
-          data-show-toggle="false">
-          <thead>
-            <tr>
-              <th>OSM Link</th>
-              <th>iNat Link</th>
-              <th>iNat Observations IDs</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody"></tbody>
-        </table>
+        <!-- ✅ Tableau SANS data-toggle="table" (pour éviter les conflits) -->
+        <table id="osmTable" class="table table-hover table-borderless"></table>
       </div>
     </div>
 
@@ -220,11 +227,9 @@
     // Toggle entre les pages
     document.querySelectorAll('input[name="page"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
-        // Masque toutes les pages
         document.querySelectorAll('.page').forEach(page => {
           page.classList.remove('active');
         });
-        // Affiche la page sélectionnée
         document.getElementById(`${e.target.value}-page`).classList.add('active');
 
         // Initialise le tableau SI on passe sur la page "table"
@@ -239,7 +244,7 @@
       initTable();
     }
 
-    // Fonction pour charger le CSV et afficher le tableau
+    // ✅ SOLUTION DÉFINITIVE : Tableau 100% géré par Bootstrap Table (pas de HTML manuel)
     function initTable() {
       fetch('osm_inat.csv')
         .then(response => {
@@ -248,76 +253,77 @@
         })
         .then(data => {
           const rows = data.split('\n');
-          const tableBody = document.getElementById('tableBody');
-          tableBody.innerHTML = ''; // Vide le tableau
+          const tableData = [];
 
           for (let i = 1; i < rows.length; i++) {
             if (rows[i].trim() === '') continue;
             const cleanRowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g)
               .map(s => s?.replace(/"/g, '').trim() || '');
             const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
-            const row = document.createElement('tr');
 
-            // Colonne OSM Link (icône 32px via .osm-img)
-            const osmLinkCell = document.createElement('td');
-            const osmLink = document.createElement('a');
-            osmLink.href = osmUrl;
-            osmLink.target = "_blank";
-            const osmImg = document.createElement('img');
-            osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
-            osmImg.className = 'osm-img'; // ✅ Classe pour la taille (32px)
-            osmLink.append(osmImg, ` ${osmElement} ${osmId}`);
-            osmLinkCell.appendChild(osmLink);
-            row.appendChild(osmLinkCell);
+            // Construis les cellules en HTML
+            const osmLink = `
+              <a href="${osmUrl}" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="osm-img">
+                ${osmElement} ${osmId}
+              </a>`;
 
-            // Colonne iNat Link (icône 32px via .inat-img)
-            const inatLinkCell = document.createElement('td');
-            const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`;
-            const imgLink = document.createElement('a');
-            imgLink.href = finalObsUrl;
-            imgLink.target = "_blank";
-            const img = document.createElement('img');
-            img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
-            img.className = 'inat-img'; // ✅ Classe pour la taille (32px)
             const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
-            imgLink.append(img, ` ${obsCount} Observation${obsCount > 1 ? 's' : ''}`);
-            inatLinkCell.appendChild(imgLink);
-            row.appendChild(inatLinkCell);
+            const inatLink = `
+              <a href="${obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`}" target="_blank">
+                <img src="https://static.inaturalist.org/wiki_page_attachments/3154-original.png" class="inat-img">
+                ${obsCount} Observation${obsCount > 1 ? 's' : ''}
+              </a>`;
 
-            // Colonne Obs IDs (badges verts)
-            const obsIdsCell = document.createElement('td');
-            obsIdsCell.className = 'obs-ids-cell';
-            (obsIdsForUrl?.split(';') || []).forEach(id => {
-              if (!id.trim()) return;
-              const badgeLink = document.createElement('a');
-              badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
-              badgeLink.target = "_blank";
-              const badge = document.createElement('span');
-              badge.className = 'id-badge'; // ✅ Classe pour le style
-              badge.textContent = id.trim();
-              badgeLink.appendChild(badge);
-              obsIdsCell.appendChild(badgeLink);
+            const obsIds = (obsIdsForUrl?.split(';') || [])
+              .filter(id => id.trim())
+              .map(id => `
+                <a href="https://www.inaturalist.org/observations/${id.trim()}" target="_blank" class="id-badge">
+                  ${id.trim()}
+                </a>`)
+              .join(' ');
+
+            tableData.push({
+              osm_link: osmLink,
+              inat_link: inatLink,
+              obs_ids: obsIds
             });
-            row.appendChild(obsIdsCell);
-
-            tableBody.appendChild(row);
           }
 
-          // Initialise Bootstrap Table
+          // ✅ Initialise Bootstrap Table avec les données et colonnes
           $('#osmTable').bootstrapTable({
+            data: tableData,
+            columns: [
+              { field: 'osm_link', title: 'OSM Link', align: 'center' },
+              { field: 'inat_link', title: 'iNat Link', align: 'center' },
+              { field: 'obs_ids', title: 'iNat Observations IDs', align: 'center' }
+            ],
+            height: '100%',
+            pagination: false,
+            search: false,
+            showColumns: false,
+            showRefresh: false,
+            showToggle: false,
             clickToSelect: false,
-            singleSelect: false
+            singleSelect: false,
+            undefinedText: '',
+            escape: false // ✅ Permet le HTML dans les cellules
           });
         })
         .catch(error => {
           console.error('Erreur:', error);
-          const errorRow = document.createElement('tr');
-          const errorCell = document.createElement('td');
-          errorCell.colSpan = 3;
-          errorCell.textContent = 'Erreur : fichier CSV introuvable ou invalide.';
-          errorCell.className = 'text-danger text-center';
-          errorRow.appendChild(errorCell);
-          document.getElementById('tableBody').appendChild(errorRow);
+          $('#osmTable').bootstrapTable({
+            data: [{
+              osm_link: '<span class="text-danger">Erreur : fichier CSV introuvable</span>',
+              inat_link: '',
+              obs_ids: ''
+            }],
+            columns: [
+              { field: 'osm_link', title: 'OSM Link' },
+              { field: 'inat_link', title: 'iNat Link' },
+              { field: 'obs_ids', title: 'iNat Observations IDs' }
+            ]
+          });
         });
     }
   </script>
