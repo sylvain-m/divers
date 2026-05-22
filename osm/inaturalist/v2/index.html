@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Métadonnées et CSS (inchangé) -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>iNat 2 OSM</title>
-  <!-- Bootstrap 5 CSS + Bootstrap Table CSS + Bootstrap Icons -->
+
+  <!-- Bootstrap 5 + Bootstrap Table + Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <style>
-    /* Tes styles existants (inchangés) */
+    /* ===== TON CSS EXISTANT (INTÉGRAL) ===== */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1e1e1e;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2em;
+    }
+    .log-info {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #a0a0a0;
+        font-size: 0.9em;
+    }
+    .osm-logo, .inat-logo {
+        width: 48px;
+        height: auto;
+        vertical-align: middle;
     }
     #header-container {
       height: 150px;
@@ -36,14 +53,6 @@
       height: calc(100vh - 150px);
       overflow: auto;
     }
-    /* Style des pages (nouveau) */
-    .page {
-      display: none; /* Toutes les pages sont cachées par défaut */
-    }
-    .page.active {
-      display: block; /* Seule la page active est affichée */
-    }
-    /* Styles du toggle switch (inchangés) */
     .toggle-switch {
       display: flex;
       background: #e9ecef;
@@ -52,11 +61,107 @@
       overflow: hidden;
       width: fit-content;
     }
-    /* ... (le reste de ton CSS existant) */
+    .toggle-switch input[type="radio"] {
+      display: none;
+    }
+    .toggle-switch label {
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .toggle-switch input[type="radio"]:checked + label {
+      background: #74ac00;
+      color: white;
+      font-weight: bold;
+    }
+    .toggle-switch label:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+    .toggle-switch label:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+    .table {
+        color: #e0e0e0;
+        background-color: #1e1e1e;
+        border-color: #333;
+        table-layout: fixed;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .table thead th {
+        background-color: #2d2d2d;
+        color: #ffffff;
+        border-bottom: 1px solid #333;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        max-width: 300px;
+        width: 300px;
+        text-align: center;
+    }
+    .table tbody td {
+        border-bottom: 1px solid #333;
+        background-color: #1e1e1e;
+        max-width: 300px;
+        width: 300px;
+        vertical-align: top;
+    }
+    .table-hover tbody tr:hover {
+        background-color: #2a2a2a;
+    }
+    a {
+        color: #4da6ff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .id-badge {
+        background-color: #74ac00;
+        color: #ffffff;
+        margin: 2px;
+        padding: 3px 6px;
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 0.85em;
+    }
+    .osm-img {
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+    .inat-img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        margin-right: 8px;
+    }
+    .table-container {
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+        overflow-x: auto;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 900px;
+    }
+    .obs-ids-cell {
+        word-break: break-all;
+        white-space: normal;
+    }
+
+    /* ===== NOUVEAUX STYLES POUR LES PAGES MASQUÉES ===== */
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <!-- Bandeau (inchangé) -->
+  <!-- Bandeau avec toggle -->
   <div id="header-container">
     <h1>iNat 2 OSM</h1>
     <div class="toggle-switch">
@@ -71,13 +176,12 @@
 
   <!-- Conteneur principal -->
   <div id="main-container">
-    <!-- Page Carte (remplace map.html) -->
+    <!-- Page Carte -->
     <div id="map-page" class="page active">
-      <!-- Contenu de ta page "Carte" ici -->
       <p>Contenu de la carte...</p>
     </div>
 
-    <!-- Page Tableau (remplace table.html) -->
+    <!-- Page Tableau -->
     <div id="table-page" class="page">
       <div class="table-container">
         <table
@@ -101,21 +205,19 @@
       </div>
     </div>
 
-    <!-- Page Graphique (remplace graph.html) -->
+    <!-- Page Graphique -->
     <div id="graph-page" class="page">
-      <!-- Contenu de ta page "Graphique" ici -->
       <p>Contenu du graphique...</p>
     </div>
   </div>
 
-  <!-- Bibliothèques JS (inchangées) -->
+  <!-- Bibliothèques JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
-  <!-- Code JS pour le toggle et le tableau -->
   <script>
-    // Initialise le toggle switch
+    // Toggle entre les pages
     document.querySelectorAll('input[name="page"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
         // Masque toutes les pages
@@ -125,14 +227,19 @@
         // Affiche la page sélectionnée
         document.getElementById(`${e.target.value}-page`).classList.add('active');
 
-        // ✅ Initialise le tableau UNIQUEMENT quand la page "table" est sélectionnée
+        // Initialise le tableau SI on passe sur la page "table"
         if (e.target.value === 'table') {
           initTable();
         }
       });
     });
 
-    // Fonction pour initialiser le tableau (inchangée)
+    // Initialise le tableau au chargement si la page "table" est active
+    if (document.querySelector('input[name="page"]:checked').value === 'table') {
+      initTable();
+    }
+
+    // Fonction pour charger le CSV et afficher le tableau
     function initTable() {
       fetch('osm_inat.csv')
         .then(response => {
@@ -142,9 +249,7 @@
         .then(data => {
           const rows = data.split('\n');
           const tableBody = document.getElementById('tableBody');
-
-          // Efface le contenu actuel
-          tableBody.innerHTML = '';
+          tableBody.innerHTML = ''; // Vide le tableau
 
           for (let i = 1; i < rows.length; i++) {
             if (rows[i].trim() === '') continue;
@@ -153,19 +258,19 @@
             const [osmElement, osmId, osmUrl, obsIdsForUrl, obsUrl] = cleanRowData;
             const row = document.createElement('tr');
 
-            // OSM Link
+            // Colonne OSM Link (icône 32px via .osm-img)
             const osmLinkCell = document.createElement('td');
             const osmLink = document.createElement('a');
             osmLink.href = osmUrl;
             osmLink.target = "_blank";
             const osmImg = document.createElement('img');
             osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
-            osmImg.className = 'osm-img';
+            osmImg.className = 'osm-img'; // ✅ Classe pour la taille (32px)
             osmLink.append(osmImg, ` ${osmElement} ${osmId}`);
             osmLinkCell.appendChild(osmLink);
             row.appendChild(osmLinkCell);
 
-            // iNat Link
+            // Colonne iNat Link (icône 32px via .inat-img)
             const inatLinkCell = document.createElement('td');
             const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`;
             const imgLink = document.createElement('a');
@@ -173,13 +278,13 @@
             imgLink.target = "_blank";
             const img = document.createElement('img');
             img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
-            img.className = 'inat-img';
+            img.className = 'inat-img'; // ✅ Classe pour la taille (32px)
             const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
             imgLink.append(img, ` ${obsCount} Observation${obsCount > 1 ? 's' : ''}`);
             inatLinkCell.appendChild(imgLink);
             row.appendChild(inatLinkCell);
 
-            // Obs IDs
+            // Colonne Obs IDs (badges verts)
             const obsIdsCell = document.createElement('td');
             obsIdsCell.className = 'obs-ids-cell';
             (obsIdsForUrl?.split(';') || []).forEach(id => {
@@ -188,7 +293,7 @@
               badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
               badgeLink.target = "_blank";
               const badge = document.createElement('span');
-              badge.className = 'badge bg-success me-1';
+              badge.className = 'id-badge'; // ✅ Classe pour le style
               badge.textContent = id.trim();
               badgeLink.appendChild(badge);
               obsIdsCell.appendChild(badgeLink);
@@ -198,7 +303,7 @@
             tableBody.appendChild(row);
           }
 
-          // Initialise Bootstrap Table APRÈS avoir peuplé le tbody
+          // Initialise Bootstrap Table
           $('#osmTable').bootstrapTable({
             clickToSelect: false,
             singleSelect: false
@@ -214,11 +319,6 @@
           errorRow.appendChild(errorCell);
           document.getElementById('tableBody').appendChild(errorRow);
         });
-    }
-
-    // ✅ Initialise le tableau par défaut si la page "table" est active au chargement
-    if (document.querySelector('input[name="page"]:checked').value === 'table') {
-      initTable();
     }
   </script>
 </body>
