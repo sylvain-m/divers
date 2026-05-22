@@ -8,8 +8,7 @@
         data-search="false"
         data-show-columns="false"
         data-show-refresh="false"
-        data-show-toggle="false"
-    >
+        data-show-toggle="false">
         <thead>
             <tr>
                 <th data-field="osm_link">OSM Link</th>
@@ -17,111 +16,83 @@
                 <th data-field="obs_ids">iNat Observations IDs</th>
             </tr>
         </thead>
-        <tbody id="tableBody">
-            <!-- content loaded dynamically via JavaScript -->
-        </tbody>
+        <tbody id="tableBody"></tbody>
     </table>
 </div>
-    <!-- Bootstrap 5 JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap Table JS -->
-    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css"></script>
 
+<script>
+    fetch('/osm_inat.csv') // ✅ Chemin absolu
+        .then(response => {
+            if (!response.ok) throw new Error('Fichier CSV introuvable');
+            return response.text();
+        })
+        .then(data => {
+            const rows = data.split('\n');
+            const tableBody = document.getElementById('tableBody');
 
-    <script>
-        // Charger le fichier CSV et afficher son contenu dans le tableau
-        fetch('osm_inat.csv')
-            .then(response => response.text())
-            .then(data => {
-                const rows = data.split('\n');
-                const tableBody = document.getElementById('tableBody');
+            for (let i = 1; i < rows.length; i++) {
+                if (rows[i].trim() === '') continue;
+                const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
+                const row = document.createElement('tr');
 
-                // Parcourir les lignes du CSV (en excluant l'en-tête)
-                for (let i = 1; i < rows.length; i++) {
-                    if (rows[i].trim() === '') continue;
+                // --- OSM Link ---
+                const osmLinkCell = document.createElement('td');
+                const [osmElement, osmId, osmUrl] = rowData.slice(0, 3).map(s => s?.replace(/"/g, '').trim() || '');
+                const osmLink = document.createElement('a');
+                osmLink.href = osmUrl;
+                osmLink.target = "_blank";
+                const osmImg = document.createElement('img');
+                osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
+                osmImg.className = 'osm-img';
+                osmImg.alt = 'OpenStreetMap';
+                osmLink.append(osmImg, ` ${osmElement} ${osmId}`);
+                osmLinkCell.appendChild(osmLink);
+                row.appendChild(osmLinkCell);
 
-                    // Utiliser une expression régulière pour gérer les guillemets et les virgules dans les CSV
-                    const rowData = rows[i].match(/(".*?"|[^",]+)(?=\s*,\s*|\s*$)/g) || [];
-                    const row = document.createElement('tr');
+                // --- iNat Link ---
+                const inatLinkCell = document.createElement('td');
+                const [, , , obsIdsForUrl, obsUrl] = rowData;
+                const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl?.replace(/;/g, ',')}`;
+                const imgLink = document.createElement('a');
+                imgLink.href = finalObsUrl;
+                imgLink.target = "_blank";
+                const img = document.createElement('img');
+                img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
+                img.className = 'inat-img';
+                img.alt = 'iNaturalist';
+                const obsCount = (obsIdsForUrl?.split(';').filter(Boolean) || []).length;
+                imgLink.append(img, ` ${obsCount} Observation${obsCount > 1 ? 's' : ''}`);
+                inatLinkCell.appendChild(imgLink);
+                row.appendChild(inatLinkCell);
 
-                    // OSM Link (icône + osm_element + osm_id, lien vers osm_url)
-                    const osmLinkCell = document.createElement('td');
-                    const osmElement = rowData[0] ? rowData[0].replace(/"/g, '').trim() : '';
-                    const osmId = rowData[1] ? rowData[1].replace(/"/g, '').trim() : '';
-                    const osmUrl = rowData[2] ? rowData[2].replace(/"/g, '').trim() : '';
-                    const osmLink = document.createElement('a');
-                    osmLink.href = osmUrl;
-                    osmLink.target = "_blank";
+                // --- Obs IDs (badges) ---
+                const obsIdsCell = document.createElement('td');
+                obsIdsCell.className = 'obs-ids-cell';
+                (obsIdsForUrl?.split(';') || []).forEach(id => {
+                    if (!id.trim()) return;
+                    const badgeLink = document.createElement('a');
+                    badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
+                    badgeLink.target = "_blank";
+                    const badge = document.createElement('span');
+                    badge.className = 'badge bg-success me-1'; // Style Bootstrap
+                    badge.textContent = id.trim();
+                    badgeLink.appendChild(badge);
+                    obsIdsCell.appendChild(badgeLink);
+                });
+                row.appendChild(obsIdsCell);
 
-                    // Ajouter l'icône OSM
-                    const osmImg = document.createElement('img');
-                    osmImg.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg';
-                    osmImg.className = 'osm-img';
-                    osmImg.alt = 'OpenStreetMap';
-                    osmLink.appendChild(osmImg);
-
-                    // Ajouter le texte (osm_element + osm_id)
-                    osmLink.appendChild(document.createTextNode(`${osmElement} ${osmId}`));
-                    osmLinkCell.appendChild(osmLink);
-                    row.appendChild(osmLinkCell);
-
-                    // iNat Link (image iNaturalist + texte "{n} Observation(s)")
-                    const inatLinkCell = document.createElement('td');
-                    const obsIdsForUrl = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
-                    const obsUrl = rowData[4] ? rowData[4].replace(/"/g, '').trim() : '';
-                    const finalObsUrl = obsUrl || `https://www.inaturalist.org/observations?verifiable=any&id=${obsIdsForUrl.replace(/;/g, ',')}`;
-                    const imgLink = document.createElement('a');
-                    imgLink.href = finalObsUrl;
-                    imgLink.target = "_blank";
-
-                    // Ajouter l'icône iNaturalist
-                    const img = document.createElement('img');
-                    img.src = 'https://static.inaturalist.org/wiki_page_attachments/3154-original.png';
-                    img.className = 'inat-img';
-                    img.alt = 'iNaturalist';
-                    imgLink.appendChild(img);
-
-                    // Compter le nombre d'IDs dans obsIdsForUrl
-                    const obsIdsArray = obsIdsForUrl.split(';').filter(id => id.trim() !== '');
-                    const obsCount = obsIdsArray.length;
-                    const obsText = document.createTextNode(`${obsCount} Observation${obsCount > 1 ? 's' : ''}`);
-                    imgLink.appendChild(obsText);
-
-                    inatLinkCell.appendChild(imgLink);
-                    row.appendChild(inatLinkCell);
-
-                    // obs_ids (badges verts cliquables pour chaque ID)
-                    const obsIdsCell = document.createElement('td');
-                    obsIdsCell.className = 'obs-ids-cell'; // Classe pour le retour à la ligne
-                    const obsIds = rowData[3] ? rowData[3].replace(/"/g, '').trim() : '';
-                    if (obsIds) {
-                        const ids = obsIds.split(';');
-                        ids.forEach(id => {
-                            if (id.trim() === '') return;
-                            const badgeLink = document.createElement('a');
-                            badgeLink.href = `https://www.inaturalist.org/observations/${id.trim()}`;
-                            badgeLink.target = "_blank";
-                            const badge = document.createElement('span');
-                            badge.className = 'id-badge';
-                            badge.textContent = id.trim();
-                            badgeLink.appendChild(badge);
-                            obsIdsCell.appendChild(badgeLink);
-                        });
-                    }
-                    row.appendChild(obsIdsCell);
-
-                    tableBody.appendChild(row);
-                }
-            })
-            .catch(error => {
-                console.error('Erreur lors du chargement du CSV:', error);
-                const tableBody = document.getElementById('tableBody');
-                const errorRow = document.createElement('tr');
-                const errorCell = document.createElement('td');
-                errorCell.colSpan = 3;
-                errorCell.textContent = 'Erreur lors du chargement des données. Vérifiez que le fichier osm_inat.csv existe et est accessible.';
-                errorCell.style.color = '#ff6b6b';
-                errorRow.appendChild(errorCell);
-                tableBody.appendChild(errorRow);
-            });
-    </script>
+                tableBody.appendChild(row);
+            }
+            $('#osmTable').bootstrapTable(); // ✅ Initialisation obligatoire
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            const errorRow = document.createElement('tr');
+            const errorCell = document.createElement('td');
+            errorCell.colSpan = 3;
+            errorCell.textContent = 'Erreur : fichier CSV introuvable ou invalide.';
+            errorCell.className = 'text-danger';
+            errorRow.appendChild(errorCell);
+            document.getElementById('tableBody').appendChild(errorRow);
+        });
+</script>
