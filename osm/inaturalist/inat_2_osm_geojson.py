@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 
 CSV_INPUT = "osm_inat.csv"
-GEOJSON_OUTPUT = "osm_inat.geojson"
+GEOJSON_OUTPUT = "osm_inat_v3.geojson"
 
 OVERPASS_SERVERS = [
     "https://overpass-api.de/api/interpreter",
@@ -170,68 +170,39 @@ def fetch_batch_recursive(batch_df):
     )
 
 
-def osm_to_geometry(element):
+def calculate_centroid(coordinates):
+    if not coordinates:
+        return None
 
-    osm_type = element[
-        "type"
-    ]
+    if isinstance(coordinates[0][0], list):
+        coordinates = [point for ring in coordinates for point in ring]
+
+    lon_sum = sum(point[0] for point in coordinates)
+    lat_sum = sum(point[1] for point in coordinates)
+    n = len(coordinates)
+
+    return [lon_sum / n, lat_sum / n]
+
+def osm_to_geometry(element):
+    osm_type = element["type"]
 
     if osm_type == "node":
-
         return {
             "type": "Point",
-            "coordinates": [
-                element["lon"],
-                element["lat"]
-            ]
+            "coordinates": [element["lon"], element["lat"]]
         }
 
-    geometry = element.get(
-        "geometry"
-    )
-
+    geometry = element.get("geometry")
     if not geometry:
         return None
 
-    coordinates = [
-        [
-            point["lon"],
-            point["lat"]
-        ]
-        for point in geometry
-    ]
+    coordinates = [[point["lon"], point["lat"]] for point in geometry]
 
-    if osm_type == "way":
-
-        if (
-            len(coordinates)
-            >= 4
-            and coordinates[0]
-            ==
-            coordinates[-1]
-        ):
-
-            return {
-                "type":
-                "Polygon",
-                "coordinates":
-                [coordinates]
-            }
-
+    if osm_type in ["way", "relation"]:
+        centroid = calculate_centroid(coordinates)
         return {
-            "type":
-            "LineString",
-            "coordinates":
-            coordinates
-        }
-
-    if osm_type == "relation":
-
-        return {
-            "type":
-            "LineString",
-            "coordinates":
-            coordinates
+            "type": "Point",
+            "coordinates": centroid
         }
 
     return None
