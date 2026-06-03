@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 
 CSV_INPUT = "osm_inat.csv"
-GEOJSON_OUTPUT = "osm_inat_v3.geojson"
+GEOJSON_OUTPUT = "osm_inat.geojson"
 
 OVERPASS_SERVERS = [
     "https://overpass-api.de/api/interpreter",
