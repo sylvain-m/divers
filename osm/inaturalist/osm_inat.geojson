@@ -1514,141 +1514,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.4941845,
-          43.7703578
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 10796816743,
-        "osm_url": "https://www.openstreetmap.org/node/10796816743",
-        "obs_ids": "179943206;282317385;351264039",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=179943206,282317385,351264039",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "282317385;351264039",
-          "species": "Ficus macrophylla",
-          "species:fr": "Figuier de la Baie de Moreton",
-          "species:wikidata": "Q1439079",
-          "species:wikipedia": "fr:Ficus macrophylla"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.5716045,
-          39.8738171
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13274209501,
-        "osm_url": "https://www.openstreetmap.org/node/13274209501",
-        "obs_ids": "24885137;117882498;165355463;351277398",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=24885137,117882498,165355463,351277398",
-        "tags": {
-          "circumference": "7.06",
-          "denotation": "natural_monument",
-          "description": "Planted around 1695, the tree survived the Revolutionary War and was present during the Battle of Brandywine.",
-          "height": "33.40",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Lafayette Sycamore",
-          "natural": "tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          7.4573344,
-          43.760519
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13758900097,
-        "osm_url": "https://www.openstreetmap.org/node/13758900097",
-        "obs_ids": "351490013",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=351490013",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "351490013",
-          "species": "Ficus macrophylla",
-          "species:fr": "Figuier de la Baie de Moreton",
-          "species:wikidata": "Q1439079",
-          "species:wikipedia": "fr:Ficus macrophylla"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          7.5118231,
-          43.783525
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13766186783,
-        "osm_url": "https://www.openstreetmap.org/node/13766186783",
-        "obs_ids": "351487055",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=351487055",
-        "tags": {
-          "denotation": "landmark",
-          "genus": "Araucaria",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "351487055"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.0346672,
-          48.583936
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13814304147,
-        "osm_url": "https://www.openstreetmap.org/node/13814304147",
-        "obs_ids": "351650405",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=351650405",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "351650405",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           123.6699281,
           -17.3507176
         ]
@@ -1772,6 +1637,114 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.4941845,
+          43.7703578
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 10796816743,
+        "osm_url": "https://www.openstreetmap.org/node/10796816743",
+        "obs_ids": "179943206;282317385;351264039",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=179943206,282317385,351264039",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "282317385;351264039",
+          "species": "Ficus macrophylla",
+          "species:fr": "Figuier de la Baie de Moreton",
+          "species:wikidata": "Q1439079",
+          "species:wikipedia": "fr:Ficus macrophylla"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5716045,
+          39.8738171
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13274209501,
+        "osm_url": "https://www.openstreetmap.org/node/13274209501",
+        "obs_ids": "24885137;117882498;165355463;351277398",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=24885137,117882498,165355463,351277398",
+        "tags": {
+          "circumference": "7.06",
+          "denotation": "natural_monument",
+          "description": "Planted around 1695, the tree survived the Revolutionary War and was present during the Battle of Brandywine.",
+          "height": "33.40",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Lafayette Sycamore",
+          "natural": "tree"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4573344,
+          43.760519
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13758900097,
+        "osm_url": "https://www.openstreetmap.org/node/13758900097",
+        "obs_ids": "351490013",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=351490013",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "351490013",
+          "species": "Ficus macrophylla",
+          "species:fr": "Figuier de la Baie de Moreton",
+          "species:wikidata": "Q1439079",
+          "species:wikipedia": "fr:Ficus macrophylla"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5118231,
+          43.783525
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13766186783,
+        "osm_url": "https://www.openstreetmap.org/node/13766186783",
+        "obs_ids": "351487055",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=351487055",
+        "tags": {
+          "denotation": "landmark",
+          "genus": "Araucaria",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "351487055"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           28.2250452,
           -22.8615032
         ]
@@ -1789,6 +1762,33 @@
           "natural": "tree",
           "species": "Adansonia digitata",
           "species:wikidata": "Q158742"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0346672,
+          48.583936
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13814304147,
+        "osm_url": "https://www.openstreetmap.org/node/13814304147",
+        "obs_ids": "351650405",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=351650405",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "351650405",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
         }
       }
     },
@@ -2102,8 +2102,15 @@
         "obs_ids": "17475431;105627860;113113243;153539178;154647507;198724579;230384484;265773713;265773737;271946517;327158097;327332858;328783291;340115062;345577527",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=17475431,105627860,113113243,153539178,154647507,198724579,230384484,265773713,265773737,271946517,327158097,327332858,328783291,340115062,345577527",
         "tags": {
+          "denotation": "natural_monument",
+          "genus": "Quercus",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
           "name": "Emancipation Oak",
           "natural": "tree",
+          "ref:inaturalist.org": "113113243",
+          "species": "Quercus virginiana",
+          "species:wikidata": "Q1758722",
           "website": "https://www.hamptonu.edu/about/emancipation_oak.cfm",
           "wikidata": "Q5368989"
         }
@@ -2128,6 +2135,10 @@
           "denotation": "natural_monument",
           "name": "Giant Totara tree",
           "natural": "tree",
+          "ref:inaturalist.org": "331434017;204489612",
+          "species": "Podocarpus totara",
+          "species:wikidata": "Q164276",
+          "species:wikipedia": "en:Podocarpus totara",
           "tourism": "attraction"
         }
       }
@@ -2216,11 +2227,147 @@
           "natural": "tree",
           "object:city": "Bridgetown",
           "object:street": "Constitution Road",
+          "ref:inaturalist.org": "347369339",
           "species": "Adansonia digitata",
           "species:es": "Baobab africano",
           "species:wikidata": "Q158742",
           "start_date": "1738",
           "wikimedia_commons": "File:Baobab Tree (46674496915).jpg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9111576,
+          34.8267342
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13767284443,
+        "osm_url": "https://www.openstreetmap.org/node/13767284443",
+        "obs_ids": "145041213;308195686;344757666",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=145041213,308195686,344757666",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "species": "Quercus infectoria",
+          "species:wikidata": "Q3565069",
+          "species:wikipedia": "en:Quercus infectoria"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0115408,
+          46.5968855
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13812125188,
+        "osm_url": "https://www.openstreetmap.org/node/13812125188",
+        "obs_ids": "345919257",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=345919257",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "345919257",
+          "species": "Sequoiadendron giganteum",
+          "species:fr": "Séquoia géant",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5355274,
+          28.4109453
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13892536456,
+        "osm_url": "https://www.openstreetmap.org/node/13892536456",
+        "obs_ids": "71886686;71961082;103971105;122927632;123346644;128163347;151911622;180442038;190769249;201003611;238605393;246814237;248340998;248913077;257497482;259253897;262118430;265950792;269424024;280757116;297251880;303830638;321602998;326164076;345071188",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=71886686,71961082,103971105,122927632,123346644,128163347,151911622,180442038,190769249,201003611,238605393,246814237,248340998,248913077,257497482,259253897,262118430,265950792,269424024,280757116,297251880,303830638,321602998,326164076,345071188",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Ficus del Jardín de Aclimatación de La Orotava",
+          "natural": "tree",
+          "ref:inaturalist.org": "123346644",
+          "species": "Ficus macrophylla columnaris",
+          "species:wikidata": "Q49414549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.0495061,
+          37.7787863
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13892554799,
+        "osm_url": "https://www.openstreetmap.org/node/13892554799",
+        "obs_ids": "204021477;304255482;346193888",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=204021477,304255482,346193888",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Pino de la Hoya del Carrascal",
+          "natural": "tree",
+          "ref:inaturalist.org": "346193888",
+          "species": "Pinus halepensis",
+          "species:wikidata": "Q211457",
+          "species:wikipedia": "es:Pinus halepensis"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2849015,
+          51.4443939
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13915099131,
+        "osm_url": "https://www.openstreetmap.org/node/13915099131",
+        "obs_ids": "98185695;345875605",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=98185695,345875605",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "345875605",
+          "species": "Quercus robur",
+          "species:wikidata": "Q165145"
         }
       }
     },
