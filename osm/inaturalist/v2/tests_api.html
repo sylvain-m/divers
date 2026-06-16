@@ -141,8 +141,8 @@
                     </p>
             `;
 
-            // Add genus if present
-            if (tags.genus) {
+            // Add genus if present AND species is not present
+            if (tags.genus && !tags.species) {
                 content += `<p class="tag-info"><strong>Genus:</strong> ${tags.genus}</p>`;
             }
 
@@ -155,14 +155,14 @@
                 }
                 // Add Wikipedia icon if species:wikipedia is present
                 if (tags['species:wikipedia']) {
-                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
+                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
                 }
                 content += `</p>`;
             }
 
             // Add Wikipedia link if present
             if (tags.wikipedia) {
-                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
+                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
             }
 
             content += `<p class="loading">Loading thumbnails...</p>`;
@@ -189,8 +189,8 @@
                     </p>
             `;
 
-            // Add genus if present
-            if (tags.genus) {
+            // Add genus if present AND species is not present
+            if (tags.genus && !tags.species) {
                 content += `<p class="tag-info"><strong>Genus:</strong> ${tags.genus}</p>`;
             }
 
@@ -203,14 +203,14 @@
                 }
                 // Add Wikipedia icon if species:wikipedia is present
                 if (tags['species:wikipedia']) {
-                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
+                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
                 }
                 content += `</p>`;
             }
 
             // Add Wikipedia link if present
             if (tags.wikipedia) {
-                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
+                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
             }
 
             // Display thumbnails in a 3x3 grid
