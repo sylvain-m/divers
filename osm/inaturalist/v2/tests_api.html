@@ -151,18 +151,18 @@
                 content += `<p class="tag-info"><strong>Species:</strong> ${tags.species}`;
                 // Add Wikidata icon if species:wikidata is present
                 if (tags['species:wikidata']) {
-                    content += ` <a href="https://www.wikidata.org/wiki/${tags['species:wikidata']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Wikidata-logo.svg/12px-Wikidata-logo.svg.png" class="icon-wikidata" alt="Wikidata"></a>`;
+                    content += ` <a href="https://www.wikidata.org/wiki/${tags['species:wikidata']}" target="_blank"><img src="https://www.wikidata.org/static/images/icons/wikidatawiki.svg" class="icon-wikidata" alt="Wikidata" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22><text x=%2250%%22 y=%2250%%22 font-size=%2210%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>W</text></svg>'"></a>`;
                 }
                 // Add Wikipedia icon if species:wikipedia is present
                 if (tags['species:wikipedia']) {
-                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
+                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg" class="icon-wikipedia" alt="Wikipedia" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22><text x=%2250%%22 y=%2250%%22 font-size=%2210%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>W</text></svg>'"></a>`;
                 }
                 content += `</p>`;
             }
 
             // Add Wikipedia link if present
             if (tags.wikipedia) {
-                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
+                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg" class="icon-wikipedia" alt="Wikipedia" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22><text x=%2250%%22 y=%2250%%22 font-size=%2210%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>W</text></svg>'"> Wikipedia: ${tags.wikipedia}</a></p>`;
             }
 
             content += `<p class="loading">Loading thumbnails...</p>`;
@@ -199,18 +199,18 @@
                 content += `<p class="tag-info"><strong>Species:</strong> ${tags.species}`;
                 // Add Wikidata icon if species:wikidata is present
                 if (tags['species:wikidata']) {
-                    content += ` <a href="https://www.wikidata.org/wiki/${tags['species:wikidata']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Wikidata-logo.svg/12px-Wikidata-logo.svg.png" class="icon-wikidata" alt="Wikidata"></a>`;
+                    content += ` <a href="https://www.wikidata.org/wiki/${tags['species:wikidata']}" target="_blank"><img src="https://www.wikidata.org/static/images/icons/wikidatawiki.svg" class="icon-wikidata" alt="Wikidata" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22><text x=%2250%%22 y=%2250%%22 font-size=%2210%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>W</text></svg>'"></a>`;
                 }
                 // Add Wikipedia icon if species:wikipedia is present
                 if (tags['species:wikipedia']) {
-                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
+                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg" class="icon-wikipedia" alt="Wikipedia" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22><text x=%2250%%22 y=%2250%%22 font-size=%2210%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>W</text></svg>'"></a>`;
                 }
                 content += `</p>`;
             }
 
             // Add Wikipedia link if present
             if (tags.wikipedia) {
-                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Notification-icon-Wikipedia-logo.svg/12px-Notification-icon-Wikipedia-logo.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
+                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg" class="icon-wikipedia" alt="Wikipedia" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22><text x=%2250%%22 y=%2250%%22 font-size=%2210%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>W</text></svg>'"> Wikipedia: ${tags.wikipedia}</a></p>`;
             }
 
             // Display thumbnails in a 3x3 grid
