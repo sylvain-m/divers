@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Leaflet avec vignettes iNaturalist (pagination)</title>
-    <!-- Feuille de style pour Leaflet -->
+    <title>Leaflet Map with iNaturalist Thumbnails (Pagination)</title>
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         body {
@@ -61,40 +61,37 @@
             justify-content: center;
             margin: 5px 0;
         }
+        .observation-count {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
 
-    <!-- Bibliothèque Leaflet -->
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script>
-        // Initialisation de la carte
+        // Initialize the map
         const map = L.map('map').setView([0, 0], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Cache pour stocker les vignettes déjà chargées
-        const thumbnailCache = {};
-
-        // Fonction pour récupérer les vignettes des observations
-        async function fetchObservationThumbnails(obsIds) {
-            const ids = obsIds.split(';');
+        // Function to fetch thumbnails for a subset of observation IDs (9 per page)
+        async function fetchObservationThumbnails(obsIds, startIndex = 0, count = 9) {
+            const ids = obsIds.split(';').slice(startIndex, startIndex + count);
             const thumbnails = [];
 
             for (const id of ids) {
-                if (thumbnailCache[id]) {
-                    thumbnails.push(thumbnailCache[id]);
-                    continue;
-                }
-
                 try {
                     const apiUrl = `https://api.inaturalist.org/v1/observations/${id}`;
                     const response = await fetch(apiUrl);
                     if (!response.ok) {
-                        console.error(`Erreur pour l'observation ${id}: ${response.status}`);
+                        console.error(`Error fetching observation ${id}: ${response.status}`);
                         continue;
                     }
                     const data = await response.json();
@@ -103,41 +100,37 @@
                     if (observation && observation.photos && observation.photos.length > 0) {
                         const photo = observation.photos[0];
                         const thumbnailUrl = photo.url.replace(/square|small|medium|large|original/, "small");
-                        const thumbnail = {
+                        thumbnails.push({
                             id: observation.id,
                             url: thumbnailUrl,
-                            taxon: observation.taxon ? observation.taxon.name : "Inconnu",
+                            taxon: observation.taxon ? observation.taxon.name : "Unknown",
                             user: observation.user.login,
-                            date: new Date(observation.observed_on).toLocaleDateString("fr-FR")
-                        };
-                        thumbnails.push(thumbnail);
-                        thumbnailCache[id] = thumbnail; // Stockage dans le cache
+                            date: new Date(observation.observed_on).toLocaleDateString("en-US")
+                        });
                     }
                 } catch (error) {
-                    console.error(`Erreur pour l'observation ${id}:`, error);
+                    console.error(`Error for observation ${id}:`, error);
                 }
             }
 
             return thumbnails;
         }
 
-        // Fonction pour créer le contenu de l'infobulle avec pagination
-        function createPopupContent(thumbnails, feature, currentPage = 0) {
+        // Function to create popup content with pagination
+        function createPopupContent(thumbnails, feature, currentPage, totalObservations) {
             const itemsPerPage = 9;
-            const totalPages = Math.ceil(thumbnails.length / itemsPerPage);
-            const startIndex = currentPage * itemsPerPage;
-            const endIndex = Math.min(startIndex + itemsPerPage, thumbnails.length);
-            const currentThumbnails = thumbnails.slice(startIndex, endIndex);
+            const totalPages = Math.ceil(totalObservations / itemsPerPage);
 
             let content = `<div class="popup-content">`;
             content += `<h3>${feature.properties.tags.name || "Observation"}</h3>`;
             content += `<p><strong>OSM:</strong> <a href="${feature.properties.osm_url}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>`;
+            content += `<p class="observation-count">${totalObservations} iNaturalist Observations</p>`;
 
-            // Affichage des vignettes (3x3)
-            for (let i = 0; i < currentThumbnails.length; i += 3) {
+            // Display thumbnails in a 3x3 grid
+            for (let i = 0; i < thumbnails.length; i += 3) {
                 content += `<div class="thumbnail-row">`;
-                for (let j = i; j < Math.min(i + 3, currentThumbnails.length); j++) {
-                    const thumb = currentThumbnails[j];
+                for (let j = i; j < Math.min(i + 3, thumbnails.length); j++) {
+                    const thumb = thumbnails[j];
                     content += `
                         <a href="https://www.inaturalist.org/observations/${thumb.id}" target="_blank">
                             <img class="observation-thumbnail" src="${thumb.url}" alt="Observation ${thumb.id}" title="${thumb.taxon}">
@@ -147,12 +140,12 @@
                 content += `</div>`;
             }
 
-            // Ajout de la pagination
+            // Add pagination buttons
             if (totalPages > 1) {
                 content += `<div class="pagination">`;
-                content += `<button onclick="changePage(${currentPage - 1}, '${feature.properties.obs_ids}', this)" ${currentPage === 0 ? 'disabled' : ''}>Précédent</button>`;
+                content += `<button onclick="changePage(${currentPage - 1}, '${feature.properties.obs_ids}', ${totalObservations}, this)" ${currentPage === 0 ? 'disabled' : ''}>Previous</button>`;
                 content += `<span>Page ${currentPage + 1} / ${totalPages}</span>`;
-                content += `<button onclick="changePage(${currentPage + 1}, '${feature.properties.obs_ids}', this)" ${currentPage === totalPages - 1 ? 'disabled' : ''}>Suivant</button>`;
+                content += `<button onclick="changePage(${currentPage + 1}, '${feature.properties.obs_ids}', ${totalObservations}, this)" ${currentPage === totalPages - 1 ? 'disabled' : ''}>Next</button>`;
                 content += `</div>`;
             }
 
@@ -160,24 +153,25 @@
             return content;
         }
 
-        // Fonction pour changer de page
-        async function changePage(newPage, obsIds, buttonElement) {
+        // Function to change page
+        async function changePage(newPage, obsIds, totalObservations, buttonElement) {
             const popup = buttonElement.closest('.leaflet-popup');
-            const feature = popup._feature; // Supposons que la feature est stockée dans l'infobulle
-            const thumbnails = await fetchObservationThumbnails(obsIds);
-            popup.setContent(createPopupContent(thumbnails, feature, newPage));
+            const feature = popup._feature;
+            const startIndex = newPage * 9;
+            const thumbnails = await fetchObservationThumbnails(obsIds, startIndex, 9);
+            popup.setContent(createPopupContent(thumbnails, feature, newPage, totalObservations));
         }
 
-        // Chargement du GeoJSON
+        // Load GeoJSON and add markers to the map
         async function loadGeoJSON() {
             try {
                 const response = await fetch('osm_inat.geojson');
                 if (!response.ok) {
-                    throw new Error(`Erreur HTTP: ${response.status}`);
+                    throw new Error(`HTTP Error: ${response.status}`);
                 }
                 const geojson = await response.json();
 
-                // Ajout des marqueurs à la carte
+                // Add markers to the map
                 L.geoJSON(geojson, {
                     pointToLayer: function(feature, latlng) {
                         return L.marker(latlng, {
@@ -188,35 +182,38 @@
                         layer.on('click', async function() {
                             const obsIds = feature.properties.obs_ids;
                             if (!obsIds) {
-                                layer.bindPopup("<p>Aucune observation iNaturalist associée.</p>").openPopup();
+                                layer.bindPopup("<p>No iNaturalist observations associated.</p>").openPopup();
                                 return;
                             }
 
-                            // Afficher un message de chargement
-                            layer.bindPopup("<p class='loading'>Chargement des vignettes...</p>").openPopup();
+                            // Show loading message
+                            layer.bindPopup("<p class='loading'>Loading thumbnails...</p>").openPopup();
 
-                            // Récupérer les vignettes
-                            const thumbnails = await fetchObservationThumbnails(obsIds);
+                            // Get total number of observations
+                            const totalObservations = obsIds.split(';').length;
 
-                            // Stocker la feature dans l'infobulle pour la pagination
+                            // Fetch first 9 thumbnails
+                            const thumbnails = await fetchObservationThumbnails(obsIds, 0, 9);
+
+                            // Store feature in popup for pagination
                             const popup = layer.getPopup();
                             popup._feature = feature;
 
-                            // Mettre à jour l'infobulle avec les vignettes (page 0 par défaut)
-                            layer.setPopupContent(createPopupContent(thumbnails, feature, 0));
+                            // Update popup content with thumbnails (page 0 by default)
+                            layer.setPopupContent(createPopupContent(thumbnails, feature, 0, totalObservations));
                         });
                     }
                 }).addTo(map);
 
-                // Ajuster la vue de la carte pour afficher toutes les données
+                // Fit map to show all data
                 map.fitBounds(L.geoJSON(geojson).getBounds());
             } catch (error) {
-                console.error("Erreur lors du chargement du GeoJSON:", error);
-                alert("Erreur lors du chargement du GeoJSON. Vérifie que le fichier est accessible.");
+                console.error("Error loading GeoJSON:", error);
+                alert("Error loading GeoJSON. Check if the file is accessible.");
             }
         }
 
-        // Charger le GeoJSON au démarrage
+        // Load GeoJSON on startup
         window.onload = loadGeoJSON;
     </script>
 </body>
