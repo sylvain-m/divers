@@ -180,16 +180,24 @@
                 // Add markers to the cluster group with custom icon
                 L.geoJSON(geojson, {
                     pointToLayer: (feature, latlng) => {
-                        return L.marker(latlng, {
+                        const marker = L.marker(latlng, {
                             icon: treeIcon,
                             title: feature.properties.tags.name || "Observation"
                         });
+                        // Store feature directly in the marker
+                        marker.feature = feature;
+                        return marker;
                     },
                     onEachFeature: (feature, layer) => {
                         layer.on('click', async () => {
                             const obsIds = feature.properties.obs_ids;
                             if (!obsIds) {
                                 layer.bindPopup("<p>No iNaturalist observations associated.</p>").openPopup();
+                                return;
+                            }
+
+                            // Check if popup already exists and is open
+                            if (layer.getPopup() && layer.getPopup().isOpen()) {
                                 return;
                             }
 
