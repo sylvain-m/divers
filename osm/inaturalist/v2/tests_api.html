@@ -143,9 +143,9 @@
             // Add pagination buttons
             if (totalPages > 1) {
                 content += `<div class="pagination">`;
-                content += `<button onclick="changePage(${currentPage - 1}, '${feature.properties.obs_ids}', ${totalObservations}, this)" ${currentPage === 0 ? 'disabled' : ''}>Previous</button>`;
+                content += `<button onclick="changePage(${currentPage - 1}, this)" ${currentPage === 0 ? 'disabled' : ''}>Previous</button>`;
                 content += `<span>Page ${currentPage + 1} / ${totalPages}</span>`;
-                content += `<button onclick="changePage(${currentPage + 1}, '${feature.properties.obs_ids}', ${totalObservations}, this)" ${currentPage === totalPages - 1 ? 'disabled' : ''}>Next</button>`;
+                content += `<button onclick="changePage(${currentPage + 1}, this)" ${currentPage === totalPages - 1 ? 'disabled' : ''}>Next</button>`;
                 content += `</div>`;
             }
 
@@ -154,11 +154,14 @@
         }
 
         // Function to change page
-        async function changePage(newPage, obsIds, totalObservations, buttonElement) {
+        async function changePage(newPage, buttonElement) {
             const popup = buttonElement.closest('.leaflet-popup');
-            const feature = popup._feature;
-            const startIndex = newPage * 9;
-            const thumbnails = await fetchObservationThumbnails(obsIds, startIndex, 9);
+            const marker = popup._marker; // Get the marker associated with the popup
+            const feature = marker.feature; // Get the feature stored in the marker
+            const obsIds = feature.properties.obs_ids;
+            const totalObservations = obsIds.split(';').length;
+
+            const thumbnails = await fetchObservationThumbnails(obsIds, newPage * 9, 9);
             popup.setContent(createPopupContent(thumbnails, feature, newPage, totalObservations));
         }
 
@@ -174,9 +177,11 @@
                 // Add markers to the map
                 L.geoJSON(geojson, {
                     pointToLayer: function(feature, latlng) {
-                        return L.marker(latlng, {
+                        const marker = L.marker(latlng, {
                             title: feature.properties.tags.name || "Observation"
                         });
+                        marker.feature = feature; // Store the feature in the marker
+                        return marker;
                     },
                     onEachFeature: function(feature, layer) {
                         layer.on('click', async function() {
@@ -195,9 +200,9 @@
                             // Fetch first 9 thumbnails
                             const thumbnails = await fetchObservationThumbnails(obsIds, 0, 9);
 
-                            // Store feature in popup for pagination
+                            // Store the marker reference in the popup for pagination
                             const popup = layer.getPopup();
-                            popup._feature = feature;
+                            popup._marker = layer;
 
                             // Update popup content with thumbnails (page 0 by default)
                             layer.setPopupContent(createPopupContent(thumbnails, feature, 0, totalObservations));
