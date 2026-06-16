@@ -45,6 +45,15 @@
             padding: 3px 8px;
             border-radius: 10px;
             font-size: 12px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .observation-link {
+            color: #333;
+            text-decoration: none;
+        }
+        .observation-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -62,6 +71,14 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+        // Custom tree icon
+        const treeIcon = L.icon({
+            iconUrl: '../tree.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
 
         // Create a marker cluster group
         const markers = L.markerClusterGroup();
@@ -108,7 +125,9 @@
                     <h3>${feature.properties.tags.name || "Observation"}</h3>
                     <p><strong>OSM:</strong> <a href="${osmUrl}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>
                     <p class="observation-count">
-                        <a href="${inatLink}" target="_blank" class="badge-observations">${totalObservations} iNaturalist Observations</a>
+                        <a href="${inatLink}" target="_blank" class="observation-link">
+                            <span class="badge-observations">${totalObservations}</span> iNaturalist Observations
+                        </a>
                     </p>
             `;
 
@@ -158,13 +177,13 @@
                 if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
                 const geojson = await response.json();
 
-                // Add markers to the cluster group
+                // Add markers to the cluster group with custom icon
                 L.geoJSON(geojson, {
                     pointToLayer: (feature, latlng) => {
-                        const marker = L.marker(latlng, {
+                        return L.marker(latlng, {
+                            icon: treeIcon,
                             title: feature.properties.tags.name || "Observation"
                         });
-                        return marker;
                     },
                     onEachFeature: (feature, layer) => {
                         layer.on('click', async () => {
