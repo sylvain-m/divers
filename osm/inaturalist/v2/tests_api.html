@@ -118,7 +118,7 @@
         // Function to change page
         async function changePage(newPage, obsIds, totalObservations, buttonElement) {
             const popup = buttonElement.closest('.leaflet-popup');
-            const feature = JSON.parse(popup.getAttribute('data-feature')); // Retrieve stored feature
+            const feature = popup.options.feature; // Retrieve stored feature
             const thumbnails = await fetchObservationThumbnails(obsIds, newPage * 9, 9);
             popup.setContent(createPopupContent(thumbnails, feature, newPage, totalObservations));
         }
@@ -144,9 +144,9 @@
                             const totalObservations = obsIds.split(';').length;
                             const thumbnails = await fetchObservationThumbnails(obsIds, 0, 9);
 
-                            // Store feature as JSON in the popup for pagination
+                            // Store feature in popup.options for pagination
                             const popup = layer.getPopup();
-                            popup.setAttribute('data-feature', JSON.stringify(feature));
+                            popup.options.feature = feature;
 
                             layer.setPopupContent(createPopupContent(thumbnails, feature, 0, totalObservations));
                         });
