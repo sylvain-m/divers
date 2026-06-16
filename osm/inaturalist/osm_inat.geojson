@@ -6455,6 +6455,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -123.051473,
+          45.077186
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 7882781419,
+        "osm_url": "https://www.openstreetmap.org/node/7882781419",
+        "obs_ids": "30461001;73574329;136856814;149783846;162994489;167230615;219671274;220121298;256893459;274433380",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=30461001,73574329,136856814,149783846,162994489,167230615,219671274,220121298,256893459,274433380",
+        "tags": {
+          "circumference": "8.8m",
+          "denotation": "natural_monument",
+          "description": "The largest black cottonwood in America",
+          "diameter": "2.8m",
+          "height": "47",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "30461001;73574329;136856814;149783846;162994489;167230615;219671274;220121298;256893459",
+          "species:wikidata": "Q149382",
+          "species:wikipedia": "en:Populus trichocarpa"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.0178196,
           48.281633
         ]
@@ -6540,31 +6570,6 @@
           "species": "Ficus macrophylla",
           "species:it": "Fico magnolioide",
           "taxon": "Ficus columnaris"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.0778446,
-          48.3671007
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12773017664,
-        "osm_url": "https://www.openstreetmap.org/node/12773017664",
-        "obs_ids": "272003781",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=272003781",
-        "tags": {
-          "denotation": "landmark",
-          "genus": "Platanus",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "272003781"
         }
       }
     },
@@ -6742,36 +6747,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.2123223,
-          47.9763244
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 6095571785,
-        "osm_url": "https://www.openstreetmap.org/node/6095571785",
-        "obs_ids": "64300751;77091804;110882565;174579122;205890095;268905222",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=64300751,77091804,110882565,174579122,205890095,268905222",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "Label \"Arbre remarquable de France\" par l'association A.R.B.R.E.S",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Le grand chêne de l'arboretum des Grandes Bruyères",
-          "natural": "tree",
-          "ref:inaturalist.org": "110882565;174579122;205890095;268905222;64300751;77091804",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "start_date": "before 1817",
-          "tourism": "yes"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.0532971,
           48.3782051
         ]
@@ -6791,6 +6766,31 @@
           "species": "Carpinus betulus",
           "species:wikidata": "Q158776",
           "species:wikipedia": "fr:Charme commun"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0778446,
+          48.3671007
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12773017664,
+        "osm_url": "https://www.openstreetmap.org/node/12773017664",
+        "obs_ids": "272003781",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=272003781",
+        "tags": {
+          "denotation": "landmark",
+          "genus": "Platanus",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "272003781"
         }
       }
     },
@@ -6923,26 +6923,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -119.5998569,
-          37.5131732
+          2.2123223,
+          47.9763244
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 3468998373,
-        "osm_url": "https://www.openstreetmap.org/node/3468998373",
-        "obs_ids": "259193316",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=259193316",
+        "osm_id": 6095571785,
+        "osm_url": "https://www.openstreetmap.org/node/6095571785",
+        "obs_ids": "64300751;77091804;110882565;174579122;205890095;268905222",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=64300751,77091804,110882565,174579122,205890095,268905222",
         "tags": {
           "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Columbia Tree",
+          "description": "Label \"Arbre remarquable de France\" par l'association A.R.B.R.E.S",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Le grand chêne de l'arboretum des Grandes Bruyères",
           "natural": "tree",
-          "ref:inaturalist.org": "259193316",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
+          "ref:inaturalist.org": "110882565;174579122;205890095;268905222;64300751;77091804",
+          "species": "Quercus robur",
+          "species:fr": "Chêne pédonculé",
+          "start_date": "before 1817",
+          "tourism": "yes"
         }
       }
     },
@@ -7211,6 +7213,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -119.5998569,
+          37.5131732
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 3468998373,
+        "osm_url": "https://www.openstreetmap.org/node/3468998373",
+        "obs_ids": "259193316",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=259193316",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Columbia Tree",
+          "natural": "tree",
+          "ref:inaturalist.org": "259193316",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           146.76874,
           -43.07729
         ]
@@ -7261,36 +7291,6 @@
           "ref:inaturalist.org": "257639746",
           "species": "Phytolacca dioica",
           "species:es": "Ombú"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -123.051473,
-          45.077186
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 7882781419,
-        "osm_url": "https://www.openstreetmap.org/node/7882781419",
-        "obs_ids": "30461001;73574329;136856814;149783846;162994489;167230615;219671274;220121298;256893459",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=30461001,73574329,136856814,149783846,162994489,167230615,219671274,220121298,256893459",
-        "tags": {
-          "circumference": "8.8m",
-          "denotation": "natural_monument",
-          "description": "The largest black cottonwood in America",
-          "diameter": "2.8m",
-          "height": "47",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "30461001;73574329;136856814;149783846;162994489;167230615;219671274;220121298;256893459",
-          "species:wikidata": "Q149382",
-          "species:wikipedia": "en:Populus trichocarpa"
         }
       }
     },
