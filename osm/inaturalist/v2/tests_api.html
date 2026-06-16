@@ -196,11 +196,7 @@
                                 return;
                             }
 
-                            // Check if popup already exists and is open
-                            if (layer.getPopup() && layer.getPopup().isOpen()) {
-                                return;
-                            }
-
+                            // Show loading message
                             layer.bindPopup("<p class='loading'>Loading thumbnails...</p>").openPopup();
                             const totalObservations = obsIds.split(';').length;
                             const thumbnails = await fetchObservationThumbnails(obsIds, 0, 9);
@@ -209,7 +205,9 @@
                             const popup = layer.getPopup();
                             popup.options.feature = feature;
 
+                            // Set popup content and force reopen
                             layer.setPopupContent(createPopupContent(thumbnails, feature, 0, totalObservations));
+                            layer.openPopup(); // Force reopen the popup
                         });
                     }
                 }).addTo(markers);
