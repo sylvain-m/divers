@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Leaflet avec vignettes iNaturalist</title>
+    <title>Carte Leaflet avec vignettes iNaturalist (pagination)</title>
     <!-- Feuille de style pour Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
@@ -17,18 +17,37 @@
             height: 100vh;
         }
         .leaflet-popup-content {
-            max-width: 300px;
+            max-width: 350px;
+            padding: 10px;
         }
         .observation-thumbnail {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             margin: 5px;
             border-radius: 4px;
             border: 1px solid #ddd;
+            display: inline-block;
         }
         .popup-content {
             text-align: center;
+        }
+        .pagination {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .pagination button {
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         .loading {
             color: #666;
@@ -36,6 +55,11 @@
         }
         .error {
             color: #d32f2f;
+        }
+        .thumbnail-row {
+            display: flex;
+            justify-content: center;
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -52,12 +76,20 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+        // Cache pour stocker les vignettes déjà chargées
+        const thumbnailCache = {};
+
         // Fonction pour récupérer les vignettes des observations
         async function fetchObservationThumbnails(obsIds) {
-            const ids = obsIds.split(';').slice(0, 5); // Limite à 5 vignettes pour éviter de surcharger
+            const ids = obsIds.split(';');
             const thumbnails = [];
 
             for (const id of ids) {
+                if (thumbnailCache[id]) {
+                    thumbnails.push(thumbnailCache[id]);
+                    continue;
+                }
+
                 try {
                     const apiUrl = `https://api.inaturalist.org/v1/observations/${id}`;
                     const response = await fetch(apiUrl);
@@ -71,13 +103,15 @@
                     if (observation && observation.photos && observation.photos.length > 0) {
                         const photo = observation.photos[0];
                         const thumbnailUrl = photo.url.replace(/square|small|medium|large|original/, "small");
-                        thumbnails.push({
+                        const thumbnail = {
                             id: observation.id,
                             url: thumbnailUrl,
                             taxon: observation.taxon ? observation.taxon.name : "Inconnu",
                             user: observation.user.login,
                             date: new Date(observation.observed_on).toLocaleDateString("fr-FR")
-                        });
+                        };
+                        thumbnails.push(thumbnail);
+                        thumbnailCache[id] = thumbnail; // Stockage dans le cache
                     }
                 } catch (error) {
                     console.error(`Erreur pour l'observation ${id}:`, error);
@@ -87,32 +121,51 @@
             return thumbnails;
         }
 
-        // Fonction pour créer le contenu de l'infobulle
-        function createPopupContent(thumbnails, feature) {
-            if (thumbnails.length === 0) {
-                return `<p>Aucune vignette disponible pour cette observation.</p>`;
-            }
+        // Fonction pour créer le contenu de l'infobulle avec pagination
+        function createPopupContent(thumbnails, feature, currentPage = 0) {
+            const itemsPerPage = 9;
+            const totalPages = Math.ceil(thumbnails.length / itemsPerPage);
+            const startIndex = currentPage * itemsPerPage;
+            const endIndex = Math.min(startIndex + itemsPerPage, thumbnails.length);
+            const currentThumbnails = thumbnails.slice(startIndex, endIndex);
 
             let content = `<div class="popup-content">`;
             content += `<h3>${feature.properties.tags.name || "Observation"}</h3>`;
             content += `<p><strong>OSM:</strong> <a href="${feature.properties.osm_url}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>`;
 
-            thumbnails.forEach(thumb => {
-                content += `
-                    <div style="margin: 10px 0;">
+            // Affichage des vignettes (3x3)
+            for (let i = 0; i < currentThumbnails.length; i += 3) {
+                content += `<div class="thumbnail-row">`;
+                for (let j = i; j < Math.min(i + 3, currentThumbnails.length); j++) {
+                    const thumb = currentThumbnails[j];
+                    content += `
                         <a href="https://www.inaturalist.org/observations/${thumb.id}" target="_blank">
-                            <img class="observation-thumbnail" src="${thumb.url}" alt="Observation ${thumb.id}">
+                            <img class="observation-thumbnail" src="${thumb.url}" alt="Observation ${thumb.id}" title="${thumb.taxon}">
                         </a>
-                        <p style="margin: 5px 0; font-size: 12px;">
-                            <strong>${thumb.taxon}</strong><br>
-                            Observé par ${thumb.user} le ${thumb.date}
-                        </p>
-                    </div>
-                `;
-            });
+                    `;
+                }
+                content += `</div>`;
+            }
+
+            // Ajout de la pagination
+            if (totalPages > 1) {
+                content += `<div class="pagination">`;
+                content += `<button onclick="changePage(${currentPage - 1}, '${feature.properties.obs_ids}', this)" ${currentPage === 0 ? 'disabled' : ''}>Précédent</button>`;
+                content += `<span>Page ${currentPage + 1} / ${totalPages}</span>`;
+                content += `<button onclick="changePage(${currentPage + 1}, '${feature.properties.obs_ids}', this)" ${currentPage === totalPages - 1 ? 'disabled' : ''}>Suivant</button>`;
+                content += `</div>`;
+            }
 
             content += `</div>`;
             return content;
+        }
+
+        // Fonction pour changer de page
+        async function changePage(newPage, obsIds, buttonElement) {
+            const popup = buttonElement.closest('.leaflet-popup');
+            const feature = popup._feature; // Supposons que la feature est stockée dans l'infobulle
+            const thumbnails = await fetchObservationThumbnails(obsIds);
+            popup.setContent(createPopupContent(thumbnails, feature, newPage));
         }
 
         // Chargement du GeoJSON
@@ -145,8 +198,12 @@
                             // Récupérer les vignettes
                             const thumbnails = await fetchObservationThumbnails(obsIds);
 
-                            // Mettre à jour l'infobulle avec les vignettes
-                            layer.setPopupContent(createPopupContent(thumbnails, feature));
+                            // Stocker la feature dans l'infobulle pour la pagination
+                            const popup = layer.getPopup();
+                            popup._feature = feature;
+
+                            // Mettre à jour l'infobulle avec les vignettes (page 0 par défaut)
+                            layer.setPopupContent(createPopupContent(thumbnails, feature, 0));
                         });
                     }
                 }).addTo(map);
