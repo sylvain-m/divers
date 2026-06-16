@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Vignette iNaturalist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        #observation-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #observation-image {
+            max-width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .loading {
+            color: #666;
+            font-style: italic;
+        }
+        .error {
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test d'affichage d'une vignette iNaturalist</h1>
+    <div id="observation-container">
+        <p class="loading">Chargement de l'observation...</p>
+    </div>
+
+    <script>
+        // ID de l'observation à afficher
+        const observationId = 371665941;
+
+        // URL de l'API iNaturalist pour récupérer les détails de l'observation
+        const apiUrl = `https://api.inaturalist.org/v1/observations/${observationId}?per_page=1`;
+
+        // Fonction pour afficher l'image de l'observation
+        async function fetchObservation() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP: ${response.status}`);
+                }
+                const data = await response.json();
+
+                // Récupérer l'URL de la vignette (photo de l'observation)
+                const observation = data.results[0];
+                if (!observation || !observation.photos || observation.photos.length === 0) {
+                    throw new Error("Aucune photo trouvée pour cette observation.");
+                }
+
+                // L'API retourne plusieurs tailles d'images. On prend la taille "small" pour la vignette.
+                const photo = observation.photos[0];
+                const thumbnailUrl = photo.url.replace(/square|small|medium|large|original/, "small");
+
+                // Afficher l'image et les infos de base
+                const container = document.getElementById("observation-container");
+                container.innerHTML = `
+                    <h2>Observation #${observation.id}</h2>
+                    <p><strong>Espèce:</strong> ${observation.taxon ? observation.taxon.name : "Inconnu"}</p>
+                    <p><strong>Observateur:</strong> ${observation.user.login}</p>
+                    <p><strong>Date:</strong> ${new Date(observation.observed_on).toLocaleDateString("fr-FR")}</p>
+                    <img id="observation-image" src="${thumbnailUrl}" alt="Vignette de l'observation ${observation.id}">
+                    <p><a href="https://www.inaturalist.org/observations/${observation.id}" target="_blank">Voir sur iNaturalist</a></p>
+                `;
+            } catch (error) {
+                const container = document.getElementById("observation-container");
+                container.innerHTML = `<p class="error">Erreur: ${error.message}</p>`;
+                console.error("Erreur:", error);
+            }
+        }
+
+        // Appel de la fonction au chargement de la page
+        window.onload = fetchObservation;
+    </script>
+</body>
+</html>
