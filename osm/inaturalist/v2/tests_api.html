@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Vignette iNaturalist</title>
+    <title>Carte Leaflet avec vignettes iNaturalist</title>
+    <!-- Feuille de style pour Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
         }
-        #observation-container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
+        #map {
+            width: 100%;
+            height: 100vh;
         }
-        #observation-image {
-            max-width: 100%;
+        .leaflet-popup-content {
+            max-width: 300px;
+        }
+        .observation-thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin: 5px;
             border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        .popup-content {
+            text-align: center;
         }
         .loading {
             color: #666;
@@ -33,56 +40,127 @@
     </style>
 </head>
 <body>
-    <h1>Test d'affichage d'une vignette iNaturalist</h1>
-    <div id="observation-container">
-        <p class="loading">Chargement de l'observation...</p>
-    </div>
+    <div id="map"></div>
+
+    <!-- Bibliothèque Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script>
-        // ID de l'observation à afficher
-        const observationId = 371665941;
+        // Initialisation de la carte
+        const map = L.map('map').setView([0, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-        // URL de l'API iNaturalist pour récupérer les détails de l'observation
-        const apiUrl = `https://api.inaturalist.org/v1/observations/${observationId}?per_page=1`;
+        // Fonction pour récupérer les vignettes des observations
+        async function fetchObservationThumbnails(obsIds) {
+            const ids = obsIds.split(';').slice(0, 5); // Limite à 5 vignettes pour éviter de surcharger
+            const thumbnails = [];
 
-        // Fonction pour afficher l'image de l'observation
-        async function fetchObservation() {
+            for (const id of ids) {
+                try {
+                    const apiUrl = `https://api.inaturalist.org/v1/observations/${id}`;
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        console.error(`Erreur pour l'observation ${id}: ${response.status}`);
+                        continue;
+                    }
+                    const data = await response.json();
+                    const observation = data.results[0];
+
+                    if (observation && observation.photos && observation.photos.length > 0) {
+                        const photo = observation.photos[0];
+                        const thumbnailUrl = photo.url.replace(/square|small|medium|large|original/, "small");
+                        thumbnails.push({
+                            id: observation.id,
+                            url: thumbnailUrl,
+                            taxon: observation.taxon ? observation.taxon.name : "Inconnu",
+                            user: observation.user.login,
+                            date: new Date(observation.observed_on).toLocaleDateString("fr-FR")
+                        });
+                    }
+                } catch (error) {
+                    console.error(`Erreur pour l'observation ${id}:`, error);
+                }
+            }
+
+            return thumbnails;
+        }
+
+        // Fonction pour créer le contenu de l'infobulle
+        function createPopupContent(thumbnails, feature) {
+            if (thumbnails.length === 0) {
+                return `<p>Aucune vignette disponible pour cette observation.</p>`;
+            }
+
+            let content = `<div class="popup-content">`;
+            content += `<h3>${feature.properties.tags.name || "Observation"}</h3>`;
+            content += `<p><strong>OSM:</strong> <a href="${feature.properties.osm_url}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>`;
+
+            thumbnails.forEach(thumb => {
+                content += `
+                    <div style="margin: 10px 0;">
+                        <a href="https://www.inaturalist.org/observations/${thumb.id}" target="_blank">
+                            <img class="observation-thumbnail" src="${thumb.url}" alt="Observation ${thumb.id}">
+                        </a>
+                        <p style="margin: 5px 0; font-size: 12px;">
+                            <strong>${thumb.taxon}</strong><br>
+                            Observé par ${thumb.user} le ${thumb.date}
+                        </p>
+                    </div>
+                `;
+            });
+
+            content += `</div>`;
+            return content;
+        }
+
+        // Chargement du GeoJSON
+        async function loadGeoJSON() {
             try {
-                const response = await fetch(apiUrl);
+                const response = await fetch('osm_inat.geojson');
                 if (!response.ok) {
                     throw new Error(`Erreur HTTP: ${response.status}`);
                 }
-                const data = await response.json();
+                const geojson = await response.json();
 
-                // Récupérer l'URL de la vignette (photo de l'observation)
-                const observation = data.results[0];
-                if (!observation || !observation.photos || observation.photos.length === 0) {
-                    throw new Error("Aucune photo trouvée pour cette observation.");
-                }
+                // Ajout des marqueurs à la carte
+                L.geoJSON(geojson, {
+                    pointToLayer: function(feature, latlng) {
+                        return L.marker(latlng, {
+                            title: feature.properties.tags.name || "Observation"
+                        });
+                    },
+                    onEachFeature: function(feature, layer) {
+                        layer.on('click', async function() {
+                            const obsIds = feature.properties.obs_ids;
+                            if (!obsIds) {
+                                layer.bindPopup("<p>Aucune observation iNaturalist associée.</p>").openPopup();
+                                return;
+                            }
 
-                // L'API retourne plusieurs tailles d'images. On prend la taille "small" pour la vignette.
-                const photo = observation.photos[0];
-                const thumbnailUrl = photo.url.replace(/square|small|medium|large|original/, "small");
+                            // Afficher un message de chargement
+                            layer.bindPopup("<p class='loading'>Chargement des vignettes...</p>").openPopup();
 
-                // Afficher l'image et les infos de base
-                const container = document.getElementById("observation-container");
-                container.innerHTML = `
-                    <h2>Observation #${observation.id}</h2>
-                    <p><strong>Espèce:</strong> ${observation.taxon ? observation.taxon.name : "Inconnu"}</p>
-                    <p><strong>Observateur:</strong> ${observation.user.login}</p>
-                    <p><strong>Date:</strong> ${new Date(observation.observed_on).toLocaleDateString("fr-FR")}</p>
-                    <img id="observation-image" src="${thumbnailUrl}" alt="Vignette de l'observation ${observation.id}">
-                    <p><a href="https://www.inaturalist.org/observations/${observation.id}" target="_blank">Voir sur iNaturalist</a></p>
-                `;
+                            // Récupérer les vignettes
+                            const thumbnails = await fetchObservationThumbnails(obsIds);
+
+                            // Mettre à jour l'infobulle avec les vignettes
+                            layer.setPopupContent(createPopupContent(thumbnails, feature));
+                        });
+                    }
+                }).addTo(map);
+
+                // Ajuster la vue de la carte pour afficher toutes les données
+                map.fitBounds(L.geoJSON(geojson).getBounds());
             } catch (error) {
-                const container = document.getElementById("observation-container");
-                container.innerHTML = `<p class="error">Erreur: ${error.message}</p>`;
-                console.error("Erreur:", error);
+                console.error("Erreur lors du chargement du GeoJSON:", error);
+                alert("Erreur lors du chargement du GeoJSON. Vérifie que le fichier est accessible.");
             }
         }
 
-        // Appel de la fonction au chargement de la page
-        window.onload = fetchObservation;
+        // Charger le GeoJSON au démarrage
+        window.onload = loadGeoJSON;
     </script>
 </body>
 </html>
