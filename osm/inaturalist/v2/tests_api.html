@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaflet Map with iNaturalist Thumbnails (Pagination)</title>
+    <title>Leaflet Map with iNaturalist Thumbnails (MarkerCluster + Pagination)</title>
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <!-- Bootstrap CSS pour le badge -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
         #map { width: 100%; height: 100vh; }
@@ -28,12 +34,27 @@
         .loading { color: #666; font-style: italic; }
         .error { color: #d32f2f; }
         .thumbnail-row { display: flex; justify-content: center; margin: 5px 0; }
-        .observation-count { font-size: 14px; color: #555; margin: 5px 0; }
+        .observation-count {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        /* Badge vert personnalisé */
+        .badge-observations {
+            background-color: #7cb518;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
+
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
     <script>
         // Initialize the map
@@ -41,6 +62,9 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+        // Create a marker cluster group
+        const markers = L.markerClusterGroup();
 
         // Function to fetch thumbnails for a subset of observation IDs
         async function fetchObservationThumbnails(obsIds, startIndex = 0, count = 9) {
@@ -76,12 +100,16 @@
         function createPopupContent(thumbnails, feature, currentPage, totalObservations) {
             const itemsPerPage = 9;
             const totalPages = Math.ceil(totalObservations / itemsPerPage);
+            const osmUrl = feature.properties.osm_url;
+            const inatLink = `https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:OpenStreetMap%20(OSM)=${encodeURIComponent(osmUrl)}`;
 
             let content = `
                 <div class="popup-content">
                     <h3>${feature.properties.tags.name || "Observation"}</h3>
-                    <p><strong>OSM:</strong> <a href="${feature.properties.osm_url}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>
-                    <p class="observation-count">${totalObservations} iNaturalist Observations</p>
+                    <p><strong>OSM:</strong> <a href="${osmUrl}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>
+                    <p class="observation-count">
+                        <a href="${inatLink}" target="_blank" class="badge-observations">${totalObservations} iNaturalist Observations</a>
+                    </p>
             `;
 
             // Display thumbnails in a 3x3 grid
@@ -118,7 +146,7 @@
         // Function to change page
         async function changePage(newPage, obsIds, totalObservations, buttonElement) {
             const popup = buttonElement.closest('.leaflet-popup');
-            const feature = popup.options.feature; // Retrieve stored feature
+            const feature = popup.options.feature;
             const thumbnails = await fetchObservationThumbnails(obsIds, newPage * 9, 9);
             popup.setContent(createPopupContent(thumbnails, feature, newPage, totalObservations));
         }
@@ -130,8 +158,14 @@
                 if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
                 const geojson = await response.json();
 
+                // Add markers to the cluster group
                 L.geoJSON(geojson, {
-                    pointToLayer: (feature, latlng) => L.marker(latlng, { title: feature.properties.tags.name || "Observation" }),
+                    pointToLayer: (feature, latlng) => {
+                        const marker = L.marker(latlng, {
+                            title: feature.properties.tags.name || "Observation"
+                        });
+                        return marker;
+                    },
                     onEachFeature: (feature, layer) => {
                         layer.on('click', async () => {
                             const obsIds = feature.properties.obs_ids;
@@ -151,9 +185,13 @@
                             layer.setPopupContent(createPopupContent(thumbnails, feature, 0, totalObservations));
                         });
                     }
-                }).addTo(map);
+                }).addTo(markers);
 
-                map.fitBounds(L.geoJSON(geojson).getBounds());
+                // Add the marker cluster group to the map
+                map.addLayer(markers);
+
+                // Fit map to show all data
+                map.fitBounds(markers.getBounds());
             } catch (error) {
                 console.error("Error loading GeoJSON:", error);
                 alert("Error loading GeoJSON. Check if the file is accessible.");
