@@ -55,6 +55,17 @@
         .observation-link:hover {
             text-decoration: underline;
         }
+        /* Style pour les icônes Wikidata et Wikipedia */
+        .icon-wikidata, .icon-wikipedia {
+            width: 12px;
+            height: 12px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        .tag-info {
+            margin: 5px 0;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -113,16 +124,15 @@
             return thumbnails;
         }
 
-        // Function to create popup content with pagination
-        function createPopupContent(thumbnails, feature, currentPage, totalObservations) {
-            const itemsPerPage = 9;
-            const totalPages = Math.ceil(totalObservations / itemsPerPage);
+        // Function to create static popup content (without thumbnails)
+        function createStaticPopupContent(feature, totalObservations) {
             const osmUrl = feature.properties.osm_url;
             const inatLink = `https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:OpenStreetMap%20(OSM)=${encodeURIComponent(osmUrl)}`;
+            const tags = feature.properties.tags || {};
 
             let content = `
                 <div class="popup-content">
-                    <h3>${feature.properties.tags.name || "Observation"}</h3>
+                    <h3>${tags.name || "Observation"}</h3>
                     <p><strong>OSM:</strong> <a href="${osmUrl}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>
                     <p class="observation-count">
                         <a href="${inatLink}" target="_blank" class="observation-link">
@@ -130,6 +140,78 @@
                         </a>
                     </p>
             `;
+
+            // Add genus if present
+            if (tags.genus) {
+                content += `<p class="tag-info"><strong>Genus:</strong> ${tags.genus}</p>`;
+            }
+
+            // Add species if present
+            if (tags.species) {
+                content += `<p class="tag-info"><strong>Species:</strong> ${tags.species}`;
+                // Add Wikidata icon if species:wikidata is present
+                if (tags['species:wikidata']) {
+                    content += ` <a href="https://www.wikidata.org/wiki/${tags['species:wikidata']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Wikidata-logo.svg/12px-Wikidata-logo.svg.png" class="icon-wikidata" alt="Wikidata"></a>`;
+                }
+                // Add Wikipedia icon if species:wikipedia is present
+                if (tags['species:wikipedia']) {
+                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
+                }
+                content += `</p>`;
+            }
+
+            // Add Wikipedia link if present
+            if (tags.wikipedia) {
+                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
+            }
+
+            content += `<p class="loading">Loading thumbnails...</p>`;
+            content += `</div>`;
+            return content;
+        }
+
+        // Function to create full popup content with thumbnails and pagination
+        function createPopupContent(thumbnails, feature, currentPage, totalObservations) {
+            const itemsPerPage = 9;
+            const totalPages = Math.ceil(totalObservations / itemsPerPage);
+            const osmUrl = feature.properties.osm_url;
+            const inatLink = `https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:OpenStreetMap%20(OSM)=${encodeURIComponent(osmUrl)}`;
+            const tags = feature.properties.tags || {};
+
+            let content = `
+                <div class="popup-content">
+                    <h3>${tags.name || "Observation"}</h3>
+                    <p><strong>OSM:</strong> <a href="${osmUrl}" target="_blank">${feature.properties.osm_element} ${feature.properties.osm_id}</a></p>
+                    <p class="observation-count">
+                        <a href="${inatLink}" target="_blank" class="observation-link">
+                            <span class="badge-observations">${totalObservations}</span> iNaturalist Observations
+                        </a>
+                    </p>
+            `;
+
+            // Add genus if present
+            if (tags.genus) {
+                content += `<p class="tag-info"><strong>Genus:</strong> ${tags.genus}</p>`;
+            }
+
+            // Add species if present
+            if (tags.species) {
+                content += `<p class="tag-info"><strong>Species:</strong> ${tags.species}`;
+                // Add Wikidata icon if species:wikidata is present
+                if (tags['species:wikidata']) {
+                    content += ` <a href="https://www.wikidata.org/wiki/${tags['species:wikidata']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Wikidata-logo.svg/12px-Wikidata-logo.svg.png" class="icon-wikidata" alt="Wikidata"></a>`;
+                }
+                // Add Wikipedia icon if species:wikipedia is present
+                if (tags['species:wikipedia']) {
+                    content += ` <a href="https://wikipedia.org/wiki/${tags['species:wikipedia']}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"></a>`;
+                }
+                content += `</p>`;
+            }
+
+            // Add Wikipedia link if present
+            if (tags.wikipedia) {
+                content += `<p class="tag-info"><a href="https://wikipedia.org/wiki/${tags.wikipedia}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/12px-Wikipedia-logo-v2.svg.png" class="icon-wikipedia" alt="Wikipedia"> Wikipedia: ${tags.wikipedia}</a></p>`;
+            }
 
             // Display thumbnails in a 3x3 grid
             for (let i = 0; i < thumbnails.length; i += 3) {
@@ -196,18 +278,20 @@
                                 return;
                             }
 
-                            // Show loading message
-                            layer.bindPopup("<p class='loading'>Loading thumbnails...</p>").openPopup();
                             const totalObservations = obsIds.split(';').length;
+
+                            // Display static content immediately
+                            layer.bindPopup(createStaticPopupContent(feature, totalObservations)).openPopup();
+
+                            // Fetch thumbnails in the background
                             const thumbnails = await fetchObservationThumbnails(obsIds, 0, 9);
 
                             // Store feature in popup.options for pagination
                             const popup = layer.getPopup();
                             popup.options.feature = feature;
 
-                            // Set popup content and force reopen
+                            // Update popup content with thumbnails
                             layer.setPopupContent(createPopupContent(thumbnails, feature, 0, totalObservations));
-                            layer.openPopup(); // Force reopen the popup
                         });
                     }
                 }).addTo(markers);
