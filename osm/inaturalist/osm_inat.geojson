@@ -6848,11 +6848,14 @@
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=272003781",
         "tags": {
           "denotation": "landmark",
-          "genus": "Platanus",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "272003781"
+          "ref:inaturalist.org": "272003781",
+          "species": "Platanus × hispanica",
+          "species:fr": "Platane commun",
+          "species:wikidata": "Q161374",
+          "species:wikipedia": "fr:Platane commun"
         }
       }
     },
@@ -10957,66 +10960,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.232149,
-          42.643094
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 3948932693,
-        "osm_url": "https://www.openstreetmap.org/node/3948932693",
-        "obs_ids": "78365046",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=78365046",
-        "tags": {
-          "denotation": "natural_monument",
-          "genus": "Quercus",
-          "height": "16",
-          "name": "Encina Tres Patas de Mendaza",
-          "name:es": "Encina Tres Patas de Mendaza",
-          "name:eu": "Mendazako Hiru Hanka artea",
-          "name:fr": "Chêne vert aux Trois Pieds de Mendaza",
-          "natural": "tree",
-          "ref:inaturalist.org": "78365046",
-          "source": "Gobierno de Navarra",
-          "source:date": "2009-12-01",
-          "species": "Quercus ilex",
-          "taxon": "ilex L.",
-          "wikidata": "Q584899"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.6853528,
-          42.5923416
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 3948932709,
-        "osm_url": "https://www.openstreetmap.org/node/3948932709",
-        "obs_ids": "78363600",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=78363600",
-        "tags": {
-          "denotation": "natural_monument",
-          "height": "16.6",
-          "name": "Quejigo de Garínoain",
-          "natural": "tree",
-          "ref:inaturalist.org": "78363600",
-          "source": "Gobierno de Navarra",
-          "source:date": "2009-12-01",
-          "species": "Quercus faginea"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -58.4341033,
           -34.6176134
         ]
@@ -11187,6 +11130,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.0116358,
+          49.12227
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13952423282,
+        "osm_url": "https://www.openstreetmap.org/node/13952423282",
+        "obs_ids": "79266107",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=79266107",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "79266107",
+          "source": "iNaturalist"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0121562,
+          49.1162468
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13952444827,
+        "osm_url": "https://www.openstreetmap.org/node/13952444827",
+        "obs_ids": "79150884",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=79150884",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "79150884",
+          "source": "iNaturalist",
+          "species": "Sequoiadendron giganteum",
+          "species:fr": "Séquoia géant",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           5.4428861,
           45.021504
         ]
@@ -11239,6 +11236,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -2.232149,
+          42.643094
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 3948932693,
+        "osm_url": "https://www.openstreetmap.org/node/3948932693",
+        "obs_ids": "78365046",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=78365046",
+        "tags": {
+          "denotation": "natural_monument",
+          "genus": "Quercus",
+          "height": "16",
+          "name": "Encina Tres Patas de Mendaza",
+          "name:es": "Encina Tres Patas de Mendaza",
+          "name:eu": "Mendazako Hiru Hanka artea",
+          "name:fr": "Chêne vert aux Trois Pieds de Mendaza",
+          "natural": "tree",
+          "ref:inaturalist.org": "78365046",
+          "source": "Gobierno de Navarra",
+          "source:date": "2009-12-01",
+          "species": "Quercus ilex",
+          "taxon": "ilex L.",
+          "wikidata": "Q584899"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.2703531,
           42.8862836
         ]
@@ -11260,6 +11290,33 @@
           "source": "Gobierno de Navarra",
           "source:date": "2009-12-01",
           "species": "Crataegus monogyna Jacq."
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6853528,
+          42.5923416
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 3948932709,
+        "osm_url": "https://www.openstreetmap.org/node/3948932709",
+        "obs_ids": "78363600",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=78363600",
+        "tags": {
+          "denotation": "natural_monument",
+          "height": "16.6",
+          "name": "Quejigo de Garínoain",
+          "natural": "tree",
+          "ref:inaturalist.org": "78363600",
+          "source": "Gobierno de Navarra",
+          "source:date": "2009-12-01",
+          "species": "Quercus faginea"
         }
       }
     },
@@ -11324,38 +11381,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.1477717,
-          32.0660994
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 6537550983,
-        "osm_url": "https://www.openstreetmap.org/node/6537550983",
-        "obs_ids": "69232574",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=69232574",
-        "tags": {
-          "alt_name": "شجرالمبارکہ",
-          "alt_name:en": "The Blessed Tree;Tree of Al Buqayawiyya",
-          "leaf_type": "broadleaved",
-          "name": "شجرة البقيعاوية",
-          "name:ar": "شجرة البقيعاوية",
-          "name:en": "Sahabi Tree",
-          "natural": "tree",
-          "species": "Pistacia atlantica",
-          "species:wikidata": "Q1788810",
-          "species:wikipedia": "it:Pistacia atlantica",
-          "wikidata": "Q16122690",
-          "wikimedia_commons": "File:Sahabi Tree, Safawi.jpg",
-          "wikipedia": "en:Sahabi Tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.0169368,
           -6.2972889
         ]
@@ -11397,31 +11422,6 @@
           "leaf_type": "broadleaved",
           "natural": "tree",
           "ref:inaturalist.org": "78335884"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.748129,
-          49.4452968
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11447553430,
-        "osm_url": "https://www.openstreetmap.org/node/11447553430",
-        "obs_ids": "68911083",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=68911083",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Hêtre du Torps",
-          "natural": "tree",
-          "ref:inaturalist.org": "68911083"
         }
       }
     },
@@ -11491,31 +11491,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.4590005,
-          -33.9565313
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2355643027,
-        "osm_url": "https://www.openstreetmap.org/node/2355643027",
-        "obs_ids": "46148392",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=46148392",
-        "tags": {
-          "circumference": "5.7 m",
-          "denotation": "natural_monument",
-          "height": "24",
-          "name": "The Old Oak Slave Tree",
-          "natural": "tree",
-          "ref:inaturalist.org": "46148392"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -8.0809406,
           39.473214
         ]
@@ -11559,6 +11534,38 @@
           "wikimedia_commons": "Category:Oliveira do Mouchão",
           "wikipedia": "pt:Oliveira do Mouchão",
           "wikipedia:en": "en:Olive Tree of Mouchão"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.1477717,
+          32.0660994
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 6537550983,
+        "osm_url": "https://www.openstreetmap.org/node/6537550983",
+        "obs_ids": "69232574",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=69232574",
+        "tags": {
+          "alt_name": "شجرالمبارکہ",
+          "alt_name:en": "The Blessed Tree;Tree of Al Buqayawiyya",
+          "leaf_type": "broadleaved",
+          "name": "شجرة البقيعاوية",
+          "name:ar": "شجرة البقيعاوية",
+          "name:en": "Sahabi Tree",
+          "natural": "tree",
+          "species": "Pistacia atlantica",
+          "species:wikidata": "Q1788810",
+          "species:wikipedia": "it:Pistacia atlantica",
+          "wikidata": "Q16122690",
+          "wikimedia_commons": "File:Sahabi Tree, Safawi.jpg",
+          "wikipedia": "en:Sahabi Tree"
         }
       }
     },
@@ -11655,29 +11662,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.832808,
-          -12.4205727
+          0.748129,
+          49.4452968
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 11162065508,
-        "osm_url": "https://www.openstreetmap.org/node/11162065508",
-        "obs_ids": "45763322",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=45763322",
+        "osm_id": 11447553430,
+        "osm_url": "https://www.openstreetmap.org/node/11447553430",
+        "obs_ids": "68911083",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=68911083",
         "tags": {
-          "denotation": "park",
-          "diameter_crown": "9.5",
-          "genus": "Adansonia",
-          "height": "10",
+          "denotation": "natural_monument",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
+          "name": "Hêtre du Torps",
           "natural": "tree",
-          "object:city": "Fannie Bay",
-          "object:street": "East Point Road",
-          "ref:inaturalist.org": "45763322",
-          "species": "Adansonia gregorii",
-          "species:es": "Baobab"
+          "ref:inaturalist.org": "68911083"
         }
       }
     },
@@ -11768,6 +11769,31 @@
           "species:fr": "Chêne pédonculé",
           "species:wikidata": "Q165145",
           "species:wikipedia": "fr:Chêne pédonculé"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.4590005,
+          -33.9565313
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2355643027,
+        "osm_url": "https://www.openstreetmap.org/node/2355643027",
+        "obs_ids": "46148392",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=46148392",
+        "tags": {
+          "circumference": "5.7 m",
+          "denotation": "natural_monument",
+          "height": "24",
+          "name": "The Old Oak Slave Tree",
+          "natural": "tree",
+          "ref:inaturalist.org": "46148392"
         }
       }
     },
@@ -11879,6 +11905,37 @@
           "ref:inaturalist.org": "33194565",
           "taxon": "Taxus baccata",
           "taxon:ru": "Тис ягодный или европейский"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.832808,
+          -12.4205727
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11162065508,
+        "osm_url": "https://www.openstreetmap.org/node/11162065508",
+        "obs_ids": "45763322",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=45763322",
+        "tags": {
+          "denotation": "park",
+          "diameter_crown": "9.5",
+          "genus": "Adansonia",
+          "height": "10",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "object:city": "Fannie Bay",
+          "object:street": "East Point Road",
+          "ref:inaturalist.org": "45763322",
+          "species": "Adansonia gregorii",
+          "species:es": "Baobab"
         }
       }
     },
