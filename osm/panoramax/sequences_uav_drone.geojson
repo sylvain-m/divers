@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "name": "sequences_uav_drone",
   "metadata": {
-    "export_date": "2026-06-28T06:53:14.827234"
+    "export_date": "2026-06-29T07:25:36.561545"
   },
   "features": [
     {
@@ -1130,6 +1130,1606 @@
         "coordinates": [
           2.474419972,
           50.68021375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "0a222dc6-602d-4bb4-b4c7-e4554f0e42b8",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.704367167,
+        "bbox.ymin": 48.576698083,
+        "bbox.xmax": 7.704367167,
+        "bbox.ymax": 48.576698083,
+        "collection": "e12d83bf-76e1-4d63-8234-e704d37d2490",
+        "created": "2026-06-19T08:48:50.594Z",
+        "updated": "2026-06-19T08:48:50.594Z",
+        "datetime": "2026-06-09T11:53:39",
+        "license": "etalab-2.0",
+        "original_file:size": 39337984,
+        "original_file:name": "2-30mDJI_20260609135339_0044_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 105,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/0a/22/2d/c6/602d-4bb4-b4c7-e4554f0e42b8.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/0a/22/2d/c6/602d-4bb4-b4c7-e4554f0e42b8/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/0a/22/2d/c6/602d-4bb4-b4c7-e4554f0e42b8/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.704367167,
+          48.576698083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "7761b111-430e-40a8-9d1f-249593119f17",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.704359389,
+        "bbox.ymin": 48.576700278,
+        "bbox.xmax": 7.704359389,
+        "bbox.ymax": 48.576700278,
+        "collection": "e12d83bf-76e1-4d63-8234-e704d37d2490",
+        "created": "2026-06-19T08:49:15.283Z",
+        "updated": "2026-06-19T08:49:15.283Z",
+        "datetime": "2026-06-09T11:52:10",
+        "license": "etalab-2.0",
+        "original_file:size": 39518208,
+        "original_file:name": "2-50mDJI_20260609135210_0043_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 105,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/77/61/b1/11/430e-40a8-9d1f-249593119f17.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/77/61/b1/11/430e-40a8-9d1f-249593119f17/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/77/61/b1/11/430e-40a8-9d1f-249593119f17/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.704359389,
+          48.576700278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3332cfe7-6ec8-4881-a935-017310aa4064",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.703125056,
+        "bbox.ymin": 48.576255694,
+        "bbox.xmax": 7.703125056,
+        "bbox.ymax": 48.576255694,
+        "collection": "ea259c3d-d2cc-44dd-9276-f0cfda17ebec",
+        "created": "2026-06-19T08:49:32.583Z",
+        "updated": "2026-06-19T08:49:32.583Z",
+        "datetime": "2026-06-09T12:01:05",
+        "license": "etalab-2.0",
+        "original_file:size": 42192896,
+        "original_file:name": "3-30mDJI_20260609140105_0046_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 106,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/33/32/cf/e7/6ec8-4881-a935-017310aa4064.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/33/32/cf/e7/6ec8-4881-a935-017310aa4064/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/33/32/cf/e7/6ec8-4881-a935-017310aa4064/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.703125056,
+          48.576255694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3540ea99-5290-4ac3-a8d7-f3cc0520d5ae",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.703117556,
+        "bbox.ymin": 48.576257917,
+        "bbox.xmax": 7.703117556,
+        "bbox.ymax": 48.576257917,
+        "collection": "ea259c3d-d2cc-44dd-9276-f0cfda17ebec",
+        "created": "2026-06-19T08:49:52.530Z",
+        "updated": "2026-06-19T08:49:52.530Z",
+        "datetime": "2026-06-09T11:59:45",
+        "license": "etalab-2.0",
+        "original_file:size": 41811968,
+        "original_file:name": "3-50mDJI_20260609135945_0045_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 106,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/35/40/ea/99/5290-4ac3-a8d7-f3cc0520d5ae.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/35/40/ea/99/5290-4ac3-a8d7-f3cc0520d5ae/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/35/40/ea/99/5290-4ac3-a8d7-f3cc0520d5ae/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.703117556,
+          48.576257917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ecf5c7ac-3285-41eb-aa6e-a55f1af46ce2",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.706100389,
+        "bbox.ymin": 48.576966889,
+        "bbox.xmax": 7.706100389,
+        "bbox.ymax": 48.576966889,
+        "collection": "46776a68-a3ca-41d8-8154-44f18c1b74db",
+        "created": "2026-06-19T08:48:24.494Z",
+        "updated": "2026-06-19T08:48:24.494Z",
+        "datetime": "2026-06-09T11:45:39",
+        "license": "etalab-2.0",
+        "original_file:size": 36462592,
+        "original_file:name": "1-50mDJI_20260609134539_0041_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 157,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/ec/f5/c7/ac/3285-41eb-aa6e-a55f1af46ce2.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/ec/f5/c7/ac/3285-41eb-aa6e-a55f1af46ce2/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/ec/f5/c7/ac/3285-41eb-aa6e-a55f1af46ce2/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.706100389,
+          48.576966889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "346b7ced-0380-474c-808c-d0ec9574eb3c",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.706107361,
+        "bbox.ymin": 48.576949639,
+        "bbox.xmax": 7.706107361,
+        "bbox.ymax": 48.576949639,
+        "collection": "46776a68-a3ca-41d8-8154-44f18c1b74db",
+        "created": "2026-06-19T08:48:07.716Z",
+        "updated": "2026-06-19T08:48:07.716Z",
+        "datetime": "2026-06-09T11:46:58",
+        "license": "etalab-2.0",
+        "original_file:size": 35684352,
+        "original_file:name": "1-30mDJI_20260609134658_0042_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 157,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/34/6b/7c/ed/0380-474c-808c-d0ec9574eb3c.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/34/6b/7c/ed/0380-474c-808c-d0ec9574eb3c/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/34/6b/7c/ed/0380-474c-808c-d0ec9574eb3c/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.706107361,
+          48.576949639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cf973867-8c96-40dd-b3a4-6067f4306a3a",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.704406139,
+        "bbox.ymin": 48.574864417,
+        "bbox.xmax": 7.704406139,
+        "bbox.ymax": 48.574864417,
+        "collection": "d3b57e11-292e-4472-a26b-44d5151981a5",
+        "created": "2026-06-19T08:50:37.772Z",
+        "updated": "2026-06-19T08:50:37.772Z",
+        "datetime": "2026-06-09T12:06:20",
+        "license": "etalab-2.0",
+        "original_file:size": 37801984,
+        "original_file:name": "4-50mDJI_20260609140620_0047_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 265,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/cf/97/38/67/8c96-40dd-b3a4-6067f4306a3a.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/cf/97/38/67/8c96-40dd-b3a4-6067f4306a3a/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/cf/97/38/67/8c96-40dd-b3a4-6067f4306a3a/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.704406139,
+          48.574864417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "852aec6c-eb57-4d58-a3ad-e5740166763d",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.704403361,
+        "bbox.ymin": 48.574864222,
+        "bbox.xmax": 7.704403361,
+        "bbox.ymax": 48.574864222,
+        "collection": "d3b57e11-292e-4472-a26b-44d5151981a5",
+        "created": "2026-06-19T08:50:17.541Z",
+        "updated": "2026-06-19T08:50:17.541Z",
+        "datetime": "2026-06-09T12:07:40",
+        "license": "etalab-2.0",
+        "original_file:size": 36880384,
+        "original_file:name": "4-30mDJI_20260609140740_0048_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 265,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/85/2a/ec/6c/eb57-4d58-a3ad-e5740166763d.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/85/2a/ec/6c/eb57-4d58-a3ad-e5740166763d/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/85/2a/ec/6c/eb57-4d58-a3ad-e5740166763d/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.704403361,
+          48.574864222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2f5e83f0-4a4e-48e7-9d8f-1c9b69a731db",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.706874444,
+        "bbox.ymin": 48.573729611,
+        "bbox.xmax": 7.706874444,
+        "bbox.ymax": 48.573729611,
+        "collection": "b12b7174-0a97-42a1-895b-f54416080d2a",
+        "created": "2026-06-19T08:52:37.208Z",
+        "updated": "2026-06-19T08:52:37.208Z",
+        "datetime": "2026-06-09T12:40:43",
+        "license": "etalab-2.0",
+        "original_file:size": 41480192,
+        "original_file:name": "8-30mDJI_20260609144043_0056_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 103,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/2f/5e/83/f0/4a4e-48e7-9d8f-1c9b69a731db.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/2f/5e/83/f0/4a4e-48e7-9d8f-1c9b69a731db/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/2f/5e/83/f0/4a4e-48e7-9d8f-1c9b69a731db/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.706874444,
+          48.573729611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "c63a7ed1-388b-48f0-9232-2c5b779e70db",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.706857806,
+        "bbox.ymin": 48.573733528,
+        "bbox.xmax": 7.706857806,
+        "bbox.ymax": 48.573733528,
+        "collection": "b12b7174-0a97-42a1-895b-f54416080d2a",
+        "created": "2026-06-19T08:52:55.701Z",
+        "updated": "2026-06-19T08:52:55.701Z",
+        "datetime": "2026-06-09T12:39:20",
+        "license": "etalab-2.0",
+        "original_file:size": 40976384,
+        "original_file:name": "8-50mDJI_20260609143920_0055_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 103,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/c6/3a/7e/d1/388b-48f0-9232-2c5b779e70db.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/c6/3a/7e/d1/388b-48f0-9232-2c5b779e70db/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/c6/3a/7e/d1/388b-48f0-9232-2c5b779e70db/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.706857806,
+          48.573733528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "0388ecbb-2d16-40a6-927e-1e0a6a06f000",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.704790861,
+        "bbox.ymin": 48.573687,
+        "bbox.xmax": 7.704790861,
+        "bbox.ymax": 48.573687,
+        "collection": "64360cf6-dda6-49a2-ae43-5a972a2d6d74",
+        "created": "2026-06-19T08:51:11.348Z",
+        "updated": "2026-06-19T08:51:11.348Z",
+        "datetime": "2026-06-09T12:11:37",
+        "license": "etalab-2.0",
+        "original_file:size": 38608896,
+        "original_file:name": "5-50mDJI_20260609141137_0049_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 72,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/03/88/ec/bb/2d16-40a6-927e-1e0a6a06f000.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/03/88/ec/bb/2d16-40a6-927e-1e0a6a06f000/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/03/88/ec/bb/2d16-40a6-927e-1e0a6a06f000/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.704790861,
+          48.573687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "17d1d7e2-5751-43c6-9dc2-b30ad2c4f0a8",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.704811472,
+        "bbox.ymin": 48.573693667,
+        "bbox.xmax": 7.704811472,
+        "bbox.ymax": 48.573693667,
+        "collection": "64360cf6-dda6-49a2-ae43-5a972a2d6d74",
+        "created": "2026-06-19T08:50:54.830Z",
+        "updated": "2026-06-19T08:50:54.830Z",
+        "datetime": "2026-06-09T12:12:51",
+        "license": "etalab-2.0",
+        "original_file:size": 38318080,
+        "original_file:name": "5-30mDJI_20260609141251_0050_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 72,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/17/d1/d7/e2/5751-43c6-9dc2-b30ad2c4f0a8.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/17/d1/d7/e2/5751-43c6-9dc2-b30ad2c4f0a8/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/17/d1/d7/e2/5751-43c6-9dc2-b30ad2c4f0a8/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.704811472,
+          48.573693667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "8a6db531-1df6-4214-85fd-647cf6b1b4e8",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.706032361,
+        "bbox.ymin": 48.571652111,
+        "bbox.xmax": 7.706032361,
+        "bbox.ymax": 48.571652111,
+        "collection": "18978d72-c3e8-4f20-a1fa-110a9d01d0b5",
+        "created": "2026-06-19T08:52:21.233Z",
+        "updated": "2026-06-19T08:52:21.233Z",
+        "datetime": "2026-06-09T12:28:35",
+        "license": "etalab-2.0",
+        "original_file:size": 39014400,
+        "original_file:name": "7-50mDJI_20260609142835_0053_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 123,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/8a/6d/b5/31/1df6-4214-85fd-647cf6b1b4e8.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/8a/6d/b5/31/1df6-4214-85fd-647cf6b1b4e8/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/8a/6d/b5/31/1df6-4214-85fd-647cf6b1b4e8/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.706032361,
+          48.571652111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ecf8c6ab-c026-471c-a5e8-47a945bac3c9",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.70604075,
+        "bbox.ymin": 48.571646583,
+        "bbox.xmax": 7.70604075,
+        "bbox.ymax": 48.571646583,
+        "collection": "18978d72-c3e8-4f20-a1fa-110a9d01d0b5",
+        "created": "2026-06-19T08:52:04.602Z",
+        "updated": "2026-06-19T08:52:04.602Z",
+        "datetime": "2026-06-09T12:29:54",
+        "license": "etalab-2.0",
+        "original_file:size": 39383040,
+        "original_file:name": "7-30mDJI_20260609142954_0054_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 123,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/ec/f8/c6/ab/c026-471c-a5e8-47a945bac3c9.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/ec/f8/c6/ab/c026-471c-a5e8-47a945bac3c9/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/ec/f8/c6/ab/c026-471c-a5e8-47a945bac3c9/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.70604075,
+          48.571646583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "884b989d-6a03-47f0-8e9d-a215feb39e11",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.702161944,
+        "bbox.ymin": 48.572880694,
+        "bbox.xmax": 7.702161944,
+        "bbox.ymax": 48.572880694,
+        "collection": "a648fcbc-28ce-48cc-b03e-a5f741e3d41f",
+        "created": "2026-06-19T08:51:47.331Z",
+        "updated": "2026-06-19T08:51:47.331Z",
+        "datetime": "2026-06-09T12:19:44",
+        "license": "etalab-2.0",
+        "original_file:size": 41881600,
+        "original_file:name": "6-50mDJI_20260609141944_0051_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 75,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/88/4b/98/9d/6a03-47f0-8e9d-a215feb39e11.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/88/4b/98/9d/6a03-47f0-8e9d-a215feb39e11/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/88/4b/98/9d/6a03-47f0-8e9d-a215feb39e11/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.702161944,
+          48.572880694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "f70e9b70-276c-4cc8-ada8-124160f050a3",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 7.702187639,
+        "bbox.ymin": 48.572887194,
+        "bbox.xmax": 7.702187639,
+        "bbox.ymax": 48.572887194,
+        "collection": "a648fcbc-28ce-48cc-b03e-a5f741e3d41f",
+        "created": "2026-06-19T08:51:29.411Z",
+        "updated": "2026-06-19T08:51:29.411Z",
+        "datetime": "2026-06-09T12:22:45",
+        "license": "etalab-2.0",
+        "original_file:size": 41906176,
+        "original_file:name": "6-30mDJI_20260609142245_0052_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 75,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/main-pictures/f7/0e/9b/70/276c-4cc8-ada8-124160f050a3.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/f7/0e/9b/70/276c-4cc8-ada8-124160f050a3/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax-storage-public-fast.s3.gra.perf.cloud.ovh.net/derivates/f7/0e/9b/70/276c-4cc8-ada8-124160f050a3/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "5762b0ba-36cc-4d6b-b9dc-6357c770b6ec",
+            "name": "eurométropole de strasbourg",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "eurométropole de strasbourg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.702187639,
+          48.572887194
         ]
       }
     },
