@@ -161,18 +161,42 @@
             header.style.display = header.style.display === 'none' ? 'block' : 'none';
         }
         
+        // Fonction pour convertir les éléments Overpass en GeoJSON
+        function overpassToGeoJSON(elements) {
+            const features = [];
+        
+            elements.forEach(element => {
+                if (element.type === 'node' && element.lat && element.lon) {
+                    features.push({
+                        type: 'Feature',
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [element.lon, element.lat]
+                        },
+                        properties: {
+                            id: element.id,
+                            type: element.type,
+                            tags: element.tags || {}
+                        }
+                    });
+                }
+                // Si tu veux gérer les "ways" (chemins) ou "relations" plus tard, ajoute-les ici
+            });
+        
+            return {
+                type: 'FeatureCollection',
+                features: features
+            };
+        }
+        
         // Fonction pour charger les POI
         function loadPOI(type) {
-            // Masquer le menu
             togglePOIMenu();
-            
-            // Afficher l'indicateur de chargement
             document.getElementById('loadingIndicator').classList.add('show');
-            
-            // Supprimer les POI existants
+            document.getElementById('alert').classList.remove('show');
+        
             poiLayer.clearLayers();
-            
-            // Récupérer les limites de la carte
+        
             const bounds = map.getBounds();
             const bbox = [
                 bounds.getSouthWest().lng,
@@ -180,8 +204,7 @@
                 bounds.getNorthEast().lng,
                 bounds.getNorthEast().lat
             ].join(',');
-            
-            // Définir la requête Overpass en fonction du type
+        
             let query;
             if (type === 'picnic') {
                 query = `[out:json][timeout:25];
@@ -195,11 +218,9 @@
                 nwr["natural"="cave_entrance"](${bbox});
                 out geom;`;
             }
-            
-            // URL de l'API Overpass
+        
             const overpassUrl = 'https://overpass-api.de/api/interpreter';
-            
-            // Envoyer la requête
+        
             fetch(overpassUrl, {
                 method: 'POST',
                 headers: {
@@ -209,8 +230,16 @@
             })
             .then(response => response.json())
             .then(data => {
-                // Ajouter les POI à la carte
-                L.geoJSON(data, {
+                if (!data.elements || data.elements.length === 0) {
+                    document.getElementById('alert').classList.add('show');
+                    setTimeout(() => {
+                        document.getElementById('alert').classList.remove('show');
+                    }, 3000);
+                    return;
+                }
+        
+                const geoJSON = overpassToGeoJSON(data.elements);
+                L.geoJSON(geoJSON, {
                     pointToLayer: function(feature, latlng) {
                         return L.marker(latlng, {
                             icon: L.icon({
@@ -222,15 +251,13 @@
                     },
                     onEachFeature: function(feature, layer) {
                         let popupContent = '<b>';
-                        if (feature.properties.name) {
-                            popupContent += feature.properties.name;
-                        } else if (feature.properties.tags && feature.properties.tags.name) {
+                        if (feature.properties.tags.name) {
                             popupContent += feature.properties.tags.name;
                         } else {
                             popupContent += type === 'picnic' ? 'Table de pic-nique' : 'Grotte';
                         }
                         popupContent += '</b><br>';
-                        
+        
                         if (feature.properties.tags) {
                             for (const [key, value] of Object.entries(feature.properties.tags)) {
                                 if (key !== 'name') {
@@ -238,18 +265,21 @@
                                 }
                             }
                         }
-                        
+        
                         layer.bindPopup(popupContent);
                     }
                 }).addTo(poiLayer);
-                
-                // Masquer l'indicateur de chargement
+        
                 document.getElementById('loadingIndicator').classList.remove('show');
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des POI:', error);
                 document.getElementById('loadingIndicator').classList.remove('show');
-                alert('Erreur lors de la récupération des POI. Veuillez réessayer.');
+                document.getElementById('alert').textContent = 'Erreur lors de la récupération des POI.';
+                document.getElementById('alert').classList.add('show');
+                setTimeout(() => {
+                    document.getElementById('alert').classList.remove('show');
+                }, 3000);
             });
         }
         
