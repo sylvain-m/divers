@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyOSM - Carte avec POI</title>
-    
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         body, html {
             margin: 0;
@@ -21,12 +21,12 @@
             height: 100%;
             font-family: Arial, sans-serif;
         }
-        
+
         #map {
             height: 100%;
             width: 100%;
         }
-        
+
         .header {
             position: absolute;
             top: 10px;
@@ -38,7 +38,7 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        
+
         .header .close-btn {
             position: absolute;
             top: 5px;
@@ -47,14 +47,14 @@
             font-size: 16px;
             color: #666;
         }
-        
+
         .poi-button {
             position: absolute;
             bottom: 20px;
             right: 20px;
             z-index: 1000;
         }
-        
+
         .poi-menu {
             position: absolute;
             bottom: 70px;
@@ -67,27 +67,27 @@
             padding: 8px 0;
             min-width: 200px;
         }
-        
+
         .poi-menu.show {
             display: block;
         }
-        
+
         .poi-menu-item {
             padding: 8px 15px;
             cursor: pointer;
             display: flex;
             align-items: center;
         }
-        
+
         .poi-menu-item:hover {
             background: #f8f9fa;
         }
-        
+
         .poi-menu-item i {
             margin-right: 10px;
             color: #0d6efd;
         }
-        
+
         .loading-indicator {
             position: absolute;
             top: 50%;
@@ -96,26 +96,45 @@
             z-index: 2000;
             display: none;
         }
-        
+
         .loading-indicator.show {
+            display: block;
+        }
+
+        #alert {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2001;
+            display: none;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        #alert.show {
             display: block;
         }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    
+
     <div class="header" id="header">
         <span>MyOSM</span>
         <span class="close-btn" onclick="toggleHeader()">&times;</span>
     </div>
-    
+
     <div class="poi-button">
         <button class="btn btn-primary" onclick="togglePOIMenu()">
             <i class="fas fa-download"></i> POI
         </button>
     </div>
-    
+
     <div class="poi-menu" id="poiMenu">
         <div class="poi-menu-item" onclick="loadPOI('picnic')">
             <i class="fas fa-utensils"></i> Pic-nique
@@ -124,49 +143,51 @@
             <i class="fas fa-mountain"></i> Grottes
         </div>
     </div>
-    
+
     <div class="loading-indicator" id="loadingIndicator">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Chargement...</span>
         </div>
     </div>
 
+    <div id="alert"></div>
+
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         // Initialisation de la carte
         const map = L.map('map').setView([46.603354, 1.888334], 13); // Centre sur la France
-        
+
         // Ajout du fond de carte OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-        
+
         // Couche pour afficher les POI
         let poiLayer = L.layerGroup().addTo(map);
-        
+
         // Fonction pour basculer l'affichage du menu POI
         function togglePOIMenu() {
             const menu = document.getElementById('poiMenu');
             menu.classList.toggle('show');
         }
-        
+
         // Fonction pour basculer l'affichage du header
         function toggleHeader() {
             const header = document.getElementById('header');
             header.style.display = header.style.display === 'none' ? 'block' : 'none';
         }
-        
+
         // Fonction pour convertir les éléments Overpass en GeoJSON
         function overpassToGeoJSON(elements) {
             const features = [];
-        
+
             elements.forEach(element => {
-                if (element.type === 'node' && element.lat && element.lon) {
+                if (element.lat && element.lon) {
                     features.push({
                         type: 'Feature',
                         geometry: {
@@ -180,23 +201,22 @@
                         }
                     });
                 }
-                // Si tu veux gérer les "ways" (chemins) ou "relations" plus tard, ajoute-les ici
             });
-        
+
             return {
                 type: 'FeatureCollection',
                 features: features
             };
         }
-        
+
         // Fonction pour charger les POI
         function loadPOI(type) {
             togglePOIMenu();
             document.getElementById('loadingIndicator').classList.add('show');
             document.getElementById('alert').classList.remove('show');
-        
+
             poiLayer.clearLayers();
-        
+
             const bounds = map.getBounds();
             const bbox = [
                 bounds.getSouthWest().lng,
@@ -204,7 +224,7 @@
                 bounds.getNorthEast().lng,
                 bounds.getNorthEast().lat
             ].join(',');
-        
+
             let query;
             if (type === 'picnic') {
                 query = `[out:json][timeout:25];
@@ -212,15 +232,15 @@
                   nwr["leisure"="picnic_table"](${bbox});
                   nwr["tourism"="picnic_site"](${bbox});
                 );
-                out geom;`;
+                out center;`;
             } else if (type === 'caves') {
                 query = `[out:json][timeout:25];
                 nwr["natural"="cave_entrance"](${bbox});
-                out geom;`;
+                out center;`;
             }
-        
+
             const overpassUrl = 'https://overpass-api.de/api/interpreter';
-        
+
             fetch(overpassUrl, {
                 method: 'POST',
                 headers: {
@@ -231,13 +251,15 @@
             .then(response => response.json())
             .then(data => {
                 if (!data.elements || data.elements.length === 0) {
+                    document.getElementById('alert').textContent = 'Aucun POI trouvé dans cette zone.';
                     document.getElementById('alert').classList.add('show');
                     setTimeout(() => {
                         document.getElementById('alert').classList.remove('show');
                     }, 3000);
+                    document.getElementById('loadingIndicator').classList.remove('show');
                     return;
                 }
-        
+
                 const geoJSON = overpassToGeoJSON(data.elements);
                 L.geoJSON(geoJSON, {
                     pointToLayer: function(feature, latlng) {
@@ -257,7 +279,7 @@
                             popupContent += type === 'picnic' ? 'Table de pic-nique' : 'Grotte';
                         }
                         popupContent += '</b><br>';
-        
+
                         if (feature.properties.tags) {
                             for (const [key, value] of Object.entries(feature.properties.tags)) {
                                 if (key !== 'name') {
@@ -265,24 +287,24 @@
                                 }
                             }
                         }
-        
+
                         layer.bindPopup(popupContent);
                     }
                 }).addTo(poiLayer);
-        
+
                 document.getElementById('loadingIndicator').classList.remove('show');
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des POI:', error);
                 document.getElementById('loadingIndicator').classList.remove('show');
-                document.getElementById('alert').textContent = 'Erreur lors de la récupération des POI.';
+                document.getElementById('alert').textContent = 'Erreur lors de la récupération des POI. Veuillez réessayer.';
                 document.getElementById('alert').classList.add('show');
                 setTimeout(() => {
                     document.getElementById('alert').classList.remove('show');
                 }, 3000);
             });
         }
-        
+
         // Fonction pour obtenir l'URL de l'icône en fonction du type de POI
         function getIconUrl(feature) {
             if (feature.properties.tags) {
@@ -294,12 +316,12 @@
             }
             return 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png';
         }
-        
+
         // Fermer le menu si on clique ailleurs
         document.addEventListener('click', function(event) {
             const menu = document.getElementById('poiMenu');
             const button = document.querySelector('.poi-button button');
-            
+
             if (!menu.contains(event.target) && !button.contains(event.target)) {
                 menu.classList.remove('show');
             }
