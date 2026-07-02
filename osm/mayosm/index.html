@@ -188,6 +188,7 @@
 
             elements.forEach(element => {
                 if (element.lat && element.lon) {
+                    // Cas des nodes
                     features.push({
                         type: 'Feature',
                         geometry: {
@@ -200,7 +201,27 @@
                             tags: element.tags || {}
                         }
                     });
+                } else if (element.type === 'way' && element.geometry) {
+                    // Cas des ways (lignes ou polygones)
+                    const coords = element.geometry.map(g => [g.lon, g.lat]);
+                    features.push({
+                        type: 'Feature',
+                        geometry: {
+                            type: coords.length > 1 && 
+                                  coords[0][0] === coords[coords.length - 1][0] && 
+                                  coords[0][1] === coords[coords.length - 1][1]
+                                ? 'Polygon'
+                                : 'LineString',
+                            coordinates: coords
+                        },
+                        properties: {
+                            id: element.id,
+                            type: element.type,
+                            tags: element.tags || {}
+                        }
+                    });
                 }
+                // Note: Les relations ne sont pas gérées ici pour simplifier
             });
 
             return {
@@ -225,6 +246,8 @@
                 bounds.getNorthEast().lat
             ].join(',');
 
+            console.log("Bbox envoyée à Overpass:", bbox); // Debug
+
             let query;
             if (type === 'picnic') {
                 query = `[out:json][timeout:25];
@@ -239,25 +262,27 @@
                 out center;`;
             }
 
-            const overpassUrl = 'https://overpass-api.de/api/interpreter';
+            const overpassUrl = 'https://overpass.kumi.systems/api/interpreter';
 
             fetch(overpassUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
                 },
                 body: `data=${encodeURIComponent(query)}`
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
+                console.log("Données reçues:", data); // Debug
+                
                 if (!data.elements || data.elements.length === 0) {
-                    document.getElementById('alert').textContent = 'Aucun POI trouvé dans cette zone.';
-                    document.getElementById('alert').classList.add('show');
-                    setTimeout(() => {
-                        document.getElementById('alert').classList.remove('show');
-                    }, 3000);
-                    document.getElementById('loadingIndicator').classList.remove('show');
-                    return;
+                    throw new Error("Aucun POI trouvé dans cette zone.");
                 }
 
                 const geoJSON = overpassToGeoJSON(data.elements);
@@ -295,13 +320,19 @@
                 document.getElementById('loadingIndicator').classList.remove('show');
             })
             .catch(error => {
-                console.error('Erreur lors de la récupération des POI:', error);
+                console.error('Erreur détaillée:', error);
                 document.getElementById('loadingIndicator').classList.remove('show');
-                document.getElementById('alert').textContent = 'Erreur lors de la récupération des POI. Veuillez réessayer.';
+                let errorMessage = 'Erreur lors de la récupération des POI.';
+                if (error.message.includes('Aucun POI')) {
+                    errorMessage = error.message;
+                } else if (error.message.includes('JSON')) {
+                    errorMessage = 'La réponse de l\'API n\'est pas du JSON valide.';
+                }
+                document.getElementById('alert').textContent = errorMessage;
                 document.getElementById('alert').classList.add('show');
                 setTimeout(() => {
                     document.getElementById('alert').classList.remove('show');
-                }, 3000);
+                }, 5000);
             });
         }
 
