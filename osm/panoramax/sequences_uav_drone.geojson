@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "name": "sequences_uav_drone",
   "metadata": {
-    "export_date": "2026-07-12T05:51:21.682204"
+    "export_date": "2026-07-13T06:09:47.811236"
   },
   "features": [
     {
@@ -302,6 +302,306 @@
         "coordinates": [
           1.777578083,
           46.487907583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "09736f46-f1b6-4c55-a780-ae0706220686",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 0.401870639,
+        "bbox.ymin": 48.436511889,
+        "bbox.xmax": 0.401870639,
+        "bbox.ymax": 48.436511889,
+        "collection": "4ea87301-de8b-4ee7-8ded-599ad5666014",
+        "created": "2026-07-06T09:45:49.094Z",
+        "updated": "2026-07-06T09:49:34.264Z",
+        "datetime": "2026-07-03T11:35:35",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 52449280,
+        "original_file:name": "DJI_20260703133535_0106_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 140,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/09/73/6f/46/f1b6-4c55-a780-ae0706220686.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/09/73/6f/46/f1b6-4c55-a780-ae0706220686/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/09/73/6f/46/f1b6-4c55-a780-ae0706220686/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "52e28607-f1c4-4f29-a41b-db416f865518",
+            "name": "Sylvain M",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "Sylvain M"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.401870639,
+          48.436511889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "fa067f42-89f3-440f-b47f-eecbd9d099d5",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 0.401958167,
+        "bbox.ymin": 48.436480611,
+        "bbox.xmax": 0.401958167,
+        "bbox.ymax": 48.436480611,
+        "collection": "8c54cbc2-e615-4073-a0f6-faf1e2f22631",
+        "created": "2026-07-06T09:45:44.880Z",
+        "updated": "2026-07-06T09:50:03.777Z",
+        "datetime": "2026-07-03T10:42:52",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 56250368,
+        "original_file:name": "DJI_20260703124252_0001_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": -60,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/fa/06/7f/42/89f3-440f-b47f-eecbd9d099d5.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/fa/06/7f/42/89f3-440f-b47f-eecbd9d099d5/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/fa/06/7f/42/89f3-440f-b47f-eecbd9d099d5/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "52e28607-f1c4-4f29-a41b-db416f865518",
+            "name": "Sylvain M",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "Sylvain M"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.401958167,
+          48.436480611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ae1bc927-53fa-414b-b419-6bba1714d8b6",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 0.401845778,
+        "bbox.ymin": 48.436410889,
+        "bbox.xmax": 0.401845778,
+        "bbox.ymax": 48.436410889,
+        "collection": "e3fa975b-8c2f-4b1d-9273-07573f04da31",
+        "created": "2026-07-06T09:45:47.023Z",
+        "updated": "2026-07-06T09:49:00.224Z",
+        "datetime": "2026-07-03T10:58:02",
+        "license": "CC-BY-SA-4.0",
+        "original_file:size": 54329344,
+        "original_file:name": "DJI_20260703125802_0016_D.JPG",
+        "panoramax:horizontal_pixel_density": 33,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 20,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC9313",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": 8.6700001,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          12000,
+          6000
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.openstreetmap.fr/images/ae/1b/c9/27/53fa-414b-b419-6bba1714d8b6.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/ae/1b/c9/27/53fa-414b-b419-6bba1714d8b6/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.openstreetmap.fr/derivates/ae/1b/c9/27/53fa-414b-b419-6bba1714d8b6/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "52e28607-f1c4-4f29-a41b-db416f865518",
+            "name": "Sylvain M",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "rel": "license",
+            "title": "License for this object (CC-BY-SA-4.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "osm-fr",
+        "instance.url": "https://panoramax.openstreetmap.fr",
+        "provider_name": "Sylvain M"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.401845778,
+          48.436410889
         ]
       }
     },
@@ -5269,6 +5569,15 @@
             "key": "transport",
             "value": "uav",
             "on": null
+          },
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
           }
         ],
         "assets": [
@@ -5474,6 +5783,15 @@
             "key": "transport",
             "value": "uav",
             "on": null
+          },
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
           }
         ],
         "assets": [
@@ -5570,6 +5888,15 @@
             "key": "transport",
             "value": "uav",
             "on": null
+          },
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
           }
         ],
         "assets": [
@@ -5666,6 +5993,15 @@
             "key": "transport",
             "value": "uav",
             "on": null
+          },
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
           }
         ],
         "assets": [
@@ -5762,6 +6098,15 @@
             "key": "transport",
             "value": "uav",
             "on": null
+          },
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
           }
         ],
         "assets": [
@@ -5858,6 +6203,15 @@
             "key": "transport",
             "value": "uav",
             "on": null
+          },
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
           }
         ],
         "assets": [
@@ -5954,6 +6308,15 @@
             "key": "transport",
             "value": "uav",
             "on": null
+          },
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
           }
         ],
         "assets": [
