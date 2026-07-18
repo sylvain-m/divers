@@ -10386,36 +10386,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.1078392,
-          48.8171863
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 5204132306,
-        "osm_url": "https://www.openstreetmap.org/node/5204132306",
-        "obs_ids": "145543861;153450383;174286028",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=145543861,153450383,174286028",
-        "tags": {
-          "denotation": "natural_monument",
-          "genus": "Sequoiadendron",
-          "height": "38",
-          "image": "https://photos.app.goo.gl/YLfQGJVJkeEkkWDb8",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "145543861;153450383;174286028",
-          "species": "Sequoiadendron gigantum",
-          "species:fr": "Sequoia géant",
-          "start_date": "1870"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           10.3106225,
           42.7594583
         ]
@@ -10614,6 +10584,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -2.0529879,
+          48.6233248
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 14022590815,
+        "osm_url": "https://www.openstreetmap.org/node/14022590815",
+        "obs_ids": "188795964",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=188795964",
+        "tags": {
+          "denotation": "park",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "188795964",
+          "species": "Taxodium distichum",
+          "species:fr": "Cyprès Chauve",
+          "species:wikidata": "Q148950",
+          "species:wikipedia": "fr:Taxodium distichum"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           44.3999628,
           -20.2115401
         ]
@@ -10716,6 +10714,36 @@
           "source": "GPS",
           "species": "Ceiba pentandra",
           "species:wikidata": "Q138617"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1078392,
+          48.8171863
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 5204132306,
+        "osm_url": "https://www.openstreetmap.org/node/5204132306",
+        "obs_ids": "145543861;153450383;174286028",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=145543861,153450383,174286028",
+        "tags": {
+          "denotation": "natural_monument",
+          "genus": "Sequoiadendron",
+          "height": "38",
+          "image": "https://photos.app.goo.gl/YLfQGJVJkeEkkWDb8",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "145543861;153450383;174286028",
+          "species": "Sequoiadendron gigantum",
+          "species:fr": "Sequoia géant",
+          "start_date": "1870"
         }
       }
     },
@@ -10859,37 +10887,6 @@
           "ref:inaturalist.org": "13388763;146425991;155213745;39778157;69571590;80730277;91184079",
           "species": "Tetrameles nudiflora",
           "species:wikidata": "Q3236759"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.6227984,
-          13.3830898
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13603528947,
-        "osm_url": "https://www.openstreetmap.org/node/13603528947",
-        "obs_ids": "147269577",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=147269577",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "The “elephant tree” is named for shapes resembling elephant faces. Known as one of Gambia’s largest trees, it has cultural significance. Visitors to Lamin Lodge can see it; the hollow interior even has benches, though it’s unclear if it’s still alive.",
-          "diameter": "8 m",
-          "historic": "yes",
-          "leaf_cycle": "semi_evergreen",
-          "leaf_type": "broadleaved",
-          "name": "Elephant Tree",
-          "natural": "tree",
-          "ref:inaturalist.org": "147269577",
-          "species": "Ceiba pentandra / Adansonia Digitata (disputed)",
-          "species:en": "Silk Cotton Tree / Baobab Tree",
-          "tourism": "attraction"
         }
       }
     },
@@ -11164,47 +11161,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.4346703,
-          48.156644
+          -16.6227984,
+          13.3830898
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 13571397034,
-        "osm_url": "https://www.openstreetmap.org/node/13571397034",
-        "obs_ids": "137482671",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=137482671",
+        "osm_id": 13603528947,
+        "osm_url": "https://www.openstreetmap.org/node/13603528947",
+        "obs_ids": "147269577",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=147269577",
         "tags": {
-          "circumference": "47 feet",
           "denotation": "natural_monument",
-          "diameter": "15 feet",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
+          "description": "The “elephant tree” is named for shapes resembling elephant faces. Known as one of Gambia’s largest trees, it has cultural significance. Visitors to Lamin Lodge can see it; the hollow interior even has benches, though it’s unclear if it’s still alive.",
+          "diameter": "8 m",
+          "historic": "yes",
+          "leaf_cycle": "semi_evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Elephant Tree",
           "natural": "tree",
-          "ref:inaturalist.org": "137482671",
-          "species": "Thuja plicata"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.8819835,
-          26.6336279
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 1419409787,
-        "osm_url": "https://www.openstreetmap.org/node/1419409787",
-        "obs_ids": "24764877;70299362;117368171",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=24764877,70299362,117368171",
-        "tags": {
-          "denotation": "natural_monument",
-          "name": "Mysore Fig",
-          "natural": "tree"
+          "ref:inaturalist.org": "147269577",
+          "species": "Ceiba pentandra / Adansonia Digitata (disputed)",
+          "species:en": "Silk Cotton Tree / Baobab Tree",
+          "tourism": "attraction"
         }
       }
     },
@@ -11444,6 +11423,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -121.4346703,
+          48.156644
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13571397034,
+        "osm_url": "https://www.openstreetmap.org/node/13571397034",
+        "obs_ids": "137482671",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=137482671",
+        "tags": {
+          "circumference": "47 feet",
+          "denotation": "natural_monument",
+          "diameter": "15 feet",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "137482671",
+          "species": "Thuja plicata"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.7486146,
           48.091337
         ]
@@ -11558,6 +11564,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -81.8819835,
+          26.6336279
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 1419409787,
+        "osm_url": "https://www.openstreetmap.org/node/1419409787",
+        "obs_ids": "24764877;70299362;117368171",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=24764877,70299362,117368171",
+        "tags": {
+          "denotation": "natural_monument",
+          "name": "Mysore Fig",
+          "natural": "tree"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.7998038,
           48.6473241
         ]
@@ -11662,41 +11690,6 @@
           "species": "Fraxinus excelsior",
           "species:wikidata": "Q156907",
           "species:wikipedia": "fr:Frêne élevé"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -72.0179987,
-          -34.4824084
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11993067611,
-        "osm_url": "https://www.openstreetmap.org/node/11993067611",
-        "obs_ids": "105770891",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=105770891",
-        "tags": {
-          "age": "mature",
-          "crown_type": "i",
-          "denotation": "garden",
-          "description": "Jch n°3062",
-          "genus": "Jubaea",
-          "height": "12",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "palm",
-          "natural": "tree",
-          "object:city": "El Pangal",
-          "object:street": "Ruta I-502",
-          "ref:inaturalist.org": "105770891",
-          "species": "Jubaea chilensis",
-          "species:en": "Chilean Wine Palm",
-          "species:es": "Palma Chilena",
-          "species:mp": "Lilla"
         }
       }
     },
@@ -11963,26 +11956,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.9394636,
-          14.3730799
+          -72.0179987,
+          -34.4824084
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 13928249470,
-        "osm_url": "https://www.openstreetmap.org/node/13928249470",
-        "obs_ids": "74356522",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=74356522",
+        "osm_id": 11993067611,
+        "osm_url": "https://www.openstreetmap.org/node/11993067611",
+        "obs_ids": "105770891",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=105770891",
         "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
+          "age": "mature",
+          "crown_type": "i",
+          "denotation": "garden",
+          "description": "Jch n°3062",
+          "genus": "Jubaea",
+          "height": "12",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "palm",
           "natural": "tree",
-          "ref:inaturalist.org": "74356522",
-          "species": "Adansonia digitata",
-          "species:fr": "Baobab africain",
-          "species:wikidata": "Q158742",
-          "species:wikipedia": "fr:Baobab africain"
+          "object:city": "El Pangal",
+          "object:street": "Ruta I-502",
+          "ref:inaturalist.org": "105770891",
+          "species": "Jubaea chilensis",
+          "species:en": "Chilean Wine Palm",
+          "species:es": "Palma Chilena",
+          "species:mp": "Lilla"
         }
       }
     },
@@ -12269,33 +12269,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.2633178,
-          48.772282
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13728439250,
-        "osm_url": "https://www.openstreetmap.org/node/13728439250",
-        "obs_ids": "55839842;64296602",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=55839842,64296602",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "55839842;64296602",
-          "species": "Cedrus libani",
-          "species:wikidata": "Q61105",
-          "species:wikipedia": "fr:Cèdre du Liban"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.189962,
           48.5970571
         ]
@@ -12318,6 +12291,34 @@
           "species:fr": "Chêne pédonculé",
           "species:wikidata": "Q165145",
           "species:wikipedia": "fr:Chêne pédonculé"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.9394636,
+          14.3730799
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13928249470,
+        "osm_url": "https://www.openstreetmap.org/node/13928249470",
+        "obs_ids": "74356522",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=74356522",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "74356522",
+          "species": "Adansonia digitata",
+          "species:fr": "Baobab africain",
+          "species:wikidata": "Q158742",
+          "species:wikipedia": "fr:Baobab africain"
         }
       }
     },
@@ -12376,29 +12377,6 @@
           "name": "The Old Oak Slave Tree",
           "natural": "tree",
           "ref:inaturalist.org": "46148392"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -122.6696941,
-          45.6219679
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 3562460555,
-        "osm_url": "https://www.openstreetmap.org/node/3562460555",
-        "obs_ids": "8745535;25413690",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=8745535,25413690",
-        "tags": {
-          "denotation": "natural_monument",
-          "name": "Old Apple Tree",
-          "natural": "tree",
-          "ref:inaturalist.org": "8745535;25413690"
         }
       }
     },
@@ -12630,6 +12608,56 @@
           "species:it": "Fico magnolioide",
           "species:wikidata": "Q1439079",
           "species:wikipedia": "it:Ficus macrophylla"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2633178,
+          48.772282
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13728439250,
+        "osm_url": "https://www.openstreetmap.org/node/13728439250",
+        "obs_ids": "55839842;64296602",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=55839842,64296602",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "55839842;64296602",
+          "species": "Cedrus libani",
+          "species:wikidata": "Q61105",
+          "species:wikipedia": "fr:Cèdre du Liban"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6696941,
+          45.6219679
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 3562460555,
+        "osm_url": "https://www.openstreetmap.org/node/3562460555",
+        "obs_ids": "8745535;25413690",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=8745535,25413690",
+        "tags": {
+          "denotation": "natural_monument",
+          "name": "Old Apple Tree",
+          "natural": "tree",
+          "ref:inaturalist.org": "8745535;25413690"
         }
       }
     },
