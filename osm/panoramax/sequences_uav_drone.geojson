@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "name": "sequences_uav_drone",
   "metadata": {
-    "export_date": "2026-07-19T05:51:41.910894"
+    "export_date": "2026-07-20T06:07:15.221015"
   },
   "features": [
     {
@@ -7511,7 +7511,7 @@
         "semantics": [
           {
             "key": "transport",
-            "value": "Drone",
+            "value": "DRONE",
             "on": {
               "field": "collection",
               "id": null,
@@ -7520,7 +7520,7 @@
           },
           {
             "key": "transport",
-            "value": "DRONE",
+            "value": "Drone",
             "on": {
               "field": "collection",
               "id": null,
