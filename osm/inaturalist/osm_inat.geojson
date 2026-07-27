@@ -635,15 +635,8 @@
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=373283689",
         "tags": {
           "denotation": "natural_monument",
-          "full_name": "Chêne de Montaloyer ou Piperon",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
           "name": "Chêne de Montaloyer",
-          "natural": "tree",
-          "species": "Quercus petraea",
-          "species:fr": "Chêne sessile",
-          "species:wikidata": "Q158608",
-          "species:wikipedia": "fr:Quercus petraea"
+          "natural": "tree"
         }
       }
     },
@@ -787,115 +780,6 @@
         "tags": {
           "name": "Chêne têtard de la Chapelle Vicomtesse",
           "natural": "tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.1050533,
-          48.4324389
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13947572699,
-        "osm_url": "https://www.openstreetmap.org/node/13947572699",
-        "obs_ids": "372588046",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=372588046",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "species": "Sequoia sempervirens",
-          "species:fr": "Sequoia a feuilles d'if",
-          "species:wikidata": "Q150129",
-          "species:wikipedia": "fr:Sequoia sempervirens"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.1259912,
-          48.4329601
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13947653418,
-        "osm_url": "https://www.openstreetmap.org/node/13947653418",
-        "obs_ids": "372586376",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=372586376",
-        "tags": {
-          "denotation": "park",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "species": "Platanus × hispanica",
-          "species:fr": "Platane commun",
-          "species:wikidata": "Q161374",
-          "species:wikipedia": "fr:Platane commun"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.2512521,
-          49.041383
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13954674084,
-        "osm_url": "https://www.openstreetmap.org/node/13954674084",
-        "obs_ids": "373269723",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=373269723",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "373269723",
-          "source": "iNaturalist",
-          "species": "Fagus sylvatica f. purpurea",
-          "species:fr": "Hêtre commun",
-          "species:wikidata": "Q886511",
-          "species:wikipedia": "fr:Hêtre pourpre"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.3134853,
-          28.4876285
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13985898817,
-        "osm_url": "https://www.openstreetmap.org/node/13985898817",
-        "obs_ids": "72431498;120148238;148717145;229656365;267549863;267566238;314302742;372378418",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=72431498,120148238,148717145,229656365,267549863,267566238,314302742,372378418",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "name": "Drago del Adelantado",
-          "natural": "tree",
-          "ref:inaturalist.org": "72431498",
-          "species": "Dracaena draco",
-          "species:wikidata": "Q157952"
         }
       }
     },
@@ -4192,18 +4076,15 @@
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=775641,1266484,18497277,20547928,26935898,100663324,126590294,221966044,225960115,236918617,316902117,334996872",
         "tags": {
           "denotation": "natural_monument",
-          "genus": "Sequoia",
           "height": "84",
           "historic": "tree",
           "inscription": "Chandelier Tree Height: 315ft Diameter 21ft Maximaum Age 2400yrs Drive Thru Tree Leggett CA",
           "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
+          "leaf_type": "broadleaved",
           "name": "Chandelier Tree",
           "name:zh": "开车穿过树洞公园",
           "natural": "tree",
-          "ref:inaturalist.org": "775641;1266484;18497277;20547928;26935898;100663324;126590294;221966044;225960115;236918617;316902117;334996872",
-          "species": "Sequoia sempervirens",
-          "species:wikidata": "Q150129",
+          "taxon": "Sequoia sempervirens",
           "tourism": "attraction",
           "website": "http://www.drivethrutree.com/",
           "wikidata": "Q1061704",
@@ -4227,20 +4108,11 @@
         "obs_ids": "138004659;336467555",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=138004659,336467555",
         "tags": {
-          "alt_name": "Fallen Tunnel Tree",
           "ele": "2000",
           "gnis:feature_id": "268481",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Wawona Tree",
-          "natural": "tree_stump",
-          "ref:inaturalist.org": "336467555",
-          "was:denotation": "natural_monument",
-          "was:natural": "tree",
-          "wikidata": "Q3106707",
-          "wikimedia_commons": "Category:Wawona_Tree",
-          "wikipedia": "en:Wawona Tree",
-          "wikipedia:fr": "Wawona Tree"
+          "name": "Fallen Tunnel Tree",
+          "natural": "tree",
+          "wikidata": "Q3106707"
         }
       }
     },
@@ -4266,7 +4138,6 @@
           "leaf_cycle": "evergreen",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "31186080;335433885",
           "species": "Arbutus menziesii"
         }
       }
@@ -4394,7 +4265,6 @@
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "248487728;334353583",
           "species": "Platanus × hispanica",
           "start_date": "1820"
         }
@@ -4445,33 +4315,6 @@
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=335799549",
         "tags": {
           "natural": "tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.9072367,
-          33.3323506
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13930794022,
-        "osm_url": "https://www.openstreetmap.org/node/13930794022",
-        "obs_ids": "13319321;37251034;51310509;65653205;65655589;82254126;96282194;103556087;162787634;252075306;255459207;284239815;292801544;293968972;324742005;329615263;337037874;337037966",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=13319321,37251034,51310509,65653205,65655589,82254126,96282194,103556087,162787634,252075306,255459207,284239815,292801544,293968972,324742005,329615263,337037874,337037966",
-        "tags": {
-          "age": "400",
-          "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "13319321;37251034;51310509;65653205;65655589;82254126;96282194;103556087;162787634;252075306;255459207;284239815;292801544;293968972;324742005;329615263;337037874;337037966",
-          "species": "Calocedrus decurrens",
-          "species:wikidata": "Q1399164"
         }
       }
     },
@@ -7167,38 +7010,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.6429714,
-          42.8154936
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2769312531,
-        "osm_url": "https://www.openstreetmap.org/node/2769312531",
-        "obs_ids": "80610681;285524855;288282097",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=80610681,285524855,288282097",
-        "tags": {
-          "denotation": "natural_monument",
-          "height": "35.7",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Sequoya del Palacio de Diputación",
-          "natural": "tree",
-          "ref:inaturalist.org": "80610681;285524855;288282097",
-          "source": "Gobierno de Navarra",
-          "source:date": "2009-12-01",
-          "species": "Sequoiadendron giganteum",
-          "tourism": "attraction",
-          "wheelchair": "yes",
-          "wikimedia_commons": "File:Secuoya del Palacio de Navarra (Pamplona) 01.jpg"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           53.2798341,
           31.1225843
         ]
@@ -7236,6 +7047,122 @@
           "wikidata": "Q245835",
           "wikimedia_commons": "File:4000_years_old_tree_-_panoramio.jpg",
           "wikipedia": "fa:سرو ابرکوه"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2394541,
+          45.8411483
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12954985321,
+        "osm_url": "https://www.openstreetmap.org/node/12954985321",
+        "obs_ids": "292961484",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=292961484",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "292961484",
+          "species": "Quercus robur",
+          "species:fr": "Chêne pédonculé",
+          "species:wikidata": "Q165145",
+          "species:wikipedia": "fr:Chêne pédonculé"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.3714136,
+          48.3498696
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13298360764,
+        "osm_url": "https://www.openstreetmap.org/node/13298360764",
+        "obs_ids": "295973362",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=295973362",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "295973362",
+          "species": "Sequoiadendron giganteum",
+          "species:fr": "Séquoia géant",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4182288,
+          -33.9258096
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13775694719,
+        "osm_url": "https://www.openstreetmap.org/node/13775694719",
+        "obs_ids": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=23120231,76498013,153066743,153066744,153071215,153355579,194561183,210089346,294126698,294319856",
+        "tags": {
+          "denotation": "natural_monument",
+          "description": "Labelled as Ficus elastica on the tag, but it appears to be an identification error. See https://www.inaturalist.org/observations/153071215",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
+          "species": "Ficus macrophylla",
+          "species:wikidata": "Q1439079",
+          "species:wikipedia": "en:Ficus macrophylla"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6429714,
+          42.8154936
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2769312531,
+        "osm_url": "https://www.openstreetmap.org/node/2769312531",
+        "obs_ids": "80610681;285524855;288282097",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=80610681,285524855,288282097",
+        "tags": {
+          "denotation": "natural_monument",
+          "height": "35.7",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Sequoya del Palacio de Diputación",
+          "natural": "tree",
+          "ref:inaturalist.org": "80610681;285524855;288282097",
+          "source": "Gobierno de Navarra",
+          "source:date": "2009-12-01",
+          "species": "Sequoiadendron giganteum",
+          "tourism": "attraction",
+          "wheelchair": "yes",
+          "wikimedia_commons": "File:Secuoya del Palacio de Navarra (Pamplona) 01.jpg"
         }
       }
     },
@@ -7355,90 +7282,6 @@
           "species": "Ficus macrophylla",
           "species:it": "Fico magnolioide",
           "taxon": "Ficus columnaris"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.2394541,
-          45.8411483
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12954985321,
-        "osm_url": "https://www.openstreetmap.org/node/12954985321",
-        "obs_ids": "292961484",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=292961484",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "292961484",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.3714136,
-          48.3498696
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13298360764,
-        "osm_url": "https://www.openstreetmap.org/node/13298360764",
-        "obs_ids": "295973362",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=295973362",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "295973362",
-          "species": "Sequoiadendron giganteum",
-          "species:fr": "Séquoia géant",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.4182288,
-          -33.9258096
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13775694719,
-        "osm_url": "https://www.openstreetmap.org/node/13775694719",
-        "obs_ids": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=23120231,76498013,153066743,153066744,153071215,153355579,194561183,210089346,294126698,294319856",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "Labelled as Ficus elastica on the tag, but it appears to be an identification error. See https://www.inaturalist.org/observations/153071215",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
-          "species": "Ficus macrophylla",
-          "species:wikidata": "Q1439079",
-          "species:wikipedia": "en:Ficus macrophylla"
         }
       }
     },
