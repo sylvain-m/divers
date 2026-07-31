@@ -6,6 +6,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -118.9711111,
+          36.7480556
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 1856427893,
+        "osm_url": "https://www.openstreetmap.org/node/1856427893",
+        "obs_ids": "32670010;32930928;51801635;93125918;94743460;101199129;122608769;125049884;127805377;166741167;238478564;269716480;291946690;295324801;299316110;302156949;315866283;317619139;326065120;364381154;367214396;370226132;378461321;385667426",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=32670010,32930928,51801635,93125918,94743460,101199129,122608769,125049884,127805377,166741167,238478564,269716480,291946690,295324801,299316110,302156949,315866283,317619139,326065120,364381154,367214396,370226132,378461321,385667426",
+        "tags": {
+          "circumference": "8.85",
+          "genus": "Sequoiadendron",
+          "height": "81.1",
+          "landmark": "16",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "General Grant Tree",
+          "natural": "tree",
+          "ref:inaturalist.org": "367214396",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "tourism": "attraction",
+          "wikidata": "Q1501618",
+          "wikipedia": "en:General Grant (tree)"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -80.0804039,
           32.717045
         ]
@@ -43,37 +76,6 @@
           "website": "https://angeloaktree.com",
           "wikidata": "Q4762234",
           "wikipedia": "en:Angel Oak"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.5418796,
-          47.2448746
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2450401378,
-        "osm_url": "https://www.openstreetmap.org/node/2450401378",
-        "obs_ids": "379175506",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=379175506",
-        "tags": {
-          "award:arbres": "2000",
-          "circumference": "10",
-          "denotation": "natural_monument",
-          "description": "Châtaignier labellisé « arbre remarquable de France » en 2000 par l’association A.R.B.R.E.S.",
-          "height": "15",
-          "leaf_type": "broadleaved",
-          "name": "Châtaignier de l’Eraudière",
-          "natural": "tree",
-          "source": "https://nature.metropole.nantes.fr/arbres-et-biodiversite/l-arbre-en-ville-a-nantes/les-principaux-arbres-remarquables-a-nantes/",
-          "species": "castanea sativa",
-          "start_date": "800",
-          "width": "12"
         }
       }
     },
@@ -313,40 +315,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.0724681,
-          53.2046562
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 455984558,
-        "osm_url": "https://www.openstreetmap.org/node/455984558",
-        "obs_ids": "43027643;45477510;80655427;94706589;99791390;162030740;172523828;182615108;188288120;200811082;210436362;216811107;232661782;248860897;255061213;261822242;268926281;295378756;309356714;317294964;320184817;373523274;375484140",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=43027643,45477510,80655427,94706589,99791390,162030740,172523828,182615108,188288120,200811082,210436362,216811107,232661782,248860897,255061213,261822242,268926281,295378756,309356714,317294964,320184817,373523274,375484140",
-        "tags": {
-          "denotation": "natural_monument",
-          "genus": "Quercus",
-          "genus:en": "Oak",
-          "historic": "yes",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "monument": "yes",
-          "name": "Major Oak",
-          "name:it": "La Grande Quercia",
-          "natural": "tree",
-          "robin_hood": "yes",
-          "tourism": "attraction",
-          "website": "http://www.eyemead.com/majoroak.htm",
-          "wikidata": "Q388443",
-          "wikipedia": "en:Major Oak"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.3997822,
           48.5667917
         ]
@@ -372,6 +340,37 @@
           "tourism": "viewpoint",
           "wikidata": "Q138661252",
           "wikipedia": "fr:Forêt d'Andaine#Lieux remarquables"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5418796,
+          47.2448746
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2450401378,
+        "osm_url": "https://www.openstreetmap.org/node/2450401378",
+        "obs_ids": "379175506",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=379175506",
+        "tags": {
+          "award:arbres": "2000",
+          "circumference": "10",
+          "denotation": "natural_monument",
+          "description": "Châtaignier labellisé « arbre remarquable de France » en 2000 par l’association A.R.B.R.E.S.",
+          "height": "15",
+          "leaf_type": "broadleaved",
+          "name": "Châtaignier de l’Eraudière",
+          "natural": "tree",
+          "source": "https://nature.metropole.nantes.fr/arbres-et-biodiversite/l-arbre-en-ville-a-nantes/les-principaux-arbres-remarquables-a-nantes/",
+          "species": "castanea sativa",
+          "start_date": "800",
+          "width": "12"
         }
       }
     },
@@ -615,6 +614,40 @@
           "species:fr": "If commun",
           "species:wikidata": "Q179729",
           "species:wikipedia": "fr:If commun"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0724681,
+          53.2046562
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 455984558,
+        "osm_url": "https://www.openstreetmap.org/node/455984558",
+        "obs_ids": "43027643;45477510;80655427;94706589;99791390;162030740;172523828;182615108;188288120;200811082;210436362;216811107;232661782;248860897;255061213;261822242;268926281;295378756;309356714;317294964;320184817;373523274;375484140",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=43027643,45477510,80655427,94706589,99791390,162030740,172523828,182615108,188288120,200811082,210436362,216811107,232661782,248860897,255061213,261822242,268926281,295378756,309356714,317294964,320184817,373523274,375484140",
+        "tags": {
+          "denotation": "natural_monument",
+          "genus": "Quercus",
+          "genus:en": "Oak",
+          "historic": "yes",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "monument": "yes",
+          "name": "Major Oak",
+          "name:it": "La Grande Quercia",
+          "natural": "tree",
+          "robin_hood": "yes",
+          "tourism": "attraction",
+          "website": "http://www.eyemead.com/majoroak.htm",
+          "wikidata": "Q388443",
+          "wikipedia": "en:Major Oak"
         }
       }
     },
@@ -878,32 +911,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.3134853,
-          28.4876285
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13985898817,
-        "osm_url": "https://www.openstreetmap.org/node/13985898817",
-        "obs_ids": "72431498;120148238;148717145;229656365;267549863;267566238;314302742;372378418",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=72431498,120148238,148717145,229656365,267549863,267566238,314302742,372378418",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "name": "Drago del Adelantado",
-          "natural": "tree",
-          "ref:inaturalist.org": "72431498",
-          "species": "Dracaena draco",
-          "species:wikidata": "Q157952"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -118.751443,
           36.5816453
         ]
@@ -964,39 +971,6 @@
           "tourism": "attraction",
           "wikidata": "Q435533",
           "wikipedia": "de:Alte Eibe von Balderschwang"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.9711111,
-          36.7480556
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 1856427893,
-        "osm_url": "https://www.openstreetmap.org/node/1856427893",
-        "obs_ids": "367214396",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=367214396",
-        "tags": {
-          "circumference": "8.85",
-          "genus": "Sequoiadendron",
-          "height": "81.1",
-          "landmark": "16",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "General Grant Tree",
-          "natural": "tree",
-          "ref:inaturalist.org": "367214396",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851",
-          "tourism": "attraction",
-          "wikidata": "Q1501618",
-          "wikipedia": "en:General Grant (tree)"
         }
       }
     },
@@ -1204,6 +1178,32 @@
           "species:it": "Fico magnolioide",
           "species:wikidata": "Q1439079",
           "species:wikipedia": "it:Ficus macrophylla"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3134853,
+          28.4876285
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13985898817,
+        "osm_url": "https://www.openstreetmap.org/node/13985898817",
+        "obs_ids": "72431498;120148238;148717145;229656365;267549863;267566238;314302742;372378418",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=72431498,120148238,148717145,229656365,267549863,267566238,314302742,372378418",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "name": "Drago del Adelantado",
+          "natural": "tree",
+          "ref:inaturalist.org": "72431498",
+          "species": "Dracaena draco",
+          "species:wikidata": "Q157952"
         }
       }
     },
