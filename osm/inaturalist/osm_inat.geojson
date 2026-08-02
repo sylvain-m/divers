@@ -8331,7 +8331,6 @@
           "leaf_type": "broadleaved",
           "name": "Yakas",
           "natural": "tree",
-          "ref:inaturalist.org": "3454732;258225278",
           "species": "Agathis australis",
           "tourism": "attraction"
         }
@@ -8385,15 +8384,8 @@
         "obs_ids": "259193316",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=259193316",
         "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
           "name": "Columbia Tree",
-          "natural": "tree",
-          "ref:inaturalist.org": "259193316",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
+          "natural": "tree"
         }
       }
     },
@@ -8419,7 +8411,6 @@
           "leaf_type": "broadleaved",
           "name": "Centurion",
           "natural": "tree",
-          "ref:inaturalist.org": "192037407;192037414;257169431",
           "species": "Eucalyptus regnans",
           "wikidata": "Q3664932",
           "wikimedia_commons": "File:Centurion tree 99.82.jpg",
@@ -8449,7 +8440,6 @@
           "historic": "tree",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "257639746",
           "species": "Phytolacca dioica",
           "species:es": "Ombú"
         }
@@ -8565,34 +8555,6 @@
           "natural": "tree",
           "ref:inaturalist.org": "214833171;256802479",
           "source": "iNaturalist"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.3735877,
-          13.8807359
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13928322992,
-        "osm_url": "https://www.openstreetmap.org/node/13928322992",
-        "obs_ids": "257119472",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=257119472",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "257119472",
-          "species": "Ceiba pentandra",
-          "species:fr": "Kapokier",
-          "species:wikidata": "Q138617",
-          "species:wikipedia": "fr:Ceiba pentandra"
         }
       }
     },
