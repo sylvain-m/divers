@@ -3594,6 +3594,7 @@
           "leaf_type": "broadleaved",
           "name": "Wonderboom",
           "natural": "tree",
+          "ref:inaturalist.org": "9155467;9460142;11317565;84847453;112498954;112676835;114142287;146206841;192192343;192192420;304645902;313801786;331102431;335184588;335229515;342914901",
           "species": "Ficus salicifolia",
           "species:wikidata": "Q55865401",
           "species:wikipedia": "fr:Ficus salicifolia",
@@ -3619,11 +3620,16 @@
         "obs_ids": "323419834;340247732",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=323419834,340247732",
         "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
           "name": "Thousand Year Old Tree",
           "name:en": "Thousand Year Old Tree",
-          "name:vi": "Cây Cho Ngàn Nam",
+          "name:vi": "Cây Chò Ngàn Năm",
           "natural": "tree",
-          "source": "survey"
+          "source": "survey",
+          "species": "Terminalia myriocarpa",
+          "species:wikidata": "Q3518446"
         }
       }
     },
@@ -3666,7 +3672,13 @@
         "obs_ids": "183826656;343040574",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=183826656,343040574",
         "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
           "natural": "tree",
+          "ref:inaturalist.org": "343040574",
+          "species": "Ceiba pentandra",
+          "species:wikidata": "Q138617",
           "tourism": "attraction"
         }
       }
@@ -3693,7 +3705,10 @@
           "leaf_type": "needleleaved",
           "name": "Langernyw Yew",
           "natural": "tree",
+          "ref:inaturalist.org": "74695869",
           "source": "en:Wikipedia",
+          "species": "Taxus baccata",
+          "species:wikidata": "Q179729",
           "website": "https://en.wikipedia.org/wiki/Llangernyw_Yew",
           "wikidata": "Q4463960"
         }
@@ -3718,6 +3733,7 @@
           "genus": "Sequoiadendron",
           "name": "Sequoia Géant",
           "natural": "tree",
+          "ref:inaturalist.org": "15817034;55839079;67316675;138422535;340348440",
           "species": "Sequoiadendron giganteum",
           "species:fr": "Séquoia géant"
         }
@@ -3828,7 +3844,7 @@
           "leaf_type": "broadleaved",
           "name": "Drago de La Culata",
           "natural": "tree",
-          "ref:inaturalist.org": "340839714",
+          "ref:inaturalist.org": "134439562;152350228;268812352;321600103;336100656;340839714",
           "species": "Dracaena draco",
           "species:wikidata": "Q157952"
         }
