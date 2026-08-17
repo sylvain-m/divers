@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "name": "sequences_uav_drone",
   "metadata": {
-    "export_date": "2026-08-16T03:39:50.449973"
+    "export_date": "2026-08-17T03:41:44.002146"
   },
   "features": [
     {
@@ -202,6 +202,106 @@
         "coordinates": [
           5.772481361,
           46.21119875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "acfaecd8-5426-4603-90f4-eb47670e847e",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/perspective-imagery/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/tiled-assets/v1.0.0/schema.json"
+        ],
+        "bbox.xmin": 6.607563917,
+        "bbox.ymin": 47.400805389,
+        "bbox.xmax": 6.607563917,
+        "bbox.ymax": 47.400805389,
+        "collection": "3cff5c10-d9a5-4494-abbc-4b6cf213f685",
+        "created": "2026-08-03T14:34:01.431Z",
+        "updated": "2026-08-03T14:34:01.431Z",
+        "datetime": "2026-08-03T07:22:19",
+        "license": "etalab-2.0",
+        "original_file:size": 17236694,
+        "original_file:name": "pano_blussans_082026.jpg",
+        "panoramax:horizontal_pixel_density": 25,
+        "quality:horizontal_accuracy": 4.0,
+        "view:azimuth": 0,
+        "pers:interior_orientation.camera_manufacturer": "DJI",
+        "pers:interior_orientation.camera_model": "FC3682",
+        "pers:interior_orientation.field_of_view": 360,
+        "pers:interior_orientation.focal_length": null,
+        "pers:interior_orientation.sensor_array_dimensions": [
+          9044,
+          4522
+        ],
+        "semantics": [
+          {
+            "key": "transport",
+            "value": "drone",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          }
+        ],
+        "assets": [
+          {
+            "href": "https://panoramax.ign.fr/api/pictures/acfaecd8-5426-4603-90f4-eb47670e847e/hd.jpg",
+            "title": "HD picture",
+            "description": "Highest resolution available of this picture",
+            "type": "image/jpeg",
+            "roles": [
+              "data"
+            ]
+          },
+          {
+            "href": "https://panoramax.ign.fr/api/pictures/acfaecd8-5426-4603-90f4-eb47670e847e/sd.jpg",
+            "title": "SD picture",
+            "description": "Picture in standard definition (fixed width of 2048px)",
+            "type": "image/jpeg",
+            "roles": [
+              "visual"
+            ]
+          },
+          {
+            "href": "https://panoramax.ign.fr/api/pictures/acfaecd8-5426-4603-90f4-eb47670e847e/thumb.jpg",
+            "title": "Thumbnail",
+            "description": "Picture in low definition (fixed width of 500px)",
+            "type": "image/jpeg",
+            "roles": [
+              "thumbnail"
+            ]
+          }
+        ],
+        "providers": [
+          {
+            "id": "24226c11-ea23-44db-a2b7-14026a26b2cd",
+            "name": "onf_es",
+            "roles": [
+              "producer"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "https://alliance.numerique.gouv.fr/licence-ouverte-open-licence/",
+            "rel": "license",
+            "title": "License for this object (etalab-2.0)",
+            "type": null
+          }
+        ],
+        "instance.name": "ign",
+        "instance.url": "https://panoramax.ign.fr",
+        "provider_name": "onf_es"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.607563917,
+          47.400805389
         ]
       }
     },
