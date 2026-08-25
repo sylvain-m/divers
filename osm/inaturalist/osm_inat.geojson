@@ -10102,71 +10102,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.1139006,
-          -20.3998456
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11036039567,
-        "osm_url": "https://www.openstreetmap.org/node/11036039567",
-        "obs_ids": "159840801;198881163",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=159840801,198881163",
-        "tags": {
-          "age": "mature",
-          "circumference": "28.11",
-          "denotation": "natural_monument",
-          "diameter": "8947",
-          "diameter_crown": "26.5",
-          "ele": "462",
-          "genus": "Adansonia",
-          "height": "23.2",
-          "heritage": "yes",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "monument": "tree",
-          "name": "Mokore Giant Baobab",
-          "natural": "tree",
-          "object:city": "Mokore",
-          "species": "Adansonia digitata",
-          "species:en": "African Baobab",
-          "species:es": "Baobab Africano",
-          "start_date": "~925",
-          "website": "http://chem.ubbcluj.ro/~studiachemia/issues/chemia2019_2T2/35_Patrut_etal_411_419.pdf"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -156.5347281,
-          20.8834377
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13906732871,
-        "osm_url": "https://www.openstreetmap.org/node/13906732871",
-        "obs_ids": "161395279;195996920;199324321",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=161395279,195996920,199324321",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "199324321",
-          "species": "Ficus benghalensis",
-          "species:wikidata": "Q1405636"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.2691016,
           48.7714539
         ]
@@ -10212,6 +10147,45 @@
           "species:wikidata": "Q161070",
           "species:wikipedia": "fr:Araucaria heterophylla",
           "url": "https://register.notabletrees.org.nz/tree/view/734"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.1139006,
+          -20.3998456
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11036039567,
+        "osm_url": "https://www.openstreetmap.org/node/11036039567",
+        "obs_ids": "159840801;198881163",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=159840801,198881163",
+        "tags": {
+          "age": "mature",
+          "circumference": "28.11",
+          "denotation": "natural_monument",
+          "diameter": "8947",
+          "diameter_crown": "26.5",
+          "ele": "462",
+          "genus": "Adansonia",
+          "height": "23.2",
+          "heritage": "yes",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "monument": "tree",
+          "name": "Mokore Giant Baobab",
+          "natural": "tree",
+          "object:city": "Mokore",
+          "species": "Adansonia digitata",
+          "species:en": "African Baobab",
+          "species:es": "Baobab Africano",
+          "start_date": "~925",
+          "website": "http://chem.ubbcluj.ro/~studiachemia/issues/chemia2019_2T2/35_Patrut_etal_411_419.pdf"
         }
       }
     },
@@ -10281,6 +10255,32 @@
           "species:es": "Palma Chilena",
           "species:mp": "Lilla",
           "species:wikidata": "Q290967"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.5347281,
+          20.8834377
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13906732871,
+        "osm_url": "https://www.openstreetmap.org/node/13906732871",
+        "obs_ids": "161395279;195996920;199324321",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=161395279,195996920,199324321",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "199324321",
+          "species": "Ficus benghalensis",
+          "species:wikidata": "Q1405636"
         }
       }
     },
