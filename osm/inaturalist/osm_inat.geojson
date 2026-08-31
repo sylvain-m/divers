@@ -5758,6 +5758,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -4.8015088,
+          43.4130426
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12153806145,
+        "osm_url": "https://www.openstreetmap.org/node/12153806145",
+        "obs_ids": "186575777;320405764",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=186575777,320405764",
+        "tags": {
+          "alt_name": "El Aguacatón de Porrúa",
+          "denotation": "natural_monument",
+          "leaf_cycle": "semi_evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Aguacate",
+          "natural": "tree",
+          "ref:inaturalist.org": "186575777;320405764",
+          "species": "Persea americana",
+          "species:wikidata": "Q37153"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1091252,
+          48.394884
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13226603132,
+        "osm_url": "https://www.openstreetmap.org/node/13226603132",
+        "obs_ids": "320227405",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=320227405",
+        "tags": {
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "320227405",
+          "species": "Chamaecyparis lawsoniana",
+          "species:fr": "Cyprès de Lawson",
+          "species:wikidata": "Q161360"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.3191052,
           40.9606338
         ]
@@ -5814,34 +5868,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -4.8015088,
-          43.4130426
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12153806145,
-        "osm_url": "https://www.openstreetmap.org/node/12153806145",
-        "obs_ids": "186575777;320405764",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=186575777,320405764",
-        "tags": {
-          "alt_name": "El Aguacatón de Porrúa",
-          "denotation": "natural_monument",
-          "leaf_cycle": "semi_evergreen",
-          "leaf_type": "broadleaved",
-          "name": "Aguacate",
-          "natural": "tree",
-          "ref:inaturalist.org": "186575777;320405764",
-          "species": "Persea americana",
-          "species:wikidata": "Q37153"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           0.5502975,
           48.4030011
         ]
@@ -5890,32 +5916,6 @@
           "species:fr": "Cyprès chauve",
           "species:wikidata": "Q148950",
           "species:wikipedia": "fr:Taxodium distichum"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.1091252,
-          48.394884
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13226603132,
-        "osm_url": "https://www.openstreetmap.org/node/13226603132",
-        "obs_ids": "320227405",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=320227405",
-        "tags": {
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "320227405",
-          "species": "Chamaecyparis lawsoniana",
-          "species:fr": "Cyprès de Lawson",
-          "species:wikidata": "Q161360"
         }
       }
     },
@@ -6843,52 +6843,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.8276715,
-          50.5841129
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 1059057756,
-        "osm_url": "https://www.openstreetmap.org/node/1059057756",
-        "obs_ids": "299148927",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=299148927",
-        "tags": {
-          "addr:city": "Liernu",
-          "addr:postcode": "5310",
-          "addr:street": "Place de Liernu",
-          "alt_name": "Chêne pédonculé",
-          "circumference": "10.31",
-          "clt:criteria": "M",
-          "clt:inscription_date": "1939-04-04",
-          "denotation": "natural_monument",
-          "description": "Plus gros chêne de Belgique et sans doute, le plus vieux. Il serait âgé de plus de 1000 ans.",
-          "genus": "Quercus",
-          "height": "19",
-          "heritage": "4",
-          "heritage:operator": "clt",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Gros Chêne de Liernu",
-          "nat_name": "Le plus vieux chêne de Belgique",
-          "natural": "tree",
-          "pex:criteria": "M",
-          "pex:inscription_date": "2016-10-06",
-          "ref:clt": "92035-CLT-0003-01",
-          "ref:pex": "92035-PEX-0001-03",
-          "species": "Quercus robur",
-          "taxon": "Quercus robur",
-          "taxon:fr": "Chêne pédonculé",
-          "taxon:nl": "Zomereik",
-          "wikimedia_commons": "File:Gros Chêne de Liernu Eghezee.jpg"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -2.2968438,
           50.7494204
         ]
@@ -6911,60 +6865,6 @@
           "species:wikidata": "Q156944",
           "wikidata": "Q64220923",
           "wikimedia_commons": "File:The Martyrs tree - geograph.org.uk - 1277399.jpg"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -123.9989754,
-          44.9753462
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 5312162827,
-        "osm_url": "https://www.openstreetmap.org/node/5312162827",
-        "obs_ids": "58911430;240604513;299091869",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=58911430,240604513,299091869",
-        "tags": {
-          "circumference": "9.9",
-          "denotation": "natural_monument",
-          "genus": "Picea",
-          "height": "64.6",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name:botanical": "Sitka Spruce",
-          "natural": "tree",
-          "ref:inaturalist.org": "58911430;240604513;299091869",
-          "species": "Picea sitchensis"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.2719151,
-          41.8266894
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 5832278978,
-        "osm_url": "https://www.openstreetmap.org/node/5832278978",
-        "obs_ids": "300471848",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=300471848",
-        "tags": {
-          "denotation": "natural_monument",
-          "diameter": "10 m",
-          "leaf_cycle": "semi_deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "300471848"
         }
       }
     },
@@ -7073,6 +6973,106 @@
           "start_date": "~0700",
           "taxon:en": "Balete",
           "tourism": "yes"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8276715,
+          50.5841129
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 1059057756,
+        "osm_url": "https://www.openstreetmap.org/node/1059057756",
+        "obs_ids": "299148927",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=299148927",
+        "tags": {
+          "addr:city": "Liernu",
+          "addr:postcode": "5310",
+          "addr:street": "Place de Liernu",
+          "alt_name": "Chêne pédonculé",
+          "circumference": "10.31",
+          "clt:criteria": "M",
+          "clt:inscription_date": "1939-04-04",
+          "denotation": "natural_monument",
+          "description": "Plus gros chêne de Belgique et sans doute, le plus vieux. Il serait âgé de plus de 1000 ans.",
+          "genus": "Quercus",
+          "height": "19",
+          "heritage": "4",
+          "heritage:operator": "clt",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Gros Chêne de Liernu",
+          "nat_name": "Le plus vieux chêne de Belgique",
+          "natural": "tree",
+          "pex:criteria": "M",
+          "pex:inscription_date": "2016-10-06",
+          "ref:clt": "92035-CLT-0003-01",
+          "ref:pex": "92035-PEX-0001-03",
+          "species": "Quercus robur",
+          "taxon": "Quercus robur",
+          "taxon:fr": "Chêne pédonculé",
+          "taxon:nl": "Zomereik",
+          "wikimedia_commons": "File:Gros Chêne de Liernu Eghezee.jpg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.9989754,
+          44.9753462
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 5312162827,
+        "osm_url": "https://www.openstreetmap.org/node/5312162827",
+        "obs_ids": "58911430;240604513;299091869",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=58911430,240604513,299091869",
+        "tags": {
+          "circumference": "9.9",
+          "denotation": "natural_monument",
+          "genus": "Picea",
+          "height": "64.6",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name:botanical": "Sitka Spruce",
+          "natural": "tree",
+          "ref:inaturalist.org": "58911430;240604513;299091869",
+          "species": "Picea sitchensis"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2719151,
+          41.8266894
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 5832278978,
+        "osm_url": "https://www.openstreetmap.org/node/5832278978",
+        "obs_ids": "300471848",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=300471848",
+        "tags": {
+          "denotation": "natural_monument",
+          "diameter": "10 m",
+          "leaf_cycle": "semi_deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "300471848"
         }
       }
     },
