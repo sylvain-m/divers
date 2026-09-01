@@ -4775,77 +4775,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          50.5829734,
-          25.9942359
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 324465586,
-        "osm_url": "https://www.openstreetmap.org/node/324465586",
-        "obs_ids": "12985481;78965750;120389502;120808844;163281676;189881635;325483462;326914538",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=12985481,78965750,120389502,120808844,163281676,189881635,325483462,326914538",
-        "tags": {
-          "age": "mature",
-          "denotation": "natural_monument",
-          "diameter_crown": "26",
-          "genus": "Prosopis",
-          "height": "9.8",
-          "image": "https://photos.app.goo.gl/UmsV9phxYTmpRazJ9",
-          "leaf_type": "broadleaved",
-          "monument": "tree",
-          "name": "شجرة الحياة",
-          "name:ar": "شجرة الحياة",
-          "name:de": "Schadscharat al-Haya",
-          "name:en": "Tree of Life",
-          "name:es": "Árbol de la Vida",
-          "name:pl": "Drzewo życia",
-          "name:ru": "Древо жизни",
-          "natural": "tree",
-          "species": "Prosopis cineraria",
-          "species:ar": "غاف رمادي",
-          "start_date": "1582",
-          "tourism": "attraction",
-          "url": "https://youtu.be/fU9TXRNzOZM?si=0cP0L3ejzWOSKcyU",
-          "wheelchair": "no",
-          "wikidata": "Q1542275",
-          "wikimedia_commons": "File:Tree_of_Life_Bahrain.jpg",
-          "wikipedia": "ar:شجرة الحياة (البحرين)"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -5.033815,
-          36.6666871
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2818215555,
-        "osm_url": "https://www.openstreetmap.org/node/2818215555",
-        "obs_ids": "254649454;326991340",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=254649454,326991340",
-        "tags": {
-          "denotation": "natural_monument",
-          "height": "26",
-          "name": "Pinsapo de las Escaleretas",
-          "natural": "tree",
-          "ref:inaturalist.org": "254649454;326991340",
-          "species": "Abies pinsapo",
-          "species:es": "Pinsapo",
-          "wikidata": "Q6076314"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           121.204443,
           23.0973527
         ]
@@ -4933,31 +4862,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.818423,
-          38.0701934
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 7451183679,
-        "osm_url": "https://www.openstreetmap.org/node/7451183679",
-        "obs_ids": "7635948;16686543;16686578;186182338;240048273;309355350;316024401;322520907;327647714",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=7635948,16686543,16686578,186182338,240048273,309355350,316024401,322520907,327647714",
-        "tags": {
-          "denotation": "landmark",
-          "genus": "Eucalyptus",
-          "genus:wikidata": "Q45669",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "309355350"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -122.7402933,
           47.5857893
         ]
@@ -4978,6 +4882,128 @@
           "species": "Pseudotsuga menziesii",
           "species:wikidata": "Q156687",
           "species:wikipedia": "en:Pseudotsuga menziesii"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0744437,
+          48.4239405
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12255097324,
+        "osm_url": "https://www.openstreetmap.org/node/12255097324",
+        "obs_ids": "247614242;329589051",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=247614242,329589051",
+        "tags": {
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "247614242;329589051",
+          "species": "Platanus × hispanica",
+          "species:wikidata": "Q161374",
+          "species:wikipedia": "fr:Platane commun"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.5829734,
+          25.9942359
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 324465586,
+        "osm_url": "https://www.openstreetmap.org/node/324465586",
+        "obs_ids": "12985481;78965750;120389502;120808844;163281676;189881635;325483462;326914538",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=12985481,78965750,120389502,120808844,163281676,189881635,325483462,326914538",
+        "tags": {
+          "age": "mature",
+          "denotation": "natural_monument",
+          "diameter_crown": "26",
+          "genus": "Prosopis",
+          "height": "9.8",
+          "image": "https://photos.app.goo.gl/UmsV9phxYTmpRazJ9",
+          "leaf_type": "broadleaved",
+          "monument": "tree",
+          "name": "شجرة الحياة",
+          "name:ar": "شجرة الحياة",
+          "name:de": "Schadscharat al-Haya",
+          "name:en": "Tree of Life",
+          "name:es": "Árbol de la Vida",
+          "name:pl": "Drzewo życia",
+          "name:ru": "Древо жизни",
+          "natural": "tree",
+          "species": "Prosopis cineraria",
+          "species:ar": "غاف رمادي",
+          "start_date": "1582",
+          "tourism": "attraction",
+          "url": "https://youtu.be/fU9TXRNzOZM?si=0cP0L3ejzWOSKcyU",
+          "wheelchair": "no",
+          "wikidata": "Q1542275",
+          "wikimedia_commons": "File:Tree_of_Life_Bahrain.jpg",
+          "wikipedia": "ar:شجرة الحياة (البحرين)"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.033815,
+          36.6666871
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2818215555,
+        "osm_url": "https://www.openstreetmap.org/node/2818215555",
+        "obs_ids": "254649454;326991340",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=254649454,326991340",
+        "tags": {
+          "denotation": "natural_monument",
+          "height": "26",
+          "name": "Pinsapo de las Escaleretas",
+          "natural": "tree",
+          "ref:inaturalist.org": "254649454;326991340",
+          "species": "Abies pinsapo",
+          "species:es": "Pinsapo",
+          "wikidata": "Q6076314"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.818423,
+          38.0701934
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 7451183679,
+        "osm_url": "https://www.openstreetmap.org/node/7451183679",
+        "obs_ids": "7635948;16686543;16686578;186182338;240048273;309355350;316024401;322520907;327647714",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=7635948,16686543,16686578,186182338,240048273,309355350,316024401,322520907,327647714",
+        "tags": {
+          "denotation": "landmark",
+          "genus": "Eucalyptus",
+          "genus:wikidata": "Q45669",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "309355350"
         }
       }
     },
@@ -5011,32 +5037,6 @@
           "species:wikipedia": "fr:Cryptomeria japonica",
           "start_date": "~1000",
           "website": "http://www.tree-flower.jp/29/kasuga_ohsugi_477/syatou_ohsugi.html"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.0744437,
-          48.4239405
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12255097324,
-        "osm_url": "https://www.openstreetmap.org/node/12255097324",
-        "obs_ids": "247614242;329589051",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=247614242,329589051",
-        "tags": {
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "247614242;329589051",
-          "species": "Platanus × hispanica",
-          "species:wikidata": "Q161374",
-          "species:wikipedia": "fr:Platane commun"
         }
       }
     },
@@ -5758,60 +5758,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -4.8015088,
-          43.4130426
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12153806145,
-        "osm_url": "https://www.openstreetmap.org/node/12153806145",
-        "obs_ids": "186575777;320405764",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=186575777,320405764",
-        "tags": {
-          "alt_name": "El Aguacatón de Porrúa",
-          "denotation": "natural_monument",
-          "leaf_cycle": "semi_evergreen",
-          "leaf_type": "broadleaved",
-          "name": "Aguacate",
-          "natural": "tree",
-          "ref:inaturalist.org": "186575777;320405764",
-          "species": "Persea americana",
-          "species:wikidata": "Q37153"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.1091252,
-          48.394884
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13226603132,
-        "osm_url": "https://www.openstreetmap.org/node/13226603132",
-        "obs_ids": "320227405",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=320227405",
-        "tags": {
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "320227405",
-          "species": "Chamaecyparis lawsoniana",
-          "species:fr": "Cyprès de Lawson",
-          "species:wikidata": "Q161360"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           0.3191052,
           40.9606338
         ]
@@ -5868,6 +5814,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -4.8015088,
+          43.4130426
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12153806145,
+        "osm_url": "https://www.openstreetmap.org/node/12153806145",
+        "obs_ids": "186575777;320405764",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=186575777,320405764",
+        "tags": {
+          "alt_name": "El Aguacatón de Porrúa",
+          "denotation": "natural_monument",
+          "leaf_cycle": "semi_evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Aguacate",
+          "natural": "tree",
+          "ref:inaturalist.org": "186575777;320405764",
+          "species": "Persea americana",
+          "species:wikidata": "Q37153"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.5502975,
           48.4030011
         ]
@@ -5916,6 +5890,32 @@
           "species:fr": "Cyprès chauve",
           "species:wikidata": "Q148950",
           "species:wikipedia": "fr:Taxodium distichum"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1091252,
+          48.394884
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13226603132,
+        "osm_url": "https://www.openstreetmap.org/node/13226603132",
+        "obs_ids": "320227405",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=320227405",
+        "tags": {
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "320227405",
+          "species": "Chamaecyparis lawsoniana",
+          "species:fr": "Cyprès de Lawson",
+          "species:wikidata": "Q161360"
         }
       }
     },
