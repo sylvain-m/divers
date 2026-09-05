@@ -9734,14 +9734,10 @@
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=83781826,212574705,220484833",
         "tags": {
           "description": "Arbres d'interès local de Barcelona. C/Aragó amb C/Enamorats",
-          "leaf_type": "broadleaved",
-          "name": "Eritrina del carrer Enamorats",
           "natural": "tree",
           "protected": "yes",
-          "ref:inaturalist.org": "83781826;212574705;220484833",
           "species": "Erythrina crista-galli",
           "species:ca": "Eritrina cresta de gall",
-          "species:wikidata": "Q162849",
           "website": "https://www.barcelona.cat/ca/que-pots-fer-a-bcn/parcs-i-jardins/arbres-interes-local/arbre-d-interes-local-eritrina-cresta-de-gall-carago-amb-cenamorats_99400455039.html"
         }
       }
@@ -9766,7 +9762,6 @@
           "leaf_type": "needleleaved",
           "loc_name": "Tejo",
           "natural": "tree",
-          "ref:inaturalist.org": "204007931",
           "species": "Taxus baccata",
           "species:de": "Eibe",
           "species:wikidata": "Q179729"
@@ -9948,62 +9943,6 @@
           "species": "Arcoa gonavensis",
           "species:wikidata": "Q15501908",
           "species:wikipedia": "en:Arcoa gonavensis"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          151.3843699,
-          -33.5213557
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13947250503,
-        "osm_url": "https://www.openstreetmap.org/node/13947250503",
-        "obs_ids": "125741865;215160154",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=125741865,215160154",
-        "tags": {
-          "denotation": "landmark",
-          "fixme": "exact position ?",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "348802161",
-          "species": "Angophora costata",
-          "species:wikidata": "Q4564056"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.8603825,
-          49.1662615
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13951530015,
-        "osm_url": "https://www.openstreetmap.org/node/13951530015",
-        "obs_ids": "207025146",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=207025146",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "Chêne millénaire, d'après l'écriteau de l'entrée de cette partie des jardins.",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "207025146",
-          "source": "iNaturalist : jacqu0",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
         }
       }
     },
@@ -10573,34 +10512,6 @@
           "species:fr": "Kapokier",
           "species:wikidata": "Q138617",
           "species:wikipedia": "fr:Ceiba pentandra"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -2.0529879,
-          48.6233248
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 14022590815,
-        "osm_url": "https://www.openstreetmap.org/node/14022590815",
-        "obs_ids": "188795964",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=188795964",
-        "tags": {
-          "denotation": "park",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "188795964",
-          "species": "Taxodium distichum",
-          "species:fr": "Cyprès Chauve",
-          "species:wikidata": "Q148950",
-          "species:wikipedia": "fr:Taxodium distichum"
         }
       }
     },
