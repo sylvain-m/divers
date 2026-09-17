@@ -3653,16 +3653,13 @@
         "obs_ids": "15665182;195948089;219554454;253169326;344743806",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=15665182,195948089,219554454,253169326,344743806",
         "tags": {
-          "alt_name": "Ohrid Plane",
           "denotation": "natural_monument",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "name": "Стар чинар",
           "name:en": "Old plane tree",
           "name:mk": "Стар чинар",
-          "natural": "tree",
-          "species": "Platanus orientalis",
-          "species:wikidata": "Q161105"
+          "natural": "tree"
         }
       }
     },
@@ -3682,13 +3679,7 @@
         "obs_ids": "183826656;343040574",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=183826656,343040574",
         "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "343040574",
-          "species": "Ceiba pentandra",
-          "species:wikidata": "Q138617",
           "tourism": "attraction"
         }
       }
@@ -3715,10 +3706,7 @@
           "leaf_type": "needleleaved",
           "name": "Langernyw Yew",
           "natural": "tree",
-          "ref:inaturalist.org": "74695869",
           "source": "en:Wikipedia",
-          "species": "Taxus baccata",
-          "species:wikidata": "Q179729",
           "website": "https://en.wikipedia.org/wiki/Llangernyw_Yew",
           "wikidata": "Q4463960"
         }
@@ -3746,7 +3734,6 @@
           "leaf_type": "broadleaved",
           "name": "McKinney Kauri",
           "natural": "tree",
-          "ref:inaturalist.org": "57560;2353768;2382178;20326700;74482320;104276521;157005768;189307213;240076847;340658785;343049096;344323488",
           "species": "Agathis australis",
           "wikidata": "Q124327896"
         }
@@ -3823,8 +3810,7 @@
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=62597018,344750092",
         "tags": {
           "name": "A. S. nº33 Castaño de la Fuente del Rey",
-          "natural": "tree",
-          "ref:inaturalist.org": "62597018;344750092"
+          "natural": "tree"
         }
       }
     },
@@ -3844,15 +3830,11 @@
         "obs_ids": "6316871;182286920;218416187;318614650;344164808",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=6316871,182286920,218416187,318614650,344164808",
         "tags": {
-          "denotation": "natural_monument",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "loc_name": "Plàtan de la Font de la Pineda",
           "natural": "tree",
-          "protected": "yes",
-          "ref:inaturalist.org": "6316871;182286920;218416187;318614650;344164808",
-          "species": "Platanus × hispanica",
-          "species:wikidata": "Q161374"
+          "protected": "yes"
         }
       }
     },
@@ -4163,20 +4145,11 @@
         "obs_ids": "138004659;336467555",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=138004659,336467555",
         "tags": {
-          "alt_name": "Fallen Tunnel Tree",
           "ele": "2000",
           "gnis:feature_id": "268481",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Wawona Tree",
-          "natural": "tree_stump",
-          "ref:inaturalist.org": "336467555",
-          "was:denotation": "natural_monument",
-          "was:natural": "tree",
-          "wikidata": "Q3106707",
-          "wikimedia_commons": "Category:Wawona_Tree",
-          "wikipedia": "en:Wawona Tree",
-          "wikipedia:fr": "Wawona Tree"
+          "name": "Fallen Tunnel Tree",
+          "natural": "tree",
+          "wikidata": "Q3106707"
         }
       }
     },
@@ -4198,7 +4171,7 @@
         "tags": {
           "age": "mature",
           "circumference": "21.23",
-          "denotation": "natural_monument",
+          "denotation": "avenue",
           "diameter": "6757.7",
           "diameter_crown": "25.5",
           "ele": "8",
@@ -4212,7 +4185,6 @@
           "natural": "tree",
           "object:city": "Mahajanga",
           "object:street": "Avenue de France",
-          "ref:inaturalist.org": "215784139",
           "species": "Adansonia digitata",
           "species:wikidata": "Q158742",
           "start_date": "~1723",
@@ -4285,7 +4257,6 @@
           "monument": "tree",
           "name": "Ahuehuete del Parterre",
           "natural": "tree",
-          "ref:inaturalist.org": "20875953;25819522;36448607;65602704;68648441;81683694;83612602;95284916;101093068;101093080;145673511;162779139;191883323;193883752;195556541;243993202;251945330;257586978;260036769;285231935;293680877;309203686;332572628;333631210;337559104",
           "source": "ground truth 21 December 2016 (site visit)",
           "species": "Taxodium mucronatum",
           "species:es": "Ahuehuete",
@@ -4318,7 +4289,6 @@
           "leaf_type": "broadleaved",
           "name": "Drago de Gáldar",
           "natural": "tree",
-          "ref:inaturalist.org": "299880763;338455846",
           "species:wikidata": "Q157952",
           "species:wikipedia": "es:Dracaena draco",
           "start_date": "1718"
@@ -4437,33 +4407,6 @@
           "species:fr": "Platane commun",
           "species:wikidata": "Q161374",
           "species:wikipedia": "fr:Platane commun"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.9072367,
-          33.3323506
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13930794022,
-        "osm_url": "https://www.openstreetmap.org/node/13930794022",
-        "obs_ids": "13319321;37251034;51310509;65653205;65655589;82254126;96282194;103556087;162787634;252075306;255459207;284239815;292801544;293968972;324742005;329615263;337037874;337037966",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=13319321,37251034,51310509,65653205,65655589,82254126,96282194,103556087,162787634,252075306,255459207,284239815,292801544,293968972,324742005,329615263,337037874,337037966",
-        "tags": {
-          "age": "400",
-          "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "13319321;37251034;51310509;65653205;65655589;82254126;96282194;103556087;162787634;252075306;255459207;284239815;292801544;293968972;324742005;329615263;337037874;337037966",
-          "species": "Calocedrus decurrens",
-          "species:wikidata": "Q1399164"
         }
       }
     },
