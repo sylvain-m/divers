@@ -84,6 +84,45 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -2.3738978,
+          55.0035721
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2780045653,
+        "osm_url": "https://www.openstreetmap.org/node/2780045653",
+        "obs_ids": "22837202;29230875;60984271;92075228;95129571;139280487;145264645;158232940;169666604;177050858;188684368;235277782;259953710;267487806;353419607;397400722",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=22837202,29230875,60984271,92075228,95129571,139280487,145264645,158232940,169666604,177050858,188684368,235277782,259953710,267487806,353419607,397400722",
+        "tags": {
+          "alt_name": "Sycamore Gap Stump",
+          "description": "Tourist attraction and famous photographic subject. Believed to have been deliberately felled on the night of the 27th-28th Sep 2023: https://www.itv.com/news/tyne-tees/2023-09-28/world-famous-sycamore-gap-tree-believed-to-have-been-deliberately-felled",
+          "description:de": "Baumstumpf des in der Nacht vom 27.-28. September 2023 illegal gefällten Baumes. Dieser Baum war bekannt aus dem Film Robin Hood – König der Diebe“ mit Kevin Costner.",
+          "destroyed:natural": "tree",
+          "genus": "Acer",
+          "genus:de": "Ahorn",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Robin Hood Tree",
+          "name:de": "Robin-Hood-Baum",
+          "natural": "tree_stump",
+          "ref:inaturalist.org": "145264645;177050858;22837202;29230875;60984271",
+          "source": "Bing",
+          "species": "Acer pseudoplatanus",
+          "species:de": "Berg-Ahorn",
+          "tourism": "attraction",
+          "wikidata": "Q55885851",
+          "wikimedia_commons": "File:FelledSycamoreTree.jpg",
+          "wikimedia_commons:2": "File:Tree_Stump.png",
+          "wikipedia": "en:Sycamore Gap tree"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -155.088769,
           19.7251332
         ]
@@ -211,33 +250,6 @@
         "osm_url": "https://www.openstreetmap.org/node/14041838358",
         "obs_ids": "384291148",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=384291148",
-        "tags": {
-          "denotation": "park",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "species": "Platanus × hispanica",
-          "species:fr": "Platane commun",
-          "species:wikidata": "Q161374",
-          "species:wikipedia": "fr:Platane commun"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.0922653,
-          48.4164167
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 14041839557,
-        "osm_url": "https://www.openstreetmap.org/node/14041839557",
-        "obs_ids": "384290885",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=384290885",
         "tags": {
           "denotation": "park",
           "leaf_cycle": "deciduous",
@@ -497,35 +509,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0775637,
-          48.3675693
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13990708621,
-        "osm_url": "https://www.openstreetmap.org/node/13990708621",
-        "obs_ids": "378080869;378485484;378486362;378487490;378489103",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=378080869,378485484,378486362,378487490,378489103",
-        "tags": {
-          "access": "private",
-          "denotation": "landmark",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "378080869",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.2586133,
           48.8802941
         ]
@@ -610,6 +593,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.0922653,
+          48.4164167
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 14041839557,
+        "osm_url": "https://www.openstreetmap.org/node/14041839557",
+        "obs_ids": "384290885",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=384290885",
+        "tags": {
+          "denotation": "park",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "species": "Platanus × hispanica",
+          "species:fr": "Platane commun",
+          "species:wikidata": "Q161374",
+          "species:wikipedia": "fr:Platane commun"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.0724681,
           53.2046562
         ]
@@ -670,35 +680,6 @@
           "wikidata": "Q30602264",
           "wikimedia_commons": "Category:Wonderboom fig of Pretoria",
           "wikipedia": "en:Wonderboom (tree)"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.6396427,
-          46.6348913
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2431358694,
-        "osm_url": "https://www.openstreetmap.org/node/2431358694",
-        "obs_ids": "373283689",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=373283689",
-        "tags": {
-          "denotation": "natural_monument",
-          "full_name": "Chêne de Montaloyer ou Piperon",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Chêne de Montaloyer",
-          "natural": "tree",
-          "species": "Quercus petraea",
-          "species:fr": "Chêne sessile",
-          "species:wikidata": "Q158608",
-          "species:wikipedia": "fr:Quercus petraea"
         }
       }
     },
@@ -923,6 +904,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.0775637,
+          48.3675693
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13990708621,
+        "osm_url": "https://www.openstreetmap.org/node/13990708621",
+        "obs_ids": "378080869;378485484;378486362;378487490;378489103",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=378080869,378485484,378486362,378487490,378489103",
+        "tags": {
+          "access": "private",
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "378080869",
+          "species": "Quercus robur",
+          "species:fr": "Chêne pédonculé",
+          "species:wikidata": "Q165145",
+          "species:wikipedia": "fr:Chêne pédonculé"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -118.751443,
           36.5816453
         ]
@@ -952,6 +962,35 @@
           "tourism": "attraction",
           "wikidata": "Q152482",
           "wikipedia": "en:General Sherman (tree)"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6396427,
+          46.6348913
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2431358694,
+        "osm_url": "https://www.openstreetmap.org/node/2431358694",
+        "obs_ids": "373283689",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=373283689",
+        "tags": {
+          "denotation": "natural_monument",
+          "full_name": "Chêne de Montaloyer ou Piperon",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Chêne de Montaloyer",
+          "natural": "tree",
+          "species": "Quercus petraea",
+          "species:fr": "Chêne sessile",
+          "species:wikidata": "Q158608",
+          "species:wikipedia": "fr:Quercus petraea"
         }
       }
     },
@@ -1065,38 +1104,6 @@
         "tags": {
           "name": "Chêne têtard de la Chapelle Vicomtesse",
           "natural": "tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.36955,
-          38.11754
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13004387623,
-        "osm_url": "https://www.openstreetmap.org/node/13004387623",
-        "obs_ids": "4383728;13395167;15129520;27015024;33843966;52802634;111516789;112139887;115390127;120659269;163815088;198570996;206493816;216824788;219133981;243604707;247828980;264915880;304277023;306744354;312448139;324221294;329398918;332417135;332417151;339422562;339587707;369350909;369351679;370773689",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=4383728,13395167,15129520,27015024,33843966,52802634,111516789,112139887,115390127,120659269,163815088,198570996,206493816,216824788,219133981,243604707,247828980,264915880,304277023,306744354,312448139,324221294,329398918,332417135,332417151,339422562,339587707,369350909,369351679,370773689",
-        "tags": {
-          "circumference": "3600 cm",
-          "denotation": "natural_monument",
-          "ele": "7",
-          "height": "21 m",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "370773689",
-          "ref:masaf": "003/G273/PA/19",
-          "species": "Ficus macrophylla",
-          "species:it": "Fico magnolioide",
-          "species:wikidata": "Q1439079",
-          "species:wikipedia": "it:Ficus macrophylla"
         }
       }
     },
@@ -1494,24 +1501,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -80.1049272,
-          26.1433626
+          13.36955,
+          38.11754
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 14166559282,
-        "osm_url": "https://www.openstreetmap.org/node/14166559282",
-        "obs_ids": "10048108;19730026;20836152;27043086;34868798;45392291;108135650;139162375;144602731;183923874;187190382;188179698;190706382;192087563;199482871;217036727;252496274;252496420;258257171;262021248;262874226;263406416;271689153;286134788;318688446;319547823;351704384;365827530",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=10048108,19730026,20836152,27043086,34868798,45392291,108135650,139162375,144602731,183923874,187190382,188179698,190706382,192087563,199482871,217036727,252496274,252496420,258257171,262021248,262874226,263406416,271689153,286134788,318688446,319547823,351704384,365827530",
+        "osm_id": 13004387623,
+        "osm_url": "https://www.openstreetmap.org/node/13004387623",
+        "obs_ids": "4383728;13395167;15129520;27015024;33843966;52802634;111516789;112139887;115390127;120659269;163815088;198570996;206493816;216824788;219133981;243604707;247828980;264915880;304277023;306744354;312448139;324221294;329398918;332417135;332417151;339422562;339587707;369350909;369351679;370773689",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=4383728,13395167,15129520,27015024,33843966,52802634,111516789,112139887,115390127,120659269,163815088,198570996,206493816,216824788,219133981,243604707,247828980,264915880,304277023,306744354,312448139,324221294,329398918,332417135,332417151,339422562,339587707,369350909,369351679,370773689",
         "tags": {
+          "circumference": "3600 cm",
           "denotation": "natural_monument",
+          "ele": "7",
+          "height": "21 m",
           "leaf_cycle": "evergreen",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "10048108",
-          "species": "Ficus benghalensis",
-          "species:wikidata": "Q1405636"
+          "ref:inaturalist.org": "370773689",
+          "ref:masaf": "003/G273/PA/19",
+          "species": "Ficus macrophylla",
+          "species:it": "Fico magnolioide",
+          "species:wikidata": "Q1439079",
+          "species:wikipedia": "it:Ficus macrophylla"
         }
       }
     },
@@ -1736,36 +1749,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.5084353,
-          43.776992
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12820904681,
-        "osm_url": "https://www.openstreetmap.org/node/12820904681",
-        "obs_ids": "15098305;56776870;86744253;123667287;132636134;176585091;222829593;223348326;223348380;228289114;236714842;311258677;313529437;317510248;322928331;340756166;343604605;351487184;362323409",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=15098305,56776870,86744253,123667287,132636134,176585091,222829593,223348326,223348380,228289114,236714842,311258677,313529437,317510248,322928331,340756166,343604605,351487184,362323409",
-        "tags": {
-          "denotation": "landmark",
-          "description": "\"Arbre bouteille\"",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "object:city": "Menton",
-          "object:street": "Qual Bonaparte",
-          "ref:inaturalist.org": "15098305;56776870;86744253;123667287;132636134;176585091;222829593;223348326;223348380;228289114;236714842;311258677;313529437;317510248;322928331;340756166;343604605;351487184;362323409",
-          "species": "Ceiba insignis",
-          "species:wikidata": "Q11225022",
-          "species:wikipedia": "en:Ceiba insignis"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.1121611,
           48.452139
         ]
@@ -1810,6 +1793,32 @@
           "leaf_type": "needleleaved",
           "natural": "tree",
           "ref:inaturalist.org": "363604443"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.1049272,
+          26.1433626
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 14166559282,
+        "osm_url": "https://www.openstreetmap.org/node/14166559282",
+        "obs_ids": "10048108;19730026;20836152;27043086;34868798;45392291;108135650;139162375;144602731;183923874;187190382;188179698;190706382;192087563;199482871;217036727;252496274;252496420;258257171;262021248;262874226;263406416;271689153;286134788;318688446;319547823;351704384;365827530",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=10048108,19730026,20836152,27043086,34868798,45392291,108135650,139162375,144602731,183923874,187190382,188179698,190706382,192087563,199482871,217036727,252496274,252496420,258257171,262021248,262874226,263406416,271689153,286134788,318688446,319547823,351704384,365827530",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "10048108",
+          "species": "Ficus benghalensis",
+          "species:wikidata": "Q1405636"
         }
       }
     },
@@ -1884,31 +1893,6 @@
           "tourism": "attraction",
           "wikidata": "Q1789423",
           "wikipedia": "en:Tāne Mahuta"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.1064802,
-          51.7381347
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 1221857755,
-        "osm_url": "https://www.openstreetmap.org/node/1221857755",
-        "obs_ids": "216981277;360526681",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=216981277,360526681",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Schäfereiche",
-          "natural": "tree",
-          "ref": "ND 0080QLB"
         }
       }
     },
@@ -2092,6 +2076,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.5084353,
+          43.776992
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12820904681,
+        "osm_url": "https://www.openstreetmap.org/node/12820904681",
+        "obs_ids": "15098305;56776870;86744253;123667287;132636134;176585091;222829593;223348326;223348380;228289114;236714842;311258677;313529437;317510248;322928331;340756166;343604605;351487184;362323409",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=15098305,56776870,86744253,123667287,132636134,176585091,222829593,223348326,223348380,228289114,236714842,311258677,313529437,317510248,322928331,340756166,343604605,351487184,362323409",
+        "tags": {
+          "denotation": "landmark",
+          "description": "\"Arbre bouteille\"",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "object:city": "Menton",
+          "object:street": "Qual Bonaparte",
+          "ref:inaturalist.org": "15098305;56776870;86744253;123667287;132636134;176585091;222829593;223348326;223348380;228289114;236714842;311258677;313529437;317510248;322928331;340756166;343604605;351487184;362323409",
+          "species": "Ceiba insignis",
+          "species:wikidata": "Q11225022",
+          "species:wikipedia": "en:Ceiba insignis"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.9209316,
           37.7877582
         ]
@@ -2179,6 +2193,31 @@
           "tourism": "attraction",
           "wikidata": "Q1540200",
           "wikipedia": "en:Te Matua Ngahere"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.1064802,
+          51.7381347
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 1221857755,
+        "osm_url": "https://www.openstreetmap.org/node/1221857755",
+        "obs_ids": "216981277;360526681",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=216981277,360526681",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Schäfereiche",
+          "natural": "tree",
+          "ref": "ND 0080QLB"
         }
       }
     },
@@ -2286,36 +2325,6 @@
           "species:fr": "Marronnier d'Inde",
           "species:wikidata": "Q26899",
           "species:wikipedia": "fr:Aesculus hippocastanum"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.8578778,
-          -24.3738959
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11768835150,
-        "osm_url": "https://www.openstreetmap.org/node/11768835150",
-        "obs_ids": "33956381;54692329;195898789;356007880",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=33956381,54692329,195898789,356007880",
-        "tags": {
-          "circumference": "47 m",
-          "denotation": "natural_monument",
-          "height": "16 m",
-          "leaf_type": "broadleaved",
-          "name": "Glencoe Baobab",
-          "natural": "tree",
-          "ref:inaturalist.org": "33956381;54692329;195898789;356007880",
-          "species": "Adansonia digitata",
-          "species:wikidata": "Q158742",
-          "wikidata": "Q939238",
-          "wikipedia": "en:Glencoe Baobab"
         }
       }
     },
@@ -2592,40 +2601,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.7256322,
-          -38.2332533
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 8082182776,
-        "osm_url": "https://www.openstreetmap.org/node/8082182776",
-        "obs_ids": "352123254",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=352123254",
-        "tags": {
-          "circumference": "3.65",
-          "denotation": "natural_monument",
-          "description": "El nombre de este árbol es \"The dragon princess\". La circunferencia del árbol medida a un tamaño de 1,30 m es 3,65 m (8 de May de 2016, Giant Trees Foundation).",
-          "ele": "1202",
-          "genus": "Araucaria",
-          "height": "31.81",
-          "image": "https://www.monumentaltrees.com/es/fotos/51097/",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "La Princesa Dragón",
-          "name:en": "The dragon princess",
-          "natural": "tree",
-          "ref:inaturalist.org": "352123254",
-          "species": "Araucaria araucana",
-          "species:mp": "Pehuén"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           77.5828679,
           12.9499723
         ]
@@ -2673,6 +2648,36 @@
           "species": "Adansonia digitata",
           "species:wikidata": "Q158742",
           "species:wikipedia": "fr:Baobab africain"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.8578778,
+          -24.3738959
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11768835150,
+        "osm_url": "https://www.openstreetmap.org/node/11768835150",
+        "obs_ids": "33956381;54692329;195898789;356007880",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=33956381,54692329,195898789,356007880",
+        "tags": {
+          "circumference": "47 m",
+          "denotation": "natural_monument",
+          "height": "16 m",
+          "leaf_type": "broadleaved",
+          "name": "Glencoe Baobab",
+          "natural": "tree",
+          "ref:inaturalist.org": "33956381;54692329;195898789;356007880",
+          "species": "Adansonia digitata",
+          "species:wikidata": "Q158742",
+          "wikidata": "Q939238",
+          "wikipedia": "en:Glencoe Baobab"
         }
       }
     },
@@ -2734,34 +2739,6 @@
           "wheelchair": "yes",
           "wikidata": "Q4931215",
           "wikipedia": "en:Boab Prison Tree, Derby"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -5.98789,
-          37.3840998
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 1721577600,
-        "osm_url": "https://www.openstreetmap.org/node/1721577600",
-        "obs_ids": "16875246;32084171;108423252;146640492;152013119;154730341;232367230;252417314;276800564;292734469;350269809",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=16875246,32084171,108423252,146640492,152013119,154730341,232367230,252417314,276800564,292734469,350269809",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "name": "Ficus de los Jardines de Murillo",
-          "natural": "tree",
-          "ref:inaturalist.org": "16875246;32084171;108423252;146640492;152013119;154730341;232367230;252417314;276800564;292734469;350269809",
-          "species": "Ficus macrophylla",
-          "species:wikidata": "Q1439079",
-          "species:wikipedia": "es:Ficus macrophylla"
         }
       }
     },
@@ -2853,6 +2830,40 @@
           "species:fr": "Olivier d'Europe",
           "species:wikidata": "Q37083",
           "species:wikipedia": "fr:Olea europaea"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.7256322,
+          -38.2332533
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 8082182776,
+        "osm_url": "https://www.openstreetmap.org/node/8082182776",
+        "obs_ids": "352123254",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=352123254",
+        "tags": {
+          "circumference": "3.65",
+          "denotation": "natural_monument",
+          "description": "El nombre de este árbol es \"The dragon princess\". La circunferencia del árbol medida a un tamaño de 1,30 m es 3,65 m (8 de May de 2016, Giant Trees Foundation).",
+          "ele": "1202",
+          "genus": "Araucaria",
+          "height": "31.81",
+          "image": "https://www.monumentaltrees.com/es/fotos/51097/",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "La Princesa Dragón",
+          "name:en": "The dragon princess",
+          "natural": "tree",
+          "ref:inaturalist.org": "352123254",
+          "species": "Araucaria araucana",
+          "species:mp": "Pehuén"
         }
       }
     },
@@ -3022,6 +3033,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -5.98789,
+          37.3840998
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 1721577600,
+        "osm_url": "https://www.openstreetmap.org/node/1721577600",
+        "obs_ids": "16875246;32084171;108423252;146640492;152013119;154730341;232367230;252417314;276800564;292734469;350269809",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=16875246,32084171,108423252,146640492,152013119,154730341,232367230,252417314,276800564,292734469,350269809",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Ficus de los Jardines de Murillo",
+          "natural": "tree",
+          "ref:inaturalist.org": "16875246;32084171;108423252;146640492;152013119;154730341;232367230;252417314;276800564;292734469;350269809",
+          "species": "Ficus macrophylla",
+          "species:wikidata": "Q1439079",
+          "species:wikipedia": "es:Ficus macrophylla"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -71.6717864,
           -38.6431831
         ]
@@ -3088,30 +3127,6 @@
           "wikidata": "Q4951448",
           "wikimedia_commons": "Category:Bowthorpe_Oak",
           "wikipedia": "en:Bowthorpe Oak"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.6554541,
-          48.4826908
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 5471954461,
-        "osm_url": "https://www.openstreetmap.org/node/5471954461",
-        "obs_ids": "347631180",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=347631180",
-        "tags": {
-          "denotation": "park",
-          "genus": "Cephalotaxus",
-          "leaf_cycle": "evergreen",
-          "natural": "tree",
-          "ref:inaturalist.org": "347631180"
         }
       }
     },
@@ -3321,6 +3336,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.6554541,
+          48.4826908
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 5471954461,
+        "osm_url": "https://www.openstreetmap.org/node/5471954461",
+        "obs_ids": "347631180",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=347631180",
+        "tags": {
+          "denotation": "park",
+          "genus": "Cephalotaxus",
+          "leaf_cycle": "evergreen",
+          "natural": "tree",
+          "ref:inaturalist.org": "347631180"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           172.8701053,
           -43.7459624
         ]
@@ -3340,39 +3379,6 @@
           "species:wikidata": "Q164276",
           "species:wikipedia": "en:Podocarpus totara",
           "tourism": "attraction"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -4.1580034,
-          40.584798
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 9220720716,
-        "osm_url": "https://www.openstreetmap.org/node/9220720716",
-        "obs_ids": "56319178;344750110;344853127",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=56319178,344750110,344853127",
-        "tags": {
-          "circumference": "5.4",
-          "denotation": "natural_monument",
-          "description": "Árbol singular de la Comunidad de Madrid",
-          "diameter_crown": "30",
-          "genus": "Cedrus",
-          "height": "27",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Cedro del Líbano de la Casita de Arriba",
-          "natural": "tree",
-          "ref:inaturalist.org": "56319178;344750110;344853127",
-          "species": "Cedrus libani",
-          "start_date": "~1870",
-          "website": "https://arbolessingularesdelacomunidad.jimdofree.com/por-municipios/san-lorenzo-de-el-escorial/casita-de-arriba/"
         }
       }
     },
@@ -3413,32 +3419,6 @@
           "species:wikidata": "Q158742",
           "start_date": "1738",
           "wikimedia_commons": "File:Baobab Tree (46674496915).jpg"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.9111576,
-          34.8267342
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13767284443,
-        "osm_url": "https://www.openstreetmap.org/node/13767284443",
-        "obs_ids": "145041213;308195686;344757666",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=145041213,308195686,344757666",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "species": "Quercus infectoria",
-          "species:wikidata": "Q3565069",
-          "species:wikipedia": "en:Quercus infectoria"
         }
       }
     },
@@ -3584,6 +3564,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          119.7396283,
+          28.2999247
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 14191212213,
+        "osm_url": "https://www.openstreetmap.org/node/14191212213",
+        "obs_ids": "347232052",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=347232052",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "347232052",
+          "species": "Camphora officinarum",
+          "species:wikidata": "Q110692156"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           5.8697197,
           46.9182628
         ]
@@ -3653,62 +3658,16 @@
         "obs_ids": "15665182;195948089;219554454;253169326;344743806",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=15665182,195948089,219554454,253169326,344743806",
         "tags": {
+          "alt_name": "Ohrid Plane",
           "denotation": "natural_monument",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "name": "Стар чинар",
           "name:en": "Old plane tree",
           "name:mk": "Стар чинар",
-          "natural": "tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.7095667,
-          9.6360724
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 4547997174,
-        "osm_url": "https://www.openstreetmap.org/node/4547997174",
-        "obs_ids": "183826656;343040574",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=183826656,343040574",
-        "tags": {
           "natural": "tree",
-          "tourism": "attraction"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6850647,
-          53.1923482
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 5896467772,
-        "osm_url": "https://www.openstreetmap.org/node/5896467772",
-        "obs_ids": "74695869;88845652;343172045",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=74695869,88845652,343172045",
-        "tags": {
-          "denotation": "natural_monument",
-          "diameter_crown": "20",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Langernyw Yew",
-          "natural": "tree",
-          "source": "en:Wikipedia",
-          "website": "https://en.wikipedia.org/wiki/Llangernyw_Yew",
-          "wikidata": "Q4463960"
+          "species": "Platanus orientalis",
+          "species:wikidata": "Q161105"
         }
       }
     },
@@ -3734,6 +3693,7 @@
           "leaf_type": "broadleaved",
           "name": "McKinney Kauri",
           "natural": "tree",
+          "ref:inaturalist.org": "57560;2353768;2382178;20326700;74482320;104276521;157005768;189307213;240076847;340658785;343049096;344323488",
           "species": "Agathis australis",
           "wikidata": "Q124327896"
         }
@@ -3798,6 +3758,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -4.1580034,
+          40.584798
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 9220720716,
+        "osm_url": "https://www.openstreetmap.org/node/9220720716",
+        "obs_ids": "56319178;344750110;344853127",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=56319178,344750110,344853127",
+        "tags": {
+          "circumference": "5.4",
+          "denotation": "natural_monument",
+          "description": "Árbol singular de la Comunidad de Madrid",
+          "diameter_crown": "30",
+          "genus": "Cedrus",
+          "height": "27",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Cedro del Líbano de la Casita de Arriba",
+          "natural": "tree",
+          "ref:inaturalist.org": "56319178;344750110;344853127",
+          "species": "Cedrus libani",
+          "start_date": "~1870",
+          "website": "https://arbolessingularesdelacomunidad.jimdofree.com/por-municipios/san-lorenzo-de-el-escorial/casita-de-arriba/"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -4.1748534,
           40.5522228
         ]
@@ -3810,7 +3803,8 @@
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=62597018,344750092",
         "tags": {
           "name": "A. S. nº33 Castaño de la Fuente del Rey",
-          "natural": "tree"
+          "natural": "tree",
+          "ref:inaturalist.org": "62597018;344750092"
         }
       }
     },
@@ -3830,11 +3824,41 @@
         "obs_ids": "6316871;182286920;218416187;318614650;344164808",
         "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=6316871,182286920,218416187,318614650,344164808",
         "tags": {
+          "denotation": "natural_monument",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "loc_name": "Plàtan de la Font de la Pineda",
           "natural": "tree",
-          "protected": "yes"
+          "protected": "yes",
+          "ref:inaturalist.org": "6316871;182286920;218416187;318614650;344164808",
+          "species": "Platanus × hispanica",
+          "species:wikidata": "Q161374"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9111576,
+          34.8267342
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13767284443,
+        "osm_url": "https://www.openstreetmap.org/node/13767284443",
+        "obs_ids": "145041213;308195686;344757666",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=145041213,308195686,344757666",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "species": "Quercus infectoria",
+          "species:wikidata": "Q3565069",
+          "species:wikipedia": "en:Quercus infectoria"
         }
       }
     },
@@ -3943,6 +3967,64 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -82.7095667,
+          9.6360724
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 4547997174,
+        "osm_url": "https://www.openstreetmap.org/node/4547997174",
+        "obs_ids": "183826656;343040574",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=183826656,343040574",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "343040574",
+          "species": "Ceiba pentandra",
+          "species:wikidata": "Q138617",
+          "tourism": "attraction"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6850647,
+          53.1923482
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 5896467772,
+        "osm_url": "https://www.openstreetmap.org/node/5896467772",
+        "obs_ids": "74695869;88845652;343172045",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=74695869,88845652,343172045",
+        "tags": {
+          "denotation": "natural_monument",
+          "diameter_crown": "20",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Langernyw Yew",
+          "natural": "tree",
+          "ref:inaturalist.org": "74695869",
+          "source": "en:Wikipedia",
+          "species": "Taxus baccata",
+          "species:wikidata": "Q179729",
+          "website": "https://en.wikipedia.org/wiki/Llangernyw_Yew",
+          "wikidata": "Q4463960"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.2703734,
           48.7712063
         ]
@@ -3988,34 +4070,6 @@
           "species:fr": "Hêtre commun",
           "species:wikidata": "Q146149",
           "species:wikipedia": "fr:Hêtre commun"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -6.9478475,
-          39.2095177
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11872731823,
-        "osm_url": "https://www.openstreetmap.org/node/11872731823",
-        "obs_ids": "338741481",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=338741481",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "El Abuelo (Alcornoque centenario)",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "name": "El Abuelo",
-          "natural": "tree",
-          "ref:inaturalist.org": "338741481",
-          "species": "Quercus suber",
-          "species:wikidata": "Q156137"
         }
       }
     },
@@ -4080,33 +4134,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.7883659,
-          48.5050187
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13814277408,
-        "osm_url": "https://www.openstreetmap.org/node/13814277408",
-        "obs_ids": "338867126",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=338867126",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "338867126",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -16.7583894,
           28.363591
         ]
@@ -4134,30 +4161,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -119.5948273,
-          37.5147308
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 479566715,
-        "osm_url": "https://www.openstreetmap.org/node/479566715",
-        "obs_ids": "138004659;336467555",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=138004659,336467555",
-        "tags": {
-          "ele": "2000",
-          "gnis:feature_id": "268481",
-          "name": "Fallen Tunnel Tree",
-          "natural": "tree",
-          "wikidata": "Q3106707"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           46.3050381,
           -15.7215821
         ]
@@ -4171,7 +4174,7 @@
         "tags": {
           "age": "mature",
           "circumference": "21.23",
-          "denotation": "avenue",
+          "denotation": "natural_monument",
           "diameter": "6757.7",
           "diameter_crown": "25.5",
           "ele": "8",
@@ -4185,45 +4188,12 @@
           "natural": "tree",
           "object:city": "Mahajanga",
           "object:street": "Avenue de France",
+          "ref:inaturalist.org": "215784139",
           "species": "Adansonia digitata",
           "species:wikidata": "Q158742",
           "start_date": "~1723",
           "website": "https://www.researchgate.net/publication/370141875_Radiocarbon_dating_of_the_historic_grand_baobab_of_Mahajanga_Madagascar",
           "wikimedia_commons": "File:The baobab, Mahajanga.jpg"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.8607047,
-          35.1151326
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 4226635164,
-        "osm_url": "https://www.openstreetmap.org/node/4226635164",
-        "obs_ids": "174071674;291531017;310715235;312661350;336250219",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=174071674,291531017,310715235,312661350,336250219",
-        "tags": {
-          "alt_name": "Azorias Olive Tree",
-          "circumference": "14.2",
-          "denotation": "natural_monument",
-          "height": "6.9",
-          "leaf_type": "broadleaved",
-          "name": "Μνημειακή Ελιά Αζοριά",
-          "name:el": "Μνημειακή Ελιά Αζοριά",
-          "name:en": "Monumental Olive Tree of Azorias",
-          "name:fr": "Olivier antique",
-          "name:ru": "Старое оливковое дерево",
-          "natural": "tree",
-          "opening_hours": "24/7",
-          "species": "Olea europaea",
-          "tourism": "attraction",
-          "wikidata": "Q105501045"
         }
       }
     },
@@ -4257,6 +4227,7 @@
           "monument": "tree",
           "name": "Ahuehuete del Parterre",
           "natural": "tree",
+          "ref:inaturalist.org": "20875953;25819522;36448607;65602704;68648441;81683694;83612602;95284916;101093068;101093080;145673511;162779139;191883323;193883752;195556541;243993202;251945330;257586978;260036769;285231935;293680877;309203686;332572628;333631210;337559104",
           "source": "ground truth 21 December 2016 (site visit)",
           "species": "Taxodium mucronatum",
           "species:es": "Ahuehuete",
@@ -4289,6 +4260,7 @@
           "leaf_type": "broadleaved",
           "name": "Drago de Gáldar",
           "natural": "tree",
+          "ref:inaturalist.org": "299880763;338455846",
           "species:wikidata": "Q157952",
           "species:wikipedia": "es:Dracaena draco",
           "start_date": "1718"
@@ -4358,6 +4330,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -6.9478475,
+          39.2095177
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11872731823,
+        "osm_url": "https://www.openstreetmap.org/node/11872731823",
+        "obs_ids": "338741481",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=338741481",
+        "tags": {
+          "denotation": "natural_monument",
+          "description": "El Abuelo (Alcornoque centenario)",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "El Abuelo",
+          "natural": "tree",
+          "ref:inaturalist.org": "338741481",
+          "species": "Quercus suber",
+          "species:wikidata": "Q156137"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.3295712,
           47.8514742
         ]
@@ -4415,6 +4415,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.7883659,
+          48.5050187
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13814277408,
+        "osm_url": "https://www.openstreetmap.org/node/13814277408",
+        "obs_ids": "338867126",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=338867126",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "338867126",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9072367,
+          33.3323506
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13930794022,
+        "osm_url": "https://www.openstreetmap.org/node/13930794022",
+        "obs_ids": "13319321;37251034;51310509;65653205;65655589;82254126;96282194;103556087;162787634;252075306;255459207;284239815;292801544;293968972;324742005;329615263;337037874;337037966",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=13319321,37251034,51310509,65653205,65655589,82254126,96282194,103556087,162787634,252075306,255459207,284239815,292801544,293968972,324742005,329615263,337037874,337037966",
+        "tags": {
+          "age": "400",
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "13319321;37251034;51310509;65653205;65655589;82254126;96282194;103556087;162787634;252075306;255459207;284239815;292801544;293968972;324742005;329615263;337037874;337037966",
+          "species": "Calocedrus decurrens",
+          "species:wikidata": "Q1399164"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -123.7192347,
           39.8583984
         ]
@@ -4451,6 +4505,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -119.5948273,
+          37.5147308
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 479566715,
+        "osm_url": "https://www.openstreetmap.org/node/479566715",
+        "obs_ids": "138004659;336467555",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=138004659,336467555",
+        "tags": {
+          "alt_name": "Fallen Tunnel Tree",
+          "ele": "2000",
+          "gnis:feature_id": "268481",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Wawona Tree",
+          "natural": "tree_stump",
+          "ref:inaturalist.org": "336467555",
+          "was:denotation": "natural_monument",
+          "was:natural": "tree",
+          "wikidata": "Q3106707",
+          "wikimedia_commons": "Category:Wawona_Tree",
+          "wikipedia": "en:Wawona Tree",
+          "wikipedia:fr": "Wawona Tree"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -123.4423622,
           48.1144683
         ]
@@ -4470,6 +4557,40 @@
           "natural": "tree",
           "ref:inaturalist.org": "31186080;335433885",
           "species": "Arbutus menziesii"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.8607047,
+          35.1151326
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 4226635164,
+        "osm_url": "https://www.openstreetmap.org/node/4226635164",
+        "obs_ids": "174071674;291531017;310715235;312661350;336250219",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=174071674,291531017,310715235,312661350,336250219",
+        "tags": {
+          "alt_name": "Azorias Olive Tree",
+          "circumference": "14.2",
+          "denotation": "natural_monument",
+          "height": "6.9",
+          "leaf_type": "broadleaved",
+          "name": "Μνημειακή Ελιά Αζοριά",
+          "name:el": "Μνημειακή Ελιά Αζοριά",
+          "name:en": "Monumental Olive Tree of Azorias",
+          "name:fr": "Olivier antique",
+          "name:ru": "Старое оливковое дерево",
+          "natural": "tree",
+          "opening_hours": "24/7",
+          "species": "Olea europaea",
+          "tourism": "attraction",
+          "wikidata": "Q105501045"
         }
       }
     },
@@ -4537,32 +4658,6 @@
           "natural": "tree",
           "ref:inaturalist.org": "335843206",
           "source": "local knowledge"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          168.6617928,
-          -45.0360406
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 7409807631,
-        "osm_url": "https://www.openstreetmap.org/node/7409807631",
-        "obs_ids": "1801338;1801464;10214395;65683261;145094309;149853981;251856478;282920284;319069209;333702185",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=1801338,1801464,10214395,65683261,145094309,149853981,251856478,282920284,319069209,333702185",
-        "tags": {
-          "genus": "Sequoiadendron",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "1801338;1801464;10214395;65683261;145094309;149853981;251856478;282920284;319069209;333702185",
-          "ref:monumentaltrees": "https://www.monumentaltrees.com/de/nzl/newzealand/southisland/12393_queenstowngardens/24058/",
-          "species": "Sequoiadendron giganteum"
         }
       }
     },
@@ -4672,32 +4767,6 @@
           "wikidata": "Q2509765",
           "wikimedia_commons": "Category:The Great Banyan",
           "wikipedia": "en:The Great Banyan"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          103.8160371,
-          1.3089204
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13915212806,
-        "osm_url": "https://www.openstreetmap.org/node/13915212806",
-        "obs_ids": "22872921;37677394;332155567;333414451",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=22872921,37677394,332155567,333414451",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "332155567",
-          "species": "Alstonia pneumatophora",
-          "species:wikidata": "Q4735886",
-          "species:wikipedia": "en:Alstonia pneumatophora"
         }
       }
     },
@@ -4918,26 +4987,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.7402933,
-          47.5857893
+          168.6617928,
+          -45.0360406
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 10796246150,
-        "osm_url": "https://www.openstreetmap.org/node/10796246150",
-        "obs_ids": "1161293;154044362;190007093;195616797;239329492;329359434",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=1161293,154044362,190007093,195616797,239329492,329359434",
+        "osm_id": 7409807631,
+        "osm_url": "https://www.openstreetmap.org/node/7409807631",
+        "obs_ids": "1801338;1801464;10214395;65683261;145094309;149853981;251856478;282920284;319069209;333702185",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=1801338,1801464,10214395,65683261,145094309,149853981,251856478,282920284,319069209,333702185",
         "tags": {
-          "circumference": "9",
-          "denotation": "natural_monument",
+          "genus": "Sequoiadendron",
           "leaf_cycle": "evergreen",
           "leaf_type": "needleleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "1161293;154044362;190007093;195616797;239329492;329359434",
-          "species": "Pseudotsuga menziesii",
-          "species:wikidata": "Q156687",
-          "species:wikipedia": "en:Pseudotsuga menziesii"
+          "ref:inaturalist.org": "1801338;1801464;10214395;65683261;145094309;149853981;251856478;282920284;319069209;333702185",
+          "ref:monumentaltrees": "https://www.monumentaltrees.com/de/nzl/newzealand/southisland/12393_queenstowngardens/24058/",
+          "species": "Sequoiadendron giganteum"
         }
       }
     },
@@ -4972,26 +5039,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.2681236,
-          48.3434778
+          103.8160371,
+          1.3089204
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 13341052321,
-        "osm_url": "https://www.openstreetmap.org/node/13341052321",
-        "obs_ids": "328743013",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=328743013",
+        "osm_id": 13915212806,
+        "osm_url": "https://www.openstreetmap.org/node/13915212806",
+        "obs_ids": "22872921;37677394;332155567;333414451",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=22872921,37677394,332155567,333414451",
         "tags": {
           "denotation": "landmark",
-          "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "328743013",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
+          "ref:inaturalist.org": "332155567",
+          "species": "Alstonia pneumatophora",
+          "species:wikidata": "Q4735886",
+          "species:wikipedia": "en:Alstonia pneumatophora"
         }
       }
     },
@@ -5186,29 +5251,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.1114376,
-          48.8041156
+          -122.7402933,
+          47.5857893
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 10574464708,
-        "osm_url": "https://www.openstreetmap.org/node/10574464708",
-        "obs_ids": "278054731;286808557;325939796",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=278054731,286808557,325939796",
+        "osm_id": 10796246150,
+        "osm_url": "https://www.openstreetmap.org/node/10796246150",
+        "obs_ids": "1161293;154044362;190007093;195616797;239329492;329359434",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=1161293,154044362,190007093,195616797,239329492,329359434",
         "tags": {
-          "genus": "Fagus",
-          "genus:fr": "Hêtre",
-          "height": "15",
-          "leaf_type": "broadleaved",
+          "circumference": "9",
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "278054731;286808557;325939796",
-          "source": "BDOrtho IGN - available 2023 at the latest",
-          "species": "Fagus sylvatica",
-          "species:fr": "Hêtre à feuilles laciniées",
-          "species:wikidata": "Q146149",
-          "taxon": "Fagus Sylvatica 'Asplenifolia'",
-          "wikimedia_commons": "File:Hêtre_à_feuilles_laciniées,_Bosquet_du_Roi,_2023.jpg"
+          "ref:inaturalist.org": "1161293;154044362;190007093;195616797;239329492;329359434",
+          "species": "Pseudotsuga menziesii",
+          "species:wikidata": "Q156687",
+          "species:wikipedia": "en:Pseudotsuga menziesii"
         }
       }
     },
@@ -5281,58 +5343,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          57.577587,
-          -20.108571
+          -0.2681236,
+          48.3434778
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 13311157501,
-        "osm_url": "https://www.openstreetmap.org/node/13311157501",
-        "obs_ids": "40033654;65207559;65827653;325726408",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=40033654,65207559,65827653,325726408",
+        "osm_id": 13341052321,
+        "osm_url": "https://www.openstreetmap.org/node/13341052321",
+        "obs_ids": "328743013",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=328743013",
         "tags": {
           "denotation": "landmark",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
-          "name": "Baobab tree",
           "natural": "tree",
-          "ref:inaturalist.org": "325726408",
-          "species": "Adansonia digitata",
-          "species:wikidata": "Q158742"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -2.2264752,
-          48.0562984
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 450143062,
-        "osm_url": "https://www.openstreetmap.org/node/450143062",
-        "obs_ids": "91314396;321282090",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=91314396,321282090",
-        "tags": {
-          "circumference": "10",
-          "denotation": "natural_monument",
-          "genus": "Quercus",
-          "genus:fr": "Chêne",
-          "historic": "yes",
-          "leaf_type": "broadleaved",
-          "name": "Chêne à Guillotin",
-          "name:br": "Dervenn Guillotin",
-          "natural": "tree",
-          "ref:inaturalist.org": "91314396;321282090",
-          "source": "gps",
-          "start_date": "~C10",
-          "tourism": "yes",
-          "wikidata": "Q52679509"
+          "ref:inaturalist.org": "328743013",
+          "species": "Quercus robur",
+          "species:fr": "Chêne pédonculé",
+          "species:wikidata": "Q165145",
+          "species:wikipedia": "fr:Chêne pédonculé"
         }
       }
     },
@@ -5404,6 +5434,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.1114376,
+          48.8041156
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 10574464708,
+        "osm_url": "https://www.openstreetmap.org/node/10574464708",
+        "obs_ids": "278054731;286808557;325939796",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=278054731,286808557,325939796",
+        "tags": {
+          "genus": "Fagus",
+          "genus:fr": "Hêtre",
+          "height": "15",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "278054731;286808557;325939796",
+          "source": "BDOrtho IGN - available 2023 at the latest",
+          "species": "Fagus sylvatica",
+          "species:fr": "Hêtre à feuilles laciniées",
+          "species:wikidata": "Q146149",
+          "taxon": "Fagus Sylvatica 'Asplenifolia'",
+          "wikimedia_commons": "File:Hêtre_à_feuilles_laciniées,_Bosquet_du_Roi,_2023.jpg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -119.7980836,
           38.3093786
         ]
@@ -5455,34 +5516,6 @@
           "ref:inaturalist.org": "117145775;145701395;193217442;214875288;262280150;324236143",
           "species": "Juniperus cedrus",
           "species:wikidata": "Q1723636"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.7533169,
-          48.54412
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13261473099,
-        "osm_url": "https://www.openstreetmap.org/node/13261473099",
-        "obs_ids": "301186204;321425258",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=301186204,321425258",
-        "tags": {
-          "denotation": "park",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "301186204;321425258",
-          "species": "Taxodium distichum",
-          "species:fr": "Cyprès chauve",
-          "species:wikidata": "Q148950",
-          "species:wikipedia": "fr:Taxodium distichum"
         }
       }
     },
@@ -5552,6 +5585,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          57.577587,
+          -20.108571
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13311157501,
+        "osm_url": "https://www.openstreetmap.org/node/13311157501",
+        "obs_ids": "40033654;65207559;65827653;325726408",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=40033654,65207559,65827653,325726408",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Baobab tree",
+          "natural": "tree",
+          "ref:inaturalist.org": "325726408",
+          "species": "Adansonia digitata",
+          "species:wikidata": "Q158742"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           7.5084934,
           43.7750464
         ]
@@ -5600,6 +5660,39 @@
           "species": "Styphnolobium japonicum",
           "species:wikidata": "Q288558",
           "species:wikipedia": "es:Styphnolobium japonicum"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2264752,
+          48.0562984
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 450143062,
+        "osm_url": "https://www.openstreetmap.org/node/450143062",
+        "obs_ids": "91314396;321282090",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=91314396,321282090",
+        "tags": {
+          "circumference": "10",
+          "denotation": "natural_monument",
+          "genus": "Quercus",
+          "genus:fr": "Chêne",
+          "historic": "yes",
+          "leaf_type": "broadleaved",
+          "name": "Chêne à Guillotin",
+          "name:br": "Dervenn Guillotin",
+          "natural": "tree",
+          "ref:inaturalist.org": "91314396;321282090",
+          "source": "gps",
+          "start_date": "~C10",
+          "tourism": "yes",
+          "wikidata": "Q52679509"
         }
       }
     },
@@ -5759,36 +5852,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.3191052,
-          40.9606338
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 6140281613,
-        "osm_url": "https://www.openstreetmap.org/node/6140281613",
-        "obs_ids": "201001566;319946396",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=201001566,319946396",
-        "tags": {
-          "circumference": "7.45",
-          "monument": "yes",
-          "name": "lo Parot",
-          "name:ca": "lo Parot",
-          "natural": "tree",
-          "protected": "yes",
-          "ref": "MA-37.071.01",
-          "species": "Olea europaea var. europaea",
-          "species:ca": "olivera",
-          "wikidata": "Q17617949",
-          "wikipedia": "ca:Lo Parot"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           168.6866556,
           -45.0260007
         ]
@@ -5843,24 +5906,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.1091252,
-          48.394884
+          -1.7533169,
+          48.54412
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 13226603132,
-        "osm_url": "https://www.openstreetmap.org/node/13226603132",
-        "obs_ids": "320227405",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=320227405",
+        "osm_id": 13261473099,
+        "osm_url": "https://www.openstreetmap.org/node/13261473099",
+        "obs_ids": "301186204;321425258",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=301186204,321425258",
         "tags": {
-          "leaf_cycle": "evergreen",
+          "denotation": "park",
+          "leaf_cycle": "deciduous",
           "leaf_type": "needleleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "320227405",
-          "species": "Chamaecyparis lawsoniana",
-          "species:fr": "Cyprès de Lawson",
-          "species:wikidata": "Q161360"
+          "ref:inaturalist.org": "301186204;321425258",
+          "species": "Taxodium distichum",
+          "species:fr": "Cyprès chauve",
+          "species:wikidata": "Q148950",
+          "species:wikipedia": "fr:Taxodium distichum"
         }
       }
     },
@@ -5898,59 +5963,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.3688794,
-          42.0363173
+          0.3191052,
+          40.9606338
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 5646111967,
-        "osm_url": "https://www.openstreetmap.org/node/5646111967",
-        "obs_ids": "270204392;318620887",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=270204392,318620887",
+        "osm_id": 6140281613,
+        "osm_url": "https://www.openstreetmap.org/node/6140281613",
+        "obs_ids": "201001566;319946396",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=201001566,319946396",
         "tags": {
-          "age": "250",
-          "denotation": "natural_monument",
-          "description": "Arbre à la base du tronc en forme d'aigle. Arbre de l'année \"Prix du Public 2018\"",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "name": "l’Arbre Oiseau",
-          "name:co": "U Arburacellu",
+          "circumference": "7.45",
+          "monument": "yes",
+          "name": "lo Parot",
+          "name:ca": "lo Parot",
           "natural": "tree",
-          "ref:inaturalist.org": "270204392;318620887",
-          "source:url": "https://www.arbredelannee.com/",
-          "species": "Quercus suber",
-          "species:fr": "Chêne-liège",
-          "wikidata": "Q105661162"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.7728466,
-          -18.3633084
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 6689054985,
-        "osm_url": "https://www.openstreetmap.org/node/6689054985",
-        "obs_ids": "6039762;108976090;286200366;318634238",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=6039762,108976090,286200366,318634238",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Baobabs",
-          "natural": "tree",
-          "ref:inaturalist.org": "108976090;286200366;318634238;6039762",
-          "species": "Adansonia digitata",
-          "species:wikidata": "Q158742",
-          "species:wikipedia": "fr:Baobab africain",
-          "tourism": "attraction"
+          "protected": "yes",
+          "ref": "MA-37.071.01",
+          "species": "Olea europaea var. europaea",
+          "species:ca": "olivera",
+          "wikidata": "Q17617949",
+          "wikipedia": "ca:Lo Parot"
         }
       }
     },
@@ -6120,6 +6154,32 @@
           "species:fr": "Cyprès chauve",
           "species:wikidata": "Q148950",
           "species:wikipedia": "fr:Taxodium distichum"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1091252,
+          48.394884
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13226603132,
+        "osm_url": "https://www.openstreetmap.org/node/13226603132",
+        "obs_ids": "320227405",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=320227405",
+        "tags": {
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "320227405",
+          "species": "Chamaecyparis lawsoniana",
+          "species:fr": "Cyprès de Lawson",
+          "species:wikidata": "Q161360"
         }
       }
     },
@@ -6313,26 +6373,59 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -118.9487486,
-          36.8242787
+          9.3688794,
+          42.0363173
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 5566642127,
-        "osm_url": "https://www.openstreetmap.org/node/5566642127",
-        "obs_ids": "86460111;91077791;124672774;159362358;172583908;184341002;186366379;226570349;237514975;314907995;317450922",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=86460111,91077791,124672774,159362358,172583908,184341002,186366379,226570349,237514975,314907995,317450922",
+        "osm_id": 5646111967,
+        "osm_url": "https://www.openstreetmap.org/node/5646111967",
+        "obs_ids": "270204392;318620887",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=270204392,318620887",
+        "tags": {
+          "age": "250",
+          "denotation": "natural_monument",
+          "description": "Arbre à la base du tronc en forme d'aigle. Arbre de l'année \"Prix du Public 2018\"",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "l’Arbre Oiseau",
+          "name:co": "U Arburacellu",
+          "natural": "tree",
+          "ref:inaturalist.org": "270204392;318620887",
+          "source:url": "https://www.arbredelannee.com/",
+          "species": "Quercus suber",
+          "species:fr": "Chêne-liège",
+          "wikidata": "Q105661162"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7728466,
+          -18.3633084
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 6689054985,
+        "osm_url": "https://www.openstreetmap.org/node/6689054985",
+        "obs_ids": "6039762;108976090;286200366;318634238",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=6039762,108976090,286200366,318634238",
         "tags": {
           "denotation": "natural_monument",
-          "ele": "2049",
-          "fixme": "confirm position",
-          "gnis:feature_id": "257348",
-          "name": "Boole",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Baobabs",
           "natural": "tree",
-          "ref:inaturalist.org": "86460111;91077791;124672774;159362358;172583908;184341002;186366379;226570349;237514975;314907995;317450922",
-          "wikidata": "Q4943345",
-          "wikipedia": "en:Boole (tree)"
+          "ref:inaturalist.org": "108976090;286200366;318634238;6039762",
+          "species": "Adansonia digitata",
+          "species:wikidata": "Q158742",
+          "species:wikipedia": "fr:Baobab africain",
+          "tourism": "attraction"
         }
       }
     },
@@ -6398,34 +6491,6 @@
           "species:fr": "Platane d'Orient",
           "species:wikidata": "Q161105",
           "species:wikipedia": "fr:Platane d'Orient"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.0981228,
-          48.3996099
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13174866313,
-        "osm_url": "https://www.openstreetmap.org/node/13174866313",
-        "obs_ids": "316793749",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=316793749",
-        "tags": {
-          "denotation": "urban",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "316793749",
-          "species": "Arbutus unedo",
-          "species:fr": "Arbousier",
-          "species:wikidata": "Q329046",
-          "species:wikipedia": "fr:Arbousier"
         }
       }
     },
@@ -6516,36 +6581,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0167546,
-          40.1824986
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2595073106,
-        "osm_url": "https://www.openstreetmap.org/node/2595073106",
-        "obs_ids": "131680974;184095873;244662911;249868418;267179128;309285790",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=131680974,184095873,244662911,249868418,267179128,309285790",
-        "tags": {
-          "circumference": "10 m",
-          "denotation": "natural_monument",
-          "diameter": "3 m",
-          "height": "35",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "İnkaya Çınarı",
-          "natural": "tree",
-          "note": "2008 itibariyle 600 yaşına giren tarihi çınar ağacı, muhteşem görünümü ile dünyaca ünlüdür. Adını, Osmanlı Devleti’nin ilk köylerinden biri olan İnkaya Köyü’nden alan çınar ağacının boyu 35 mt. Dallarının kalınlığı 3-4 mt. çevresi 9.2 mt. dir.",
-          "species:wikidata": "Q161105",
-          "species:wikipedia": "en:Platanus orientalis"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           173.0239337,
           -43.8100798
         ]
@@ -6570,27 +6605,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.7205356,
-          33.6381597
+          -118.9487486,
+          36.8242787
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 7279675035,
-        "osm_url": "https://www.openstreetmap.org/node/7279675035",
-        "obs_ids": "309013438",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=309013438",
+        "osm_id": 5566642127,
+        "osm_url": "https://www.openstreetmap.org/node/5566642127",
+        "obs_ids": "86460111;91077791;124672774;159362358;172583908;184341002;186366379;226570349;237514975;314907995;317450922",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=86460111,91077791,124672774,159362358,172583908,184341002,186366379,226570349,237514975,314907995,317450922",
         "tags": {
           "denotation": "natural_monument",
-          "leaf_cycle": "semi_evergreen",
-          "leaf_type": "broadleaved",
-          "name": "The Centennial Oak Tree",
+          "ele": "2049",
+          "fixme": "confirm position",
+          "gnis:feature_id": "257348",
+          "name": "Boole",
           "natural": "tree",
-          "ref:inaturalist.org": "309013438",
-          "species": "Quercus coccifera",
-          "species:wikidata": "Q2666806",
-          "species:wikipedia": "en:Quercus_coccifera",
-          "taxon": "Quercus coccifera ssp. calliprinos"
+          "ref:inaturalist.org": "86460111;91077791;124672774;159362358;172583908;184341002;186366379;226570349;237514975;314907995;317450922",
+          "wikidata": "Q4943345",
+          "wikipedia": "en:Boole (tree)"
         }
       }
     },
@@ -6714,6 +6748,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.0981228,
+          48.3996099
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13174866313,
+        "osm_url": "https://www.openstreetmap.org/node/13174866313",
+        "obs_ids": "316793749",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=316793749",
+        "tags": {
+          "denotation": "urban",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "316793749",
+          "species": "Arbutus unedo",
+          "species:fr": "Arbousier",
+          "species:wikidata": "Q329046",
+          "species:wikipedia": "fr:Arbousier"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           138.6385877,
           -31.5181942
         ]
@@ -6811,6 +6873,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.0167546,
+          40.1824986
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2595073106,
+        "osm_url": "https://www.openstreetmap.org/node/2595073106",
+        "obs_ids": "131680974;184095873;244662911;249868418;267179128;309285790",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=131680974,184095873,244662911,249868418,267179128,309285790",
+        "tags": {
+          "circumference": "10 m",
+          "denotation": "natural_monument",
+          "diameter": "3 m",
+          "height": "35",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "İnkaya Çınarı",
+          "natural": "tree",
+          "note": "2008 itibariyle 600 yaşına giren tarihi çınar ağacı, muhteşem görünümü ile dünyaca ünlüdür. Adını, Osmanlı Devleti’nin ilk köylerinden biri olan İnkaya Köyü’nden alan çınar ağacının boyu 35 mt. Dallarının kalınlığı 3-4 mt. çevresi 9.2 mt. dir.",
+          "species:wikidata": "Q161105",
+          "species:wikipedia": "en:Platanus orientalis"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           9.1969998,
           47.7056565
         ]
@@ -6842,22 +6934,27 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.1328442,
-          48.4206068
+          35.7205356,
+          33.6381597
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 7527680997,
-        "osm_url": "https://www.openstreetmap.org/node/7527680997",
-        "obs_ids": "302359390",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=302359390",
+        "osm_id": 7279675035,
+        "osm_url": "https://www.openstreetmap.org/node/7279675035",
+        "obs_ids": "309013438",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=309013438",
         "tags": {
           "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
+          "leaf_cycle": "semi_evergreen",
+          "leaf_type": "broadleaved",
+          "name": "The Centennial Oak Tree",
           "natural": "tree",
-          "species": "Taxus baccata"
+          "ref:inaturalist.org": "309013438",
+          "species": "Quercus coccifera",
+          "species:wikidata": "Q2666806",
+          "species:wikipedia": "en:Quercus_coccifera",
+          "taxon": "Quercus coccifera ssp. calliprinos"
         }
       }
     },
@@ -7037,37 +7134,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.9919748,
-          48.5359826
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13543695257,
-        "osm_url": "https://www.openstreetmap.org/node/13543695257",
-        "obs_ids": "301905097",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=301905097",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "Hêtres remarquables par leur mystérieux dérèglement biologique, qui provoque de profondes excroissances dans l’écorce de leurs troncs et des branches charpentières.Info : Les Amis de la Forêt de Senonches : https://amisforetsenonches.com/?da_image=513",
-          "fixme": "position exacte à vérifier",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Les deux hêtres de la Vallée Biquet",
-          "natural": "tree",
-          "ref:inaturalist.org": "301905097",
-          "species": "Fagus sylvatica",
-          "species:fr": "Hêtre commun",
-          "species:wikidata": "Q146149",
-          "species:wikipedia": "fr:Hêtre commun"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           4.8276715,
           50.5841129
         ]
@@ -7150,51 +7216,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          53.2798341,
-          31.1225843
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 3244460373,
-        "osm_url": "https://www.openstreetmap.org/node/3244460373",
-        "obs_ids": "69053937;70514416;293240660",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=69053937,70514416,293240660",
-        "tags": {
-          "age": "mature",
-          "circumference": "18",
-          "crown_type": "c",
-          "denotation": "natural_monument",
-          "diameter_crown": "15.7",
-          "genus": "Cupressus",
-          "health": "5",
-          "height": "28",
-          "heritage": "yes",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "monument": "tree",
-          "name": "سرو ابرکوه",
-          "name:de": "Zypresse",
-          "name:en": "Cypress",
-          "name:es": "Ciprés Milenário",
-          "name:fr": "cyprès millénaire",
-          "natural": "tree",
-          "object:city": "Abarkuh",
-          "species": "Cupressus sempervirens",
-          "species:es": "Ciprés Mediterráneo",
-          "species:wikidata": "Q147513",
-          "start_date": "-1976",
-          "wikidata": "Q245835",
-          "wikimedia_commons": "File:4000_years_old_tree_-_panoramio.jpg",
-          "wikipedia": "fa:سرو ابرکوه"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -123.9989754,
           44.9753462
         ]
@@ -7249,31 +7270,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.2437472,
-          40.3649611
+          -0.1328442,
+          48.4206068
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 9254301398,
-        "osm_url": "https://www.openstreetmap.org/node/9254301398",
-        "obs_ids": "66371017;72075253;236727729;273757678;294166487",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=66371017,72075253,236727729,273757678,294166487",
+        "osm_id": 7527680997,
+        "osm_url": "https://www.openstreetmap.org/node/7527680997",
+        "obs_ids": "302359390",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=302359390",
         "tags": {
-          "circumference": "6.5",
           "denotation": "natural_monument",
-          "description": "Árbol singular de la Comunidad de Madrid",
-          "diameter_crown": "18",
-          "genus": "Ulmus",
-          "height": "21",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Olmo de Nuevo Baztán",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
           "natural": "tree",
-          "species": "Ulmus minor",
-          "start_date": "~1725",
-          "website": "https://arbolessingularesdelacomunidad.jimdofree.com/por-municipios/nuevo-bazt%C3%A1n/",
-          "wikidata": "Q54824009"
+          "species": "Taxus baccata"
         }
       }
     },
@@ -7324,6 +7336,37 @@
           "species:fr": "Séquoia géant",
           "species:wikidata": "Q149851",
           "species:wikipedia": "fr:Séquoia géant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.9919748,
+          48.5359826
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13543695257,
+        "osm_url": "https://www.openstreetmap.org/node/13543695257",
+        "obs_ids": "301905097",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=301905097",
+        "tags": {
+          "denotation": "natural_monument",
+          "description": "Hêtres remarquables par leur mystérieux dérèglement biologique, qui provoque de profondes excroissances dans l’écorce de leurs troncs et des branches charpentières.Info : Les Amis de la Forêt de Senonches : https://amisforetsenonches.com/?da_image=513",
+          "fixme": "position exacte à vérifier",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Les deux hêtres de la Vallée Biquet",
+          "natural": "tree",
+          "ref:inaturalist.org": "301905097",
+          "species": "Fagus sylvatica",
+          "species:fr": "Hêtre commun",
+          "species:wikidata": "Q146149",
+          "species:wikipedia": "fr:Hêtre commun"
         }
       }
     },
@@ -7414,55 +7457,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.2890235,
-          -14.7743826
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 902496218,
-        "osm_url": "https://www.openstreetmap.org/node/902496218",
-        "obs_ids": "173916252;275937578",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=173916252,275937578",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "semi_evergreen",
-          "leaf_type": "broadleaved",
-          "name": "Livingstone Baobab",
-          "natural": "tree",
-          "ref:inaturalist.org": "173916252;275937578"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          83.2266438,
-          54.8005368
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 1453427441,
-        "osm_url": "https://www.openstreetmap.org/node/1453427441",
-        "obs_ids": "38169368;53036446;72619263;77481012;92725277;229660854;276495336",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=38169368,53036446,72619263,77481012,92725277,229660854,276495336",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Красивая сосна 2",
-          "natural": "tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -1.6429714,
           42.8154936
         ]
@@ -7487,6 +7481,51 @@
           "tourism": "attraction",
           "wheelchair": "yes",
           "wikimedia_commons": "File:Secuoya del Palacio de Navarra (Pamplona) 01.jpg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          53.2798341,
+          31.1225843
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 3244460373,
+        "osm_url": "https://www.openstreetmap.org/node/3244460373",
+        "obs_ids": "69053937;70514416;293240660",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=69053937,70514416,293240660",
+        "tags": {
+          "age": "mature",
+          "circumference": "18",
+          "crown_type": "c",
+          "denotation": "natural_monument",
+          "diameter_crown": "15.7",
+          "genus": "Cupressus",
+          "health": "5",
+          "height": "28",
+          "heritage": "yes",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "monument": "tree",
+          "name": "سرو ابرکوه",
+          "name:de": "Zypresse",
+          "name:en": "Cypress",
+          "name:es": "Ciprés Milenário",
+          "name:fr": "cyprès millénaire",
+          "natural": "tree",
+          "object:city": "Abarkuh",
+          "species": "Cupressus sempervirens",
+          "species:es": "Ciprés Mediterráneo",
+          "species:wikidata": "Q147513",
+          "start_date": "-1976",
+          "wikidata": "Q245835",
+          "wikimedia_commons": "File:4000_years_old_tree_-_panoramio.jpg",
+          "wikipedia": "fa:سرو ابرکوه"
         }
       }
     },
@@ -7550,6 +7589,39 @@
           "wikidata": "Q5504407",
           "wikimedia_commons": "File:Friendship-oak.jpg",
           "wikipedia": "en:Friendship Oak"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2437472,
+          40.3649611
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 9254301398,
+        "osm_url": "https://www.openstreetmap.org/node/9254301398",
+        "obs_ids": "66371017;72075253;236727729;273757678;294166487",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=66371017,72075253,236727729,273757678,294166487",
+        "tags": {
+          "circumference": "6.5",
+          "denotation": "natural_monument",
+          "description": "Árbol singular de la Comunidad de Madrid",
+          "diameter_crown": "18",
+          "genus": "Ulmus",
+          "height": "21",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Olmo de Nuevo Baztán",
+          "natural": "tree",
+          "species": "Ulmus minor",
+          "start_date": "~1725",
+          "website": "https://arbolessingularesdelacomunidad.jimdofree.com/por-municipios/nuevo-bazt%C3%A1n/",
+          "wikidata": "Q54824009"
         }
       }
     },
@@ -7678,25 +7750,47 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.7096497,
-          49.4003654
+          35.2890235,
+          -14.7743826
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 1129572660,
-        "osm_url": "https://www.openstreetmap.org/node/1129572660",
-        "obs_ids": "76979522;270280696",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=76979522,270280696",
+        "osm_id": 902496218,
+        "osm_url": "https://www.openstreetmap.org/node/902496218",
+        "obs_ids": "173916252;275937578",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=173916252,275937578",
         "tags": {
-          "leaf_type": "needleleaved",
+          "denotation": "natural_monument",
+          "leaf_cycle": "semi_evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Livingstone Baobab",
           "natural": "tree",
-          "ref:baumkunde": "https://www.baumkunde.de/baumregister/11174-bergmammutbaum_1_im_arboretum_1_bei_heidelberg/",
-          "ref:ddg": "https://ddg-web.de/rekordbaeume.html?VCardId=7000",
-          "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=14179",
-          "ref:monumentaltrees": "https://www.monumentaltrees.com/de/deu/badenwurttemberg/heidelberg/11969_arboretum1/23317/",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851"
+          "ref:inaturalist.org": "173916252;275937578"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.2266438,
+          54.8005368
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 1453427441,
+        "osm_url": "https://www.openstreetmap.org/node/1453427441",
+        "obs_ids": "38169368;53036446;72619263;77481012;92725277;229660854;276495336",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=38169368,53036446,72619263,77481012,92725277,229660854,276495336",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Красивая сосна 2",
+          "natural": "tree"
         }
       }
     },
@@ -7758,38 +7852,6 @@
           "name": "The Royal Oak",
           "natural": "tree",
           "ref:inaturalist.org": "164872503;65496897"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.0440287,
-          48.9247843
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 4135205056,
-        "osm_url": "https://www.openstreetmap.org/node/4135205056",
-        "obs_ids": "270458942",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=270458942",
-        "tags": {
-          "age": "~300",
-          "circumference": "4,65",
-          "denotation": "landmark",
-          "height": "34",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Chêne Henriot",
-          "natural": "tree",
-          "ref:inaturalist.org": "270458942",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
         }
       }
     },
@@ -7967,37 +8029,57 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.3738978,
-          55.0035721
+          8.7096497,
+          49.4003654
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 2780045653,
-        "osm_url": "https://www.openstreetmap.org/node/2780045653",
-        "obs_ids": "22837202;29230875;60984271;92075228;95129571;139280487;145264645;158232940;169666604;177050858;188684368;235277782;259953710;267487806",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=22837202,29230875,60984271,92075228,95129571,139280487,145264645,158232940,169666604,177050858,188684368,235277782,259953710,267487806",
+        "osm_id": 1129572660,
+        "osm_url": "https://www.openstreetmap.org/node/1129572660",
+        "obs_ids": "76979522;270280696",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=76979522,270280696",
         "tags": {
-          "alt_name": "Sycamore Gap Stump",
-          "description": "Tourist attraction and famous photographic subject. Believed to have been deliberately felled on the night of the 27th-28th Sep 2023: https://www.itv.com/news/tyne-tees/2023-09-28/world-famous-sycamore-gap-tree-believed-to-have-been-deliberately-felled",
-          "description:de": "Baumstumpf des in der Nacht vom 27.-28. September 2023 illegal gefällten Baumes. Dieser Baum war bekannt aus dem Film Robin Hood – König der Diebe“ mit Kevin Costner.",
-          "destroyed:natural": "tree",
-          "genus": "Acer",
-          "genus:de": "Ahorn",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:baumkunde": "https://www.baumkunde.de/baumregister/11174-bergmammutbaum_1_im_arboretum_1_bei_heidelberg/",
+          "ref:ddg": "https://ddg-web.de/rekordbaeume.html?VCardId=7000",
+          "ref:mbreg": "http://mbreg.de/mbr/mbr_de_search.php?q1=id&q=14179",
+          "ref:monumentaltrees": "https://www.monumentaltrees.com/de/deu/badenwurttemberg/heidelberg/11969_arboretum1/23317/",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0440287,
+          48.9247843
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 4135205056,
+        "osm_url": "https://www.openstreetmap.org/node/4135205056",
+        "obs_ids": "270458942",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=270458942",
+        "tags": {
+          "age": "~300",
+          "circumference": "4,65",
+          "denotation": "landmark",
+          "height": "34",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
-          "name": "Robin Hood Tree",
-          "name:de": "Robin-Hood-Baum",
-          "natural": "tree_stump",
-          "ref:inaturalist.org": "145264645;177050858;22837202;29230875;60984271",
-          "source": "Bing",
-          "species": "Acer pseudoplatanus",
-          "species:de": "Berg-Ahorn",
-          "tourism": "attraction",
-          "wikidata": "Q55885851",
-          "wikimedia_commons": "File:FelledSycamoreTree.jpg",
-          "wikimedia_commons:2": "File:Tree_Stump.png",
-          "wikipedia": "en:Sycamore Gap tree"
+          "name": "Chêne Henriot",
+          "natural": "tree",
+          "ref:inaturalist.org": "270458942",
+          "species": "Quercus robur",
+          "species:fr": "Chêne pédonculé",
+          "species:wikidata": "Q165145",
+          "species:wikipedia": "fr:Chêne pédonculé"
         }
       }
     },
@@ -8140,33 +8222,6 @@
           "ref:inaturalist.org": "265040841",
           "species": "Sequoia sempervirens",
           "species:fr": "Séquoia toujours vert",
-          "species:wikidata": "Q150129"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.0779969,
-          48.4294757
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 8428535154,
-        "osm_url": "https://www.openstreetmap.org/node/8428535154",
-        "obs_ids": "264103425",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=264103425",
-        "tags": {
-          "genus": "Sequoia",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "264103425",
-          "species": "Sequoia sempervirens",
-          "species:fr": "Séquoia à feuilles d'if",
           "species:wikidata": "Q150129"
         }
       }
@@ -8379,6 +8434,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.0779969,
+          48.4294757
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 8428535154,
+        "osm_url": "https://www.openstreetmap.org/node/8428535154",
+        "obs_ids": "264103425",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=264103425",
+        "tags": {
+          "genus": "Sequoia",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "264103425",
+          "species": "Sequoia sempervirens",
+          "species:fr": "Séquoia à feuilles d'if",
+          "species:wikidata": "Q150129"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.1017513,
           48.4198194
         ]
@@ -8430,35 +8512,6 @@
           "species:wikidata": "Q163025",
           "species:wikipedia": "fr:Platane",
           "tree": "1"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.3360769,
-          48.8449246
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12506965556,
-        "osm_url": "https://www.openstreetmap.org/node/12506965556",
-        "obs_ids": "258114239",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=258114239",
-        "tags": {
-          "denotation": "park",
-          "genus": "Sequoiadendron",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "258114239",
-          "species": "Sequoiadendron giganteum",
-          "species:fr": "Séquoia géant",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
         }
       }
     },
@@ -8692,34 +8745,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.1208805,
-          48.5900285
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12394953895,
-        "osm_url": "https://www.openstreetmap.org/node/12394953895",
-        "obs_ids": "254056592;254056761;254057197;254057460",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=254056592,254056761,254057197,254057460",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "254056592;254056761;254057197;254057460",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           0.1093935,
           48.4361682
         ]
@@ -8767,6 +8792,35 @@
           "species:fr": "Platane commun",
           "species:wikidata": "Q161374",
           "species:wikipedia": "fr:Platane commun"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3360769,
+          48.8449246
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12506965556,
+        "osm_url": "https://www.openstreetmap.org/node/12506965556",
+        "obs_ids": "258114239",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=258114239",
+        "tags": {
+          "denotation": "park",
+          "genus": "Sequoiadendron",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "258114239",
+          "species": "Sequoiadendron giganteum",
+          "species:fr": "Séquoia géant",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
         }
       }
     },
@@ -8943,37 +8997,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.464763,
-          48.4373628
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 7954386115,
-        "osm_url": "https://www.openstreetmap.org/node/7954386115",
-        "obs_ids": "79039540;118244505;177036113;249273783",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=79039540,118244505,177036113,249273783",
-        "tags": {
-          "alt_name": "Le gros Platane",
-          "denotation": "natural_monument",
-          "description": "Labellisé Arbre Remarquable par l'association ARBRES",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Platane Samuel",
-          "natural": "tree",
-          "ref:inaturalist.org": "118244505;177036113;249273783;79039540",
-          "species": "Platanus × hispanica",
-          "species:wikidata": "Q161374",
-          "species:wikipedia": "fr:Platane commun",
-          "start_date": "1782"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           0.0883685,
           48.42849
         ]
@@ -9111,6 +9134,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.1208805,
+          48.5900285
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12394953895,
+        "osm_url": "https://www.openstreetmap.org/node/12394953895",
+        "obs_ids": "254056592;254056761;254057197;254057460",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=254056592,254056761,254057197,254057460",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "254056592;254056761;254057197;254057460",
+          "species": "Quercus robur",
+          "species:fr": "Chêne pédonculé",
+          "species:wikidata": "Q165145",
+          "species:wikipedia": "fr:Chêne pédonculé"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.1864586,
           43.7683331
         ]
@@ -9137,6 +9188,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.464763,
+          48.4373628
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 7954386115,
+        "osm_url": "https://www.openstreetmap.org/node/7954386115",
+        "obs_ids": "79039540;118244505;177036113;249273783",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=79039540,118244505,177036113,249273783",
+        "tags": {
+          "alt_name": "Le gros Platane",
+          "denotation": "natural_monument",
+          "description": "Labellisé Arbre Remarquable par l'association ARBRES",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Platane Samuel",
+          "natural": "tree",
+          "ref:inaturalist.org": "118244505;177036113;249273783;79039540",
+          "species": "Platanus × hispanica",
+          "species:wikidata": "Q161374",
+          "species:wikipedia": "fr:Platane commun",
+          "start_date": "1782"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.1053651,
           48.4011136
         ]
@@ -9155,33 +9237,6 @@
           "ref:inaturalist.org": "247203071",
           "species:fr": "Arbousier",
           "species:wikidata": "Q329046"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.0932175,
-          48.428015
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12236286927,
-        "osm_url": "https://www.openstreetmap.org/node/12236286927",
-        "obs_ids": "246368595",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=246368595",
-        "tags": {
-          "denotation": "urban",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "246368595",
-          "species": "Juglans nigra",
-          "species:wikidata": "Q852572",
-          "species:wikipedia": "fr:Noyer noir"
         }
       }
     },
@@ -9662,25 +9717,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -156.6370032,
-          21.013184
+          0.0932175,
+          48.428015
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 13906810036,
-        "osm_url": "https://www.openstreetmap.org/node/13906810036",
-        "obs_ids": "148198066;148543203;148642100;167432393;170367172;194069135;231125741",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=148198066,148543203,148642100,167432393,170367172,194069135,231125741",
+        "osm_id": 12236286927,
+        "osm_url": "https://www.openstreetmap.org/node/12236286927",
+        "obs_ids": "246368595",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=246368595",
         "tags": {
-          "denotation": "natural_monument",
-          "fixme": "Not sure for exact position (about 50 meters around)",
-          "leaf_cycle": "evergreen",
+          "denotation": "urban",
+          "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "148198066;170367172",
-          "species": "Ficus benghalensis",
-          "species:wikidata": "Q1405636"
+          "ref:inaturalist.org": "246368595",
+          "species": "Juglans nigra",
+          "species:wikidata": "Q852572",
+          "species:wikipedia": "fr:Noyer noir"
         }
       }
     },
@@ -9759,33 +9814,6 @@
           "species:ca": "Eritrina cresta de gall",
           "species:wikidata": "Q162849",
           "website": "https://www.barcelona.cat/ca/que-pots-fer-a-bcn/parcs-i-jardins/arbres-interes-local/arbre-d-interes-local-eritrina-cresta-de-gall-carago-amb-cenamorats_99400455039.html"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          43.7705385,
-          -21.7412118
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 8420837735,
-        "osm_url": "https://www.openstreetmap.org/node/8420837735",
-        "obs_ids": "218581592",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=218581592",
-        "tags": {
-          "denotation": "natural_monument",
-          "genus": "Adansonia",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "218581592",
-          "species:fr": "Baobab",
-          "taxon:wikidata": "Q157991"
         }
       }
     },
@@ -9969,6 +9997,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -156.6370032,
+          21.013184
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13906810036,
+        "osm_url": "https://www.openstreetmap.org/node/13906810036",
+        "obs_ids": "148198066;148543203;148642100;167432393;170367172;194069135;231125741",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=148198066,148543203,148642100,167432393,170367172,194069135,231125741",
+        "tags": {
+          "denotation": "natural_monument",
+          "fixme": "Not sure for exact position (about 50 meters around)",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "148198066;170367172",
+          "species": "Ficus benghalensis",
+          "species:wikidata": "Q1405636"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           7.4435887,
           43.7867037
         ]
@@ -10092,24 +10147,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.6418571,
-          19.1210314
+          43.7705385,
+          -21.7412118
         ]
       },
       "properties": {
         "osm_element": "node",
-        "osm_id": 6253504394,
-        "osm_url": "https://www.openstreetmap.org/node/6253504394",
-        "obs_ids": "199728257;200034736",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=199728257,200034736",
+        "osm_id": 8420837735,
+        "osm_url": "https://www.openstreetmap.org/node/8420837735",
+        "obs_ids": "218581592",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=218581592",
         "tags": {
           "denotation": "natural_monument",
+          "genus": "Adansonia",
+          "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "ref:inaturalist.org": "199728257;200034736",
-          "species": "Samanea saman",
-          "species:wikidata": "Q259500",
-          "species:wikipedia": "en:Samanea saman"
+          "ref:inaturalist.org": "218581592",
+          "species:fr": "Baobab",
+          "taxon:wikidata": "Q157991"
         }
       }
     },
@@ -10323,6 +10379,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -70.6418571,
+          19.1210314
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 6253504394,
+        "osm_url": "https://www.openstreetmap.org/node/6253504394",
+        "obs_ids": "199728257;200034736",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=199728257,200034736",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "199728257;200034736",
+          "species": "Samanea saman",
+          "species:wikidata": "Q259500",
+          "species:wikipedia": "en:Samanea saman"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.2691016,
           48.7714539
         ]
@@ -10407,34 +10489,6 @@
           "species:es": "Baobab Africano",
           "start_date": "~925",
           "website": "http://chem.ubbcluj.ro/~studiachemia/issues/chemia2019_2T2/35_Patrut_etal_411_419.pdf"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.6920839,
-          45.2368005
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11463718236,
-        "osm_url": "https://www.openstreetmap.org/node/11463718236",
-        "obs_ids": "194965641",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=194965641",
-        "tags": {
-          "denotation": "landmark",
-          "genus": "Sequoiadendron",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "194965641",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
         }
       }
     },
@@ -10595,31 +10649,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.6984984,
-          45.5320025
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 5686330855,
-        "osm_url": "https://www.openstreetmap.org/node/5686330855",
-        "obs_ids": "8890976;138650532;178039366",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=8890976,138650532,178039366",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Portland Heritage Tree #10",
-          "natural": "tree",
-          "ref:inaturalist.org": "8890976;138650532;178039366"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           170.5193755,
           -45.8557275
         ]
@@ -10723,6 +10752,34 @@
           "species": "Olea europaea",
           "species:wikidata": "Q37083",
           "species:wikipedia": "pt:Oliveira"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6920839,
+          45.2368005
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11463718236,
+        "osm_url": "https://www.openstreetmap.org/node/11463718236",
+        "obs_ids": "194965641",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=194965641",
+        "tags": {
+          "denotation": "landmark",
+          "genus": "Sequoiadendron",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "194965641",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
         }
       }
     },
@@ -10995,6 +11052,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -122.6984984,
+          45.5320025
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 5686330855,
+        "osm_url": "https://www.openstreetmap.org/node/5686330855",
+        "obs_ids": "8890976;138650532;178039366",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=8890976,138650532,178039366",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Portland Heritage Tree #10",
+          "natural": "tree",
+          "ref:inaturalist.org": "8890976;138650532;178039366"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.944131,
           36.9457733
         ]
@@ -11110,32 +11192,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          103.8981441,
-          13.4297997
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12633097652,
-        "osm_url": "https://www.openstreetmap.org/node/12633097652",
-        "obs_ids": "13388763;39778157;69571590;80730277;91184079;146425991;155213745",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=13388763,39778157,69571590,80730277,91184079,146425991,155213745",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "13388763;146425991;155213745;39778157;69571590;80730277;91184079",
-          "species": "Tetrameles nudiflora",
-          "species:wikidata": "Q3236759"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           44.3999628,
           -20.2115401
         ]
@@ -11157,34 +11213,6 @@
           "type": "baobab",
           "wikidata": "Q788084",
           "wikipedia": "en:Avenue of the Baobabs"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -5.9791233,
-          43.2010525
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2327724042,
-        "osm_url": "https://www.openstreetmap.org/node/2327724042",
-        "obs_ids": "142815444",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=142815444",
-        "tags": {
-          "denotation": "natural_monument",
-          "height": "9.5",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Antiguo Reboḷḷo de Bermiego",
-          "natural": "tree",
-          "ref:inaturalist.org": "142815444",
-          "taxon": "Quercus pyrenaica",
-          "tourism": "attraction"
         }
       }
     },
@@ -11414,6 +11442,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          103.8981441,
+          13.4297997
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12633097652,
+        "osm_url": "https://www.openstreetmap.org/node/12633097652",
+        "obs_ids": "13388763;39778157;69571590;80730277;91184079;146425991;155213745",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=13388763,39778157,69571590,80730277,91184079,146425991,155213745",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "13388763;146425991;155213745;39778157;69571590;80730277;91184079",
+          "species": "Tetrameles nudiflora",
+          "species:wikidata": "Q3236759"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -16.6227984,
           13.3830898
         ]
@@ -11464,6 +11518,34 @@
           "ref:inaturalist.org": "141365761",
           "species": "Quercus robur",
           "species:wikidata": "Q165145"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9791233,
+          43.2010525
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2327724042,
+        "osm_url": "https://www.openstreetmap.org/node/2327724042",
+        "obs_ids": "142815444",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=142815444",
+        "tags": {
+          "denotation": "natural_monument",
+          "height": "9.5",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Antiguo Reboḷḷo de Bermiego",
+          "natural": "tree",
+          "ref:inaturalist.org": "142815444",
+          "taxon": "Quercus pyrenaica",
+          "tourism": "attraction"
         }
       }
     },
@@ -11564,35 +11646,6 @@
           "natural": "tree",
           "ref:inaturalist.org": "140245134",
           "species": "Ficus sycomorus"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -4.2968106,
-          43.269901
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 10933595264,
-        "osm_url": "https://www.openstreetmap.org/node/10933595264",
-        "obs_ids": "132393403",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=132393403",
-        "tags": {
-          "alt_name": "El Arriaga",
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Arriaga",
-          "natural": "tree",
-          "ref:inaturalist.org": "132393403",
-          "species": "Quercus robur",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
         }
       }
     },
@@ -11720,35 +11773,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6446008,
-          46.7842711
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 930847949,
-        "osm_url": "https://www.openstreetmap.org/node/930847949",
-        "obs_ids": "109319368",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=109319368",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "109319368",
-          "source": "Orthophoto Yverdon 2007 / HEIG-VD",
-          "species": "Sequoiadendron giganteum",
-          "species:fr": "Séquoia géant",
-          "species:wikidata": "Q149851",
-          "species:wikipedia": "fr:Séquoia géant"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           14.4702691,
           45.0957444
         ]
@@ -11844,6 +11868,35 @@
           "species:wikidata": "Q3071706",
           "wikidata": "Q321437",
           "wikipedia": "en:Bodhi tree"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.2968106,
+          43.269901
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 10933595264,
+        "osm_url": "https://www.openstreetmap.org/node/10933595264",
+        "obs_ids": "132393403",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=132393403",
+        "tags": {
+          "alt_name": "El Arriaga",
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Arriaga",
+          "natural": "tree",
+          "ref:inaturalist.org": "132393403",
+          "species": "Quercus robur",
+          "species:wikidata": "Q165145",
+          "species:wikipedia": "fr:Chêne pédonculé"
         }
       }
     },
@@ -12005,6 +12058,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6446008,
+          46.7842711
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 930847949,
+        "osm_url": "https://www.openstreetmap.org/node/930847949",
+        "obs_ids": "109319368",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=109319368",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "109319368",
+          "source": "Orthophoto Yverdon 2007 / HEIG-VD",
+          "species": "Sequoiadendron giganteum",
+          "species:fr": "Séquoia géant",
+          "species:wikidata": "Q149851",
+          "species:wikipedia": "fr:Séquoia géant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           73.3805042,
           54.9698619
         ]
@@ -12025,33 +12107,6 @@
           "species": "Salix alba",
           "species:wikidata": "Q156918",
           "species:wikipedia": "ru:Ива белая"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.5953831,
-          37.5112829
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 3331427777,
-        "osm_url": "https://www.openstreetmap.org/node/3331427777",
-        "obs_ids": "87281072",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=87281072",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Telescope Tree",
-          "natural": "tree",
-          "ref:inaturalist.org": "87281072",
-          "species": "Sequoiadendron giganteum",
-          "species:wikidata": "Q149851"
         }
       }
     },
@@ -12285,28 +12340,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.8116565,
-          14.8429552
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 3064829669,
-        "osm_url": "https://www.openstreetmap.org/node/3064829669",
-        "obs_ids": "71115203",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=71115203",
-        "tags": {
-          "name": "Kalayaan Tree",
-          "natural": "tree",
-          "tourism": "attraction"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -119.600724,
           37.5035464
         ]
@@ -12335,6 +12368,33 @@
           "tourism": "attraction",
           "wikidata": "Q5609795",
           "wikipedia": "en:Grizzly Giant"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.5953831,
+          37.5112829
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 3331427777,
+        "osm_url": "https://www.openstreetmap.org/node/3331427777",
+        "obs_ids": "87281072",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=87281072",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Telescope Tree",
+          "natural": "tree",
+          "ref:inaturalist.org": "87281072",
+          "species": "Sequoiadendron giganteum",
+          "species:wikidata": "Q149851"
         }
       }
     },
@@ -12626,6 +12686,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          120.8116565,
+          14.8429552
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 3064829669,
+        "osm_url": "https://www.openstreetmap.org/node/3064829669",
+        "obs_ids": "71115203",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=71115203",
+        "tags": {
+          "name": "Kalayaan Tree",
+          "natural": "tree",
+          "tourism": "attraction"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -8.0809406,
           39.473214
         ]
@@ -12730,34 +12812,6 @@
           "wikidata": "Q16122690",
           "wikimedia_commons": "File:Sahabi Tree, Safawi.jpg",
           "wikipedia": "en:Sahabi Tree"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8733208,
-          49.8280441
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 9673130977,
-        "osm_url": "https://www.openstreetmap.org/node/9673130977",
-        "obs_ids": "58534239",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=58534239",
-        "tags": {
-          "denotation": "natural_monument",
-          "genus": "Platanus",
-          "height": "30",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref": "ND-06018",
-          "ref:monumentaltrees": "https://www.monumentaltrees.com/de/deu/bayern/wurzburg/4681_veitshochheim/11339/",
-          "species": "Platanus × hispanica"
         }
       }
     },
@@ -12956,6 +13010,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          9.8733208,
+          49.8280441
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 9673130977,
+        "osm_url": "https://www.openstreetmap.org/node/9673130977",
+        "obs_ids": "58534239",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=58534239",
+        "tags": {
+          "denotation": "natural_monument",
+          "genus": "Platanus",
+          "height": "30",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref": "ND-06018",
+          "ref:monumentaltrees": "https://www.monumentaltrees.com/de/deu/bayern/wurzburg/4681_veitshochheim/11339/",
+          "species": "Platanus × hispanica"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           12.3239182,
           51.8656654
         ]
@@ -13006,31 +13088,6 @@
           "ref:inaturalist.org": "45763322",
           "species": "Adansonia gregorii",
           "species:es": "Baobab"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9723924,
-          38.3832855
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 11547491555,
-        "osm_url": "https://www.openstreetmap.org/node/11547491555",
-        "obs_ids": "10361574",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=10361574",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "Old Oak Tree",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Old Oak Tree",
-          "natural": "tree"
         }
       }
     },
@@ -13227,6 +13284,31 @@
           "species:fr": "Baobab Africain",
           "species:wikidata": "Q158742",
           "species:wikipedia": "fr:Baobab africain"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9723924,
+          38.3832855
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 11547491555,
+        "osm_url": "https://www.openstreetmap.org/node/11547491555",
+        "obs_ids": "10361574",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=10361574",
+        "tags": {
+          "denotation": "natural_monument",
+          "description": "Old Oak Tree",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Old Oak Tree",
+          "natural": "tree"
         }
       }
     }
