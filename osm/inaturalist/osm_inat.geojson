@@ -7464,6 +7464,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -1.6429714,
+          42.8154936
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2769312531,
+        "osm_url": "https://www.openstreetmap.org/node/2769312531",
+        "obs_ids": "80610681;285524855;288282097",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=80610681,285524855,288282097",
+        "tags": {
+          "denotation": "natural_monument",
+          "height": "35.7",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "needleleaved",
+          "name": "Sequoya del Palacio de Diputación",
+          "natural": "tree",
+          "ref:inaturalist.org": "80610681;285524855;288282097",
+          "source": "Gobierno de Navarra",
+          "source:date": "2009-12-01",
+          "species": "Sequoiadendron giganteum",
+          "tourism": "attraction",
+          "wheelchair": "yes",
+          "wikimedia_commons": "File:Secuoya del Palacio de Navarra (Pamplona) 01.jpg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           53.2798341,
           31.1225843
         ]
@@ -7509,6 +7541,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -5.9699722,
+          43.266611
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 4313659083,
+        "osm_url": "https://www.openstreetmap.org/node/4313659083",
+        "obs_ids": "283620920",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=283620920",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "Texu de Pedroveya",
+          "name:es": "Tejo de Pedroveya",
+          "natural": "tree",
+          "ref:inaturalist.org": "283620920",
+          "taxon": "Taxus baccata"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -3.2437472,
           40.3649611
         ]
@@ -7534,121 +7593,6 @@
           "start_date": "~1725",
           "website": "https://arbolessingularesdelacomunidad.jimdofree.com/por-municipios/nuevo-bazt%C3%A1n/",
           "wikidata": "Q54824009"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.2394541,
-          45.8411483
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12954985321,
-        "osm_url": "https://www.openstreetmap.org/node/12954985321",
-        "obs_ids": "292961484",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=292961484",
-        "tags": {
-          "denotation": "landmark",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "292961484",
-          "species": "Quercus robur",
-          "species:fr": "Chêne pédonculé",
-          "species:wikidata": "Q165145",
-          "species:wikipedia": "fr:Chêne pédonculé"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.4182288,
-          -33.9258096
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13775694719,
-        "osm_url": "https://www.openstreetmap.org/node/13775694719",
-        "obs_ids": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=23120231,76498013,153066743,153066744,153071215,153355579,194561183,210089346,294126698,294319856",
-        "tags": {
-          "denotation": "natural_monument",
-          "description": "Labelled as Ficus elastica on the tag, but it appears to be an identification error. See https://www.inaturalist.org/observations/153071215",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
-          "species": "Ficus macrophylla",
-          "species:wikidata": "Q1439079",
-          "species:wikipedia": "en:Ficus macrophylla"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.6429714,
-          42.8154936
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2769312531,
-        "osm_url": "https://www.openstreetmap.org/node/2769312531",
-        "obs_ids": "80610681;285524855;288282097",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=80610681,285524855,288282097",
-        "tags": {
-          "denotation": "natural_monument",
-          "height": "35.7",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "needleleaved",
-          "name": "Sequoya del Palacio de Diputación",
-          "natural": "tree",
-          "ref:inaturalist.org": "80610681;285524855;288282097",
-          "source": "Gobierno de Navarra",
-          "source:date": "2009-12-01",
-          "species": "Sequoiadendron giganteum",
-          "tourism": "attraction",
-          "wheelchair": "yes",
-          "wikimedia_commons": "File:Secuoya del Palacio de Navarra (Pamplona) 01.jpg"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -5.9699722,
-          43.266611
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 4313659083,
-        "osm_url": "https://www.openstreetmap.org/node/4313659083",
-        "obs_ids": "283620920",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=283620920",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "evergreen",
-          "leaf_type": "broadleaved",
-          "name": "Texu de Pedroveya",
-          "name:es": "Tejo de Pedroveya",
-          "natural": "tree",
-          "ref:inaturalist.org": "283620920",
-          "taxon": "Taxus baccata"
         }
       }
     },
@@ -7741,6 +7685,62 @@
           "species": "Ficus macrophylla",
           "species:it": "Fico magnolioide",
           "taxon": "Ficus columnaris"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2394541,
+          45.8411483
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12954985321,
+        "osm_url": "https://www.openstreetmap.org/node/12954985321",
+        "obs_ids": "292961484",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=292961484",
+        "tags": {
+          "denotation": "landmark",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "292961484",
+          "species": "Quercus robur",
+          "species:fr": "Chêne pédonculé",
+          "species:wikidata": "Q165145",
+          "species:wikipedia": "fr:Chêne pédonculé"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.4182288,
+          -33.9258096
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13775694719,
+        "osm_url": "https://www.openstreetmap.org/node/13775694719",
+        "obs_ids": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=23120231,76498013,153066743,153066744,153071215,153355579,194561183,210089346,294126698,294319856",
+        "tags": {
+          "denotation": "natural_monument",
+          "description": "Labelled as Ficus elastica on the tag, but it appears to be an identification error. See https://www.inaturalist.org/observations/153071215",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "23120231;76498013;153066743;153066744;153071215;153355579;194561183;210089346;294126698;294319856",
+          "species": "Ficus macrophylla",
+          "species:wikidata": "Q1439079",
+          "species:wikipedia": "en:Ficus macrophylla"
         }
       }
     },
