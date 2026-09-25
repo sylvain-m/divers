@@ -7242,6 +7242,7 @@
           "leaf_type": "needleleaved",
           "name:botanical": "Sitka Spruce",
           "natural": "tree",
+          "ref:inaturalist.org": "58911430;240604513;299091869",
           "species": "Picea sitchensis"
         }
       }
@@ -7266,7 +7267,8 @@
           "diameter": "10 m",
           "leaf_cycle": "semi_deciduous",
           "leaf_type": "broadleaved",
-          "natural": "tree"
+          "natural": "tree",
+          "ref:inaturalist.org": "300471848"
         }
       }
     },
@@ -7400,6 +7402,36 @@
           "species:fr": "Hêtre commun",
           "species:wikidata": "Q146149",
           "species:wikipedia": "fr:Hêtre commun"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.1016896,
+          30.3669707
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13947236234,
+        "osm_url": "https://www.openstreetmap.org/node/13947236234",
+        "obs_ids": "297927497",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=297927497",
+        "tags": {
+          "denotation": "natural_monument",
+          "genus": "Quercus",
+          "inscription": "The Celestial Oak | Registered Live Oak | Registration #596",
+          "leaf_cycle": "evergreen",
+          "leaf_type": "broadleaved",
+          "name": "The Celestial Oak",
+          "natural": "tree",
+          "ref:inaturalist.org": "297927497",
+          "source": "iNaturalist",
+          "species": "Quercus virginiana",
+          "species:wikidata": "Q1758722"
         }
       }
     },
