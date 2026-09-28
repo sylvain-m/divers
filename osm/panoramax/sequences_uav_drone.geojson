@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "name": "sequences_uav_drone",
   "metadata": {
-    "export_date": "2026-09-27T08:47:19.933505"
+    "export_date": "2026-09-28T09:14:40.583601"
   },
   "features": [
     {
@@ -220,7 +220,7 @@
         "bbox.ymax": 47.400805389,
         "collection": "3cff5c10-d9a5-4494-abbc-4b6cf213f685",
         "created": "2026-08-03T14:34:01.431Z",
-        "updated": "2026-08-03T14:34:01.431Z",
+        "updated": "2026-09-21T18:23:24.628Z",
         "datetime": "2026-08-03T07:22:19",
         "license": "etalab-2.0",
         "original_file:size": 17236694,
@@ -237,6 +237,40 @@
           4522
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "2.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -1648,7 +1682,7 @@
         "bbox.ymax": 48.576698083,
         "collection": "e12d83bf-76e1-4d63-8234-e704d37d2490",
         "created": "2026-06-19T08:48:50.594Z",
-        "updated": "2026-06-19T08:48:50.594Z",
+        "updated": "2026-09-24T03:28:04.132Z",
         "datetime": "2026-06-09T11:53:39",
         "license": "etalab-2.0",
         "original_file:size": 39337984,
@@ -1665,6 +1699,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.4",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -1748,7 +1816,7 @@
         "bbox.ymax": 48.576700278,
         "collection": "e12d83bf-76e1-4d63-8234-e704d37d2490",
         "created": "2026-06-19T08:49:15.283Z",
-        "updated": "2026-06-19T08:49:15.283Z",
+        "updated": "2026-09-24T03:28:03.352Z",
         "datetime": "2026-06-09T11:52:10",
         "license": "etalab-2.0",
         "original_file:size": 39518208,
@@ -1765,6 +1833,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.0",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.5",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -1848,7 +1950,7 @@
         "bbox.ymax": 48.576255694,
         "collection": "ea259c3d-d2cc-44dd-9276-f0cfda17ebec",
         "created": "2026-06-19T08:49:32.583Z",
-        "updated": "2026-06-19T08:49:32.583Z",
+        "updated": "2026-09-22T04:46:41.366Z",
         "datetime": "2026-06-09T12:01:05",
         "license": "etalab-2.0",
         "original_file:size": 42192896,
@@ -1865,6 +1967,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "1.8",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -1948,7 +2084,7 @@
         "bbox.ymax": 48.576257917,
         "collection": "ea259c3d-d2cc-44dd-9276-f0cfda17ebec",
         "created": "2026-06-19T08:49:52.530Z",
-        "updated": "2026-06-19T08:49:52.530Z",
+        "updated": "2026-09-22T04:46:40.526Z",
         "datetime": "2026-06-09T11:59:45",
         "license": "etalab-2.0",
         "original_file:size": 41811968,
@@ -1965,6 +2101,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "2.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.8",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2048,7 +2218,7 @@
         "bbox.ymax": 48.576966889,
         "collection": "46776a68-a3ca-41d8-8154-44f18c1b74db",
         "created": "2026-06-19T08:48:24.494Z",
-        "updated": "2026-06-19T08:48:24.494Z",
+        "updated": "2026-09-22T08:52:34.309Z",
         "datetime": "2026-06-09T11:45:39",
         "license": "etalab-2.0",
         "original_file:size": 36462592,
@@ -2065,6 +2235,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.2",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2148,7 +2352,7 @@
         "bbox.ymax": 48.576949639,
         "collection": "46776a68-a3ca-41d8-8154-44f18c1b74db",
         "created": "2026-06-19T08:48:07.716Z",
-        "updated": "2026-06-19T08:48:07.716Z",
+        "updated": "2026-09-22T08:52:35.070Z",
         "datetime": "2026-06-09T11:46:58",
         "license": "etalab-2.0",
         "original_file:size": 35684352,
@@ -2165,6 +2369,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.0",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.1",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2248,7 +2486,7 @@
         "bbox.ymax": 48.574864417,
         "collection": "d3b57e11-292e-4472-a26b-44d5151981a5",
         "created": "2026-06-19T08:50:37.772Z",
-        "updated": "2026-06-19T08:50:37.772Z",
+        "updated": "2026-09-22T04:46:42.396Z",
         "datetime": "2026-06-09T12:06:20",
         "license": "etalab-2.0",
         "original_file:size": 37801984,
@@ -2265,6 +2503,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "1.9",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.4",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2348,7 +2620,7 @@
         "bbox.ymax": 48.574864222,
         "collection": "d3b57e11-292e-4472-a26b-44d5151981a5",
         "created": "2026-06-19T08:50:17.541Z",
-        "updated": "2026-06-19T08:50:17.541Z",
+        "updated": "2026-09-22T04:46:43.211Z",
         "datetime": "2026-06-09T12:07:40",
         "license": "etalab-2.0",
         "original_file:size": 36880384,
@@ -2365,6 +2637,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.3",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.6",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2448,7 +2754,7 @@
         "bbox.ymax": 48.573729611,
         "collection": "b12b7174-0a97-42a1-895b-f54416080d2a",
         "created": "2026-06-19T08:52:37.208Z",
-        "updated": "2026-06-19T08:52:37.208Z",
+        "updated": "2026-09-23T07:13:43.519Z",
         "datetime": "2026-06-09T12:40:43",
         "license": "etalab-2.0",
         "original_file:size": 41480192,
@@ -2465,6 +2771,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.9",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.6",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2548,7 +2888,7 @@
         "bbox.ymax": 48.573733528,
         "collection": "b12b7174-0a97-42a1-895b-f54416080d2a",
         "created": "2026-06-19T08:52:55.701Z",
-        "updated": "2026-06-19T08:52:55.701Z",
+        "updated": "2026-09-23T07:13:42.408Z",
         "datetime": "2026-06-09T12:39:20",
         "license": "etalab-2.0",
         "original_file:size": 40976384,
@@ -2565,6 +2905,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.8",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2648,7 +3022,7 @@
         "bbox.ymax": 48.573687,
         "collection": "64360cf6-dda6-49a2-ae43-5a972a2d6d74",
         "created": "2026-06-19T08:51:11.348Z",
-        "updated": "2026-06-19T08:51:11.348Z",
+        "updated": "2026-09-23T01:26:46.521Z",
         "datetime": "2026-06-09T12:11:37",
         "license": "etalab-2.0",
         "original_file:size": 38608896,
@@ -2665,6 +3039,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.4",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.3",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -2748,7 +3156,7 @@
         "bbox.ymax": 48.573693667,
         "collection": "64360cf6-dda6-49a2-ae43-5a972a2d6d74",
         "created": "2026-06-19T08:50:54.830Z",
-        "updated": "2026-06-19T08:50:54.830Z",
+        "updated": "2026-09-23T01:26:47.377Z",
         "datetime": "2026-06-09T12:12:51",
         "license": "etalab-2.0",
         "original_file:size": 38318080,
@@ -2765,6 +3173,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.9",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.1",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -3048,7 +3490,7 @@
         "bbox.ymax": 48.572880694,
         "collection": "a648fcbc-28ce-48cc-b03e-a5f741e3d41f",
         "created": "2026-06-19T08:51:47.331Z",
-        "updated": "2026-06-19T08:51:47.331Z",
+        "updated": "2026-09-22T22:50:34.794Z",
         "datetime": "2026-06-09T12:19:44",
         "license": "etalab-2.0",
         "original_file:size": 41881600,
@@ -3065,6 +3507,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.7",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.5",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -3148,7 +3624,7 @@
         "bbox.ymax": 48.572887194,
         "collection": "a648fcbc-28ce-48cc-b03e-a5f741e3d41f",
         "created": "2026-06-19T08:51:29.411Z",
-        "updated": "2026-06-19T08:51:29.411Z",
+        "updated": "2026-09-22T22:50:35.679Z",
         "datetime": "2026-06-09T12:22:45",
         "license": "etalab-2.0",
         "original_file:size": 41906176,
@@ -3165,6 +3641,40 @@
           6000
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "2.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.5",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -8301,7 +8811,7 @@
         "bbox.ymax": 46.025307028,
         "collection": "923484b8-a56c-404b-9841-7798e0cde0bc",
         "created": "2025-09-29T09:31:08.636Z",
-        "updated": "2025-09-29T09:31:08.636Z",
+        "updated": "2026-09-24T08:45:35.251Z",
         "datetime": "2023-11-15T14:14:41",
         "license": "etalab-2.0",
         "original_file:size": 34840576,
@@ -8318,6 +8828,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.9",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.5",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -8401,7 +8945,7 @@
         "bbox.ymax": 46.002412194,
         "collection": "781edb3c-f9c7-45a8-b378-593a2cda1e07",
         "created": "2025-10-07T13:13:14.013Z",
-        "updated": "2025-10-07T13:13:14.013Z",
+        "updated": "2026-09-22T19:20:00.209Z",
         "datetime": "2023-12-14T13:08:08",
         "license": "etalab-2.0",
         "original_file:size": 13054209,
@@ -8418,6 +8962,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.6",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.3",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -8501,7 +9079,7 @@
         "bbox.ymax": 46.015163333,
         "collection": "6a53b8f0-ecce-4d45-af83-117a2ea0e5cb",
         "created": "2026-01-23T07:48:28.491Z",
-        "updated": "2026-01-23T07:48:28.491Z",
+        "updated": "2026-09-24T15:25:36.956Z",
         "datetime": "2023-12-14T13:41:27",
         "license": "etalab-2.0",
         "original_file:size": 5950773,
@@ -8518,6 +9096,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.2",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "UAV",
@@ -8608,7 +9220,7 @@
         "bbox.ymax": 45.995753944,
         "collection": "054af74a-77fb-417e-bae3-d7dd91eb7c03",
         "created": "2025-10-07T13:28:41.959Z",
-        "updated": "2025-10-07T13:28:41.959Z",
+        "updated": "2026-09-24T03:53:52.042Z",
         "datetime": "2023-12-14T13:21:54",
         "license": "etalab-2.0",
         "original_file:size": 12309894,
@@ -8625,6 +9237,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.2",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -8708,7 +9354,7 @@
         "bbox.ymax": 45.994182889,
         "collection": "11bb941e-6493-4ae2-bf4e-23f1be88e582",
         "created": "2025-09-29T08:04:57.106Z",
-        "updated": "2025-09-29T08:04:57.106Z",
+        "updated": "2026-09-23T23:28:09.232Z",
         "datetime": "2025-08-22T14:23:39",
         "license": "etalab-2.0",
         "original_file:size": 29868032,
@@ -8725,6 +9371,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.7",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -9008,7 +9688,7 @@
         "bbox.ymax": 45.964843222,
         "collection": "3949a778-db3c-42a9-afbd-7b6808cd1d30",
         "created": "2025-10-07T13:05:49.493Z",
-        "updated": "2025-10-07T13:05:49.493Z",
+        "updated": "2026-09-23T08:25:23.082Z",
         "datetime": "2021-04-01T12:46:38",
         "license": "etalab-2.0",
         "original_file:size": 13819150,
@@ -9025,6 +9705,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.4",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -9108,7 +9822,7 @@
         "bbox.ymax": 45.948795417,
         "collection": "46c68cfc-4b21-4103-9c3b-c5c150faa685",
         "created": "2025-09-29T07:56:18.543Z",
-        "updated": "2025-09-29T07:56:18.543Z",
+        "updated": "2026-09-24T03:53:52.940Z",
         "datetime": "2021-03-09T09:46:00",
         "license": "etalab-2.0",
         "original_file:size": 13615839,
@@ -9125,6 +9839,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.8",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "Drone",
@@ -9208,7 +9956,7 @@
         "bbox.ymax": 45.929506667,
         "collection": "3b70b53c-16f4-4851-a187-6e15ade692f7",
         "created": "2025-10-07T13:19:24.562Z",
-        "updated": "2025-10-07T13:19:24.562Z",
+        "updated": "2026-09-23T02:27:34.510Z",
         "datetime": "2025-08-01T12:44:35",
         "license": "etalab-2.0",
         "original_file:size": 62443331,
@@ -9225,6 +9973,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.3",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.3",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -9315,7 +10097,7 @@
         "bbox.ymax": 45.926830778,
         "collection": "bc62e793-1631-4112-80bb-507ad4cd4c2c",
         "created": "2026-01-06T13:06:34.319Z",
-        "updated": "2026-01-06T13:06:34.319Z",
+        "updated": "2026-09-22T06:05:51.254Z",
         "datetime": "2026-01-06T11:58:27",
         "license": "etalab-2.0",
         "original_file:size": 33902592,
@@ -9332,6 +10114,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.4",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "UAV",
@@ -9415,7 +10231,7 @@
         "bbox.ymax": 45.934329028,
         "collection": "0194b6cd-8dc2-492f-bb1d-0b9a73f5f809",
         "created": "2025-10-20T08:39:26.405Z",
-        "updated": "2025-10-20T08:39:26.405Z",
+        "updated": "2026-09-22T08:57:00.942Z",
         "datetime": "2025-10-16T07:23:11",
         "license": "etalab-2.0",
         "original_file:size": 34258944,
@@ -9432,6 +10248,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "uav",
@@ -9515,7 +10365,7 @@
         "bbox.ymax": 45.935934806,
         "collection": "2fcab983-9eda-4c5d-94d3-c5d184fa64c1",
         "created": "2025-10-07T13:07:04.075Z",
-        "updated": "2025-10-07T13:07:04.075Z",
+        "updated": "2026-09-23T18:03:05.941Z",
         "datetime": "2021-04-01T12:22:35",
         "license": "etalab-2.0",
         "original_file:size": 13645082,
@@ -9532,6 +10382,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.2",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.5",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -9615,7 +10499,7 @@
         "bbox.ymax": 45.896160056,
         "collection": "a11dd49b-8bd9-4086-a67d-ba895ed9fde9",
         "created": "2025-10-07T13:21:48.817Z",
-        "updated": "2025-10-07T13:21:48.817Z",
+        "updated": "2026-09-22T00:51:39.802Z",
         "datetime": "2024-03-14T14:05:50",
         "license": "etalab-2.0",
         "original_file:size": 36872192,
@@ -9632,6 +10516,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.5",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.5",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -9715,7 +10633,7 @@
         "bbox.ymax": 45.886603333,
         "collection": "1d1d249a-4d91-4418-83ad-30a972649322",
         "created": "2025-09-29T09:01:34.125Z",
-        "updated": "2025-09-29T09:01:34.125Z",
+        "updated": "2026-09-24T00:14:14.246Z",
         "datetime": "2025-07-30T12:27:36",
         "license": "etalab-2.0",
         "original_file:size": 53336919,
@@ -9732,6 +10650,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.2",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.1",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -9822,7 +10774,7 @@
         "bbox.ymax": 45.8865,
         "collection": "1caa62c6-0e65-4955-90d5-d9ff236f8e1c",
         "created": "2026-01-21T08:53:29.454Z",
-        "updated": "2026-01-21T08:53:29.454Z",
+        "updated": "2026-09-22T10:06:13.947Z",
         "datetime": "2025-07-30T12:32:15",
         "license": "etalab-2.0",
         "original_file:size": 71804064,
@@ -9839,6 +10791,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.8",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "uav",
@@ -9929,14 +10915,14 @@
         "bbox.ymax": 45.961018361,
         "collection": "8e6ce0cf-376f-4426-95de-a9fac7052729",
         "created": "2025-09-29T08:15:24.625Z",
-        "updated": "2026-08-19T12:04:42.116Z",
+        "updated": "2026-09-25T13:21:02.641Z",
         "datetime": "2023-12-14T12:33:29",
         "license": "etalab-2.0",
         "original_file:size": 11140313,
         "original_file:name": "DJI_0035.JPG",
         "panoramax:horizontal_pixel_density": 23,
         "quality:horizontal_accuracy": null,
-        "view:azimuth": -78,
+        "view:azimuth": -22,
         "pers:interior_orientation.camera_manufacturer": "Hasselblad",
         "pers:interior_orientation.camera_model": "L1D-20c",
         "pers:interior_orientation.field_of_view": 360,
@@ -9946,6 +10932,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.0",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -10029,7 +11049,7 @@
         "bbox.ymax": 45.979289083,
         "collection": "a3497256-b59d-4198-b8b6-f94bac93c0fe",
         "created": "2025-09-29T08:00:18.472Z",
-        "updated": "2025-09-29T08:00:18.472Z",
+        "updated": "2026-09-24T00:14:40.148Z",
         "datetime": "2024-10-03T12:50:55",
         "license": "etalab-2.0",
         "original_file:size": 33017856,
@@ -10046,6 +11066,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.5",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "Drone",
@@ -10229,7 +11283,7 @@
         "bbox.ymax": 45.98339275,
         "collection": "ac30f450-1162-4301-b5a2-90fa564b98c5",
         "created": "2025-10-07T13:49:36.919Z",
-        "updated": "2025-10-07T13:49:36.919Z",
+        "updated": "2026-09-24T00:14:41.094Z",
         "datetime": "2021-10-12T12:57:43",
         "license": "etalab-2.0",
         "original_file:size": 14963406,
@@ -10246,6 +11300,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.9",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.3",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -10329,7 +11417,7 @@
         "bbox.ymax": 45.987135167,
         "collection": "58a93f43-a2f8-4755-9848-8616ff1b73c5",
         "created": "2025-10-07T13:29:37.942Z",
-        "updated": "2025-10-07T13:29:37.942Z",
+        "updated": "2026-09-22T06:32:33.336Z",
         "datetime": "2022-06-02T12:40:07",
         "license": "etalab-2.0",
         "original_file:size": 14952691,
@@ -10346,6 +11434,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.2",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.3",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -10429,7 +11551,7 @@
         "bbox.ymax": 45.985182306,
         "collection": "ad1f12e7-f7b9-488e-8d3e-a8788be67de3",
         "created": "2025-10-07T12:26:34.658Z",
-        "updated": "2025-10-07T12:26:34.658Z",
+        "updated": "2026-09-22T10:06:14.787Z",
         "datetime": "2022-07-06T08:57:24",
         "license": "etalab-2.0",
         "original_file:size": 14471419,
@@ -10446,6 +11568,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.3",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -10529,7 +11685,7 @@
         "bbox.ymax": 45.985463767,
         "collection": "114a6f8a-8c8f-40e9-88b1-d73599831a68",
         "created": "2025-10-07T13:55:09.210Z",
-        "updated": "2025-10-07T13:55:09.210Z",
+        "updated": "2026-09-24T20:39:08.266Z",
         "datetime": "2021-04-20T13:21:14",
         "license": "etalab-2.0",
         "original_file:size": 27870964,
@@ -10546,6 +11702,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.0",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.4",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -10629,7 +11819,7 @@
         "bbox.ymax": 45.986459028,
         "collection": "4dcb86ef-5299-408f-9db8-421bfde595d4",
         "created": "2025-10-07T13:30:05.876Z",
-        "updated": "2025-10-07T13:30:05.876Z",
+        "updated": "2026-09-24T14:52:12.446Z",
         "datetime": "2022-06-02T13:13:09",
         "license": "etalab-2.0",
         "original_file:size": 14079570,
@@ -10646,6 +11836,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "0.4",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.1",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -10828,7 +12052,7 @@
         "bbox.ymax": 45.992513,
         "collection": "3b2e9dc3-abab-42e2-a641-9a8fd11721ba",
         "created": "2025-10-07T13:24:50.085Z",
-        "updated": "2025-10-07T13:24:50.085Z",
+        "updated": "2026-09-21T20:36:33.510Z",
         "datetime": "2023-05-03T12:28:10",
         "license": "etalab-2.0",
         "original_file:size": 34902016,
@@ -10845,6 +12069,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -10928,7 +12186,7 @@
         "bbox.ymax": 45.993159639,
         "collection": "9fdd1acc-0197-4499-be63-93f6a3295360",
         "created": "2025-10-07T13:57:10.894Z",
-        "updated": "2025-10-07T13:57:10.894Z",
+        "updated": "2026-09-22T10:06:15.697Z",
         "datetime": "2022-03-29T11:28:35",
         "license": "etalab-2.0",
         "original_file:size": 11725926,
@@ -10945,6 +12203,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.1",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.6",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -11028,7 +12320,7 @@
         "bbox.ymax": 45.99328583,
         "collection": "67a9f996-2c5d-41b7-a440-a506456105e9",
         "created": "2025-10-15T14:02:35.883Z",
-        "updated": "2025-10-15T14:02:35.883Z",
+        "updated": "2026-09-22T00:51:40.726Z",
         "datetime": "2022-06-17T07:37:02",
         "license": "etalab-2.0",
         "original_file:size": 14559166,
@@ -11045,6 +12337,40 @@
           4096
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-1.3",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.7",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "uav",
@@ -11128,7 +12454,7 @@
         "bbox.ymax": 45.993285139,
         "collection": "f412ac5e-6307-4a0d-ab45-d1221a1f0fcc",
         "created": "2025-10-14T14:06:34.833Z",
-        "updated": "2025-10-14T14:06:34.833Z",
+        "updated": "2026-09-23T03:55:57.305Z",
         "datetime": "2025-10-14T11:43:47",
         "license": "etalab-2.0",
         "original_file:size": 35368960,
@@ -11145,6 +12471,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.8",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "-0.9",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
@@ -11328,7 +12688,7 @@
         "bbox.ymax": 45.987905444,
         "collection": "8990f1e1-3852-430a-ab05-28fc97ff7530",
         "created": "2025-10-07T12:40:47.455Z",
-        "updated": "2025-10-07T12:40:47.455Z",
+        "updated": "2026-09-24T00:14:42.088Z",
         "datetime": "2023-02-14T10:04:33",
         "license": "etalab-2.0",
         "original_file:size": 36200448,
@@ -11345,6 +12705,40 @@
           7200
         ],
         "semantics": [
+          {
+            "key": "computed_by[pitch]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "computed_by[roll]",
+            "value": "panoflat/0.1.0",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": null
+          },
+          {
+            "key": "pitch",
+            "value": "-0.2",
+            "on": null
+          },
+          {
+            "key": "roll",
+            "value": "0.8",
+            "on": null
+          },
+          {
+            "key": "fixme:roll",
+            "value": "fixed",
+            "on": {
+              "field": "collection",
+              "id": null,
+              "geometry": null
+            }
+          },
           {
             "key": "transport",
             "value": "drone",
