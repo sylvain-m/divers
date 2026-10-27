@@ -13,7 +13,7 @@ conn.execute("""
         SELECT *,
             providers[1].name as provider_name
         FROM 'https://api.panoramax.xyz/data/geoparquet/panoramax.parquet'
-        WHERE length(list_filter(semantics, s ->
+        WHERE length(list_filter(semantics, lambda s:
             s.key = 'transport' AND
             (LOWER(s.value) = 'uav' OR LOWER(s.value) = 'drone')
         )) > 0
