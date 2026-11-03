@@ -9472,6 +9472,67 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.9499211,
+          48.718237
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 1827487545,
+        "osm_url": "https://www.openstreetmap.org/node/1827487545",
+        "obs_ids": "263509853",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=263509853",
+        "tags": {
+          "circumference": "2.53",
+          "denotation": "landmark",
+          "description": "Label \"Arbre remarquable de France\" par l'association A.R.B.R.E.S",
+          "genus": "Magnolia",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "source": "knowledge",
+          "species": "Magnolia x soulangeana",
+          "species:fr": "Magnolia de Soulange",
+          "tourism": "yes"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5024571,
+          13.6795693
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 2627623829,
+        "osm_url": "https://www.openstreetmap.org/node/2627623829",
+        "obs_ids": "104207936;194688746;197359851;247785274;261090760",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=104207936,194688746,197359851,247785274,261090760",
+        "tags": {
+          "alt_name": "Fromager millenaire de Missirah",
+          "circumference": "~30 m",
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "name": "Le fromager géant",
+          "natural": "tree",
+          "ref:inaturalist.org": "104207936;194688746;197359851;247785274;261090760",
+          "species": "Ceiba pentandra",
+          "species:wikidata": "Q138617",
+          "species:wikipedia": "fr:Ceiba pentandra",
+          "tourism": "attraction",
+          "url": "https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:Observation%20group=104207936"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           117.8892983,
           4.4056045
         ]
@@ -9584,6 +9645,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.1600123,
+          47.9653071
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 12579580576,
+        "osm_url": "https://www.openstreetmap.org/node/12579580576",
+        "obs_ids": "261347419",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=261347419",
+        "tags": {
+          "denotation": "urban",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "261347419",
+          "species": "Platanus × hispanica",
+          "species:fr": "Platane commun",
+          "species:wikidata": "Q161374",
+          "species:wikipedia": "fr:Platane commun"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           139.0798704,
           35.994699
         ]
@@ -9605,95 +9694,6 @@
           "species": "Zelkova serrata",
           "species:wikidata": "Q920344",
           "website": "https://www.city.chichibu.lg.jp/4446.html"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.9499211,
-          48.718237
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 1827487545,
-        "osm_url": "https://www.openstreetmap.org/node/1827487545",
-        "obs_ids": "263509853",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=263509853",
-        "tags": {
-          "circumference": "2.53",
-          "denotation": "landmark",
-          "description": "Label \"Arbre remarquable de France\" par l'association A.R.B.R.E.S",
-          "genus": "Magnolia",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "source": "knowledge",
-          "species": "Magnolia x soulangeana",
-          "species:fr": "Magnolia de Soulange",
-          "tourism": "yes"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.5024571,
-          13.6795693
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 2627623829,
-        "osm_url": "https://www.openstreetmap.org/node/2627623829",
-        "obs_ids": "104207936;194688746;197359851;247785274;261090760",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=104207936,194688746,197359851,247785274,261090760",
-        "tags": {
-          "alt_name": "Fromager millenaire de Missirah",
-          "circumference": "~30 m",
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "name": "Le fromager géant",
-          "natural": "tree",
-          "ref:inaturalist.org": "104207936;194688746;197359851;247785274;261090760",
-          "species": "Ceiba pentandra",
-          "species:wikidata": "Q138617",
-          "species:wikipedia": "fr:Ceiba pentandra",
-          "tourism": "attraction",
-          "url": "https://www.inaturalist.org/observations?verifiable=any&place_id=any&field:Observation%20group=104207936"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.1600123,
-          47.9653071
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 12579580576,
-        "osm_url": "https://www.openstreetmap.org/node/12579580576",
-        "obs_ids": "261347419",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=261347419",
-        "tags": {
-          "denotation": "urban",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "261347419",
-          "species": "Platanus × hispanica",
-          "species:fr": "Platane commun",
-          "species:wikidata": "Q161374",
-          "species:wikipedia": "fr:Platane commun"
         }
       }
     },
