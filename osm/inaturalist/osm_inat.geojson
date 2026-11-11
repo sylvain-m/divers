@@ -10149,6 +10149,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -16.3735877,
+          13.8807359
+        ]
+      },
+      "properties": {
+        "osm_element": "node",
+        "osm_id": 13928322992,
+        "osm_url": "https://www.openstreetmap.org/node/13928322992",
+        "obs_ids": "257119472",
+        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=257119472",
+        "tags": {
+          "denotation": "natural_monument",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "ref:inaturalist.org": "257119472",
+          "species": "Ceiba pentandra",
+          "species:fr": "Kapokier",
+          "species:wikidata": "Q138617",
+          "species:wikipedia": "fr:Ceiba pentandra"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.6291329,
           48.4027954
         ]
@@ -10280,34 +10308,6 @@
           "natural": "tree",
           "ref:inaturalist.org": "214833171;256802479",
           "source": "iNaturalist"
-        }
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -16.3735877,
-          13.8807359
-        ]
-      },
-      "properties": {
-        "osm_element": "node",
-        "osm_id": 13928322992,
-        "osm_url": "https://www.openstreetmap.org/node/13928322992",
-        "obs_ids": "257119472",
-        "obs_url": "https://www.inaturalist.org/observations?verifiable=any&id=257119472",
-        "tags": {
-          "denotation": "natural_monument",
-          "leaf_cycle": "deciduous",
-          "leaf_type": "broadleaved",
-          "natural": "tree",
-          "ref:inaturalist.org": "257119472",
-          "species": "Ceiba pentandra",
-          "species:fr": "Kapokier",
-          "species:wikidata": "Q138617",
-          "species:wikipedia": "fr:Ceiba pentandra"
         }
       }
     },
